@@ -30,6 +30,8 @@ public:
     virtual bool initWithData(PlayerStatusData* playerData, std::vector<UnitOfPlayerRecord*> &unitRecords);
     virtual bool initFromLocalData();
     
+    std::vector<UnitOfPlayerRecord*> getUnitRecords();
+    
     // TODO: for debug, remove later
 public:
     bool initWithDebugData();

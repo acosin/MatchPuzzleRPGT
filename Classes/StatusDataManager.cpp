@@ -67,6 +67,12 @@ bool StatusDataManager::initFromLocalData()
     return true;
 }
 
+std::vector<UnitOfPlayerRecord*> StatusDataManager::getUnitRecords()
+{
+    // TODO: should return a safe readable object instead
+    return _unitRecords;
+}
+
 // TODO: for debug, remove later
 bool StatusDataManager::initWithDebugData()
 {

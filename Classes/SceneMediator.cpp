@@ -11,6 +11,7 @@
 
 SceneMediator* SceneMediator::_instance = nullptr;
 MainBackground* SceneMediator::_mainBackground = nullptr;
+StatusDataManager* SceneMediator::_statusDataManager = nullptr;
 
 SceneMediator* SceneMediator::getInstance()
 {
@@ -28,6 +29,17 @@ MainBackground* SceneMediator::getMainBackground()
         _mainBackground = MainBackground::create();
     }
     return _mainBackground;
+}
+
+StatusDataManager* SceneMediator::getStatusDataManager()
+{
+    if (_statusDataManager == nullptr) {
+        _statusDataManager = StatusDataManager::create();
+        // TODO: fix here by replacing with initFromLocalData();
+        //_statusDataManager->initFromLocalData();
+        _statusDataManager->initWithDebugData();
+    }
+    return _statusDataManager;
 }
 
 void SceneMediator::gotoHomeScene()

@@ -3,10 +3,10 @@
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="Scene" ctype="GameNodeObjectData">
-        <Size X="640.0000" Y="960.0000" />
+      <ObjectData Name="Scene" Visible="False" ctype="GameNodeObjectData">
+        <Size X="640.0000" Y="1136.0000" />
         <Children>
-          <AbstractNodeData Name="Default" ActionTag="-620272433" Tag="5" IconVisible="False" ObjectIndex="3" ctype="SpriteObjectData">
+          <AbstractNodeData Name="Default" ActionTag="-620272433" Tag="5" IconVisible="False" ctype="SpriteObjectData">
             <Size X="640.0000" Y="960.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="320.0000" Y="480.0000" />

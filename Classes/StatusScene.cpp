@@ -6,12 +6,13 @@
 
 #include "StatusScene.h"
 
-#include "SceneMediator.h"
-
 StatusScene::StatusScene():
+_layout(nullptr),
 _background(nullptr),
 _homeButton(nullptr),
-_exitButton(nullptr)
+_exitButton(nullptr),
+_listView_unitRecords(nullptr),
+_statusManager(nullptr)
 {
     
 }
@@ -39,18 +40,24 @@ bool StatusScene::init()
     
     auto viewSize=Director::getInstance()->getVisibleSize();
     
+    _statusManager = SceneMediator::getStatusDataManager();
+    
+    _layout = CSLoader::createNode("ui/StatusScene.csb");
+    _layout->setName("LAYOUT");
+    
     // TODO: may create only once in SceneMediator?
     _background = MainBackground::create();
-    this->addChild(_background);
+    _layout->getChildByName("ImageView_background")->addChild(_background);
     
-    //initialize buttons
-    _homeButton = ui::Button::create("home.png");
-    _homeButton->setPosition(Vec2(viewSize.width/2, viewSize.height/2-340));
-    addChild(_homeButton);
+    _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
+    _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
     
-    _exitButton = ui::Button::create("exit.png");
-    _exitButton->setPosition(Vec2(viewSize.width/2, viewSize.height/2-420));
-    addChild(_exitButton);
+    _listView_unitRecords = dynamic_cast<ui::ListView*>(_layout->getChildByName("ListView_UnitRecords"));
+    // add unit records to the listview
+    fillListViewUnitRecords();
+    
+    this->addChild(_layout);
+
 
     //initialize ui event listener
     
@@ -67,3 +74,21 @@ bool StatusScene::init()
     
     return true;
 }
+
+bool StatusScene::fillListViewUnitRecords()
+{
+    if (_statusManager == nullptr ||
+        _listView_unitRecords == nullptr) {
+        return false;
+    }
+    
+    // TODO: may need to handle exepction later
+    
+    for (auto record : _statusManager->getUnitRecords()) {
+        auto item = ListItem_UnitRecord::createListItem(record);
+        _listView_unitRecords->pushBackCustomItem(item);
+    }
+    
+    return true;
+}
+
