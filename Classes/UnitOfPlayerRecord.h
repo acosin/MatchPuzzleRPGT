@@ -13,6 +13,19 @@ struct UnitOfPlayerRecord {
     UnitData unitdata;
     //unit32_t playerID;
     time_t getTimestamp;
+    
+    UnitOfPlayerRecord(UnitData unitdata,
+                       time_t getTimestamp)
+    {
+        init(unitdata, getTimestamp);
+    }
+    // TODO: here deep copy the UnitData
+    void init(UnitData unitdata,
+              time_t getTimestamp)
+    {
+        this->unitdata = unitdata;
+        this->getTimestamp = getTimestamp;
+    }
 };
 
 
