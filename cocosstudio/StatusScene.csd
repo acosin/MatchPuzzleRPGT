@@ -100,13 +100,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ListView_UnitRecords" ActionTag="1454428146" Tag="16" IconVisible="False" LeftMargin="65.5092" RightMargin="74.4908" TopMargin="438.1853" BottomMargin="397.8147" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" ItemMargin="1" DirectionType="Vertical" ctype="ListViewObjectData">
-            <Size X="500.0000" Y="300.0000" />
+          <AbstractNodeData Name="ListView_UnitRecords" ActionTag="1454428146" Tag="16" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="64.5040" RightMargin="75.4640" TopMargin="438.2120" BottomMargin="397.7704" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Enable="True" IsBounceEnabled="True" ScrollDirectionType="0" ItemMargin="20" DirectionType="Vertical" VerticalType="Align_VerticalCenter" ctype="ListViewObjectData">
+            <Size X="500.0320" Y="300.0176" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="315.5092" Y="547.8147" />
+            <Position X="314.5200" Y="547.7792" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.4930" Y="0.4822" />
+            <PrePosition X="0.4914" Y="0.4822" />
             <PreSize X="0.7813" Y="0.2641" />
             <SingleColor A="255" R="150" G="150" B="255" />
             <FirstColor A="255" R="150" G="150" B="255" />
