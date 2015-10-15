@@ -4,8 +4,7 @@
 //
 //
 
-#ifndef PlayerStatusData_h
-#define PlayerStatusData_h
+#pragma once
 
 struct PlayerStatusData {
     uint32_t playerID;
@@ -47,4 +46,3 @@ struct PlayerStatusData {
 };
 
 
-#endif /* PlayerStatusData_h */

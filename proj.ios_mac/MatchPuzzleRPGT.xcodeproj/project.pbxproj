@@ -47,6 +47,10 @@
 		31122EB61BCCBEDF00F08C65 /* Chara_illust.png in Resources */ = {isa = PBXBuildFile; fileRef = 31122EB41BCCBEDF00F08C65 /* Chara_illust.png */; settings = {ASSET_TAGS = (); }; };
 		31122EC11BCD01CD00F08C65 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 31122EC01BCD01CD00F08C65 /* ui */; settings = {ASSET_TAGS = (); }; };
 		31122EC21BCD01CD00F08C65 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 31122EC01BCD01CD00F08C65 /* ui */; settings = {ASSET_TAGS = (); }; };
+		31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122EC41BCE27A300F08C65 /* CsvParser.cpp */; settings = {ASSET_TAGS = (); }; };
+		31122EC71BCE27A300F08C65 /* CsvParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122EC41BCE27A300F08C65 /* CsvParser.cpp */; settings = {ASSET_TAGS = (); }; };
+		31122ECA1BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv in Resources */ = {isa = PBXBuildFile; fileRef = 31122EC91BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv */; settings = {ASSET_TAGS = (); }; };
+		31122ECB1BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv in Resources */ = {isa = PBXBuildFile; fileRef = 31122EC91BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv */; settings = {ASSET_TAGS = (); }; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
@@ -128,8 +132,11 @@
 		31122EA81BCC9DBC00F08C65 /* element_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = element_red.png; sourceTree = "<group>"; };
 		31122EA91BCC9DBC00F08C65 /* element_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = element_yellow.png; sourceTree = "<group>"; };
 		31122EB41BCCBEDF00F08C65 /* Chara_illust.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chara_illust.png; sourceTree = "<group>"; };
-		31122EBF1BCCF22F00F08C65 /* ListItem_UnitRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem_UnitRecord.h; sourceTree = "<group>"; };
+		31122EBF1BCCF22F00F08C65 /* ListItem_UnitRecord.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ListItem_UnitRecord.hpp; sourceTree = "<group>"; };
 		31122EC01BCD01CD00F08C65 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
+		31122EC41BCE27A300F08C65 /* CsvParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CsvParser.cpp; sourceTree = "<group>"; };
+		31122EC51BCE27A300F08C65 /* CsvParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CsvParser.h; sourceTree = "<group>"; };
+		31122EC91BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnitOfPlayerRecords.csv; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
@@ -250,6 +257,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				31122EC81BCE2DD300F08C65 /* Data */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -324,9 +332,26 @@
 		31122EBE1BCCF19900F08C65 /* DataVisualizer */ = {
 			isa = PBXGroup;
 			children = (
-				31122EBF1BCCF22F00F08C65 /* ListItem_UnitRecord.h */,
+				31122EBF1BCCF22F00F08C65 /* ListItem_UnitRecord.hpp */,
 			);
 			name = DataVisualizer;
+			sourceTree = "<group>";
+		};
+		31122EC31BCE277700F08C65 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				31122EC41BCE27A300F08C65 /* CsvParser.cpp */,
+				31122EC51BCE27A300F08C65 /* CsvParser.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		31122EC81BCE2DD300F08C65 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				31122EC91BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 		46880B7519C43A67006E1F66 /* Resources */ = {
@@ -353,6 +378,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				31122EC31BCE277700F08C65 /* Utils */,
 				31122EBD1BCCF14A00F08C65 /* Scene */,
 				31122EBC1BCCF12D00F08C65 /* DataManager */,
 				31122EBE1BCCF19900F08C65 /* DataVisualizer */,
@@ -504,6 +530,7 @@
 				31122E8A1BC786DA00F08C65 /* status.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				31122ECA1BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				31122E871BC7852F00F08C65 /* score.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
@@ -548,6 +575,7 @@
 				31122E8B1BC786DA00F08C65 /* status.png in Resources */,
 				31122EC21BCD01CD00F08C65 /* ui in Resources */,
 				31122E8E1BC7872800F08C65 /* exit.png in Resources */,
+				31122ECB1BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv in Resources */,
 				31122EB31BCC9DBC00F08C65 /* element_yellow.png in Resources */,
 				31122EB11BCC9DBC00F08C65 /* element_red.png in Resources */,
 				31122EB61BCCBEDF00F08C65 /* Chara_illust.png in Resources */,
@@ -564,6 +592,7 @@
 				31122E761BC7658100F08C65 /* HomeScene.cpp in Sources */,
 				31122E811BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				31122E911BC7884600F08C65 /* StatusScene.cpp in Sources */,
+				31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */,
 				31122E7A1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
@@ -584,6 +613,7 @@
 				31122E821BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				31122EA41BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
+				31122EC71BCE27A300F08C65 /* CsvParser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

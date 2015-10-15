@@ -48,7 +48,7 @@ bool StatusDataManager::initWithData(PlayerStatusData* playerData, std::vector<U
     if (Layer::init()==false)
         return false;
     
-    // TODO: init playerData, UnitRecords here
+    // TODO: init playerData, UnitRecords here, may check delete?
     _playerData = playerData;
     _unitRecords = unitRecords;
     
@@ -63,6 +63,43 @@ bool StatusDataManager::initFromLocalData()
     
     // TODO: init playerData, UnitRecords here from local data
     //
+    
+    loadUnitOfPlayerRecordsFromCSV("Data/UnitOfPlayerRecords.csv");
+    
+    return true;
+}
+
+void StatusDataManager::clearUnitRecords()
+{
+    for (auto record : _unitRecords) {
+        delete record;
+    }
+    _unitRecords.clear();
+}
+
+bool StatusDataManager::loadUnitOfPlayerRecordsFromCSV(const std::string &fullpath)
+{
+    clearUnitRecords();
+    UnitData unitDataTemp;
+    UnitOfPlayerRecord* unitRecordTemp;
+    
+    CsvParser::Csv csv(FileUtils::getInstance()->fullPathForFilename(fullpath));
+    // TODO: handle file open excpetion here
+    
+    for (int i = 0; i < csv.getRowCount(); i++) {
+        auto row = csv[i];
+        // TODO: may modify for any cols
+        unitDataTemp.init((uint32_t)(Value(row[0]).asInt()),
+                          row[1],
+                          (ElementType)Value(row[2]).asInt(),
+                          row[3],
+                          Value(row[4]).asInt(),
+                          Value(row[5]).asInt());
+        // TODO: should load here later
+        unitRecordTemp = new UnitOfPlayerRecord(unitDataTemp,
+                                                time(nullptr));
+        _unitRecords.push_back(unitRecordTemp);
+    }
     
     return true;
 }

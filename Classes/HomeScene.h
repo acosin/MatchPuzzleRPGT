@@ -4,8 +4,7 @@
 //
 //
 
-#ifndef __MatchPuzzleRPGT__HomeScene__
-#define __MatchPuzzleRPGT__HomeScene__
+#pragma once
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
@@ -31,5 +30,3 @@ public:
     
     static Scene *createScene();
 };
-
-#endif /* defined(__MatchPuzzleRPGT__HomeScene__) */

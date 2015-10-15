@@ -4,8 +4,7 @@
 //
 //
 
-#ifndef __MatchPuzzleRPGT__SceneMediator__
-#define __MatchPuzzleRPGT__SceneMediator__
+#pragma once
 
 #include "cocos2d.h"
 
@@ -39,5 +38,3 @@ public:
 private:
 
 };
-
-#endif /* defined(__MatchPuzzleRPGT__SceneMediator__) */

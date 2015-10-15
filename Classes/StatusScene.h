@@ -4,8 +4,7 @@
 //
 //
 
-#ifndef __MatchPuzzleRPGT__StatusScene__
-#define __MatchPuzzleRPGT__StatusScene__
+#pragma once
 
 #include "cocos2d.h"
 
@@ -13,7 +12,7 @@
 #include "cocostudio/CocoStudio.h"
 
 #include "SceneMediator.h"
-#include "ListItem_UnitRecord.h"
+#include "ListItem_UnitRecord.hpp"
 
 USING_NS_CC;
 
@@ -41,5 +40,3 @@ public:
 private:
     virtual bool fillListViewUnitRecords();
 };
-
-#endif /* defined(__MatchPuzzleRPGT__StatusScene__) */

@@ -38,6 +38,7 @@ StatusDataManager* SceneMediator::getStatusDataManager()
         // TODO: fix here by replacing with initFromLocalData();
         //_statusDataManager->initFromLocalData();
         _statusDataManager->initWithDebugData();
+        //_statusDataManager->initFromLocalData();
     }
     return _statusDataManager;
 }

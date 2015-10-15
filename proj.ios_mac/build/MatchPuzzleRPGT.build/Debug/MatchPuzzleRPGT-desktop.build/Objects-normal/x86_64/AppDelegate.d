@@ -1,0 +1,34 @@
+dependencies: \
+  /Users/suiyan.li/Develop/Codes/cocos2dx/MatchPuzzleRPGT/Classes/AppDelegate.cpp \
+  /Users/suiyan.li/Develop/Codes/cocos2dx/MatchPuzzleRPGT/Classes/AppDelegate.h \
+  /Users/suiyan.li/Develop/Codes/cocos2dx/MatchPuzzleRPGT/Classes/HomeScene.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/CocosGUI.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIWidget.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UILayoutParameter.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/GUIExport.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/GUIDefine.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/base/ObjectFactory.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UILayout.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIButton.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UICheckBox.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIAbstractCheckButton.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIRadioButton.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIImageView.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIText.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UITextAtlas.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UILoadingBar.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIScrollView.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIListView.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UISlider.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UITextField.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UITextBMFont.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIPageView.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIHelper.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIRichText.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIHBox.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIVBox.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIRelativeBox.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIDeprecated.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIScale9Sprite.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UIEditBox/UIEditBox.h \
+  /Applications/Cocos/frameworks/cocos2d-x-3.8/cocos/ui/UILayoutComponent.h

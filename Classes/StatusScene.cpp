@@ -41,7 +41,6 @@ bool StatusScene::init()
     auto viewSize=Director::getInstance()->getVisibleSize();
     
     _statusManager = SceneMediator::getStatusDataManager();
-    
     _layout = CSLoader::createNode("ui/StatusScene.csb");
     _layout->setName("LAYOUT");
     
@@ -86,6 +85,8 @@ bool StatusScene::fillListViewUnitRecords()
     
     for (auto record : _statusManager->getUnitRecords()) {
         auto item = ListItem_UnitRecord::createListItem(record);
+        // NOTE: setSizePercent() not work
+        //item->setSizePercent(Vec2(90.0f, 50.0f));
         _listView_unitRecords->pushBackCustomItem(item);
     }
     

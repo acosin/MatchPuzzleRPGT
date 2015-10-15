@@ -4,8 +4,7 @@
 //
 //
 
-#ifndef __MatchPuzzleRPGT__MainBackground__
-#define __MatchPuzzleRPGT__MainBackground__
+#pragma once
 
 #include "cocos2d.h"
 
@@ -24,5 +23,3 @@ public:
     virtual bool init();
     virtual void update(float t);
 };
-
-#endif /* defined(__MatchPuzzleRPGT__MainBackground__) */
