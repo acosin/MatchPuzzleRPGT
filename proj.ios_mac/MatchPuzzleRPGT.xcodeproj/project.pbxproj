@@ -49,8 +49,13 @@
 		31122EC21BCD01CD00F08C65 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 31122EC01BCD01CD00F08C65 /* ui */; settings = {ASSET_TAGS = (); }; };
 		31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122EC41BCE27A300F08C65 /* CsvParser.cpp */; settings = {ASSET_TAGS = (); }; };
 		31122EC71BCE27A300F08C65 /* CsvParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122EC41BCE27A300F08C65 /* CsvParser.cpp */; settings = {ASSET_TAGS = (); }; };
-		31122ECA1BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv in Resources */ = {isa = PBXBuildFile; fileRef = 31122EC91BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv */; settings = {ASSET_TAGS = (); }; };
-		31122ECB1BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv in Resources */ = {isa = PBXBuildFile; fileRef = 31122EC91BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv */; settings = {ASSET_TAGS = (); }; };
+		31599BE21BCF5E58005E92C5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 31599BE11BCF5E58005E92C5 /* data */; settings = {ASSET_TAGS = (); }; };
+		3188E6721BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */; settings = {ASSET_TAGS = (); }; };
+		3188E6731BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */; settings = {ASSET_TAGS = (); }; };
+		3188E6761BCF8E7900AC8FBC /* StageData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6741BCF8E7900AC8FBC /* StageData.cpp */; settings = {ASSET_TAGS = (); }; };
+		3188E6771BCF8E7900AC8FBC /* StageData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6741BCF8E7900AC8FBC /* StageData.cpp */; settings = {ASSET_TAGS = (); }; };
+		3188E67A1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6791BCFBA4500AC8FBC /* StageScoreRecord.cpp */; settings = {ASSET_TAGS = (); }; };
+		3188E67B1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6791BCFBA4500AC8FBC /* StageScoreRecord.cpp */; settings = {ASSET_TAGS = (); }; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
@@ -136,7 +141,14 @@
 		31122EC01BCD01CD00F08C65 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		31122EC41BCE27A300F08C65 /* CsvParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CsvParser.cpp; sourceTree = "<group>"; };
 		31122EC51BCE27A300F08C65 /* CsvParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CsvParser.h; sourceTree = "<group>"; };
-		31122EC91BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UnitOfPlayerRecords.csv; sourceTree = "<group>"; };
+		31599BE11BCF5E58005E92C5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
+		31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Layer_PlayerStatus.hpp; sourceTree = "<group>"; };
+		3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PuzzleData.cpp; sourceTree = "<group>"; };
+		3188E6711BCF8DD100AC8FBC /* PuzzleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleData.h; sourceTree = "<group>"; };
+		3188E6741BCF8E7900AC8FBC /* StageData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageData.cpp; sourceTree = "<group>"; };
+		3188E6751BCF8E7900AC8FBC /* StageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageData.h; sourceTree = "<group>"; };
+		3188E6781BCFB90200AC8FBC /* StageScoreRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageScoreRecord.h; sourceTree = "<group>"; };
+		3188E6791BCFBA4500AC8FBC /* StageScoreRecord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageScoreRecord.cpp; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
@@ -257,7 +269,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				31122EC81BCE2DD300F08C65 /* Data */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -299,10 +310,16 @@
 		31122EBA1BCCF0FE00F08C65 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				3188E6741BCF8E7900AC8FBC /* StageData.cpp */,
+				3188E6751BCF8E7900AC8FBC /* StageData.h */,
+				3188E6791BCFBA4500AC8FBC /* StageScoreRecord.cpp */,
+				3188E6781BCFB90200AC8FBC /* StageScoreRecord.h */,
 				31122E961BC7A19400F08C65 /* ElementType.h */,
 				31122E981BC7A4A100F08C65 /* UnitData.h */,
 				31122E9C1BC7A88900F08C65 /* UnitOfPlayerRecord.h */,
 				31122EA01BC7B52600F08C65 /* PlayerStatusData.h */,
+				3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */,
+				3188E6711BCF8DD100AC8FBC /* PuzzleData.h */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -333,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				31122EBF1BCCF22F00F08C65 /* ListItem_UnitRecord.hpp */,
+				31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */,
 			);
 			name = DataVisualizer;
 			sourceTree = "<group>";
@@ -346,17 +364,10 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		31122EC81BCE2DD300F08C65 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				31122EC91BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv */,
-			);
-			name = Data;
-			sourceTree = "<group>";
-		};
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				31599BE11BCF5E58005E92C5 /* data */,
 				31122EC01BCD01CD00F08C65 /* ui */,
 				31122EB41BCCBEDF00F08C65 /* Chara_illust.png */,
 				31122EA51BCC9DBC00F08C65 /* character_icon_0.png */,
@@ -530,7 +541,6 @@
 				31122E8A1BC786DA00F08C65 /* status.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
-				31122ECA1BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				31122E871BC7852F00F08C65 /* score.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
@@ -556,6 +566,7 @@
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
 				31122EAA1BCC9DBC00F08C65 /* character_icon_0.png in Resources */,
 				31122EB51BCCBEDF00F08C65 /* Chara_illust.png in Resources */,
+				31599BE21BCF5E58005E92C5 /* data in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,7 +586,6 @@
 				31122E8B1BC786DA00F08C65 /* status.png in Resources */,
 				31122EC21BCD01CD00F08C65 /* ui in Resources */,
 				31122E8E1BC7872800F08C65 /* exit.png in Resources */,
-				31122ECB1BCE3C4B00F08C65 /* UnitOfPlayerRecords.csv in Resources */,
 				31122EB31BCC9DBC00F08C65 /* element_yellow.png in Resources */,
 				31122EB11BCC9DBC00F08C65 /* element_red.png in Resources */,
 				31122EB61BCCBEDF00F08C65 /* Chara_illust.png in Resources */,
@@ -589,8 +599,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3188E6761BCF8E7900AC8FBC /* StageData.cpp in Sources */,
 				31122E761BC7658100F08C65 /* HomeScene.cpp in Sources */,
 				31122E811BC77FA000F08C65 /* MainBackground.cpp in Sources */,
+				3188E67A1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
 				31122E911BC7884600F08C65 /* StatusScene.cpp in Sources */,
 				31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */,
 				31122E7A1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
@@ -599,6 +611,7 @@
 				31122EA31BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				3188E6721BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,12 +620,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				3188E67B1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
 				31122E7B1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
 				31122E921BC7884600F08C65 /* StatusScene.cpp in Sources */,
 				31122E771BC7658100F08C65 /* HomeScene.cpp in Sources */,
 				31122E821BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				3188E6731BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */,
 				31122EA41BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
+				3188E6771BCF8E7900AC8FBC /* StageData.cpp in Sources */,
 				31122EC71BCE27A300F08C65 /* CsvParser.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

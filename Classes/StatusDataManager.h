@@ -14,12 +14,16 @@
 
 USING_NS_CC;
 
-class StatusDataManager : public Layer
+/**
+ * NOTE: StatusDataManager is a class need memory management manually! 
+ */
+class StatusDataManager 
 {
 protected:
     PlayerStatusData* _playerData;
     std::vector<UnitOfPlayerRecord*> _unitRecords;
     
+    void clearPlayerData();
     void clearUnitRecords();
     
 public:
@@ -30,10 +34,12 @@ public:
     
     virtual bool initWithoutData(); // TODO: may remove later
     virtual bool initWithData(PlayerStatusData* playerData, std::vector<UnitOfPlayerRecord*> &unitRecords);
-    virtual bool initFromLocalData();
-    bool loadUnitOfPlayerRecordsFromCSV(const std::string& fullpath);
+    virtual bool initFromLocalData(const std::string &playerDataFile, const std::string &unitRocordsFile);
+    bool loadPlayerDataFromCSV(const std::string &filename);
+    bool loadUnitOfPlayerRecordsFromCSV(const std::string& filename);
     
     std::vector<UnitOfPlayerRecord*> getUnitRecords();
+    PlayerStatusData* getPlayerStatusData();
     
     // TODO: for debug, remove later
 public:

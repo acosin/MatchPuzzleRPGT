@@ -42,7 +42,7 @@ bool HomeScene::init()
     auto viewSize=Director::getInstance()->getVisibleSize();
     
     // TODO: may create only once in SceneMediator?
-    //_background = SceneMediator::getMainBackground();
+    //_background = SceneMediator::getInstance()->getMainBackground();
     _background = MainBackground::create();
     addChild(_background);
     

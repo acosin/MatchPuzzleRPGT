@@ -1,4 +1,4 @@
-unitID,unitIconPath,elementType,UnitName,atk,level
+unitID,unitIconPath,elementType,U/Users/suiyan.li/Develop/Codes/cocos2dx/MatchPuzzleRPGT/Resources/data/PlayerStatusData.csvnitName,atk,level
 0,element_red.png,0,UnitName_0_red,10,1
 1,element_blue.png,1,UnitName_1_blue,10,1
 2,element_yellow.png,2,UnitName_2_yellow,10,1

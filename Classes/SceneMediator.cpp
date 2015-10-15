@@ -10,8 +10,6 @@
 #include "StatusScene.h"
 
 SceneMediator* SceneMediator::_instance = nullptr;
-MainBackground* SceneMediator::_mainBackground = nullptr;
-StatusDataManager* SceneMediator::_statusDataManager = nullptr;
 
 SceneMediator* SceneMediator::getInstance()
 {
@@ -36,9 +34,8 @@ StatusDataManager* SceneMediator::getStatusDataManager()
     if (_statusDataManager == nullptr) {
         _statusDataManager = StatusDataManager::create();
         // TODO: fix here by replacing with initFromLocalData();
-        //_statusDataManager->initFromLocalData();
-        _statusDataManager->initWithDebugData();
-        //_statusDataManager->initFromLocalData();
+        //_statusDataManager->initWithDebugData();
+        _statusDataManager->initFromLocalData("data/PlayerStatusData.csv", "data/UnitOfPlayerRecords.csv");
     }
     return _statusDataManager;
 }

@@ -19,6 +19,7 @@
         </Folder>
         <Project Name="ListItem_UnitRecord.csd" Type="Layer" />
         <Image Name="home.png" />
+        <Project Name="Layer_PlayerStatus.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

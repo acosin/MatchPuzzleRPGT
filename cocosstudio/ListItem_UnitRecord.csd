@@ -3,7 +3,7 @@
   <Content ctype="GameProjectContent">
     <Content>
       <Animation Duration="0" Speed="1.0000" />
-      <ObjectData Name="Layer" Tag="15" ctype="GameLayerObjectData">
+      <ObjectData Name="ListItem_UnitReord" Tag="15" ctype="GameLayerObjectData">
         <Size X="450.0000" Y="50.0000" />
         <Children>
           <AbstractNodeData Name="Image_unitIcon" ActionTag="1625243511" Tag="16" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="9.4500" RightMargin="394.5500" TopMargin="4.7420" BottomMargin="9.2580" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">

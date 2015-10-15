@@ -13,6 +13,7 @@
 
 #include "SceneMediator.h"
 #include "ListItem_UnitRecord.hpp"
+#include "Layer_PlayerStatus.hpp"
 
 USING_NS_CC;
 
@@ -24,6 +25,7 @@ protected:
     
     ui::Button* _homeButton;
     ui::Button* _exitButton;
+    ui::Layout* _panel_playerStatus;
     ui::ListView* _listView_unitRecords;
     
     StatusDataManager* _statusManager;
@@ -38,5 +40,6 @@ public:
     static Scene *createScene();
     
 private:
+    virtual bool fillPanelPlayerStatus();
     virtual bool fillListViewUnitRecords();
 };

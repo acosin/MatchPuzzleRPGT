@@ -14,7 +14,7 @@ struct PlayerStatusData {
     //std::string playerImagePath;
     
     // user data
-    std::string playarName;
+    std::string playerName;
     
     // growth data
     int playerLevel;
@@ -22,25 +22,25 @@ struct PlayerStatusData {
     PlayerStatusData(uint32_t playerID,
                      std::string playerIconPath,
                      // user data
-                     std::string playarName,
+                     std::string playerName,
                      // growth data
                      int playerLevel
                      )
     {
-        init(playerID, playerIconPath, playarName, playerLevel);
+        init(playerID, playerIconPath, playerName, playerLevel);
     }
     
     void init(uint32_t playerID,
               std::string playerIconPath,
               // user data
-              std::string playarName,
+              std::string playerName,
               // growth data
               int playerLevel
               )
     {
         this->playerID = playerID;
         this->playerIconPath = playerIconPath;
-        this->playarName = playarName;
+        this->playerName = playerName;
         this->playerLevel = playerLevel;
     }
 };

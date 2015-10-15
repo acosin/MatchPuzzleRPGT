@@ -17,17 +17,15 @@ class SceneMediator
 {
 protected:
     static SceneMediator* _instance;
-    
-    // TODO: may not maintain a common MainBackGround later
-    static MainBackground* _mainBackground;
-    static StatusDataManager* _statusDataManager;
+    MainBackground* _mainBackground = nullptr;
+    StatusDataManager* _statusDataManager = nullptr;
     
 public:
     static SceneMediator* getInstance();
     
     // TODO: may not maintain a common MainBackGround later
-    static MainBackground* getMainBackground();
-    static StatusDataManager* getStatusDataManager();
+    MainBackground* getMainBackground();
+    StatusDataManager* getStatusDataManager();
     
     virtual void gotoHomeScene();
     virtual void gotoStageSelectScene();
