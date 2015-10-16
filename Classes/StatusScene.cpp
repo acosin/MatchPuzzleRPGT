@@ -68,6 +68,7 @@ bool StatusScene::init()
     _homeButton->addClickEventListener([](Ref* ref) {
         SceneMediator::getInstance()->gotoHomeScene();
     });
+    
     _exitButton->addClickEventListener([](Ref* ref) {
         Director::getInstance()->end();
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)

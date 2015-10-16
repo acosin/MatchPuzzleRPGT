@@ -6,9 +6,14 @@
 
 # pragma once
 
+#include <map>
+#include "CsvParser.h"
+
+USING_NS_CC;
+
 class StageData
 {
-protected:
+public:
     uint32_t _stageID;
     std::string _stageName;
     uint32_t _mapID;
@@ -43,4 +48,6 @@ public:
     {
         return (_stageID == a._stageID);
     }
+    
+    static std::map<uint32_t, StageData*> loadStageDataFromCSV(const std::string &filename);
 };

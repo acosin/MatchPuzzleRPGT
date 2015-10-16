@@ -10,6 +10,8 @@
 
 #include "MainBackground.h"
 #include "StatusDataManager.h"
+#include "StageDataManager.h"
+#include "StageScoreScene.h"
 
 USING_NS_CC;
 
@@ -19,6 +21,7 @@ protected:
     static SceneMediator* _instance;
     MainBackground* _mainBackground = nullptr;
     StatusDataManager* _statusDataManager = nullptr;
+    StageDataManager* _stageDataManager = nullptr;
     
 public:
     static SceneMediator* getInstance();
@@ -26,6 +29,7 @@ public:
     // TODO: may not maintain a common MainBackGround later
     MainBackground* getMainBackground();
     StatusDataManager* getStatusDataManager();
+    StageDataManager* getStageDataManager();
     
     virtual void gotoHomeScene();
     virtual void gotoStageSelectScene();

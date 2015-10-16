@@ -40,6 +40,17 @@ StatusDataManager* SceneMediator::getStatusDataManager()
     return _statusDataManager;
 }
 
+
+StageDataManager* SceneMediator::getStageDataManager()
+{
+    if (_stageDataManager == nullptr) {
+        _stageDataManager = StageDataManager::create();
+        // TODO: fix here by replacing with initFromLocalData();
+        _stageDataManager->initWithDebugData();
+    }
+    return _stageDataManager;
+}
+
 void SceneMediator::gotoHomeScene()
 {
     auto scene = HomeScene::createScene();
@@ -59,7 +70,9 @@ void SceneMediator::gotoGameStageScene()
 
 void SceneMediator::gotoStageScoreScene()
 {
+    auto scene = StageScoreScene::createScene();
     
+    Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
 }
 
 void SceneMediator::gotoStatusScene()

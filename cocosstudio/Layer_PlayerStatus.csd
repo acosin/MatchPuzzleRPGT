@@ -14,7 +14,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="1.0000" Y="0.5000" />
             <PreSize X="0.0800" Y="0.6667" />
-            <FileData Type="Normal" Path="Resources/character_icon_0.png" Plist="" />
+            <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="Text_PlayerName" ActionTag="-129508618" Tag="23" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="77.1378" RightMargin="231.8622" TopMargin="12.9390" BottomMargin="9.0610" FontSize="24" LabelText="Player_name" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="141.0000" Y="28.0000" />

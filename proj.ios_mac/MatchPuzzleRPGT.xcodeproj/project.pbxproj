@@ -56,6 +56,12 @@
 		3188E6771BCF8E7900AC8FBC /* StageData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6741BCF8E7900AC8FBC /* StageData.cpp */; settings = {ASSET_TAGS = (); }; };
 		3188E67A1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6791BCFBA4500AC8FBC /* StageScoreRecord.cpp */; settings = {ASSET_TAGS = (); }; };
 		3188E67B1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6791BCFBA4500AC8FBC /* StageScoreRecord.cpp */; settings = {ASSET_TAGS = (); }; };
+		3188E67E1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E67C1BD09D8200AC8FBC /* StageDataManager.cpp */; settings = {ASSET_TAGS = (); }; };
+		3188E67F1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E67C1BD09D8200AC8FBC /* StageDataManager.cpp */; settings = {ASSET_TAGS = (); }; };
+		3188E6821BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6801BD0A6BB00AC8FBC /* StageScoreScene.cpp */; settings = {ASSET_TAGS = (); }; };
+		3188E6831BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6801BD0A6BB00AC8FBC /* StageScoreScene.cpp */; settings = {ASSET_TAGS = (); }; };
+		3188E6851BD0B68000AC8FBC /* stageIcon_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3188E6841BD0B68000AC8FBC /* stageIcon_0.png */; settings = {ASSET_TAGS = (); }; };
+		3188E6861BD0B68000AC8FBC /* stageIcon_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3188E6841BD0B68000AC8FBC /* stageIcon_0.png */; settings = {ASSET_TAGS = (); }; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
@@ -149,6 +155,13 @@
 		3188E6751BCF8E7900AC8FBC /* StageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageData.h; sourceTree = "<group>"; };
 		3188E6781BCFB90200AC8FBC /* StageScoreRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageScoreRecord.h; sourceTree = "<group>"; };
 		3188E6791BCFBA4500AC8FBC /* StageScoreRecord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageScoreRecord.cpp; sourceTree = "<group>"; };
+		3188E67C1BD09D8200AC8FBC /* StageDataManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageDataManager.cpp; sourceTree = "<group>"; };
+		3188E67D1BD09D8200AC8FBC /* StageDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageDataManager.h; sourceTree = "<group>"; };
+		3188E6801BD0A6BB00AC8FBC /* StageScoreScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageScoreScene.cpp; sourceTree = "<group>"; };
+		3188E6811BD0A6BB00AC8FBC /* StageScoreScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageScoreScene.h; sourceTree = "<group>"; };
+		3188E6841BD0B68000AC8FBC /* stageIcon_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stageIcon_0.png; sourceTree = "<group>"; };
+		3188E6871BD0E31300AC8FBC /* Item_StageScoreRecord.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Item_StageScoreRecord.hpp; sourceTree = "<group>"; };
+		3188E6881BD1064D00AC8FBC /* TimeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeParser.h; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
@@ -329,6 +342,8 @@
 			children = (
 				31122EA11BC7B6E000F08C65 /* StatusDataManager.cpp */,
 				31122EA21BC7B6E000F08C65 /* StatusDataManager.h */,
+				3188E67C1BD09D8200AC8FBC /* StageDataManager.cpp */,
+				3188E67D1BD09D8200AC8FBC /* StageDataManager.h */,
 			);
 			name = DataManager;
 			sourceTree = "<group>";
@@ -342,6 +357,8 @@
 				31122E751BC7658100F08C65 /* HomeScene.h */,
 				31122E8F1BC7884600F08C65 /* StatusScene.cpp */,
 				31122E901BC7884600F08C65 /* StatusScene.h */,
+				3188E6801BD0A6BB00AC8FBC /* StageScoreScene.cpp */,
+				3188E6811BD0A6BB00AC8FBC /* StageScoreScene.h */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -351,6 +368,7 @@
 			children = (
 				31122EBF1BCCF22F00F08C65 /* ListItem_UnitRecord.hpp */,
 				31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */,
+				3188E6871BD0E31300AC8FBC /* Item_StageScoreRecord.hpp */,
 			);
 			name = DataVisualizer;
 			sourceTree = "<group>";
@@ -360,6 +378,7 @@
 			children = (
 				31122EC41BCE27A300F08C65 /* CsvParser.cpp */,
 				31122EC51BCE27A300F08C65 /* CsvParser.h */,
+				3188E6881BD1064D00AC8FBC /* TimeParser.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -371,6 +390,7 @@
 				31122EC01BCD01CD00F08C65 /* ui */,
 				31122EB41BCCBEDF00F08C65 /* Chara_illust.png */,
 				31122EA51BCC9DBC00F08C65 /* character_icon_0.png */,
+				3188E6841BD0B68000AC8FBC /* stageIcon_0.png */,
 				31122EA61BCC9DBC00F08C65 /* element_blue.png */,
 				31122EA71BCC9DBC00F08C65 /* element_green.png */,
 				31122EA81BCC9DBC00F08C65 /* element_red.png */,
@@ -547,6 +567,7 @@
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				31122EAE1BCC9DBC00F08C65 /* element_green.png in Resources */,
 				31122E7D1BC77C4B00F08C65 /* start.png in Resources */,
+				3188E6851BD0B68000AC8FBC /* stageIcon_0.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				31122EAC1BCC9DBC00F08C65 /* element_blue.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
@@ -577,6 +598,7 @@
 			files = (
 				31122E881BC7852F00F08C65 /* score.png in Resources */,
 				31122E7E1BC77C4B00F08C65 /* start.png in Resources */,
+				3188E6861BD0B68000AC8FBC /* stageIcon_0.png in Resources */,
 				31122E951BC79CC800F08C65 /* home.png in Resources */,
 				31122EAD1BCC9DBC00F08C65 /* element_blue.png in Resources */,
 				31122EAB1BCC9DBC00F08C65 /* character_icon_0.png in Resources */,
@@ -599,9 +621,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3188E67E1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,
 				3188E6761BCF8E7900AC8FBC /* StageData.cpp in Sources */,
 				31122E761BC7658100F08C65 /* HomeScene.cpp in Sources */,
 				31122E811BC77FA000F08C65 /* MainBackground.cpp in Sources */,
+				3188E6821BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
 				3188E67A1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
 				31122E911BC7884600F08C65 /* StatusScene.cpp in Sources */,
 				31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */,
@@ -625,8 +649,10 @@
 				31122E921BC7884600F08C65 /* StatusScene.cpp in Sources */,
 				31122E771BC7658100F08C65 /* HomeScene.cpp in Sources */,
 				31122E821BC77FA000F08C65 /* MainBackground.cpp in Sources */,
+				3188E67F1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				3188E6731BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */,
+				3188E6831BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
 				31122EA41BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
 				3188E6771BCF8E7900AC8FBC /* StageData.cpp in Sources */,
 				31122EC71BCE27A300F08C65 /* CsvParser.cpp in Sources */,

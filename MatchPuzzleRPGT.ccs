@@ -4,22 +4,12 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Project Name="StatusScene.csd" Type="Scene" />
-        <Folder Name="Resources">
-          <Image Name="character_icon_0.png" />
-          <Image Name="element_blue.png" />
-          <Image Name="element_green.png" />
-          <Image Name="element_red.png" />
-          <Image Name="element_yellow.png" />
-          <Image Name="exit.png" />
-          <Image Name="home.png" />
-          <Image Name="mainBG.png" />
-          <Image Name="score.png" />
-          <Image Name="start.png" />
-          <Image Name="status.png" />
-        </Folder>
         <Project Name="ListItem_UnitRecord.csd" Type="Layer" />
-        <Image Name="home.png" />
         <Project Name="Layer_PlayerStatus.csd" Type="Layer" />
+        <Project Name="StageScoreScene.csd" Type="Scene" />
+        <Image Name="exit.png" />
+        <Image Name="home.png" />
+        <Project Name="Item_StageScoreRecord.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>
