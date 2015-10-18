@@ -118,7 +118,8 @@ std::map<uint32_t, StageScoreRecord*> StageDataManager::getStageScoreRecords()
 
 bool StageDataManager::initWithDebugData()
 {
-    std::vector<StageScoreRecord*> stageScoreRecords;
+    std::map<uint32_t, StageScoreRecord*> stageScoreRecords;
+    std::map<uint32_t, StageData*> stageDataAll;
     
     StageData* stageDataTemp;
     StageScoreRecord* recordTemp;
@@ -139,7 +140,8 @@ bool StageDataManager::initWithDebugData()
     recordTemp = StageScoreRecord::create(stageDataTemp);
     recordTemp->updateScore(700);
     recordTemp->updateScore(1000);
-    stageScoreRecords.push_back(recordTemp);
+    stageDataAll[stageDataTemp->_stageID] = stageDataTemp;
+    stageScoreRecords[stageDataTemp->_stageID] = recordTemp;
     // stage 1
     stageDataTemp = new StageData(1,                 //stageID
                                   "stageName_1",     //stageName
@@ -156,8 +158,9 @@ bool StageDataManager::initWithDebugData()
                                   );
     recordTemp = StageScoreRecord::create(stageDataTemp);
     recordTemp->updateScore(600);
-    recordTemp->updateScore(9000);
-    stageScoreRecords.push_back(recordTemp);
+    recordTemp->updateScore(900);
+    stageDataAll[stageDataTemp->_stageID] = stageDataTemp;
+    stageScoreRecords[stageDataTemp->_stageID] = recordTemp;
     // stage 2
     stageDataTemp = new StageData(2,                 //stageID
                                   "stageName_2",     //stageName
@@ -175,7 +178,8 @@ bool StageDataManager::initWithDebugData()
     recordTemp = StageScoreRecord::create(stageDataTemp);
     recordTemp->updateScore(700);
     recordTemp->updateScore(1000);
-    stageScoreRecords.push_back(recordTemp);
+    stageDataAll[stageDataTemp->_stageID] = stageDataTemp;
+    stageScoreRecords[stageDataTemp->_stageID] = recordTemp;
     // stage 3
     stageDataTemp = new StageData(3,                 //stageID
                                   "stageName_3",     //stageName
@@ -193,7 +197,8 @@ bool StageDataManager::initWithDebugData()
     recordTemp = StageScoreRecord::create(stageDataTemp);
     recordTemp->updateScore(100);
     recordTemp->updateScore(300);
-    stageScoreRecords.push_back(recordTemp);
+    stageDataAll[stageDataTemp->_stageID] = stageDataTemp;
+    stageScoreRecords[stageDataTemp->_stageID] = recordTemp;
     // stage 4
     stageDataTemp = new StageData(4,                 //stageID
                                   "stageName_4",     //stageName
@@ -211,7 +216,8 @@ bool StageDataManager::initWithDebugData()
     recordTemp = StageScoreRecord::create(stageDataTemp);
     recordTemp->updateScore(300);
     recordTemp->updateScore(400);
-    stageScoreRecords.push_back(recordTemp);
+    stageDataAll[stageDataTemp->_stageID] = stageDataTemp;
+    stageScoreRecords[stageDataTemp->_stageID] = recordTemp;
     // stage 5
     stageDataTemp = new StageData(5,                 //stageID
                                   "stageName_5",     //stageName
@@ -229,7 +235,8 @@ bool StageDataManager::initWithDebugData()
     recordTemp = StageScoreRecord::create(stageDataTemp);
     recordTemp->updateScore(100);
     recordTemp->updateScore(200);
-    stageScoreRecords.push_back(recordTemp);
+    stageDataAll[stageDataTemp->_stageID] = stageDataTemp;
+    stageScoreRecords[stageDataTemp->_stageID] = recordTemp;
     
-    return initWithData(stageScoreRecords);
+    return initWithData(stageDataAll, stageScoreRecords);
 }

@@ -85,8 +85,8 @@ bool StageScoreScene::fillListViewScoreRecords()
     
     // TODO: may need to handle exepction later
     
-    for (auto record : _stageManager->getStageScoreRecords()) {
-        auto item = Item_StageScoreRecord::createItem(record);
+    for (auto recordIt : _stageManager->getStageScoreRecords()) {
+        auto item = Item_StageScoreRecord::createItem(recordIt.second);
         item->setAnchorPoint(Vec2(0.5,0.5));
         item->setPositionType(ui::Widget::PositionType::PERCENT);
         item->setPositionPercent(Vec2(0.5,0.5));
