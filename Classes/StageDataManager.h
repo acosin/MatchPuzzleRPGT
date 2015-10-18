@@ -31,8 +31,8 @@ public:
     virtual bool initWithoutData(); // TODO: may remove later
     virtual bool initWithData(std::map<uint32_t, StageData*> stageData,
                               std::map<uint32_t, StageScoreRecord*> stageScoreRecords);
-    virtual bool initFromLocalData(const std::string &scoreRocordsFile);
-    bool loadStageScoreFromCSV(const std::string &filename);
+    virtual bool initFromLocalData(const std::string &stageDataFile,
+                                   const std::string &scoreRocordsFile);
     
     std::map<uint32_t, StageScoreRecord*> getStageScoreRecords();
     

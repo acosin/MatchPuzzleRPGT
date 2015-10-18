@@ -5,7 +5,6 @@
 
 #include "StageScoreRecord.h"
 
-
 StageScoreRecord::StageScoreRecord():
 _stageData(nullptr),
 _scoreExist(false),
@@ -35,6 +34,7 @@ StageScoreRecord* StageScoreRecord::create(StageData* stageData)
     
     return ret;
 }
+
 
 uint32_t StageScoreRecord::getStageID()
 {
@@ -122,4 +122,42 @@ const std::string StageScoreRecord::getStageName()
 const std::string StageScoreRecord::getStageIconPath()
 {
     return _stageData->_stageIconPath;
+}
+
+
+// TODO: throw exception here for load some record without data with the same stageID in stageData!
+std::map<uint32_t, StageScoreRecord*> loadStageScoreRecordFromCSV(const std::string &filename, std::map<uint32_t, StageData*> &stageData)
+{
+    std::map<uint32_t, StageScoreRecord*> ret;
+    
+    // TODO: handle file open excpetion here
+    CsvParser::Csv csv(FileUtils::getInstance()->fullPathForFilename(filename));
+    
+    StageData* stageDataTemp;
+    StageScoreRecord* recordTemp;
+    // NOTE: i = 1 to discard header(csv[0])
+    for (int i = 1; i < csv.getRowCount(); i++) {
+        auto row = csv[i];
+        uint32_t id = (uint32_t)(Value(row[0]).asInt());
+        if (stageData.count(id) == 0) {
+            log("StageScoreRecord::loadStageScoreRecordFromCSV: no stageData for the stageID %u", id);
+        } else {
+            stageDataTemp = stageData[id];
+            recordTemp = StageScoreRecord::create(stageDataTemp);
+            
+            bool scoreExist = Value(row[1]).asBool();
+            if (scoreExist) {
+                int score = Value(row[2]).asInt();
+                struct tm timestamp = TimeParser::StringToTM(Value(row[3]).asString());
+                recordTemp->setBestScore(score, mktime(&timestamp));
+                score = Value(row[4]).asInt();
+                timestamp = TimeParser::StringToTM(Value(row[5]).asString());
+                recordTemp->setLastScore(score, mktime(&timestamp));
+            }
+        }
+        ret.insert(std::pair<uint32_t, StageScoreRecord*>(id, recordTemp));
+    }
+    
+    return ret;
+    
 }

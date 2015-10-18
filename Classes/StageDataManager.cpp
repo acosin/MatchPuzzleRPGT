@@ -63,52 +63,17 @@ bool StageDataManager::initWithData(std::map<uint32_t, StageData*> stageData,
     return true;
 }
 
-bool StageDataManager::initFromLocalData(const std::string &scoreRocordsFile)
+// TODO: need to handle exception here!
+bool StageDataManager::initFromLocalData(const std::string &stageDataFile,
+                                         const std::string &scoreRocordsFile)
 {
-    return false;
-}
-
-bool StageDataManager::loadStageScoreFromCSV(const std::string &filename)
-{
-    clearStageScoreRecords();
+    auto stageData = StageData::loadStageDataFromCSV(stageDataFile);
     
-    StageScoreRecord* recordTemp;
+    //std::map<uint32_t, StageScoreRecord*> scoreRecord;
+    auto scoreRecord = StageScoreRecord::loadStageScoreRecordFromCSV(scoreRocordsFile,
+                                                                     stageData);
     
-    // TODO: handle file open excpetion here
-    CsvParser::Csv csv(FileUtils::getInstance()->fullPathForFilename(filename));
-    
-    // NOTE: i = 1 to discard header(csv[0])
-    for (int i = 1; i < csv.getRowCount(); i++) {
-        auto row = csv[i];
-        
-        uint32_t stageID = (uint32_t)(Value(row[0]).asInt());
-        if (_stageData.count(stageID) == 0) {
-            log("StageDataManager::loadStageScoreFromCSV: no stageData for the stageID %u", stageID);
-            clearStageScoreRecords();
-            return false;
-        }
-        recordTemp = StageScoreRecord::create(_stageData[stageID]);
-        bool scoreExist = Value(row[1]).asBool();
-        timeval a;
-        
-        if (scoreExist) {
-            /*
-            recordTemp->setBestScore(Value(row[2]).asInt(),
-                                     Value(row[3]).as);
-             
-             bool _scoreExist;
-             int _bestScore;
-             int _lastScore;
-             time_t _bestTimestamp;
-             time_t _lastTimestamp;
-             */
-        }
-        
-        _stageScoreRecords[stageID] = recordTemp;
-    }
-    
-    
-    return true;
+    return initWithData(stageData, scoreRecord);
 }
 
 std::map<uint32_t, StageScoreRecord*> StageDataManager::getStageScoreRecords()
