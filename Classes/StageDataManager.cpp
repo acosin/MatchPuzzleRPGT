@@ -68,8 +68,6 @@ bool StageDataManager::initFromLocalData(const std::string &stageDataFile,
                                          const std::string &scoreRocordsFile)
 {
     auto stageData = StageData::loadStageDataFromCSV(stageDataFile);
-    
-    //std::map<uint32_t, StageScoreRecord*> scoreRecord;
     auto scoreRecord = StageScoreRecord::loadStageScoreRecordFromCSV(scoreRocordsFile,
                                                                      stageData);
     

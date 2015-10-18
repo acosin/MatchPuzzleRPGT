@@ -126,7 +126,7 @@ const std::string StageScoreRecord::getStageIconPath()
 
 
 // TODO: throw exception here for load some record without data with the same stageID in stageData!
-std::map<uint32_t, StageScoreRecord*> loadStageScoreRecordFromCSV(const std::string &filename, std::map<uint32_t, StageData*> &stageData)
+std::map<uint32_t, StageScoreRecord*> StageScoreRecord::loadStageScoreRecordFromCSV(const std::string &filename, std::map<uint32_t, StageData*> &stageData)
 {
     std::map<uint32_t, StageScoreRecord*> ret;
     
