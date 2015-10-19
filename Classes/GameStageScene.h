@@ -36,6 +36,9 @@ protected:
     
     bool initData(StageDataManager* stageManager, uint32_t stageID);
     
+    int _texture_num = 0;
+    void LoadTexture();
+    
 public:
     GameStageScene();
     ~GameStageScene();

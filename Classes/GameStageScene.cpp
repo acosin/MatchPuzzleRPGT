@@ -77,6 +77,10 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     _stageManager = stageManager;
     _currentStageScore = stageManager->getStageScoreRecord(stageID);
     _currentStageData = _currentStageScore->getStageData();
+    
+    //NOTE: should load texture before creating Jewel class!
+    LoadTexture();
+    
     _controller = GameStageController::create(_currentStageData);
     _jewelsGrid = _controller->getJewelsGrid();
     
@@ -106,5 +110,26 @@ Scene* GameStageScene::createScene(StageDataManager* stageManager, uint32_t stag
     scene->addChild(layer);
     
     return scene;
+}
+
+void GameStageScene::LoadTexture()
+{
+    _texture_num = 0; //current number of loaded textures
+    int *ptexture_num = &_texture_num;
+    
+    //after loading all textures
+    auto addTextureCallback = [ptexture_num](Texture2D* texture)
+    {
+        (*ptexture_num)++;
+        log("load a texture async");
+    };
+    
+    //Async loading of the jewels
+    for(int i=0; i<(int)ElementType::count;i++) {
+        auto filename = ElementTypeUtils::getResourceFilename((ElementType)i);
+        //Director::getInstance()->getTextureCache()->addImageAsync(filename, addTextureCallback);
+        Director::getInstance()->getTextureCache()->addImage(filename);
+    }
+    
 }
 

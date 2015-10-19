@@ -23,6 +23,7 @@ Jewel* Jewel::createByType(ElementType type, int x, int y)
     }
 }
 
+//NOTE: note that every Jewel should init after loading texture!
 bool Jewel::init(ElementType type, int x, int y)
 {
     Sprite::init();
@@ -35,8 +36,8 @@ bool Jewel::init(ElementType type, int x, int y)
     
     //NOTE: initialize textures by names, should be load some where first!
     auto name = ElementTypeUtils::getResourceFilename(_type);
-    this->initWithFile(name);
-    //this->initWithTexture(Director::getInstance()->getTextureCache()->getTextureForKey(name));
+    //this->initWithFile(name);
+    this->initWithTexture(Director::getInstance()->getTextureCache()->getTextureForKey(name));
     
     this->setAnchorPoint(Vec2(0, 0)); //left bottom as anchor
     
