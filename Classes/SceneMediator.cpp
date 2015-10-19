@@ -61,7 +61,9 @@ void SceneMediator::gotoHomeScene()
 
 void SceneMediator::gotoStageSelectScene()
 {
+    auto scene = StageSelectScene::createScene();
     
+    Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
 }
 
 void SceneMediator::gotoGameStageScene()

@@ -10,6 +10,8 @@
         <Image Name="exit.png" />
         <Image Name="home.png" />
         <Project Name="Item_StageScoreRecord.csd" Type="Layer" />
+        <Project Name="StageSelectScene.csd" Type="Scene" />
+        <Project Name="Item_SelectStage.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -12,6 +12,7 @@
 #include "StatusDataManager.h"
 #include "StageDataManager.h"
 #include "StageScoreScene.h"
+#include "StageSelectScene.h"
 
 USING_NS_CC;
 

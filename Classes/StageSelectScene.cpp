@@ -1,0 +1,96 @@
+//
+//  StageSelectScene.cpp
+//  MatchPuzzleRPGT
+//
+//
+
+#include "StageSelectScene.h"
+
+StageSelectScene::StageSelectScene():
+_layout(nullptr),
+_background(nullptr),
+_homeButton(nullptr),
+_exitButton(nullptr),
+_listView_selectStage(nullptr),
+_stageManager(nullptr)
+{
+    
+}
+
+StageSelectScene::~StageSelectScene()
+{
+    
+}
+
+
+Scene* StageSelectScene::createScene()
+{
+	auto layer = StageSelectScene::create();
+    
+    auto scene = Scene::create();
+	scene->addChild(layer);
+	
+    return scene;
+}
+
+bool StageSelectScene::init()
+{
+    if (Layer::init()==false) {
+        return false;
+    }
+    
+    auto viewSize=Director::getInstance()->getVisibleSize();
+    
+    _stageManager = SceneMediator::getInstance()->getStageDataManager();
+    _layout = CSLoader::createNode("ui/StageSelectScene.csb");
+    _layout->setName("LAYOUT");
+    
+    // TODO: may create only once in SceneMediator?
+    //_background = SceneMediator::getInstance()->getMainBackground();
+    _background = MainBackground::create();
+    _layout->getChildByName("ImageView_background")->addChild(_background);
+    
+    _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
+    _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
+    
+    _listView_selectStage = dynamic_cast<ui::ListView*>(_layout->getChildByName("ListView_selectStage"));
+    fillListViewSelectStage();
+    
+    this->addChild(_layout);
+    
+    //initialize ui event listener
+    
+    // TODO: may used TouchListener
+    _homeButton->addClickEventListener([](Ref* ref) {
+        SceneMediator::getInstance()->gotoHomeScene();
+    });
+    
+    _exitButton->addClickEventListener([](Ref* ref) {
+        Director::getInstance()->end();
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+        exit(0);
+#endif
+    });
+    
+    return true;
+}
+
+bool StageSelectScene::fillListViewSelectStage()
+{
+    if (_stageManager == nullptr ||
+        _listView_selectStage == nullptr) {
+        return false;
+    }
+    
+    // TODO: may need to handle exepction later
+    
+    for (auto recordIt : _stageManager->getStageScoreRecords()) {
+        auto item = Item_SelectStage::createItem(recordIt.second);
+        item->setAnchorPoint(Vec2(0.5,0.5));
+        item->setPositionType(ui::Widget::PositionType::PERCENT);
+        item->setPositionPercent(Vec2(0.5,0.5));
+        _listView_selectStage->pushBackCustomItem(item);
+    }
+    
+    return true;
+}

@@ -50,6 +50,8 @@
 		31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122EC41BCE27A300F08C65 /* CsvParser.cpp */; settings = {ASSET_TAGS = (); }; };
 		31122EC71BCE27A300F08C65 /* CsvParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122EC41BCE27A300F08C65 /* CsvParser.cpp */; settings = {ASSET_TAGS = (); }; };
 		31599BE21BCF5E58005E92C5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 31599BE11BCF5E58005E92C5 /* data */; settings = {ASSET_TAGS = (); }; };
+		3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
+		3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
 		3188E6721BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */; settings = {ASSET_TAGS = (); }; };
 		3188E6731BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */; settings = {ASSET_TAGS = (); }; };
 		3188E6761BCF8E7900AC8FBC /* StageData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6741BCF8E7900AC8FBC /* StageData.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -149,6 +151,9 @@
 		31122EC51BCE27A300F08C65 /* CsvParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CsvParser.h; sourceTree = "<group>"; };
 		31599BE11BCF5E58005E92C5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Layer_PlayerStatus.hpp; sourceTree = "<group>"; };
+		3185615B1BD4855800627C21 /* StageSelectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageSelectScene.cpp; sourceTree = "<group>"; };
+		3185615C1BD4855800627C21 /* StageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectScene.h; sourceTree = "<group>"; };
+		3185615F1BD4899100627C21 /* Item_SelectStage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Item_SelectStage.hpp; sourceTree = "<group>"; };
 		3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PuzzleData.cpp; sourceTree = "<group>"; };
 		3188E6711BCF8DD100AC8FBC /* PuzzleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleData.h; sourceTree = "<group>"; };
 		3188E6741BCF8E7900AC8FBC /* StageData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageData.cpp; sourceTree = "<group>"; };
@@ -359,6 +364,8 @@
 				31122E901BC7884600F08C65 /* StatusScene.h */,
 				3188E6801BD0A6BB00AC8FBC /* StageScoreScene.cpp */,
 				3188E6811BD0A6BB00AC8FBC /* StageScoreScene.h */,
+				3185615B1BD4855800627C21 /* StageSelectScene.cpp */,
+				3185615C1BD4855800627C21 /* StageSelectScene.h */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -367,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				31122EBF1BCCF22F00F08C65 /* ListItem_UnitRecord.hpp */,
+				3185615F1BD4899100627C21 /* Item_SelectStage.hpp */,
 				31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */,
 				3188E6871BD0E31300AC8FBC /* Item_StageScoreRecord.hpp */,
 			);
@@ -628,6 +636,7 @@
 				31122E811BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				3188E6821BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
 				31122E911BC7884600F08C65 /* StatusScene.cpp in Sources */,
+				3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
 				31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */,
 				31122E7A1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
@@ -646,6 +655,7 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				3188E67B1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
 				31122E7B1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
+				3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
 				31122E921BC7884600F08C65 /* StatusScene.cpp in Sources */,
 				31122E771BC7658100F08C65 /* HomeScene.cpp in Sources */,
 				31122E821BC77FA000F08C65 /* MainBackground.cpp in Sources */,
