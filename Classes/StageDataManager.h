@@ -36,6 +36,8 @@ public:
     
     std::map<uint32_t, StageScoreRecord*> getStageScoreRecords();
     
+    StageScoreRecord* getStageScoreRecord(uint32_t stageID);
+    
     // TODO: for debug, remove later
 public:
     bool initWithDebugData();

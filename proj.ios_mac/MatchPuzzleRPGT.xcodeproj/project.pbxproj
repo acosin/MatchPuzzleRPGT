@@ -52,6 +52,8 @@
 		31599BE21BCF5E58005E92C5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 31599BE11BCF5E58005E92C5 /* data */; settings = {ASSET_TAGS = (); }; };
 		3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
 		3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
+		318561621BD4A48800627C21 /* GameStageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318561601BD4A48800627C21 /* GameStageScene.cpp */; settings = {ASSET_TAGS = (); }; };
+		318561631BD4A48800627C21 /* GameStageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318561601BD4A48800627C21 /* GameStageScene.cpp */; settings = {ASSET_TAGS = (); }; };
 		3188E6721BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */; settings = {ASSET_TAGS = (); }; };
 		3188E6731BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */; settings = {ASSET_TAGS = (); }; };
 		3188E6761BCF8E7900AC8FBC /* StageData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6741BCF8E7900AC8FBC /* StageData.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -154,6 +156,8 @@
 		3185615B1BD4855800627C21 /* StageSelectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageSelectScene.cpp; sourceTree = "<group>"; };
 		3185615C1BD4855800627C21 /* StageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectScene.h; sourceTree = "<group>"; };
 		3185615F1BD4899100627C21 /* Item_SelectStage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Item_SelectStage.hpp; sourceTree = "<group>"; };
+		318561601BD4A48800627C21 /* GameStageScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStageScene.cpp; sourceTree = "<group>"; };
+		318561611BD4A48800627C21 /* GameStageScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStageScene.h; sourceTree = "<group>"; };
 		3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PuzzleData.cpp; sourceTree = "<group>"; };
 		3188E6711BCF8DD100AC8FBC /* PuzzleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleData.h; sourceTree = "<group>"; };
 		3188E6741BCF8E7900AC8FBC /* StageData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageData.cpp; sourceTree = "<group>"; };
@@ -366,6 +370,8 @@
 				3188E6811BD0A6BB00AC8FBC /* StageScoreScene.h */,
 				3185615B1BD4855800627C21 /* StageSelectScene.cpp */,
 				3185615C1BD4855800627C21 /* StageSelectScene.h */,
+				318561601BD4A48800627C21 /* GameStageScene.cpp */,
+				318561611BD4A48800627C21 /* GameStageScene.h */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -640,6 +646,7 @@
 				31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */,
 				31122E7A1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				318561621BD4A48800627C21 /* GameStageScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				31122EA31BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
@@ -661,6 +668,7 @@
 				31122E821BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				3188E67F1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				318561631BD4A48800627C21 /* GameStageScene.cpp in Sources */,
 				3188E6731BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */,
 				3188E6831BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
 				31122EA41BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,

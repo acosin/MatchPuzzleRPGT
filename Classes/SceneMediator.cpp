@@ -66,9 +66,12 @@ void SceneMediator::gotoStageSelectScene()
     Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
 }
 
-void SceneMediator::gotoGameStageScene()
+void SceneMediator::gotoGameStageScene(StageDataManager* stageDataManager, uint32_t stageID)
 {
+    auto scene = GameStageScene::createScene(stageDataManager, stageID);
+    log("SceneMediator::gotoGameStageScene: enter stage %u",stageID);
     
+    Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
 }
 
 void SceneMediator::gotoStageScoreScene()

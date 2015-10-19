@@ -13,6 +13,7 @@
 #include "StageDataManager.h"
 #include "StageScoreScene.h"
 #include "StageSelectScene.h"
+#include "GameStageScene.h"
 
 USING_NS_CC;
 
@@ -34,7 +35,7 @@ public:
     
     virtual void gotoHomeScene();
     virtual void gotoStageSelectScene();
-    virtual void gotoGameStageScene();
+    virtual void gotoGameStageScene(StageDataManager* stageDataManager, uint32_t stageID);
     virtual void gotoStageScoreScene();
     virtual void gotoStatusScene();
 

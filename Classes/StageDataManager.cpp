@@ -79,6 +79,16 @@ std::map<uint32_t, StageScoreRecord*> StageDataManager::getStageScoreRecords()
     return _stageScoreRecords;
 }
 
+StageScoreRecord* StageDataManager::getStageScoreRecord(uint32_t stageID)
+{
+    if (_stageScoreRecords.count(stageID) == 0) {
+        log("StageDataManager::getStageScoreRecord: no stage with the id(%u)",stageID);
+        return nullptr;
+    } else {
+        return _stageScoreRecords[stageID];
+    }
+}
+
 bool StageDataManager::initWithDebugData()
 {
     std::map<uint32_t, StageScoreRecord*> stageScoreRecords;
