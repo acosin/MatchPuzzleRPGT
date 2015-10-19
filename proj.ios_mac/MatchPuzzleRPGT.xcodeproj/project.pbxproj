@@ -53,6 +53,10 @@
 		3141AECF1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */; settings = {ASSET_TAGS = (); }; };
 		3141AED31BD4B8F0001F09B6 /* Jewel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AED11BD4B8F0001F09B6 /* Jewel.cpp */; settings = {ASSET_TAGS = (); }; };
 		3141AED41BD4B8F0001F09B6 /* Jewel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AED11BD4B8F0001F09B6 /* Jewel.cpp */; settings = {ASSET_TAGS = (); }; };
+		3141AED71BD4BCF9001F09B6 /* JewelGrid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AED51BD4BCF9001F09B6 /* JewelGrid.cpp */; settings = {ASSET_TAGS = (); }; };
+		3141AED81BD4BCF9001F09B6 /* JewelGrid.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AED51BD4BCF9001F09B6 /* JewelGrid.cpp */; settings = {ASSET_TAGS = (); }; };
+		3141AEDA1BD4C03B001F09B6 /* crush.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 3141AED91BD4C03B001F09B6 /* crush.ogg */; settings = {ASSET_TAGS = (); }; };
+		3141AEDB1BD4C03B001F09B6 /* crush.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 3141AED91BD4C03B001F09B6 /* crush.ogg */; settings = {ASSET_TAGS = (); }; };
 		31599BE21BCF5E58005E92C5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 31599BE11BCF5E58005E92C5 /* data */; settings = {ASSET_TAGS = (); }; };
 		3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
 		3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -159,6 +163,9 @@
 		3141AECD1BD4B6F1001F09B6 /* GameStageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStageController.h; sourceTree = "<group>"; };
 		3141AED11BD4B8F0001F09B6 /* Jewel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Jewel.cpp; sourceTree = "<group>"; };
 		3141AED21BD4B8F0001F09B6 /* Jewel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jewel.h; sourceTree = "<group>"; };
+		3141AED51BD4BCF9001F09B6 /* JewelGrid.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JewelGrid.cpp; sourceTree = "<group>"; };
+		3141AED61BD4BCF9001F09B6 /* JewelGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JewelGrid.h; sourceTree = "<group>"; };
+		3141AED91BD4C03B001F09B6 /* crush.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = crush.ogg; sourceTree = "<group>"; };
 		31599BE11BCF5E58005E92C5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Layer_PlayerStatus.hpp; sourceTree = "<group>"; };
 		3185615B1BD4855800627C21 /* StageSelectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageSelectScene.cpp; sourceTree = "<group>"; };
@@ -410,6 +417,8 @@
 			children = (
 				3141AED11BD4B8F0001F09B6 /* Jewel.cpp */,
 				3141AED21BD4B8F0001F09B6 /* Jewel.h */,
+				3141AED51BD4BCF9001F09B6 /* JewelGrid.cpp */,
+				3141AED61BD4BCF9001F09B6 /* JewelGrid.h */,
 				3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */,
 				3141AECD1BD4B6F1001F09B6 /* GameStageController.h */,
 			);
@@ -419,6 +428,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3141AED91BD4C03B001F09B6 /* crush.ogg */,
 				31599BE11BCF5E58005E92C5 /* data */,
 				31122EC01BCD01CD00F08C65 /* ui */,
 				31122EB41BCCBEDF00F08C65 /* Chara_illust.png */,
@@ -603,6 +613,7 @@
 				31122E7D1BC77C4B00F08C65 /* start.png in Resources */,
 				3188E6851BD0B68000AC8FBC /* stageIcon_0.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
+				3141AEDA1BD4C03B001F09B6 /* crush.ogg in Resources */,
 				31122EAC1BCC9DBC00F08C65 /* element_blue.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
@@ -639,6 +650,7 @@
 				31122E851BC780C400F08C65 /* mainBG.png in Resources */,
 				31122EAF1BCC9DBC00F08C65 /* element_green.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
+				3141AEDB1BD4C03B001F09B6 /* crush.ogg in Resources */,
 				31122E8B1BC786DA00F08C65 /* status.png in Resources */,
 				31122EC21BCD01CD00F08C65 /* ui in Resources */,
 				31122E8E1BC7872800F08C65 /* exit.png in Resources */,
@@ -662,6 +674,7 @@
 				3141AECE1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */,
 				31122E811BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				3188E6821BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
+				3141AED71BD4BCF9001F09B6 /* JewelGrid.cpp in Sources */,
 				31122E911BC7884600F08C65 /* StatusScene.cpp in Sources */,
 				3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
 				31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */,
@@ -686,6 +699,7 @@
 				31122E7B1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
 				3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
 				31122E921BC7884600F08C65 /* StatusScene.cpp in Sources */,
+				3141AED81BD4BCF9001F09B6 /* JewelGrid.cpp in Sources */,
 				31122E771BC7658100F08C65 /* HomeScene.cpp in Sources */,
 				3141AED41BD4B8F0001F09B6 /* Jewel.cpp in Sources */,
 				31122E821BC77FA000F08C65 /* MainBackground.cpp in Sources */,
