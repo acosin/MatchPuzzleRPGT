@@ -59,6 +59,7 @@ bool StageSelectScene::init()
     this->addChild(_layout);
     
     //initialize ui event listener
+    _listView_selectStage->addEventListener((ui::ListView::ccListViewCallback)CC_CALLBACK_2(StageSelectScene::selectStage_callback, this));
     
     // TODO: may used TouchListener
     _homeButton->addClickEventListener([](Ref* ref) {
@@ -89,8 +90,27 @@ bool StageSelectScene::fillListViewSelectStage()
         item->setAnchorPoint(Vec2(0.5,0.5));
         item->setPositionType(ui::Widget::PositionType::PERCENT);
         item->setPositionPercent(Vec2(0.5,0.5));
+        item->setTouchEnabled(true);
         _listView_selectStage->pushBackCustomItem(item);
     }
     
     return true;
+}
+
+void StageSelectScene::selectStage_callback(Ref* pSender, ui::ListView::EventType type)
+{
+    if (type == ui::ListView::EventType::ON_SELECTED_ITEM_END) {
+        auto listView = static_cast<ui::ListView*>(pSender);
+        
+        for (auto widget : listView->getItems()) {
+            widget->getChildByName("Layer")->getChildByName<ui::Text*>("Text_stageName")->setColor(Color3B::WHITE);
+        }
+        
+        auto selectedIndex = listView->getCurSelectedIndex();
+        listView->getItem(selectedIndex)->getChildByName("Layer")->getChildByName<ui::Text*>("Text_stageName")->setColor(Color3B::GREEN);
+        
+        log("selected index %ld", selectedIndex);
+        
+        // TODO: select a stage and change scene here
+    }
 }

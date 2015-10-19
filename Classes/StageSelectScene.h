@@ -18,7 +18,7 @@ USING_NS_CC;
 
 class StageSelectScene : public Layer
 {
-public:
+protected:
     Node* _layout;
     Node* _background;
     
@@ -28,6 +28,7 @@ public:
     ui::ListView* _listView_selectStage;
     
     StageDataManager* _stageManager;
+    
 public:
     StageSelectScene();
     ~StageSelectScene();
@@ -38,4 +39,6 @@ public:
     static Scene *createScene();
     
     virtual bool fillListViewSelectStage();
+    
+    void selectStage_callback(Ref* pSender, ui::ListView::EventType type);
 };
