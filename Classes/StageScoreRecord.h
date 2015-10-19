@@ -37,6 +37,7 @@ public:
     
     const std::string getStageName();
     const std::string getStageIconPath();
+    StageData* getStageData();
     
     static std::map<uint32_t, StageScoreRecord*> loadStageScoreRecordFromCSV(const std::string &filename, std::map<uint32_t, StageData*> &stageData);
 };

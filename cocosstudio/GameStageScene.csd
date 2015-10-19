@@ -59,6 +59,19 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Panel_puzzle" ActionTag="2051755324" Alpha="119" Tag="45" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="70.0000" RightMargin="70.0000" TopMargin="571.1625" BottomMargin="64.8375" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="500.0000" Y="500.0000" />
+            <AnchorPoint ScaleX="0.5000" />
+            <Position X="320.0000" Y="64.8375" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="30" G="144" B="255" />
+            <PrePosition X="0.5000" Y="0.0571" />
+            <PreSize X="0.7813" Y="0.4401" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

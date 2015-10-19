@@ -34,10 +34,9 @@ bool Jewel::init(ElementType type, int x, int y)
     _isCrushing = false;
     
     //NOTE: initialize textures by names, should be load some where first!
-    char name[100] = {0};
-    //TODO: may change image resource path here!
-    sprintf(name, "jewel%d.png", _type);
-    this->initWithTexture(Director::getInstance()->getTextureCache()->getTextureForKey(name));
+    auto name = ElementTypeUtils::getResourceFilename(_type);
+    this->initWithFile(name);
+    //this->initWithTexture(Director::getInstance()->getTextureCache()->getTextureForKey(name));
     
     this->setAnchorPoint(Vec2(0, 0)); //left bottom as anchor
     

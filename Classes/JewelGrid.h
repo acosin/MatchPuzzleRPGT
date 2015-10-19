@@ -12,7 +12,7 @@
 USING_NS_CC;
 using namespace std;
 
-#define GRID_WIDTH 40 //pixels of a grid: 40x40
+#define GRID_WIDTH 80 //pixels of a grid: 40x40
 #define MOVE_SPEED 0.2
 
 const int FIRST_JEWEL_ID = 0;

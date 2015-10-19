@@ -12,6 +12,7 @@
 #include "cocostudio/CocoStudio.h"
 
 #include "SceneMediator.h"
+#include "GameStageController.h"
 
 USING_NS_CC;
 
@@ -19,6 +20,7 @@ class GameStageScene : public Layer
 {
 protected:
     Node* _layout;
+    Node* _puzzleLayout;
     Node* _background;
     
     ui::Button* _homeButton;
@@ -26,9 +28,11 @@ protected:
     ui::Button* _selectStageButton;
     
     uint32_t _stageID;
-    const StageData* _currentStageData;
-    const StageScoreRecord* _currentStageScore;
+    StageData* _currentStageData;
+    StageScoreRecord* _currentStageScore;
     StageDataManager* _stageManager;
+    GameStageController* _controller;
+    JewelsGrid* _jewelsGrid;
     
     bool initData(StageDataManager* stageManager, uint32_t stageID);
     

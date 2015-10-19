@@ -8,6 +8,7 @@
 
 GameStageScene::GameStageScene():
 _layout(nullptr),
+_puzzleLayout(nullptr),
 _background(nullptr),
 _homeButton(nullptr),
 _exitButton(nullptr),
@@ -15,7 +16,9 @@ _selectStageButton(nullptr),
 _stageID(0),
 _currentStageData(nullptr),
 _currentStageScore(nullptr),
-_stageManager(nullptr)
+_stageManager(nullptr),
+_controller(nullptr),
+_jewelsGrid(nullptr)
 {
     
 }
@@ -40,6 +43,8 @@ bool GameStageScene::init()
     //_background = SceneMediator::getInstance()->getMainBackground();
     _background = MainBackground::create();
     _layout->getChildByName("ImageView_background")->addChild(_background);
+    
+    _puzzleLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_puzzle"));
     
     _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
     _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
@@ -71,8 +76,21 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
 {
     _stageManager = stageManager;
     _currentStageScore = stageManager->getStageScoreRecord(stageID);
+    _currentStageData = _currentStageScore->getStageData();
+    _controller = GameStageController::create(_currentStageData);
+    _jewelsGrid = _controller->getJewelsGrid();
     
     // visualize map and puzzle here
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    auto texturecache = TextureCache::getInstance();
+    
+    
+    //_jewelsGrid->setAnchorPoint(Vec2(400,0.5));
+    _jewelsGrid->setPosition(0, 0);
+    //_puzzleLayout->setContentSize(_jewelsGrid->getContentSize());
+    //_jewelsGrid->setPosition(visibleSize.width/2, _jewelsGrid->getRow() * GRID_WIDTH *0);
+    _puzzleLayout->addChild(_jewelsGrid);
+    //this->addChild(_jewelsGrid);
     
     return true;
 }
