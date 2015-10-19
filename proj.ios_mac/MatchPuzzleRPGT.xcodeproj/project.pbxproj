@@ -49,6 +49,10 @@
 		31122EC21BCD01CD00F08C65 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 31122EC01BCD01CD00F08C65 /* ui */; settings = {ASSET_TAGS = (); }; };
 		31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122EC41BCE27A300F08C65 /* CsvParser.cpp */; settings = {ASSET_TAGS = (); }; };
 		31122EC71BCE27A300F08C65 /* CsvParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122EC41BCE27A300F08C65 /* CsvParser.cpp */; settings = {ASSET_TAGS = (); }; };
+		3141AECE1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */; settings = {ASSET_TAGS = (); }; };
+		3141AECF1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */; settings = {ASSET_TAGS = (); }; };
+		3141AED31BD4B8F0001F09B6 /* Jewel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AED11BD4B8F0001F09B6 /* Jewel.cpp */; settings = {ASSET_TAGS = (); }; };
+		3141AED41BD4B8F0001F09B6 /* Jewel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AED11BD4B8F0001F09B6 /* Jewel.cpp */; settings = {ASSET_TAGS = (); }; };
 		31599BE21BCF5E58005E92C5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 31599BE11BCF5E58005E92C5 /* data */; settings = {ASSET_TAGS = (); }; };
 		3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
 		3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -151,6 +155,10 @@
 		31122EC01BCD01CD00F08C65 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		31122EC41BCE27A300F08C65 /* CsvParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CsvParser.cpp; sourceTree = "<group>"; };
 		31122EC51BCE27A300F08C65 /* CsvParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CsvParser.h; sourceTree = "<group>"; };
+		3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStageController.cpp; sourceTree = "<group>"; };
+		3141AECD1BD4B6F1001F09B6 /* GameStageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStageController.h; sourceTree = "<group>"; };
+		3141AED11BD4B8F0001F09B6 /* Jewel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Jewel.cpp; sourceTree = "<group>"; };
+		3141AED21BD4B8F0001F09B6 /* Jewel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jewel.h; sourceTree = "<group>"; };
 		31599BE11BCF5E58005E92C5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Layer_PlayerStatus.hpp; sourceTree = "<group>"; };
 		3185615B1BD4855800627C21 /* StageSelectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageSelectScene.cpp; sourceTree = "<group>"; };
@@ -397,6 +405,17 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		3141AED01BD4B74E001F09B6 /* GameStage */ = {
+			isa = PBXGroup;
+			children = (
+				3141AED11BD4B8F0001F09B6 /* Jewel.cpp */,
+				3141AED21BD4B8F0001F09B6 /* Jewel.h */,
+				3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */,
+				3141AECD1BD4B6F1001F09B6 /* GameStageController.h */,
+			);
+			name = GameStage;
+			sourceTree = "<group>";
+		};
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +442,7 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3141AED01BD4B74E001F09B6 /* GameStage */,
 				31122EC31BCE277700F08C65 /* Utils */,
 				31122EBD1BCCF14A00F08C65 /* Scene */,
 				31122EBC1BCCF12D00F08C65 /* DataManager */,
@@ -639,6 +659,7 @@
 				3188E67A1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
 				3188E67E1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,
 				31122E761BC7658100F08C65 /* HomeScene.cpp in Sources */,
+				3141AECE1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */,
 				31122E811BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				3188E6821BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
 				31122E911BC7884600F08C65 /* StatusScene.cpp in Sources */,
@@ -652,6 +673,7 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				3188E6721BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */,
+				3141AED31BD4B8F0001F09B6 /* Jewel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,10 +687,12 @@
 				3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
 				31122E921BC7884600F08C65 /* StatusScene.cpp in Sources */,
 				31122E771BC7658100F08C65 /* HomeScene.cpp in Sources */,
+				3141AED41BD4B8F0001F09B6 /* Jewel.cpp in Sources */,
 				31122E821BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				3188E67F1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				318561631BD4A48800627C21 /* GameStageScene.cpp in Sources */,
+				3141AECF1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */,
 				3188E6731BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */,
 				3188E6831BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
 				31122EA41BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
