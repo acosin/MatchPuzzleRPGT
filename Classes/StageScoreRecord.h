@@ -14,8 +14,8 @@ protected:
     StageData* _stageData;
     bool _scoreExist;
     int _bestScore;
-    int _lastScore;
     time_t _bestTimestamp;
+    int _lastScore;
     time_t _lastTimestamp;
     
 public:

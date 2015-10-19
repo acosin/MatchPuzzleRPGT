@@ -46,7 +46,8 @@ StageDataManager* SceneMediator::getStageDataManager()
     if (_stageDataManager == nullptr) {
         _stageDataManager = StageDataManager::create();
         // TODO: fix here by replacing with initFromLocalData();
-        _stageDataManager->initWithDebugData();
+        //_stageDataManager->initWithDebugData();
+        _stageDataManager->initFromLocalData("data/StageData.csv", "data/StageScoreRecords.csv");
     }
     return _stageDataManager;
 }

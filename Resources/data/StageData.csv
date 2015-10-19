@@ -1,0 +1,7 @@
+stageID,stageName,mapID,mapName,stageIconPath,mapWidth,mapHeight,playerInitialX,playerInitialY,difficultybaga
+0,stageName_0,0,mapName_0,stageIcon_0.png,5,4,2,0,1
+1,stageName_1,1,mapName_1,stageIcon_0.png,5,5,2,0,1
+2,stageName_2,2,mapName_2,stageIcon_0.png,5,4,2,0,1
+3,stageName_3,3,mapName_3,stageIcon_0.png,5,5,2,0,3
+4,stageName_4,0,mapName_0,stageIcon_0.png,5,4,2,0,2
+5,stageNmae_5,0,mapName_0,stageIcon_0.png,5,4,2,0,3
