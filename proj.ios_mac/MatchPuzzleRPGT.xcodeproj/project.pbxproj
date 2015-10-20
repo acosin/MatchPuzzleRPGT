@@ -65,6 +65,8 @@
 		3141AEE51BD4DB47001F09B6 /* element_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEDE1BD4DB47001F09B6 /* element_2.png */; settings = {ASSET_TAGS = (); }; };
 		3141AEE61BD4DB47001F09B6 /* element_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEDF1BD4DB47001F09B6 /* element_3.png */; settings = {ASSET_TAGS = (); }; };
 		3141AEE71BD4DB47001F09B6 /* element_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEDF1BD4DB47001F09B6 /* element_3.png */; settings = {ASSET_TAGS = (); }; };
+		3141AEEB1BD5DB6F001F09B6 /* JewelGridStatus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AEE91BD5DB6F001F09B6 /* JewelGridStatus.cpp */; settings = {ASSET_TAGS = (); }; };
+		3141AEEC1BD5DB6F001F09B6 /* JewelGridStatus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AEE91BD5DB6F001F09B6 /* JewelGridStatus.cpp */; settings = {ASSET_TAGS = (); }; };
 		31599BE21BCF5E58005E92C5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 31599BE11BCF5E58005E92C5 /* data */; settings = {ASSET_TAGS = (); }; };
 		3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
 		3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -178,6 +180,8 @@
 		3141AEDD1BD4DB47001F09B6 /* element_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = element_1.png; sourceTree = "<group>"; };
 		3141AEDE1BD4DB47001F09B6 /* element_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = element_2.png; sourceTree = "<group>"; };
 		3141AEDF1BD4DB47001F09B6 /* element_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = element_3.png; sourceTree = "<group>"; };
+		3141AEE91BD5DB6F001F09B6 /* JewelGridStatus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JewelGridStatus.cpp; sourceTree = "<group>"; };
+		3141AEEA1BD5DB6F001F09B6 /* JewelGridStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JewelGridStatus.h; sourceTree = "<group>"; };
 		31599BE11BCF5E58005E92C5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Layer_PlayerStatus.hpp; sourceTree = "<group>"; };
 		3185615B1BD4855800627C21 /* StageSelectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageSelectScene.cpp; sourceTree = "<group>"; };
@@ -431,6 +435,8 @@
 				3141AED21BD4B8F0001F09B6 /* Jewel.h */,
 				3141AED51BD4BCF9001F09B6 /* JewelGrid.cpp */,
 				3141AED61BD4BCF9001F09B6 /* JewelGrid.h */,
+				3141AEE91BD5DB6F001F09B6 /* JewelGridStatus.cpp */,
+				3141AEEA1BD5DB6F001F09B6 /* JewelGridStatus.h */,
 				3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */,
 				3141AECD1BD4B6F1001F09B6 /* GameStageController.h */,
 			);
@@ -700,6 +706,7 @@
 				3188E6821BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
 				3141AED71BD4BCF9001F09B6 /* JewelGrid.cpp in Sources */,
 				31122E911BC7884600F08C65 /* StatusScene.cpp in Sources */,
+				3141AEEB1BD5DB6F001F09B6 /* JewelGridStatus.cpp in Sources */,
 				3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
 				31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */,
 				31122E7A1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
@@ -722,6 +729,7 @@
 				3188E67B1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
 				31122E7B1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
 				3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
+				3141AEEC1BD5DB6F001F09B6 /* JewelGridStatus.cpp in Sources */,
 				31122E921BC7884600F08C65 /* StatusScene.cpp in Sources */,
 				3141AED81BD4BCF9001F09B6 /* JewelGrid.cpp in Sources */,
 				31122E771BC7658100F08C65 /* HomeScene.cpp in Sources */,
