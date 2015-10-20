@@ -4,10 +4,14 @@
 //
 //
 
+#pragma once
+
 #include "cocos2d.h"
 #include <vector>
 
 #include "ElementType.h"
+
+#include "JewelGridStatus.h"
 
 USING_NS_CC;
 using namespace std;
@@ -73,4 +77,6 @@ private:
     vector<vector<Jewel*>> m_JewelsBox;
     Vector<Jewel*> m_crushJewelBox;
     Vector<Jewel*> m_newJewelBox;
+    
+    JewelGridStatus* m_status;
 };

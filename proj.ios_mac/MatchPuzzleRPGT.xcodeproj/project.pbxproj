@@ -67,6 +67,12 @@
 		3141AEE71BD4DB47001F09B6 /* element_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEDF1BD4DB47001F09B6 /* element_3.png */; settings = {ASSET_TAGS = (); }; };
 		3141AEEB1BD5DB6F001F09B6 /* JewelGridStatus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AEE91BD5DB6F001F09B6 /* JewelGridStatus.cpp */; settings = {ASSET_TAGS = (); }; };
 		3141AEEC1BD5DB6F001F09B6 /* JewelGridStatus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AEE91BD5DB6F001F09B6 /* JewelGridStatus.cpp */; settings = {ASSET_TAGS = (); }; };
+		3141AEEF1BD615CB001F09B6 /* MapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AEED1BD615CB001F09B6 /* MapLayer.cpp */; settings = {ASSET_TAGS = (); }; };
+		3141AEF01BD615CB001F09B6 /* MapLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AEED1BD615CB001F09B6 /* MapLayer.cpp */; settings = {ASSET_TAGS = (); }; };
+		3141AEF21BD6217F001F09B6 /* map_00.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEF11BD6217F001F09B6 /* map_00.tmx */; settings = {ASSET_TAGS = (); }; };
+		3141AEF31BD6217F001F09B6 /* map_00.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEF11BD6217F001F09B6 /* map_00.tmx */; settings = {ASSET_TAGS = (); }; };
+		3141AEF51BD62333001F09B6 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEF41BD62333001F09B6 /* tmw_desert_spacing.png */; settings = {ASSET_TAGS = (); }; };
+		3141AEF61BD62333001F09B6 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEF41BD62333001F09B6 /* tmw_desert_spacing.png */; settings = {ASSET_TAGS = (); }; };
 		31599BE21BCF5E58005E92C5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 31599BE11BCF5E58005E92C5 /* data */; settings = {ASSET_TAGS = (); }; };
 		3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
 		3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -182,6 +188,10 @@
 		3141AEDF1BD4DB47001F09B6 /* element_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = element_3.png; sourceTree = "<group>"; };
 		3141AEE91BD5DB6F001F09B6 /* JewelGridStatus.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JewelGridStatus.cpp; sourceTree = "<group>"; };
 		3141AEEA1BD5DB6F001F09B6 /* JewelGridStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JewelGridStatus.h; sourceTree = "<group>"; };
+		3141AEED1BD615CB001F09B6 /* MapLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapLayer.cpp; sourceTree = "<group>"; };
+		3141AEEE1BD615CB001F09B6 /* MapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLayer.h; sourceTree = "<group>"; };
+		3141AEF11BD6217F001F09B6 /* map_00.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map_00.tmx; sourceTree = "<group>"; };
+		3141AEF41BD62333001F09B6 /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmw_desert_spacing.png; sourceTree = "<group>"; };
 		31599BE11BCF5E58005E92C5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Layer_PlayerStatus.hpp; sourceTree = "<group>"; };
 		3185615B1BD4855800627C21 /* StageSelectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageSelectScene.cpp; sourceTree = "<group>"; };
@@ -437,6 +447,8 @@
 				3141AED61BD4BCF9001F09B6 /* JewelGrid.h */,
 				3141AEE91BD5DB6F001F09B6 /* JewelGridStatus.cpp */,
 				3141AEEA1BD5DB6F001F09B6 /* JewelGridStatus.h */,
+				3141AEED1BD615CB001F09B6 /* MapLayer.cpp */,
+				3141AEEE1BD615CB001F09B6 /* MapLayer.h */,
 				3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */,
 				3141AECD1BD4B6F1001F09B6 /* GameStageController.h */,
 			);
@@ -446,6 +458,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3141AEF41BD62333001F09B6 /* tmw_desert_spacing.png */,
+				3141AEF11BD6217F001F09B6 /* map_00.tmx */,
 				3141AEDC1BD4DB47001F09B6 /* element_0.png */,
 				3141AEDD1BD4DB47001F09B6 /* element_1.png */,
 				3141AEDE1BD4DB47001F09B6 /* element_2.png */,
@@ -625,6 +639,7 @@
 				31122EC11BCD01CD00F08C65 /* ui in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				31122E8A1BC786DA00F08C65 /* status.png in Resources */,
+				3141AEF51BD62333001F09B6 /* tmw_desert_spacing.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
@@ -633,6 +648,7 @@
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				31122EAE1BCC9DBC00F08C65 /* element_green.png in Resources */,
 				3141AEE21BD4DB47001F09B6 /* element_1.png in Resources */,
+				3141AEF21BD6217F001F09B6 /* map_00.tmx in Resources */,
 				31122E7D1BC77C4B00F08C65 /* start.png in Resources */,
 				3188E6851BD0B68000AC8FBC /* stageIcon_0.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
@@ -668,6 +684,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3141AEE71BD4DB47001F09B6 /* element_3.png in Resources */,
+				3141AEF61BD62333001F09B6 /* tmw_desert_spacing.png in Resources */,
 				31122E881BC7852F00F08C65 /* score.png in Resources */,
 				31122E7E1BC77C4B00F08C65 /* start.png in Resources */,
 				3188E6861BD0B68000AC8FBC /* stageIcon_0.png in Resources */,
@@ -678,6 +695,7 @@
 				3141AEE11BD4DB47001F09B6 /* element_0.png in Resources */,
 				3141AEE51BD4DB47001F09B6 /* element_2.png in Resources */,
 				31122EAF1BCC9DBC00F08C65 /* element_green.png in Resources */,
+				3141AEF31BD6217F001F09B6 /* map_00.tmx in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				3141AEE31BD4DB47001F09B6 /* element_1.png in Resources */,
 				3141AEDB1BD4C03B001F09B6 /* crush.ogg in Resources */,
@@ -711,6 +729,7 @@
 				31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */,
 				31122E7A1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				3141AEEF1BD615CB001F09B6 /* MapLayer.cpp in Sources */,
 				318561621BD4A48800627C21 /* GameStageScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				31122EA31BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
@@ -733,6 +752,7 @@
 				31122E921BC7884600F08C65 /* StatusScene.cpp in Sources */,
 				3141AED81BD4BCF9001F09B6 /* JewelGrid.cpp in Sources */,
 				31122E771BC7658100F08C65 /* HomeScene.cpp in Sources */,
+				3141AEF01BD615CB001F09B6 /* MapLayer.cpp in Sources */,
 				3141AED41BD4B8F0001F09B6 /* Jewel.cpp in Sources */,
 				31122E821BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				3188E67F1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,

@@ -37,6 +37,8 @@ bool JewelsGrid::init(int row, int col)
     m_jewelSelected = nullptr;
     m_jewelSwapped = nullptr;
     
+    m_status = new JewelGridStatus();
+    
     m_JewelsBox.resize(m_row);
     for (auto &vec : m_JewelsBox)
         vec.resize(m_col);
@@ -70,6 +72,7 @@ bool JewelsGrid::init(int row, int col)
     return true;
 }
 
+//TODO: only for debug
 void JewelsGrid::updateMap()
 {
     for (int x = 0; x < m_col; x++)

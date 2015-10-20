@@ -9,6 +9,7 @@
 GameStageScene::GameStageScene():
 _layout(nullptr),
 _puzzleLayout(nullptr),
+_mapLayout(nullptr),
 _background(nullptr),
 _homeButton(nullptr),
 _exitButton(nullptr),
@@ -18,7 +19,8 @@ _currentStageData(nullptr),
 _currentStageScore(nullptr),
 _stageManager(nullptr),
 _controller(nullptr),
-_jewelsGrid(nullptr)
+_jewelsGrid(nullptr),
+_mapLayer(nullptr)
 {
     
 }
@@ -45,10 +47,17 @@ bool GameStageScene::init()
     _layout->getChildByName("ImageView_background")->addChild(_background);
     
     _puzzleLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_puzzle"));
+    _mapLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_map"));
     
     _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
     _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
     _selectStageButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_selectStage"));
+    
+    //TODO[001]: remove later
+    _mapLayer = MapLayer::create("map_00.tmx");
+    //_mapLayer->setPosition(0, 0);
+    _mapLayout->addChild(_mapLayer);
+    //end TODO[001]
     
     this->addChild(_layout);
     

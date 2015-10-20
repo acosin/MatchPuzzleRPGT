@@ -6,13 +6,13 @@
       <ObjectData Name="Scene" Tag="32" ctype="GameNodeObjectData">
         <Size X="640.0000" Y="1136.0000" />
         <Children>
-          <AbstractNodeData Name="ImageView_background" ActionTag="1917417479" Tag="41" IconVisible="False" LeftMargin="-2.5786" RightMargin="2.5786" TopMargin="-4.5159" BottomMargin="4.5159" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="ImageView_background" ActionTag="1917417479" Tag="41" IconVisible="False" LeftMargin="-5.6661" RightMargin="5.6661" TopMargin="-4.5159" BottomMargin="4.5159" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
             <Size X="640.0000" Y="1136.0000" />
             <AnchorPoint />
-            <Position X="-2.5786" Y="4.5159" />
+            <Position X="-5.6661" Y="4.5159" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="-0.0040" Y="0.0040" />
+            <PrePosition X="-0.0089" Y="0.0040" />
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
           </AbstractNodeData>
@@ -66,6 +66,19 @@
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="30" G="144" B="255" />
             <PrePosition X="0.5000" Y="0.0571" />
+            <PreSize X="0.7813" Y="0.4401" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_map" ActionTag="-800175265" Alpha="119" Tag="46" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="64.5607" RightMargin="75.4393" TopMargin="3.7859" BottomMargin="632.2141" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="500.0000" Y="500.0000" />
+            <AnchorPoint ScaleX="0.5000" />
+            <Position X="314.5607" Y="632.2141" />
+            <Scale ScaleX="1.0000" ScaleY="0.6418" />
+            <CColor A="255" R="30" G="144" B="255" />
+            <PrePosition X="0.4915" Y="0.5565" />
             <PreSize X="0.7813" Y="0.4401" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
