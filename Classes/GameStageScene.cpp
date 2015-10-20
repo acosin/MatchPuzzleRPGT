@@ -54,7 +54,7 @@ bool GameStageScene::init()
     _selectStageButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_selectStage"));
     
     //TODO[001]: remove later
-    _mapLayer = MapLayer::create("map_00.tmx");
+    _mapLayer = MapLayer::create("map_00.tmx", "Player_on_map.png");
     UIHelper::scaleToFixFather(_mapLayer, _mapLayout);
     //UIHelper::scaleToFixFather(_mapLayout,_mapLayer);
     //_mapLayer->setPosition(0, 0);

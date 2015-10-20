@@ -35,5 +35,6 @@ public:
     {
         auto fatherSize = father->getContentSize();
         child->setAnchorPoint(Vec2(0.5,0.5));
-        child->setPosition(fatherSize.width/2, fatherSize.height/2);    }
+        child->setPosition(fatherSize.width/2, fatherSize.height/2);
+    }
 };

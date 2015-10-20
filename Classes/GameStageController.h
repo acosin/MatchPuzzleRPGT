@@ -18,6 +18,8 @@ class GameStageController
 private:
     JewelsGrid* _jewelsGrid;
     StageData* _stageData;
+    // map control
+    
 public:
     GameStageController();
     ~GameStageController();

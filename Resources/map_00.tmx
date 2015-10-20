@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="5" height="4" tilewidth="32" tileheight="32" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="5" height="4" tilewidth="32" tileheight="32" nextobjectid="8">
  <tileset firstgid="1" name="tmw_desert_spacing" tilewidth="32" tileheight="32" spacing="1" margin="1">
-  <image source="./tmw_desert_spacing.png" width="265" height="199"/>
+  <image source="tmw_desert_spacing.png" width="265" height="199"/>
  </tileset>
  <layer name="Background" width="5" height="4">
   <data encoding="base64" compression="zlib">
    eJyTY2BgkANiPShNKQYAZ0ACaQ==
   </data>
  </layer>
+ <objectgroup name="Objects">
+  <object id="5" name="SpawnPoint" x="79.3527" y="111.249"/>
+ </objectgroup>
 </map>

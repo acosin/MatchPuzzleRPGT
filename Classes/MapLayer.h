@@ -15,6 +15,7 @@ class MapLayer : public cocos2d::Layer
 private:
     TMXTiledMap* _tileMap;
     TMXLayer* _background;
+    Sprite* _player;
     
 public:
     MapLayer();
@@ -22,8 +23,11 @@ public:
     
     CREATE_FUNC(MapLayer);
     
-    static MapLayer* create(const std::string &mapFilename);
+    static MapLayer* create(const std::string &mapFilename, const std::string &playerFilename);
     
     virtual bool init();
-    bool initMap(const std::string &mapFilename);
+    bool initMap(const std::string &mapFilename, const std::string &playerFilename);
+    
+private:
+    void setViewPointCenter(Point position);
 };
