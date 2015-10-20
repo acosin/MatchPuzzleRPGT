@@ -14,6 +14,7 @@
 #include "SceneMediator.h"
 #include "GameStageController.h"
 #include "MapLayer.h"
+#include "UIHelper.hpp"
 
 USING_NS_CC;
 

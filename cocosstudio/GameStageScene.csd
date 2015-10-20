@@ -72,7 +72,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_map" ActionTag="-800175265" Alpha="119" Tag="46" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="64.5607" RightMargin="75.4393" TopMargin="3.7859" BottomMargin="632.2141" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_map" ActionTag="-800175265" Alpha="0" Tag="46" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="64.5607" RightMargin="75.4393" TopMargin="3.7859" BottomMargin="632.2141" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="500.0000" Y="500.0000" />
             <AnchorPoint ScaleX="0.5000" />
             <Position X="314.5607" Y="632.2141" />

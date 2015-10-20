@@ -37,6 +37,7 @@ bool MapLayer::initMap(const std::string &mapFilename)
     _background = _tileMap->getLayer("Background");
     
     addChild(_tileMap);
+    setContentSize(_tileMap->getContentSize());
     
     return true;
 }

@@ -55,6 +55,8 @@ bool GameStageScene::init()
     
     //TODO[001]: remove later
     _mapLayer = MapLayer::create("map_00.tmx");
+    UIHelper::scaleToFixFather(_mapLayer, _mapLayout);
+    //UIHelper::scaleToFixFather(_mapLayout,_mapLayer);
     //_mapLayer->setPosition(0, 0);
     _mapLayout->addChild(_mapLayer);
     //end TODO[001]

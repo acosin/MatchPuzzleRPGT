@@ -192,6 +192,7 @@
 		3141AEEE1BD615CB001F09B6 /* MapLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapLayer.h; sourceTree = "<group>"; };
 		3141AEF11BD6217F001F09B6 /* map_00.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map_00.tmx; sourceTree = "<group>"; };
 		3141AEF41BD62333001F09B6 /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmw_desert_spacing.png; sourceTree = "<group>"; };
+		3141AEF71BD63320001F09B6 /* UIHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UIHelper.hpp; sourceTree = "<group>"; };
 		31599BE11BCF5E58005E92C5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Layer_PlayerStatus.hpp; sourceTree = "<group>"; };
 		3185615B1BD4855800627C21 /* StageSelectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageSelectScene.cpp; sourceTree = "<group>"; };
@@ -434,6 +435,7 @@
 				31122EC41BCE27A300F08C65 /* CsvParser.cpp */,
 				31122EC51BCE27A300F08C65 /* CsvParser.h */,
 				3188E6881BD1064D00AC8FBC /* TimeParser.hpp */,
+				3141AEF71BD63320001F09B6 /* UIHelper.hpp */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
