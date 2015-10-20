@@ -49,7 +49,7 @@ bool MapLayer::initMap(const std::string &mapFilename, const std::string &player
     _player = Sprite::create(playerFilename);
     _player->setPosition(x, y);
     addChild(_player);
-    setViewPointCenter(_player->getPosition());
+    //setViewPointCenter(_player->getPosition());
     
     return true;
 }
