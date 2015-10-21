@@ -21,7 +21,7 @@ enum class MapItemType {
 class IMapItem
 {
 public:
-    virtual int getX();
-    virtual int getY();
-    virtual MapItemType getType();
+    virtual int getX() = 0;
+    virtual int getY() = 0;
+    virtual MapItemType getType() = 0;
 };
