@@ -52,4 +52,7 @@ public:
     virtual bool init();
     
     static Scene *createScene(StageDataManager* stageManager, uint32_t stageID);
+    
+private:
+    void movePlayerTo(int x, int y);
 };

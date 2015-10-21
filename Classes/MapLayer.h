@@ -17,6 +17,7 @@ private:
     TMXLayer* _background;
     Sprite* _player;
     
+    
 public:
     MapLayer();
     virtual ~MapLayer();
@@ -29,6 +30,10 @@ public:
     bool initMap(const std::string &mapFilename, const std::string &playerFilename);
     
     void movePlayerTo(int x, int y);
+    
+    Vec2 convertToPixelPos(const Vec2 &mapPos);
+    Vec2 convertToMapPos(const Vec2 &pixelPos);
+    
     
 private:
     void setViewPointCenter(Point position);

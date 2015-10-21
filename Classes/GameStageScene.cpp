@@ -63,6 +63,7 @@ bool GameStageScene::init()
     
     this->addChild(_layout);
     
+    
     //initialize ui event listener
     _selectStageButton->addClickEventListener([](Ref* ref) {
         SceneMediator::getInstance()->gotoStageSelectScene();
@@ -142,5 +143,13 @@ void GameStageScene::LoadTexture()
         Director::getInstance()->getTextureCache()->addImage(filename);
     }
     
+}
+
+void GameStageScene::movePlayerTo(int x, int y)
+{
+    //logic
+    _controller->movePlayerTo(x, y);
+    //view, may set animation for _mapPlayer
+    _mapLayer->setPosition(_mapLayer->convertToPixelPos(_controller->getPlayerPos()));
 }
 

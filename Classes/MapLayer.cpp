@@ -46,6 +46,7 @@ bool MapLayer::initMap(const std::string &mapFilename, const std::string &player
     CCASSERT(!spawnPoint.empty(), "SpawnPoint object not found");
     int x = spawnPoint["x"].asInt();
     int y = spawnPoint["y"].asInt();
+    //TODO: set by StageData in GameStageController
     _player = Sprite::create(playerFilename);
     _player->setPosition(x, y);
     addChild(_player);
@@ -58,7 +59,22 @@ MapLayer* MapLayer::create(const std::string &mapFilename, const std::string &pl
 {
     MapLayer* map = MapLayer::create();
     map->initMap(mapFilename, playerFilename);
+ 
     return map;
+}
+
+
+Vec2 MapLayer::convertToPixelPos(const Vec2 &mapPos)
+{
+    auto ret = _background->getPositionAt(mapPos);
+    return ret;
+}
+
+Vec2 MapLayer::convertToMapPos(const Vec2 &pixelPos)
+{
+    //TODO
+    Vec2 ret;
+    return ret;
 }
 
 void MapLayer::setViewPointCenter(Point position)

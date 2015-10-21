@@ -23,6 +23,8 @@ private:
     std::vector<IMapItem*> _mapItems;
     IMapItem* _playerItem;
     
+    int _lastPlayerX, _lastPlayerY;
+    
 public:
     GameStageController();
     ~GameStageController();
@@ -32,6 +34,8 @@ public:
     virtual bool initWithoutData();
     bool initWithData(StageData* stageData);
     
+    Vec2 getPlayerPos();
+    void movePlayerTo(int x, int y);
     
     JewelsGrid* getJewelsGrid();
 };
