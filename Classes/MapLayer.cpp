@@ -75,3 +75,8 @@ void MapLayer::setViewPointCenter(Point position)
     auto viewPoint = centerOfView - actualPosition;
     this->setPosition(viewPoint);
 }
+
+void MapLayer::movePlayerTo(int x, int y)
+{
+    //TODO
+}

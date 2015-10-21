@@ -19,8 +19,9 @@ class GameStageController
 private:
     JewelsGrid* _jewelsGrid;
     StageData* _stageData;
-    // map control
-    std::vector<IMapItem*> mapItems;
+    // map logic control
+    std::vector<IMapItem*> _mapItems;
+    IMapItem* _playerItem;
     
 public:
     GameStageController();

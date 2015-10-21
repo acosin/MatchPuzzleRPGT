@@ -28,6 +28,8 @@ public:
     virtual bool init();
     bool initMap(const std::string &mapFilename, const std::string &playerFilename);
     
+    void movePlayerTo(int x, int y);
+    
 private:
     void setViewPointCenter(Point position);
 };

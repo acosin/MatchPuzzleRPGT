@@ -8,7 +8,8 @@
 
 GameStageController::GameStageController():
 _jewelsGrid(nullptr),
-_stageData(nullptr)
+_stageData(nullptr),
+_playerItem(nullptr)
 {
     
 }

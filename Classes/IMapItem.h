@@ -30,4 +30,18 @@ public:
     virtual void setType(MapItemType type) = 0;
     virtual bool isMovable() = 0;
     virtual void setMovable(bool flag) = 0;
+    
+    bool atSamePosition(IMapItem* other) {
+        return (getX() == other->getX() && getY() && other->getY());
+    }
+    static bool atSamePosition(IMapItem* a, IMapItem* b) {
+        return (a->atSamePosition(b));
+    }
+    
+    bool hasSameType(IMapItem* other) {
+        return (getType() == other->getType());
+    }
+    static bool hasSameType(IMapItem* a, IMapItem* b) {
+        return (a->hasSameType(b));
+    }
 };
