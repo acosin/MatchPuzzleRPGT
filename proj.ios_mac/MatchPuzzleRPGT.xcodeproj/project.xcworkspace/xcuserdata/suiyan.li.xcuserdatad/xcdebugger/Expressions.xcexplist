@@ -3,7 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "Jewel::init(ElementType, int, int):Jewel.cpp">
+         contextName = "GameStageScene::init():GameStageScene.cpp">
       </ContextState>
       <ContextState
          contextName = "CsvParser::Csv::Parse(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):CsvParser.cpp">
@@ -53,7 +53,15 @@
          contextName = "GameStageScene::initData(StageDataManager*, unsigned int):GameStageScene.cpp">
       </ContextState>
       <ContextState
-         contextName = "GameStageScene::init():GameStageScene.cpp">
+         contextName = "MapLayer::onTouchEnded(cocos2d::Touch*, cocos2d::Event*):MapLayer.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "_tileMap-&gt;getMapSize().width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "Jewel::init(ElementType, int, int):Jewel.cpp">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

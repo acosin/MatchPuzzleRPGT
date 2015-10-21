@@ -52,6 +52,15 @@ bool MapLayer::initMap(const std::string &mapFilename, const std::string &player
     addChild(_player);
     //setViewPointCenter(_player->getPosition());
     
+    // handle event
+    // TODO: modify later
+    auto listener = EventListenerTouchOneByOne::create();
+    listener->onTouchBegan = [&](Touch *touch, Event *unused_event)->bool { return true; };
+    listener->onTouchEnded = CC_CALLBACK_2(MapLayer::onTouchEnded, this);
+    this->_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+    
+    
+    
     return true;
 }
 
@@ -92,7 +101,43 @@ void MapLayer::setViewPointCenter(Point position)
     this->setPosition(viewPoint);
 }
 
+// here only do the visulaization
+// TODO: may modify or remote later (only use moveX/moveY)
 void MapLayer::movePlayerTo(int x, int y)
 {
     //TODO
+}
+
+void MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)
+{
+    auto touchLocation = touch->getLocation();
+    touchLocation = this->convertToNodeSpace(touchLocation);
+    
+    auto playerPos = _player->getPosition();
+    auto diff = touchLocation - playerPos;
+    if (abs(diff.x) > abs(diff.y)) {
+        if (diff.x > 0) {
+            playerPos.x += _tileMap->getTileSize().width;
+        }
+        else {
+            playerPos.x -= _tileMap->getTileSize().width;
+        }
+    }
+    else {
+        if (diff.y > 0) {
+            playerPos.y += _tileMap->getTileSize().height;
+        }
+        else {
+            playerPos.y -= _tileMap->getTileSize().height;
+        }
+    }
+    /*
+    if (playerPos.x <= (_tileMap->getMapSize().width * _tileMap->getMapSize().width) &&
+        playerPos.y <= (_tileMap->getMapSize().height * _tileMap->getMapSize().height) &&
+        playerPos.y >= 0 &&
+        playerPos.x >= 0)*/
+    {
+        _player->setPosition(playerPos);
+    }
+    
 }

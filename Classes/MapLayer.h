@@ -37,4 +37,7 @@ public:
     
 private:
     void setViewPointCenter(Point position);
+    
+    
+    void onTouchEnded(Touch *touch, Event *unused_event);
 };
