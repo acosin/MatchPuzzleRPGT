@@ -147,9 +147,6 @@ void GameStageScene::LoadTexture()
 
 void GameStageScene::movePlayerTo(int x, int y)
 {
-    //logic
-    _controller->movePlayerTo(x, y);
-    //view, may set animation for _mapPlayer
-    _mapLayer->setPosition(_mapLayer->convertToPixelPos(_controller->getPlayerPos()));
+    
 }
 

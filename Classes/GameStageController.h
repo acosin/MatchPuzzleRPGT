@@ -10,8 +10,7 @@
 #include "JewelGrid.h"
 #include "StageData.h"
 #include "StageScoreRecord.h"
-#include "MapItemPlayer.h"
-#include "MapItemEnemy.h"
+#include "MapController.h"
 
 USING_NS_CC;
 
@@ -21,10 +20,7 @@ private:
     JewelsGrid* _jewelsGrid;
     StageData* _stageData;
     // map logic control
-    MapItemPlayer* _playerItem;
-    int _lastPlayerX, _lastPlayerY;
-    std::vector<MapItemEnemy*> _enemyItems;
-    std::vector<IMapItem*> _mapItems;
+    MapController* _mapController;
     
 public:
     GameStageController();
@@ -35,8 +31,7 @@ public:
     virtual bool initWithoutData();
     bool initWithData(StageData* stageData);
     
-    Vec2 getPlayerPos();
-    void movePlayerTo(int x, int y);
-    
     JewelsGrid* getJewelsGrid();
+    
+    MapLayer* createMapLayerFromData();
 };

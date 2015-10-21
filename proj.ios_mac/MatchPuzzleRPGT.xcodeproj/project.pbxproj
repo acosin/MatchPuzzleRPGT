@@ -97,6 +97,8 @@
 		31CD824A1BD767440009D1FB /* MapItemPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31CD82471BD767440009D1FB /* MapItemPlayer.cpp */; settings = {ASSET_TAGS = (); }; };
 		31CD824D1BD769EC0009D1FB /* MapItemEnemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31CD824B1BD769EC0009D1FB /* MapItemEnemy.cpp */; settings = {ASSET_TAGS = (); }; };
 		31CD824E1BD769EC0009D1FB /* MapItemEnemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31CD824B1BD769EC0009D1FB /* MapItemEnemy.cpp */; settings = {ASSET_TAGS = (); }; };
+		31CD82521BD77CD40009D1FB /* MapController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31CD82501BD77CD40009D1FB /* MapController.cpp */; settings = {ASSET_TAGS = (); }; };
+		31CD82531BD77CD40009D1FB /* MapController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31CD82501BD77CD40009D1FB /* MapController.cpp */; settings = {ASSET_TAGS = (); }; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
@@ -229,6 +231,8 @@
 		31CD824B1BD769EC0009D1FB /* MapItemEnemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapItemEnemy.cpp; sourceTree = "<group>"; };
 		31CD824C1BD769EC0009D1FB /* MapItemEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapItemEnemy.h; sourceTree = "<group>"; };
 		31CD824F1BD76AD50009D1FB /* EnemyStatusData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyStatusData.h; sourceTree = "<group>"; };
+		31CD82501BD77CD40009D1FB /* MapController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapController.cpp; sourceTree = "<group>"; };
+		31CD82511BD77CD40009D1FB /* MapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapController.h; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
@@ -475,6 +479,8 @@
 				31CD82401BD64C000009D1FB /* IMapItem.h */,
 				3141AEED1BD615CB001F09B6 /* MapLayer.cpp */,
 				3141AEEE1BD615CB001F09B6 /* MapLayer.h */,
+				31CD82501BD77CD40009D1FB /* MapController.cpp */,
+				31CD82511BD77CD40009D1FB /* MapController.h */,
 				3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */,
 				3141AECD1BD4B6F1001F09B6 /* GameStageController.h */,
 			);
@@ -763,6 +769,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				31122EA31BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				31CD82521BD77CD40009D1FB /* MapController.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				3188E6721BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */,
 				31CD82451BD725F00009D1FB /* MapItemBase.cpp in Sources */,
@@ -787,6 +794,7 @@
 				3141AEF01BD615CB001F09B6 /* MapLayer.cpp in Sources */,
 				31CD82461BD725F00009D1FB /* MapItemBase.cpp in Sources */,
 				3141AED41BD4B8F0001F09B6 /* Jewel.cpp in Sources */,
+				31CD82531BD77CD40009D1FB /* MapController.cpp in Sources */,
 				31122E821BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				3188E67F1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,

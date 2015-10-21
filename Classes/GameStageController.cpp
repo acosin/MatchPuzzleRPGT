@@ -8,8 +8,7 @@
 
 GameStageController::GameStageController():
 _jewelsGrid(nullptr),
-_stageData(nullptr),
-_playerItem(nullptr)
+_stageData(nullptr)
 {
     
 }
@@ -54,21 +53,13 @@ JewelsGrid* GameStageController::getJewelsGrid()
     return _jewelsGrid;
 }
 
-Vec2 GameStageController::getPlayerPos()
+
+MapLayer* GameStageController::createMapLayerFromData()
 {
-    return Vec2(_playerItem->getX(), _playerItem->getY());
+    if (_mapController == nullptr) {
+        return nullptr;
+    }
+    return _mapController->createMapLayerFromData();
 }
-
-void GameStageController::movePlayerTo(int x, int y)
-{
-    _lastPlayerX = _playerItem->getX();
-    _lastPlayerY = _playerItem->getY();
-    
-    _playerItem->setXY(x, y);
-    // TODO: update rendering
-}
-
-
-
 
 
