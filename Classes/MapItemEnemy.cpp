@@ -17,6 +17,12 @@ MapItemEnemy::MapItemEnemy(int x, int y, bool movable)
     MapItemBase::MapItemBase(x,y,movable,MapItemType::Enemy);
 }
 
+MapItemEnemy::MapItemEnemy(int x, int y, EnemyStatusData* statusData)
+{
+    MapItemEnemy::MapItemEnemy(x,y);
+    setStatusData(statusData);
+}
+
 MapItemEnemy::MapItemEnemy()
 {
     

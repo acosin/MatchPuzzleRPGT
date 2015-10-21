@@ -20,6 +20,7 @@ private:
 public:
     MapItemEnemy(int x, int y);
     MapItemEnemy(int x, int y, bool movable);
+    MapItemEnemy(int x, int y, EnemyStatusData* statusData);
     MapItemEnemy();
     
     void setStatusData(EnemyStatusData* statusData);

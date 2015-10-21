@@ -28,29 +28,26 @@ bool MapLayer::init()
     auto viewSize=Director::getInstance()->getVisibleSize();
     
     
-    
     return true;
 }
 
 bool MapLayer::initMap(const std::string &mapFilename, const std::string &playerFilename)
 {
+    
+    return initMap(mapFilename) && initPlayer(playerFilename);
+}
+
+
+bool MapLayer::initMap(const std::string &mapFilename)
+{
     _tileMap = TMXTiledMap::create(mapFilename);
+    if (_tileMap == nullptr) {
+        return false;
+    }
+    
     _background = _tileMap->getLayer("Background");
     addChild(_tileMap);
     setContentSize(_tileMap->getContentSize());
-    
-    
-    TMXObjectGroup *objects = _tileMap->getObjectGroup("Objects");
-    CCASSERT(objects!=nullptr, "'Objects' object group not found");
-    auto spawnPoint = objects->getObject("SpawnPoint");
-    CCASSERT(!spawnPoint.empty(), "SpawnPoint object not found");
-    int x = spawnPoint["x"].asInt();
-    int y = spawnPoint["y"].asInt();
-    //TODO: set by StageData in GameStageController
-    _player = Sprite::create(playerFilename);
-    _player->setPosition(x, y);
-    addChild(_player);
-    //setViewPointCenter(_player->getPosition());
     
     // handle event
     // TODO: modify later
@@ -59,16 +56,41 @@ bool MapLayer::initMap(const std::string &mapFilename, const std::string &player
     listener->onTouchEnded = CC_CALLBACK_2(MapLayer::onTouchEnded, this);
     this->_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
+    return true;
+}
+
+
+bool MapLayer::initPlayer(const std::string &playerFilename)
+{
+    TMXObjectGroup *objects = _tileMap->getObjectGroup("Objects");
+    CCASSERT(objects!=nullptr, "'Objects' object group not found");
     
+    auto spawnPoint = objects->getObject("SpawnPoint");
+    CCASSERT(!spawnPoint.empty(), "SpawnPoint object not found");
+    int x = spawnPoint["x"].asInt();
+    int y = spawnPoint["y"].asInt();
+    //TODO: set by StageData in GameStageController
+    _player = Sprite::create(playerFilename);
+    _player->setPosition(x, y);
+    addChild(_player);
     
     return true;
 }
+
 
 MapLayer* MapLayer::create(const std::string &mapFilename, const std::string &playerFilename)
 {
     MapLayer* map = MapLayer::create();
     map->initMap(mapFilename, playerFilename);
  
+    return map;
+}
+
+MapLayer* MapLayer::create(const std::string &mapFilename)
+{
+    MapLayer* map = MapLayer::create();
+    map->initMap(mapFilename);
+    
     return map;
 }
 

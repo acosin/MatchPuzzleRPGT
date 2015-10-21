@@ -16,7 +16,7 @@ private:
     TMXTiledMap* _tileMap;
     TMXLayer* _background;
     Sprite* _player;
-    
+    Vector<Sprite*> _enemies;
     
 public:
     MapLayer();
@@ -24,11 +24,13 @@ public:
     
     CREATE_FUNC(MapLayer);
     
-    static MapLayer* create(const std::string &mapFilename, const std::string &playerFilename);
+    static MapLayer* create(const std::string &mapFilename, const std::string &playerFilename); //TODO: remove later
+    static MapLayer* create(const std::string &mapFilename);
     
     virtual bool init();
-    bool initMap(const std::string &mapFilename, const std::string &playerFilename);
-    
+    bool initMap(const std::string &mapFilename, const std::string &playerFilename); //TODO: remove later
+    bool initMap(const std::string &mapFilename);
+    bool initPlayer(const std::string &playerFilename);    
     void movePlayerTo(int x, int y);
     
     Vec2 convertToPixelPos(const Vec2 &mapPos);

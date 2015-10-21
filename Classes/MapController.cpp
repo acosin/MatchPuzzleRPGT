@@ -13,6 +13,9 @@ bool MapController::initMap(StageData *stageData)
     }
     
     
+    _stageData = stageData;
+    //createEnemies();
+    createEnemiesDebug();
     
     return true;
 }
@@ -49,6 +52,49 @@ MapLayer* MapController::createMapLayerFromData()
     auto playerFilename = "Player_on_map.png"; //TODO: get from _playerItem
     auto layer = MapLayer::create(mapFilename, playerFilename);
     return layer;
+}
+
+void MapController::createEnemies()
+{
+    
+}
+
+void MapController::createEnemiesDebug()
+{
+    //TODO: should create every enemy from csv/json data later
+    EnemyStatusData* data;
+    data = new EnemyStatusData(0,    // enemyID,
+                               "element_0.png",   //iconPath,
+                               //std::string imagePath,
+                               "EnemyName_0",     //enemyName,
+                               ElementType::RED,  //type,
+                               0,    //level,
+                               10,   //hp,
+                               1     //atk
+                               );
+    _enemyItems.push_back(new MapItemEnemy(1,2,data));
+    
+    data = new EnemyStatusData(0,    // enemyID,
+                               "element_0.png",   //iconPath,
+                               //std::string imagePath,
+                               "EnemyName_0",     //enemyName,
+                               ElementType::RED,  //type,
+                               0,    //level,
+                               10,   //hp,
+                               1     //atk
+                               );
+    _enemyItems.push_back(new MapItemEnemy(2,0,data));
+    
+    data = new EnemyStatusData(0,    // enemyID,
+                               "element_0.png",   //iconPath,
+                               //std::string imagePath,
+                               "EnemyName_0",     //enemyName,
+                               ElementType::RED,  //type,
+                               0,    //level,
+                               10,   //hp,
+                               1     //atk
+                               );
+    _enemyItems.push_back(new MapItemEnemy(4,2,data));
 }
 
 

@@ -19,13 +19,16 @@ struct EnemyStatusData {
     int hp;
     int atk;
     
-    EnemyStatusData(uint32_t playerID,
-                     std::string playerIconPath,
-                     // user data
-                     std::string playerName,
-                     // growth data
-                     int playerLevel
-                     )
+    EnemyStatusData(uint32_t enemyID,
+                    // static data
+                    std::string iconPath,
+                    //std::string imagePath,
+                    std::string enemyName,
+                    ElementType type,
+                    int level,
+                    int hp,
+                    int atk
+                    )
     {
         init(enemyID,
              // static data
@@ -35,7 +38,8 @@ struct EnemyStatusData {
              type,
              level,
              hp,
-             atk);
+             atk
+             );
     }
     
     void init(uint32_t enemyID,

@@ -33,4 +33,7 @@ public:
     void movePlayerTo(int x, int y);
     
     MapLayer* createMapLayerFromData();
+private:
+    void createEnemies();
+    void createEnemiesDebug();
 };
