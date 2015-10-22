@@ -27,7 +27,7 @@ bool MapController::initMap(StageData *stageData)
     
     _stageData = stageData;
     
-    _mapLayer = createMapLayerFromData();
+    createMapLayerFromData();
     CC_ASSERT(_mapLayer != nullptr);
     
     //createEnemies();
@@ -70,8 +70,14 @@ MapLayer* MapController::createMapLayerFromData()
     //auto mapFilename = StageData::getMapTMXFilename(_stageData->_mapID); //TODO: get from _stageData
     auto playerFilename = "Player_on_map.png"; //TODO: get from _playerItem // remove
     
-    auto layer = MapLayer::create(mapFilename, playerFilename);
-    return layer;
+    //_mapLayer = MapLayer::create(mapFilename, playerFilename);
+    _mapLayer = MapLayer::create(mapFilename);
+    //createPlayerItem(2, 3, playerFilename);
+    //TODO: should get this from StageData
+    createPlayerItem(_stageData->_playerInitialX, _stageData->_playerInitialY, playerFilename);
+    //createPlayerItem(2, 2, playerFilename);
+    
+    return _mapLayer;
 }
 
 bool MapController::removeMapItem(uint32_t id)
@@ -99,9 +105,7 @@ bool MapController::removeMapItem(IMapItem* pItem)
 
 bool MapController::createPlayerItem(int x, int y, const std::string &imagePath)
 {
-    if (_mapLayer == nullptr || _playerItem == nullptr) {
-        return false;
-    }
+    CC_ASSERT(_mapLayer != nullptr);
     
     _playerItem = new MapItemPlayer(x, y, imagePath);
     auto id = _IDpool_mapItem->generateID();

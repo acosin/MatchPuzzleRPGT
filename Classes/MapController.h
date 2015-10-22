@@ -21,11 +21,11 @@ USING_NS_CC;
 class MapController
 {
 private:
-    StageData* _stageData;
-    MapLayer* _mapLayer;
+    StageData* _stageData = nullptr;
+    MapLayer* _mapLayer = nullptr;
     
-    IDPool* _IDpool_mapItem;
-    MapItemPlayer* _playerItem;
+    IDPool* _IDpool_mapItem = nullptr;
+    MapItemPlayer* _playerItem = nullptr;
     int _lastPlayerX, _lastPlayerY;
     std::map<uint32_t, MapItemEnemy*> _enemyItems;
     std::map<uint32_t, MapItemEnemy*> _mapItems;
