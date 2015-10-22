@@ -19,10 +19,11 @@ protected:
     int y;
     bool movable;
     MapItemType type;
+    std::string imagePath;
     
 public:
     MapItemBase();
-    MapItemBase(int x, int y, bool movable, MapItemType type);
+    MapItemBase(int x, int y, bool movable, MapItemType type, const std::string &path);
     ~MapItemBase();
     
     int getX() override;
@@ -34,4 +35,6 @@ public:
     void setMovable(bool flag) override;
     MapItemType getType() override;
     void setType(MapItemType type) override;
+    std::string getImagePath() override;
+    void setImagePath(const std::string &path) override;
 };

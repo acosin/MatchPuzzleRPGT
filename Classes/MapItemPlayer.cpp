@@ -7,14 +7,14 @@
 #include "MapItemPlayer.h"
 
 
-MapItemPlayer::MapItemPlayer(int x, int y)
+MapItemPlayer::MapItemPlayer(int x, int y, const std::string &imagePath)
 {
-    MapItemPlayer::MapItemPlayer(x,y,true);
+    MapItemPlayer::MapItemPlayer(x,y,true, imagePath);
 }
 
-MapItemPlayer::MapItemPlayer(int x, int y, bool movable)
+MapItemPlayer::MapItemPlayer(int x, int y, bool movable, const std::string &imagePath)
 {
-    MapItemBase::MapItemBase(x,y,movable,MapItemType::Player);
+    MapItemBase::MapItemBase(x,y,movable,MapItemType::Player, imagePath);
 }
 
 MapItemPlayer::~MapItemPlayer()

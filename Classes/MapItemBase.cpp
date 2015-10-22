@@ -14,12 +14,13 @@ movable(false)
     
 }
 
-MapItemBase::MapItemBase(int x, int y, bool mavable, MapItemType type)
+MapItemBase::MapItemBase(int x, int y, bool mavable, MapItemType type, const std::string &imagePath)
 {
     setX(x);
     setY(y);
     setMovable(movable);
     setType(type);
+    setImagePath(imagePath);
 }
 
 MapItemBase::~MapItemBase()
@@ -71,4 +72,14 @@ MapItemType MapItemBase::getType()
 void MapItemBase::setType(MapItemType type)
 {
     this->type = type;
+}
+
+std::string MapItemBase::getImagePath()
+{
+    return imagePath;
+}
+
+void MapItemBase::setImagePath(const std::string &path)
+{
+    imagePath = path;
 }

@@ -7,19 +7,20 @@
 #include "MapItemEnemy.h"
 
 
-MapItemEnemy::MapItemEnemy(int x, int y)
+MapItemEnemy::MapItemEnemy(int x, int y, const std::string &imagePath)
 {
-    MapItemEnemy::MapItemEnemy(x,y,false);
+    MapItemEnemy::MapItemEnemy(x,y,false, imagePath);
 }
 
-MapItemEnemy::MapItemEnemy(int x, int y, bool movable)
+
+MapItemEnemy::MapItemEnemy(int x, int y, bool movable, const std::string &imagePath)
 {
-    MapItemBase::MapItemBase(x,y,movable,MapItemType::Enemy);
+    MapItemBase::MapItemBase(x,y,movable,MapItemType::Enemy,imagePath);
 }
 
-MapItemEnemy::MapItemEnemy(int x, int y, EnemyStatusData* statusData)
+MapItemEnemy::MapItemEnemy(int x, int y, const std::string &imagePath, EnemyStatusData* statusData)
 {
-    MapItemEnemy::MapItemEnemy(x,y);
+    MapItemEnemy::MapItemEnemy(x,y,imagePath);
     setStatusData(statusData);
 }
 

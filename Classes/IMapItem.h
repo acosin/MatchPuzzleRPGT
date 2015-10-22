@@ -30,6 +30,8 @@ public:
     virtual void setType(MapItemType type) = 0;
     virtual bool isMovable() = 0;
     virtual void setMovable(bool flag) = 0;
+    virtual std::string getImagePath() = 0;
+    virtual void setImagePath(const std::string &path) = 0;
     
     bool atSamePosition(IMapItem* other) {
         return (getX() == other->getX() && getY() && other->getY());

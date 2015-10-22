@@ -18,8 +18,8 @@ class MapItemPlayer : public MapItemBase
 private:
     PlayerStatusData* _statusData;
 public:
-    MapItemPlayer(int x, int y);
-    MapItemPlayer(int x, int y, bool movable);
+    MapItemPlayer(int x, int y, const std::string &imagePath);
+    MapItemPlayer(int x, int y, bool movable, const std::string &imagePath);
     ~MapItemPlayer();
     
     void setStatusData(PlayerStatusData* statusData);

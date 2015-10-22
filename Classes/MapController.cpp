@@ -72,7 +72,7 @@ void MapController::createEnemiesDebug()
                                10,   //hp,
                                1     //atk
                                );
-    _enemyItems.push_back(new MapItemEnemy(1,2,data));
+    //_enemyItems.push_back(new MapItemEnemy(1,2,data));
     
     data = new EnemyStatusData(0,    // enemyID,
                                "element_0.png",   //iconPath,
@@ -83,7 +83,7 @@ void MapController::createEnemiesDebug()
                                10,   //hp,
                                1     //atk
                                );
-    _enemyItems.push_back(new MapItemEnemy(2,0,data));
+    //_enemyItems.push_back(new MapItemEnemy(2,0,data));
     
     data = new EnemyStatusData(0,    // enemyID,
                                "element_0.png",   //iconPath,
@@ -94,7 +94,7 @@ void MapController::createEnemiesDebug()
                                10,   //hp,
                                1     //atk
                                );
-    _enemyItems.push_back(new MapItemEnemy(4,2,data));
+    //_enemyItems.push_back(new MapItemEnemy(4,2,data));
 }
 
 

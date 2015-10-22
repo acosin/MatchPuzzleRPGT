@@ -18,9 +18,9 @@ class MapItemEnemy : public MapItemBase
 private:
     EnemyStatusData* _statusData;
 public:
-    MapItemEnemy(int x, int y);
-    MapItemEnemy(int x, int y, bool movable);
-    MapItemEnemy(int x, int y, EnemyStatusData* statusData);
+    MapItemEnemy(int x, int y, const std::string &imagePath);
+    MapItemEnemy(int x, int y, bool movable, const std::string &imagePath);
+    MapItemEnemy(int x, int y, const std::string &imagePath, EnemyStatusData* statusData);
     MapItemEnemy();
     
     void setStatusData(EnemyStatusData* statusData);
