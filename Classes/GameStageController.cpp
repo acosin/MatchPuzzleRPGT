@@ -43,7 +43,9 @@ bool GameStageController::initWithData(StageData *stageData)
     _stageData = stageData;
     _mapController = new MapController(stageData);
     
-    //TODO: may grid size  here!
+    CC_ASSERT(_mapController->getMapLayer() != nullptr);
+    
+    //TODO: may grid size  here!_
     _jewelsGrid = JewelsGrid::create(6, 6);
     
     return true;

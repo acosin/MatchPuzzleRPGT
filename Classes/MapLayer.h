@@ -37,6 +37,8 @@ public:
     Vec2 convertToPixelPos(const Vec2 &mapPos);
     Vec2 convertToMapPos(const Vec2 &pixelPos);
     
+    void scaleAsTileSize(Sprite* sprite);
+    
     
 private:
     void setViewPointCenter(Point position);

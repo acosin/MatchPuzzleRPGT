@@ -61,4 +61,9 @@ struct EnemyStatusData {
         this->hp = hp;
         this->atk = atk;
     }
+    
+    //TODO: modify later
+    std::string getSpriteImagePath() {
+        return iconPath;
+    }
 };

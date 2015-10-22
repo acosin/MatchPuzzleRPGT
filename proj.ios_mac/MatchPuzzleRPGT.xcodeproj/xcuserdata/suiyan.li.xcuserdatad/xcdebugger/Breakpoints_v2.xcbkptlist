@@ -714,11 +714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapLayer.cpp"
-            timestampString = "467185140.463737"
+            timestampString = "467199754.789591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
             landmarkType = "5">
          </BreakpointContent>
@@ -730,11 +730,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapLayer.cpp"
-            timestampString = "467185140.463737"
+            timestampString = "467199754.789591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
             landmarkType = "5">
          </BreakpointContent>
@@ -746,23 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapLayer.cpp"
-            timestampString = "467185140.463737"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/MapLayer.cpp"
-            timestampString = "467185140.463737"
+            timestampString = "467199754.789591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
@@ -778,7 +762,87 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapLayer.cpp"
-            timestampString = "467185140.463737"
+            timestampString = "467199754.789591"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/MapLayer.cpp"
+            timestampString = "467199754.789591"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/MapLayer.cpp"
+            timestampString = "467199754.789591"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/MapLayer.cpp"
+            timestampString = "467199754.789591"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/MapLayer.cpp"
+            timestampString = "467199754.789591"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/MapLayer.cpp"
+            timestampString = "467199754.789591"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "157"
@@ -793,13 +857,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/MapLayer.cpp"
-            timestampString = "467185140.463737"
+            filePath = "../Classes/MapController.cpp"
+            timestampString = "467193309.623143"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "MapController::createMapLayerFromData()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -809,45 +873,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../Classes/MapLayer.cpp"
-            timestampString = "467185140.463737"
+            filePath = "../Classes/GameStageScene.cpp"
+            timestampString = "467190771.297854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/MapLayer.cpp"
-            timestampString = "467185140.463737"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/MapLayer.cpp"
-            timestampString = "467185140.463737"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -858,12 +890,108 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapController.cpp"
-            timestampString = "467188749.271686"
+            timestampString = "467191770.431652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "MapController::createMapLayerFromData()"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "MapController::initMap(StageData *stageData)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/MapLayer.cpp"
+            timestampString = "467190952.033575"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "MapLayer::create(const std::string &amp;mapFilename, const std::string &amp;playerFilename)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameStageScene.cpp"
+            timestampString = "467190969.420273"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameStageController.cpp"
+            timestampString = "467191441.382679"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "GameStageController::create(StageData *stageData)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameStageController.cpp"
+            timestampString = "467191649.992146"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "GameStageController::initWithData(StageData *stageData)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/MapController.cpp"
+            timestampString = "467191739.512647"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "MapController::initMap(StageData *stageData)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/MapController.cpp"
+            timestampString = "467193309.623143"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "MapController::createPlayerItem(int x, int y, const std::string &amp;imagePath)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

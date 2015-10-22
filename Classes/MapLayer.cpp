@@ -115,6 +115,14 @@ Vec2 MapLayer::convertToMapPos(const Vec2 &pixelPos)
     return ret;
 }
 
+void MapLayer::scaleAsTileSize(Sprite* sprite)
+{
+    auto tileSize = _tileMap->getTileSize();
+    auto size = sprite->getContentSize();
+    //TODO: may need 0 divide check
+    sprite->setScale(tileSize.width/size.width, tileSize.height/size.height);
+}
+
 void MapLayer::setViewPointCenter(Point position)
 {
     auto winSize = Director::getInstance()->getWinSize();

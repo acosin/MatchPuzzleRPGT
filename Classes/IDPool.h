@@ -7,6 +7,7 @@
 #pragma once
 
 #include <set>
+#include <random>
 
 using namespace std;
 
@@ -25,7 +26,5 @@ public:
     bool exist(uint32_t id);
     
 private:
-    int randto(int n);
-    void shuffle(unsigned *x, size_t n);
-    uint32_t nrand32(int n);
+    uint32_t randomu32();
 };
