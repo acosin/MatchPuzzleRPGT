@@ -53,14 +53,6 @@ bool GameStageScene::init()
     _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
     _selectStageButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_selectStage"));
     
-    //TODO[001]: remove later
-    _mapLayer = MapLayer::create("map_00.tmx", "Player_on_map.png");
-    UIHelper::scaleToFixFather(_mapLayer, _mapLayout);
-    //UIHelper::scaleToFixFather(_mapLayout,_mapLayer);
-    //_mapLayer->setPosition(0, 0);
-    _mapLayout->addChild(_mapLayer);
-    //end TODO[001]
-    
     this->addChild(_layout);
     
     
@@ -96,10 +88,13 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     _controller = GameStageController::create(_currentStageData);
     _jewelsGrid = _controller->getJewelsGrid();
     
-    // visualize map and puzzle here
-    auto visibleSize = Director::getInstance()->getVisibleSize();
-    auto texturecache = TextureCache::getInstance();
-    
+    _mapLayer = _controller->getMapLayer();
+    //TODO[001]: remove later
+    //_mapLayer = MapLayer::create("map_00.tmx", "Player_on_map.png");
+    //end TODO[001]
+    UIHelper::scaleToFixFather(_mapLayer, _mapLayout);
+    _mapLayer->setPosition(0, 0);
+    _mapLayout->addChild(_mapLayer);    
     
     //_jewelsGrid->setAnchorPoint(Vec2(400,0.5));
     _jewelsGrid->setPosition(0, 0);

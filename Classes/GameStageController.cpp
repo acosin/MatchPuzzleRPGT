@@ -41,6 +41,7 @@ bool GameStageController::initWithoutData()
 bool GameStageController::initWithData(StageData *stageData)
 {
     _stageData = stageData;
+    _mapController = new MapController(stageData);
     
     //TODO: may grid size  here!
     _jewelsGrid = JewelsGrid::create(6, 6);
@@ -53,13 +54,8 @@ JewelsGrid* GameStageController::getJewelsGrid()
     return _jewelsGrid;
 }
 
-
-MapLayer* GameStageController::createMapLayerFromData()
+MapLayer* GameStageController::getMapLayer()
 {
-    if (_mapController == nullptr) {
-        return nullptr;
-    }
-    return _mapController->createMapLayerFromData();
+    return _mapController->getMapLayer();
 }
-
 

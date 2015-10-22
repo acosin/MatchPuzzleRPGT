@@ -29,10 +29,11 @@ private:
     std::vector<MapItemEnemy*> _enemyItems;
     std::vector<IMapItem*> _mapItems;
 public:
-    MapController();
+    MapController(StageData *stageData);
     ~MapController();
     
     bool initMap(StageData* stageData);
+    MapLayer* getMapLayer();
     
     int getPlayerX();
     int getPlayerY();

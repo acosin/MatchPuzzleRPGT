@@ -33,5 +33,5 @@ public:
     
     JewelsGrid* getJewelsGrid();
     
-    MapLayer* createMapLayerFromData();
+    MapLayer* getMapLayer();
 };

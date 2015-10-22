@@ -6,9 +6,10 @@
 
 #include "MapController.h"
 
-MapController::MapController()
+MapController::MapController(StageData *stageData)
 {
     _IDpool_mapItem = new IDPool();
+    initMap(stageData);
 }
 
 MapController::~MapController()
@@ -32,6 +33,11 @@ bool MapController::initMap(StageData *stageData)
     createEnemiesDebug();
     
     return true;
+}
+
+MapLayer* MapController::getMapLayer()
+{
+    return _mapLayer;
 }
 
 
@@ -63,7 +69,7 @@ MapLayer* MapController::createMapLayerFromData()
         return nullptr;
     }
     auto mapFilename = "map_00.tmx"; //TODO: get from _stageData
-    auto playerFilename = "Player_on_map.png"; //TODO: get from _playerItem
+    auto playerFilename = "Player_on_map.png"; //TODO: get from _playerItem // remove
     auto layer = MapLayer::create(mapFilename, playerFilename);
     return layer;
 }
