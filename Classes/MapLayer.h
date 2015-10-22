@@ -30,7 +30,8 @@ public:
     virtual bool init();
     bool initMap(const std::string &mapFilename, const std::string &playerFilename); //TODO: remove later
     bool initMap(const std::string &mapFilename);
-    bool initPlayer(const std::string &playerFilename);    
+    bool initPlayer(const std::string &playerFilename);
+    void initPlayer(Sprite* player);
     void movePlayerTo(int x, int y);
     
     Vec2 convertToPixelPos(const Vec2 &mapPos);

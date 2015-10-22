@@ -6,6 +6,17 @@
 
 #include "MapController.h"
 
+MapController::MapController()
+{
+    _IDpool_mapItem = new IDPool();
+}
+
+MapController::~MapController()
+{
+    CC_SAFE_DELETE(_IDpool_mapItem);
+    CC_SAFE_DELETE(_mapLayer);
+}
+
 bool MapController::initMap(StageData *stageData)
 {
     if (stageData == nullptr) {
@@ -14,6 +25,9 @@ bool MapController::initMap(StageData *stageData)
     
     
     _stageData = stageData;
+    
+    _mapLayer = createMapLayerFromData();
+    
     //createEnemies();
     createEnemiesDebug();
     
@@ -75,6 +89,28 @@ bool MapController::removeMapItem(IMapItem* pItem)
         return false;
     return removeMapItem(pItem->getID());
 }
+
+
+
+bool MapController::createPlayerItem(int x, int y, const std::string &imagePath)
+{
+    if (_mapLayer == nullptr || _playerItem == nullptr) {
+        return false;
+    }
+    
+    _playerItem = new MapItemPlayer(x, y, imagePath);
+    auto id = _IDpool_mapItem->generateID();
+    _playerItem->setID(id);
+    
+    auto sprite = Sprite::create(imagePath);
+    //change this to pixel coordinate
+    sprite->setPosition(_mapLayer->convertToPixelPos(Vec2(x,y)));
+    _playerItem->setSprite(sprite);
+    _mapLayer->initPlayer(sprite);
+    
+    return true;
+}
+
 
 // -- private --
 

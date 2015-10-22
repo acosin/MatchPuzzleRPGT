@@ -34,6 +34,8 @@ public:
     virtual void setMovable(bool flag) = 0;
     virtual std::string getImagePath() = 0;
     virtual void setImagePath(const std::string &path) = 0;
+    virtual Sprite* getSprite() = 0;
+    virtual void setSprite(Sprite* sprite) = 0;
     
     bool atSamePosition(IMapItem* other) {
         return (getX() == other->getX() && getY() && other->getY());

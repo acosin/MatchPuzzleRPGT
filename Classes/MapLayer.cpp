@@ -59,7 +59,7 @@ bool MapLayer::initMap(const std::string &mapFilename)
     return true;
 }
 
-
+// TODO: remove later
 bool MapLayer::initPlayer(const std::string &playerFilename)
 {
     TMXObjectGroup *objects = _tileMap->getObjectGroup("Objects");
@@ -75,6 +75,13 @@ bool MapLayer::initPlayer(const std::string &playerFilename)
     addChild(_player);
     
     return true;
+}
+
+void MapLayer::initPlayer(cocos2d::Sprite *player)
+{
+    CCASSERT(_player==nullptr, "MapLayer::initPlayer: _player != nullptr");
+    _player = player;
+    addChild(_player);
 }
 
 

@@ -93,3 +93,14 @@ void MapItemBase::setImagePath(const std::string &path)
 {
     imagePath = path;
 }
+
+
+Sprite* MapItemBase::getSprite()
+{
+    return sprite;
+}
+
+void MapItemBase::setSprite(Sprite* sprite)
+{
+    this->sprite = sprite;
+}

@@ -21,6 +21,7 @@ protected:
     bool movable;
     MapItemType type;
     std::string imagePath;
+    Sprite* sprite;
     
 public:
     MapItemBase();
@@ -40,4 +41,7 @@ public:
     void setType(MapItemType type) override;
     std::string getImagePath() override;
     void setImagePath(const std::string &path) override;
+    
+    Sprite* getSprite() override;
+    void setSprite(Sprite* sprite) override;
 };
