@@ -68,3 +68,10 @@ std::map<uint32_t, StageData*> StageData::loadStageDataFromCSV(const std::string
     
     return ret;
 }
+
+std::string StageData::getMapTMXFilename(uint32_t mapID)
+{
+    char name[100] = {0};
+    sprintf(name, "map_0%u.tmx", mapID);
+    return std::string(name);
+}

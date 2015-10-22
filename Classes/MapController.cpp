@@ -68,7 +68,8 @@ MapLayer* MapController::createMapLayerFromData()
         _playerItem == nullptr) {
         return nullptr;
     }
-    auto mapFilename = "map_00.tmx"; //TODO: get from _stageData
+    auto mapFilename = StageData::getMapTMXFilename(0); //TODO: get from _stageData
+    //auto mapFilename = StageData::getMapTMXFilename(_stageData->_mapID); //TODO: get from _stageData
     auto playerFilename = "Player_on_map.png"; //TODO: get from _playerItem // remove
     auto layer = MapLayer::create(mapFilename, playerFilename);
     return layer;

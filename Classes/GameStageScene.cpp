@@ -89,12 +89,9 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     _jewelsGrid = _controller->getJewelsGrid();
     
     _mapLayer = _controller->getMapLayer();
-    //TODO[001]: remove later
-    //_mapLayer = MapLayer::create("map_00.tmx", "Player_on_map.png");
-    //end TODO[001]
     UIHelper::scaleToFixFather(_mapLayer, _mapLayout);
     _mapLayer->setPosition(0, 0);
-    _mapLayout->addChild(_mapLayer);    
+    _mapLayout->addChild(_mapLayer);
     
     //_jewelsGrid->setAnchorPoint(Vec2(400,0.5));
     _jewelsGrid->setPosition(0, 0);

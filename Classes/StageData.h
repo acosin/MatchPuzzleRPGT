@@ -50,4 +50,6 @@ public:
     }
     
     static std::map<uint32_t, StageData*> loadStageDataFromCSV(const std::string &filename);
+    
+    static std::string getMapTMXFilename(uint32_t mapID);
 };
