@@ -28,6 +28,16 @@ MapItemBase::~MapItemBase()
     
 }
 
+uint32_t MapItemBase::getID()
+{
+    return id;
+}
+
+void MapItemBase::setID(uint32_t id)
+{
+    this->id = id;
+}
+
 int MapItemBase::getX()
 {
     return x;

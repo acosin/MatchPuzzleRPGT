@@ -15,6 +15,7 @@ USING_NS_CC;
 class MapItemBase : public IMapItem
 {
 protected:
+    uint32_t id;
     int x;
     int y;
     bool movable;
@@ -26,6 +27,8 @@ public:
     MapItemBase(int x, int y, bool movable, MapItemType type, const std::string &path);
     ~MapItemBase();
     
+    uint32_t getID() override;
+    void setID(uint32_t id) override;
     int getX() override;
     int getY() override;
     void setX(int x) override;

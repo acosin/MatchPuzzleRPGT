@@ -13,6 +13,8 @@
 #include "MapItemPlayer.h"
 #include "MapLayer.h"
 
+#include "IDPool.h"
+
 USING_NS_CC;
 
 class MapController
@@ -20,6 +22,7 @@ class MapController
 private:
     StageData* _stageData;
     
+    IDPool* _IDpool_mapItem;
     MapItemPlayer* _playerItem;
     int _lastPlayerX, _lastPlayerY;
     std::vector<MapItemEnemy*> _enemyItems;
@@ -33,6 +36,8 @@ public:
     void movePlayerTo(int x, int y);
     
     MapLayer* createMapLayerFromData();
+    
+    void removeMapItem(uint32_t id);
 private:
     void createEnemies();
     void createEnemiesDebug();
