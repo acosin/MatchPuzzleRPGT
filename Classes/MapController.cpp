@@ -71,6 +71,7 @@ MapLayer* MapController::createMapLayerFromData()
     auto mapFilename = StageData::getMapTMXFilename(0); //TODO: get from _stageData
     //auto mapFilename = StageData::getMapTMXFilename(_stageData->_mapID); //TODO: get from _stageData
     auto playerFilename = "Player_on_map.png"; //TODO: get from _playerItem // remove
+    
     auto layer = MapLayer::create(mapFilename, playerFilename);
     return layer;
 }
@@ -80,8 +81,7 @@ bool MapController::removeMapItem(uint32_t id)
     bool ret = false;
     
     if (_IDpool_mapItem->exist(id)) {
-        auto it = findMapItem(id);
-        _mapItems.erase(it);
+        _mapItems.erase(id);
         _IDpool_mapItem->removeID(id);
         ret = true;
     }
@@ -108,7 +108,6 @@ bool MapController::createPlayerItem(int x, int y, const std::string &imagePath)
     _playerItem = new MapItemPlayer(x, y, imagePath);
     auto id = _IDpool_mapItem->generateID();
     _playerItem->setID(id);
-    
     auto sprite = Sprite::create(imagePath);
     //change this to pixel coordinate
     sprite->setPosition(_mapLayer->convertToPixelPos(Vec2(x,y)));
@@ -119,26 +118,48 @@ bool MapController::createPlayerItem(int x, int y, const std::string &imagePath)
 }
 
 
+uint32_t MapController::createEnemyItem(int x, int y, const std::string &imagePath)
+{
+    uint32_t id = 0;
+    
+    if (_mapLayer == nullptr) {
+        return 0;
+    }
+    
+    auto enemy = new MapItemEnemy(x,y,imagePath);
+    id = _IDpool_mapItem->generateID();
+    enemy->setID(id);
+    auto sprite = Sprite::create(imagePath);
+    //change this to pixel coordinate
+    sprite->setPosition(_mapLayer->convertToPixelPos(Vec2(x,y)));
+    enemy->setSprite(sprite);
+    _enemyItems[id] = enemy;
+    _mapLayer->addChild(sprite);
+    
+    return id;
+}
+
 // -- private --
 
-//NOTE: not used
 
-std::vector<IMapItem*>::iterator MapController::findMapItem(uint32_t id)
+//NOTE: not used
+/*
+std::map<uint32_t, MapItemEnemy*>::iterator MapController::findMapItem(uint32_t id)
 {
-    std::vector<IMapItem*>::iterator it;
+    std::map<uint32_t, MapItemEnemy*>::iterator it;
     for (it = _mapItems.begin(); it != _mapItems.end(); it++) {
-        if ((*it)->getID() == id) {
+        if ((*it).second->getID() == id) {
             return it;
         }
     }
     return it;
 }
 
-std::vector<IMapItem*>::iterator MapController::findMapItem(IMapItem* ptr)
+std::map<uint32_t, MapItemEnemy*>::iterator MapController::findMapItem(IMapItem* ptr)
 {
     return find(_mapItems.begin(), _mapItems.end(), ptr);
 }
-
+*/
 void MapController::createEnemies()
 {
     

@@ -10,7 +10,7 @@ uint32_t IDPool::generateID()
 {
     uint32_t id = 0;
     //TODO: need to assert no dead loop
-    while (exist(id)) {
+    while (id == 0 || exist(id)) {
         id = nrand32(UINT32_MAX);
     }
     _pool.insert(id);

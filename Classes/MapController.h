@@ -7,6 +7,7 @@
 #pragma once
 
 #include "cocos2d.h"
+#include <map>
 
 #include "StageData.h"
 #include "MapItemEnemy.h"
@@ -26,8 +27,8 @@ private:
     IDPool* _IDpool_mapItem;
     MapItemPlayer* _playerItem;
     int _lastPlayerX, _lastPlayerY;
-    std::vector<MapItemEnemy*> _enemyItems;
-    std::vector<IMapItem*> _mapItems;
+    std::map<uint32_t, MapItemEnemy*> _enemyItems;
+    std::map<uint32_t, MapItemEnemy*> _mapItems;
 public:
     MapController(StageData *stageData);
     ~MapController();
@@ -45,11 +46,14 @@ public:
     bool removeMapItem(IMapItem* pItem);
     
     bool createPlayerItem(int x, int y, const std::string &imagePath);
+    //NOTE: return 0 if cannot create
+    uint32_t createEnemyItem(int x, int y, const std::string &imagePath);
     
 private:
+    /*
     std::vector<IMapItem*>::iterator findMapItem(uint32_t id);
     std::vector<IMapItem*>::iterator findMapItem(IMapItem* ptr);
-    
+    */
     void createEnemies();
     void createEnemiesDebug();
 };

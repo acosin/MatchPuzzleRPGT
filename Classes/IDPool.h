@@ -10,6 +10,9 @@
 
 using namespace std;
 
+/*
+ * NOTE: 0 not used!
+ */
 class IDPool
 {
 private:
