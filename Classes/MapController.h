@@ -37,8 +37,11 @@ public:
     
     MapLayer* createMapLayerFromData();
     
-    void removeMapItem(uint32_t id);
+    bool removeMapItem(uint32_t id);
+    bool removeMapItem(IMapItem* pItem);
 private:
+    std::vector<IMapItem*>::iterator findMapItem(uint32_t id);
+    std::vector<IMapItem*>::iterator findMapItem(IMapItem* ptr);
     void createEnemies();
     void createEnemiesDebug();
 };

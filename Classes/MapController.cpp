@@ -54,6 +54,48 @@ MapLayer* MapController::createMapLayerFromData()
     return layer;
 }
 
+bool MapController::removeMapItem(uint32_t id)
+{
+    bool ret = false;
+    
+    if (_IDpool_mapItem->exist(id)) {
+        auto it = findMapItem(id);
+        _mapItems.erase(it);
+        _IDpool_mapItem->removeID(id);
+        ret = true;
+    }
+    
+    return ret;
+}
+
+
+bool MapController::removeMapItem(IMapItem* pItem)
+{
+    if (pItem == nullptr)
+        return false;
+    return removeMapItem(pItem->getID());
+}
+
+// -- private --
+
+//NOTE: not used
+
+std::vector<IMapItem*>::iterator MapController::findMapItem(uint32_t id)
+{
+    std::vector<IMapItem*>::iterator it;
+    for (it = _mapItems.begin(); it != _mapItems.end(); it++) {
+        if ((*it)->getID() == id) {
+            return it;
+        }
+    }
+    return it;
+}
+
+std::vector<IMapItem*>::iterator MapController::findMapItem(IMapItem* ptr)
+{
+    return find(_mapItems.begin(), _mapItems.end(), ptr);
+}
+
 void MapController::createEnemies()
 {
     
