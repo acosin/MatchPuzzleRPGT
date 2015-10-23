@@ -76,6 +76,8 @@ bool GameStageScene::init()
         exit(0);
 #endif
     });
+    
+    this->scheduleUpdate();
 
     return true;
 }
@@ -146,5 +148,21 @@ void GameStageScene::LoadTexture()
 void GameStageScene::movePlayerTo(int x, int y)
 {
     
+}
+
+void GameStageScene::update(float delta)
+{
+    switch ((TagForDirection)(_stick->stickDirection)) {
+        case TagForDirection::up:
+            break;
+        case TagForDirection::down:
+            break;
+        case TagForDirection::left:
+            break;
+        case TagForDirection::right:
+            break;
+        default:
+            break;
+    }
 }
 

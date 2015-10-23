@@ -58,4 +58,6 @@ public:
     
 private:
     void movePlayerTo(int x, int y);
+    
+    virtual void update(float delta);
 };

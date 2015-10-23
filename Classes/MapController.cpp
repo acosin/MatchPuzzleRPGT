@@ -94,6 +94,18 @@ bool MapController::moveMapItemTo(uint32_t id, int x, int y)
     return ret;
 }
 
+std::vector<uint32_t> MapController::findMapItem(int x, int y)
+{
+    std::vector<uint32_t> itemIDs;
+    // TODO: may need to consider the traversal speed
+    for (auto item : _mapItems) {
+        if (item.second->getX() == x && item.second->getY() == y) {
+            itemIDs.push_back(item.second->getID());
+        }
+    }
+    return itemIDs;
+}
+
 bool MapController::removeMapItem(uint32_t id)
 {
     bool ret = false;

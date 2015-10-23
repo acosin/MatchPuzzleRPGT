@@ -8,6 +8,7 @@
 
 #include "cocos2d.h"
 #include <map>
+#include <vector>
 
 #include "StageData.h"
 #include "MapItemEnemy.h"
@@ -44,7 +45,7 @@ public:
     bool createPlayerItem(int x, int y, const std::string &imagePath);
     
     bool moveMapItemTo(uint32_t id, int x, int y);
-    
+    std::vector<uint32_t> findMapItem(int x, int y);
     bool removeMapItem(uint32_t id);
     bool removeMapItem(IMapItem* pItem);
     
