@@ -108,9 +108,9 @@ Vec2 MapLayer::convertToPixelPos(const Vec2 &mapPos)
     return ret;
 }
 
+//TODO
 Vec2 MapLayer::convertToMapPos(const Vec2 &pixelPos)
 {
-    //TODO
     Vec2 ret;
     return ret;
 }
@@ -121,6 +121,21 @@ void MapLayer::scaleAsTileSize(Sprite* sprite)
     auto size = sprite->getContentSize();
     //TODO: may need 0 divide check
     sprite->setScale(tileSize.width/size.width, tileSize.height/size.height);
+}
+
+// -- private --
+
+bool MapLayer::moveSpriteOnMap(Sprite* sprite, int x, int y)
+{
+    if (sprite == nullptr) {
+        return false;
+    }
+    
+    auto pixelPos = convertToPixelPos(Vec2(x,y));
+    //TODO: should check boundary condiiton
+    sprite->setPosition(pixelPos);
+    
+    return true;
 }
 
 void MapLayer::setViewPointCenter(Point position)
@@ -140,9 +155,17 @@ void MapLayer::setViewPointCenter(Point position)
 
 // here only do the visulaization
 // TODO: may modify or remote later (only use moveX/moveY)
-void MapLayer::movePlayerTo(int x, int y)
+bool MapLayer::movePlayerTo(int x, int y)
 {
-    //TODO
+    if (_player == nullptr) {
+        return false;
+    }
+    if(moveSpriteOnMap(_player, x, y)) {
+        return true;
+    } else {
+        //TODO: may need more process here
+        return false;
+    }
 }
 
 void MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)

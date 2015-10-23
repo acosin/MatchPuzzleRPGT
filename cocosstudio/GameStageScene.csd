@@ -85,6 +85,19 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Panel_stick" ActionTag="820179592" Tag="47" IconVisible="False" LeftMargin="469.6468" RightMargin="-29.6468" TopMargin="973.5245" BottomMargin="-37.5245" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="200.0000" Y="200.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="569.6468" Y="62.4755" />
+            <Scale ScaleX="0.3240" ScaleY="0.3255" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.8901" Y="0.0550" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

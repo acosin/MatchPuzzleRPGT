@@ -36,16 +36,18 @@ public:
     bool initMap(StageData* stageData);
     MapLayer* getMapLayer();
     
+    MapLayer* createMapLayerFromData();
+    
     int getPlayerX();
     int getPlayerY();
     void movePlayerTo(int x, int y);
+    bool createPlayerItem(int x, int y, const std::string &imagePath);
     
-    MapLayer* createMapLayerFromData();
+    bool moveMapItemTo(uint32_t id, int x, int y);
     
     bool removeMapItem(uint32_t id);
     bool removeMapItem(IMapItem* pItem);
     
-    bool createPlayerItem(int x, int y, const std::string &imagePath);
     //NOTE: return 0 if cannot create
     uint32_t createEnemyItem(int x, int y, const std::string &imagePath);
     

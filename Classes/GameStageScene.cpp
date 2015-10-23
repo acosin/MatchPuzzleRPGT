@@ -55,6 +55,12 @@ bool GameStageScene::init()
     
     this->addChild(_layout);
     
+    auto stickPanel = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_stick"));
+    auto stickpos =stickPanel->getPosition();
+    _stick = AnalogStick::createStick("stick_inner.png", "stick_outer.png", stickpos);
+    this->addChild(_stick);
+    _stick->startStick();
+    
     
     //initialize ui event listener
     _selectStageButton->addClickEventListener([](Ref* ref) {

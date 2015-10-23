@@ -24,7 +24,6 @@ bool MapController::initMap(StageData *stageData)
         return false;
     }
     
-    
     _stageData = stageData;
     
     createMapLayerFromData();
@@ -78,6 +77,21 @@ MapLayer* MapController::createMapLayerFromData()
     //createPlayerItem(2, 2, playerFilename);
     
     return _mapLayer;
+}
+
+
+bool MapController::moveMapItemTo(uint32_t id, int x, int y)
+{
+    CC_ASSERT(_IDpool_mapItem != nullptr);
+    if (!_IDpool_mapItem->exist(id)) {
+        return false;
+    }
+    
+    bool ret = false;
+    
+    
+    
+    return ret;
 }
 
 bool MapController::removeMapItem(uint32_t id)

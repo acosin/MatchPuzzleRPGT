@@ -32,7 +32,7 @@ public:
     bool initMap(const std::string &mapFilename);
     bool initPlayer(const std::string &playerFilename);
     void initPlayer(Sprite* player);
-    void movePlayerTo(int x, int y);
+    bool movePlayerTo(int x, int y);
     
     Vec2 convertToPixelPos(const Vec2 &mapPos);
     Vec2 convertToMapPos(const Vec2 &pixelPos);
@@ -41,6 +41,7 @@ public:
     
     
 private:
+    bool moveSpriteOnMap(Sprite* sprite, int x, int y);
     void setViewPointCenter(Point position);
     
     

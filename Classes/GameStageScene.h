@@ -15,6 +15,7 @@
 #include "GameStageController.h"
 #include "MapLayer.h"
 #include "UIHelper.hpp"
+#include "AnalogStick.h"
 
 USING_NS_CC;
 
@@ -25,6 +26,8 @@ protected:
     Node* _puzzleLayout;
     Node* _mapLayout;
     Node* _background;
+    
+    AnalogStick* _stick;
     
     ui::Button* _homeButton;
     ui::Button* _exitButton;
