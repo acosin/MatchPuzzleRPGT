@@ -8,19 +8,19 @@
 
 
 MapItemEnemy::MapItemEnemy(int x, int y, const std::string &imagePath)
+:MapItemEnemy(x,y,false, imagePath)
 {
-    MapItemEnemy::MapItemEnemy(x,y,false, imagePath);
 }
 
 
 MapItemEnemy::MapItemEnemy(int x, int y, bool movable, const std::string &imagePath)
+:MapItemBase(x,y,movable,MapItemType::Enemy,imagePath)
 {
-    MapItemBase::MapItemBase(x,y,movable,MapItemType::Enemy,imagePath);
 }
 
 MapItemEnemy::MapItemEnemy(int x, int y, const std::string &imagePath, EnemyStatusData* statusData)
+:MapItemEnemy(x,y,imagePath)
 {
-    MapItemEnemy::MapItemEnemy(x,y,imagePath);
     setStatusData(statusData);
 }
 

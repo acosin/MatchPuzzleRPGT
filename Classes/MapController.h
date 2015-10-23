@@ -28,7 +28,6 @@ private:
     IDPool* _IDpool_mapItem = nullptr;
     MapItemPlayer* _playerItem = nullptr;
     int _lastPlayerX, _lastPlayerY;
-    std::map<uint32_t, MapItemEnemy*> _enemyItems;
     std::map<uint32_t, MapItemEnemy*> _mapItems;
 public:
     MapController(StageData *stageData);
@@ -42,10 +41,16 @@ public:
     int getPlayerX();
     int getPlayerY();
     void movePlayerTo(int x, int y);
+    bool tryMovePlayerTo(int x, int y);
+    bool tryMovePlayerUp();
+    bool tryMovePlayerDown();
+    bool tryMovePlayerLeft();
+    bool tryMovePlayerRight();
     bool createPlayerItem(int x, int y, const std::string &imagePath);
     
     bool moveMapItemTo(uint32_t id, int x, int y);
-    std::vector<uint32_t> findMapItem(int x, int y);
+    bool tryMoveMapItemTo(uint32_t id, int x, int y);
+    std::vector<uint32_t> findMapItems(int x, int y);
     bool removeMapItem(uint32_t id);
     bool removeMapItem(IMapItem* pItem);
     

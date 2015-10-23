@@ -54,7 +54,7 @@ bool MapLayer::initMap(const std::string &mapFilename)
     auto listener = EventListenerTouchOneByOne::create();
     listener->onTouchBegan = [&](Touch *touch, Event *unused_event)->bool { return true; };
     listener->onTouchEnded = CC_CALLBACK_2(MapLayer::onTouchEnded, this);
-    this->_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+    //this->_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
     return true;
 }

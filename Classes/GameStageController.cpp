@@ -61,3 +61,25 @@ MapLayer* GameStageController::getMapLayer()
     return _mapController->getMapLayer();
 }
 
+
+bool GameStageController::tryMovePlayerUp()
+{
+    return _mapController->tryMovePlayerUp();
+}
+
+bool GameStageController::tryMovePlayerDown()
+{
+    return _mapController->tryMovePlayerDown();
+}
+
+bool GameStageController::tryMovePlayerLeft()
+{
+    return _mapController->tryMovePlayerLeft();
+}
+
+bool GameStageController::tryMovePlayerRight()
+{
+    return _mapController->tryMovePlayerRight();
+}
+
+

@@ -154,12 +154,16 @@ void GameStageScene::update(float delta)
 {
     switch ((TagForDirection)(_stick->stickDirection)) {
         case TagForDirection::up:
+            _controller->tryMovePlayerUp();
             break;
         case TagForDirection::down:
+            _controller->tryMovePlayerDown();
             break;
         case TagForDirection::left:
+            _controller->tryMovePlayerLeft();
             break;
         case TagForDirection::right:
+            _controller->tryMovePlayerRight();
             break;
         default:
             break;

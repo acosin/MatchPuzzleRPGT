@@ -34,4 +34,10 @@ public:
     JewelsGrid* getJewelsGrid();
     
     MapLayer* getMapLayer();
+    
+    bool tryMovePlayerUp();
+    bool tryMovePlayerDown();
+    bool tryMovePlayerLeft();
+    bool tryMovePlayerRight();
+
 };

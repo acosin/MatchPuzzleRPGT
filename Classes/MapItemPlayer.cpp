@@ -8,13 +8,13 @@
 
 
 MapItemPlayer::MapItemPlayer(int x, int y, const std::string &imagePath)
+:MapItemPlayer(x,y,true, imagePath)
 {
-    MapItemPlayer::MapItemPlayer(x,y,true, imagePath);
 }
 
 MapItemPlayer::MapItemPlayer(int x, int y, bool movable, const std::string &imagePath)
+:MapItemBase(x,y,movable,MapItemType::Player, imagePath)
 {
-    MapItemBase::MapItemBase(x,y,movable,MapItemType::Player, imagePath);
 }
 
 MapItemPlayer::~MapItemPlayer()

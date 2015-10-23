@@ -39,9 +39,9 @@ public:
     
     void scaleAsTileSize(Sprite* sprite);
     
+    bool moveSpriteOnMap(Sprite* sprite, int x, int y);
     
 private:
-    bool moveSpriteOnMap(Sprite* sprite, int x, int y);
     void setViewPointCenter(Point position);
     
     

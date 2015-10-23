@@ -59,6 +59,51 @@ void MapController::movePlayerTo(int x, int y)
     
     _playerItem->setXY(x, y);
     // TODO: may update rendering
+    auto sprite = _playerItem->getSprite();
+    _mapLayer->moveSpriteOnMap(sprite, x, y);
+}
+
+bool MapController::tryMovePlayerTo(int x, int y)
+{
+    CC_ASSERT(_IDpool_mapItem != nullptr);
+    if (x<0 || y<0 ||x>= _stageData->_mapWidth || y>=_stageData->_mapHeight) {
+        //CCLOG("(%d,%d) out of map", x,y);
+        return false;
+    }
+    
+    if (findMapItems(x, y).size() != 0) {
+        CCLOG("already exist item in (%d,%d)", x,y);
+        return false;
+    }
+    
+    movePlayerTo(x, y);
+    return true;
+}
+
+
+bool MapController::tryMovePlayerUp()
+{
+    auto x = _playerItem->getX();
+    auto y = _playerItem->getY();
+    return tryMovePlayerTo(x, y-1);
+}
+bool MapController::tryMovePlayerDown()
+{
+    auto x = _playerItem->getX();
+    auto y = _playerItem->getY();
+    return tryMovePlayerTo(x, y+1);
+}
+bool MapController::tryMovePlayerLeft()
+{
+    auto x = _playerItem->getX();
+    auto y = _playerItem->getY();
+    return tryMovePlayerTo(x-1, y);
+}
+bool MapController::tryMovePlayerRight()
+{
+    auto x = _playerItem->getX();
+    auto y = _playerItem->getY();
+    return tryMovePlayerTo(x+1, y);
 }
 
 
@@ -87,14 +132,28 @@ bool MapController::moveMapItemTo(uint32_t id, int x, int y)
         return false;
     }
     
-    bool ret = false;
+    auto item = _mapItems[id];
+    //TODO: may need animation
+    item->setXY(x, y);
+    auto sprite = item->getSprite();
+    _mapLayer->moveSpriteOnMap(sprite, x, y);
     
     
-    
-    return ret;
+    return true;
 }
 
-std::vector<uint32_t> MapController::findMapItem(int x, int y)
+//
+bool MapController::tryMoveMapItemTo(uint32_t id, int x, int y)
+{
+    CC_ASSERT(_IDpool_mapItem != nullptr);
+    if (findMapItems(x, y).size() != 0) {
+        CCLOG("already exist item in (%d,%d)", x,y);
+        return false;
+    }
+    return moveMapItemTo(id, x, y);
+}
+
+std::vector<uint32_t> MapController::findMapItems(int x, int y)
 {
     std::vector<uint32_t> itemIDs;
     // TODO: may need to consider the traversal speed
@@ -162,8 +221,7 @@ uint32_t MapController::createEnemyItem(int x, int y, const std::string &imagePa
     auto sprite = Sprite::create(imagePath);
     //change this to pixel coordinate
     sprite->setPosition(_mapLayer->convertToPixelPos(Vec2(x,y)));
-    enemy->setSprite(sprite);
-    _enemyItems[id] = enemy;
+    enemy->setSprite(sprite);    _mapItems[id] = enemy;
     //TODO: scale enemy item here, may remove later (image should be ideal size)
     _mapLayer->scaleAsTileSize(sprite);
     _mapLayer->addChild(sprite);
