@@ -86,6 +86,7 @@ public:
     bool isCrushing = false;
     int comboCount = 0;
     std::vector<MatchCombo*> comboes;
+    
 public:
     JewelGridStatus();
     ~JewelGridStatus();

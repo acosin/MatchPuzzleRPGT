@@ -29,11 +29,16 @@ class Jewel;
 class JewelsGrid : public Node
 {
 public:
+    static const std::string eventNameStatusChange;
+public:
     static JewelsGrid* create(int row, int col);
     bool init(int row, int col);
     
     void updateMap();
     bool isDeadMap();
+    
+    void startDispatchStatusChange();
+    void stopDispatchStatusChange();
     
 private:
     Jewel* createAJewel(int x, int y);
@@ -62,6 +67,9 @@ private:
     void onJewelsSwapingBack(float dt);
     void onJewelsCrushing(float dt);
     void onJewelsRefreshing(float dt);
+    
+    bool isDispatchStatusChange = false;
+    void dispatchEventStatusChange();
     
 public:
     int getRow() { return m_row; }

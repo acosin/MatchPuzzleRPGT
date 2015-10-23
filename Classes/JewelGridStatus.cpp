@@ -170,6 +170,7 @@ void JewelGridStatus::addCombo(MatchCombo *combo)
 //TODO
 void JewelGridStatus::clearCombo()
 {
-    
+    //TODO: need more for memory management
+    comboes.clear();
 }
 

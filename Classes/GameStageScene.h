@@ -60,4 +60,7 @@ private:
     void movePlayerTo(int x, int y);
     
     virtual void update(float delta);
+    
+    void regEventJewelGridStatusChange();
+    void onJewelGridStatusChange(Event *pEvent);
 };

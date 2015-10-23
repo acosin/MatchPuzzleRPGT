@@ -57,7 +57,7 @@ bool JewelsGrid::init(int row, int col)
     
     while (isDeadMap())
     {
-        log("dead map! need to update");
+        //log("dead map! need to update");
         updateMap();
     }
     
@@ -533,27 +533,27 @@ void JewelsGrid::onJewelsSwaping(float dt)
     {
         unschedule(schedule_selector(JewelsGrid::onJewelsSwaping));
         
-        log("swap over!");
+        //log("swap over!");
         
-        log("is it can crush?");
+        //log("is it can crush?");
         
         //check if current state can crush
         //判断是否当前状态可以消除
         if (canCrush())
         {
-            log("yes,crush!");
+            //log("yes,crush!");
             
             m_jewelSelected = nullptr;
             
             // start crushing
             //开始消除，开启消除状态捕捉函数(捕捉到消除完毕后，刷新布局)，这一轮消除正式开始
-            SimpleAudioEngine::getInstance()->playEffect("crush.ogg");
+            //SimpleAudioEngine::getInstance()->playEffect("crush.ogg");
             goCrush();
             schedule(schedule_selector(JewelsGrid::onJewelsCrushing));
         }
         else
         {
-            log("no, cant crush!");
+            //log("no, cant crush!");
             //cannot crush
             //不能消除，交换回去，开启交换返回时的捕捉函数(捕捉到消除完毕后，开启触摸接听)
             //SimpleAudioEngine::getInstance()->playEffect("swapback.ogg");
@@ -573,7 +573,7 @@ void JewelsGrid::onJewelsSwapingBack(float dt)
     {
         unschedule(schedule_selector(JewelsGrid::onJewelsSwapingBack));
         
-        log("swap back!");
+        //log("swap back!");
         
         m_jewelSelected = nullptr;
         
@@ -600,9 +600,11 @@ void JewelsGrid::onJewelsCrushing(float dt)
     //TODO: clear JewelGridStatus
     m_status->clearCombo();
     
-    log("crush over!");
-    log("begin to refresh!");
+    //log("crush over!");
+    //log("begin to refresh!");
     
+    //TODO: dispatch here for every combo now!!!!
+    dispatchEventStatusChange();
     
     //刷新宝石阵列，并开启刷新状态捕捉函数（刷新一遍结束，重新判断新阵列是否可消除）
     refreshJewelsGrid();
@@ -620,26 +622,26 @@ void JewelsGrid::onJewelsRefreshing(float dt)
     {
         unschedule(schedule_selector(JewelsGrid::onJewelsRefreshing));
         
-        log("refresh over!");
-        log("and now, is it can crush?");
+        //log("refresh over!");
+        //log("and now, is it can crush?");
         
         if (canCrush())
         {
-            log("yes, crush again!");
+            //log("yes, crush again!");
             
-            SimpleAudioEngine::getInstance()->playEffect("crush.ogg");
+            //SimpleAudioEngine::getInstance()->playEffect("crush.ogg");
             goCrush();
             schedule(schedule_selector(JewelsGrid::onJewelsCrushing));
         }
         else
         {
-            log("no, cant crush! over!");
+            //log("no, cant crush! over!");
             
             // check if isDeadMap, if it is, update
             //判断是否为死图，如果是，则执行一段文字动画，提示即将更新地图
             if (isDeadMap())
             {
-                log("cant crush any more, updating a new map!");
+                //log("cant crush any more, updating a new map!");
                 
                 auto winSize = Director::getInstance()->getWinSize();
                 auto label = Label::createWithTTF("Cant Crush Any More, Change!", "fonts/Marker Felt.ttf", 24);
@@ -673,4 +675,20 @@ void JewelsGrid::onJewelsRefreshing(float dt)
             }
         }
     }
+}
+
+void JewelsGrid::dispatchEventStatusChange()
+{
+    if (!isDispatchStatusChange)
+        return;
+    this->getEventDispatcher()->dispatchCustomEvent(JewelsGrid::eventNameStatusChange);
+}
+
+void JewelsGrid::startDispatchStatusChange()
+{
+    isDispatchStatusChange = true;
+}
+void JewelsGrid::stopDispatchStatusChange()
+{
+    isDispatchStatusChange = false;
 }

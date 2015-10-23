@@ -6,6 +6,8 @@
 
 #include "GameStageScene.h"
 
+const string JewelsGrid::eventNameStatusChange = "event_JewelGridStatusChange";
+
 GameStageScene::GameStageScene():
 _layout(nullptr),
 _puzzleLayout(nullptr),
@@ -108,6 +110,10 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     _puzzleLayout->addChild(_jewelsGrid);
     //this->addChild(_jewelsGrid);
     
+    //TODO: may register more events here
+    regEventJewelGridStatusChange();
+    _jewelsGrid->startDispatchStatusChange();
+    
     return true;
 }
 
@@ -168,5 +174,17 @@ void GameStageScene::update(float delta)
         default:
             break;
     }
+}
+
+void GameStageScene::regEventJewelGridStatusChange()
+{
+    auto listenner =EventListenerCustom::create(JewelsGrid::eventNameStatusChange,
+                                                CC_CALLBACK_1(GameStageScene::onJewelGridStatusChange, this));
+    this->getEventDispatcher()->addEventListenerWithFixedPriority(listenner, 1);
+}
+
+void GameStageScene::onJewelGridStatusChange(cocos2d::Event *pEvent)
+{
+    CCLOG("onJewelGridStatusChange");
 }
 
