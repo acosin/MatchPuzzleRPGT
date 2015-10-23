@@ -89,7 +89,7 @@ float AnalogStick::getRad(cocos2d::Vec2 pos1, cocos2d::Vec2 pos2)
     float c = sqrt(pow(x,2) + pow(y,2));
     float cosAngle = x / c;
     float rad = acos(cosAngle);
-    //注意：当触屏的位置Y坐标<摇杆的Y坐标，我们要去反值-0~-180
+    //注意：当触屏的位置Y坐标<摇杆的Y坐标，去反值-0~-180
     if (py2 < py1)
     {
         rad = -rad;
@@ -105,11 +105,12 @@ bool AnalogStick::onTouchBegan(Touch *pTouch, Event *pEvent)
 {
     auto pos = pTouch->getLocation();
     auto stick = (Sprite*)this->getChildByTag((int)TagForStickPart::tag_stick);
-    if (stick->getBoundingBox().containsPoint(pos));
-    {
+    if (stick->getBoundingBox().containsPoint(pos)) {
         isCanMove = true;
+        return true;
+    } else {
+        return false;
     }
-    return true;
 }
 
 void AnalogStick::onTouchMoved(Touch *pTouch, Event *pEvent)
@@ -155,7 +156,7 @@ void AnalogStick::onTouchEnded(Touch *pTouch, Event *pEvent)
     auto outer = (Sprite*)this->getChildByTag((int)TagForStickPart::tag_outer);
     auto stick = (Sprite*)this->getChildByTag((int)TagForStickPart::tag_stick);
     stick->stopAllActions();
-    stick->runAction(MoveTo::create(0.08f, outer->getPosition()));
+    stick->runAction(MoveTo::create(0.8f, outer->getPosition()));
     isCanMove = false;
     stickDirection = (int)TagForDirection::stay;
 }

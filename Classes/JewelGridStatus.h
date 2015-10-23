@@ -77,13 +77,14 @@ public:
     int getColCount();
     int getRowOfTypeCount(ElementType type);
     int getColOfTypeCount(ElementType type);
+    void addMatch(MatchedJewels* match);
 };
 
 class JewelGridStatus
 {
 public:
-    bool isCrushing;
-    int comboCount;
+    bool isCrushing = false;
+    int comboCount = 0;
     std::vector<MatchCombo*> comboes;
 public:
     JewelGridStatus();
@@ -93,4 +94,7 @@ public:
     int getColCount();
     int getRowOfTypeCount(ElementType type);
     int getColOfTypeCount(ElementType type);
+    
+    void addCombo(MatchCombo* combo);
+    void clearCombo();
 };

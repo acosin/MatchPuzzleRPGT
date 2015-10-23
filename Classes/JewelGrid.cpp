@@ -37,6 +37,7 @@ bool JewelsGrid::init(int row, int col)
     m_jewelSelected = nullptr;
     m_jewelSwapped = nullptr;
     
+    //TODO: may add more operation here
     m_status = new JewelGridStatus();
     
     m_JewelsBox.resize(m_row);
@@ -336,6 +337,9 @@ bool JewelsGrid::canCrush()
     Jewel *JewelBegin = nullptr; //起始遍历的宝石
     Jewel *JewelNext = nullptr; //从起始宝石开始往前遍历的宝石
     
+    //TODO: release later
+    auto matchCombo = new MatchCombo();
+    
     //traversal every col
     for (int x = 0; x < m_col; x++)
     {
@@ -355,6 +359,9 @@ bool JewelsGrid::canCrush()
             }
             if (count >= 3)
             {
+                // TODO: Update JewelGridStatus(match a col)
+                auto colMatch = MatchedJewels::createMatchCol(x, y, y+count, JewelNext->getType());
+                matchCombo->addMatch(colMatch);
                 for (int n = 0; n < count; n++)
                 {
                     auto jewel = m_JewelsBox[x][y+n];
@@ -384,6 +391,10 @@ bool JewelsGrid::canCrush()
             }
             if (count >= 3)
             {
+                // TODO: Update JewelGridStatus(match a row)
+                auto rowMatch = MatchedJewels::createMatchRow(y, x, x+count, JewelNext->getType());
+                matchCombo->addMatch(rowMatch);
+
                 for (int n = 0; n < count; n++)
                 {
                     auto jewel = m_JewelsBox[x+n][y];
@@ -402,6 +413,8 @@ bool JewelsGrid::canCrush()
     
     if (!m_crushJewelBox.empty())
     {
+        //TODO: update JeweLGridStatus by a combo
+        m_status->addCombo(matchCombo);
         return true;
     }
     else
@@ -584,6 +597,8 @@ void JewelsGrid::onJewelsCrushing(float dt)
     unschedule(schedule_selector(JewelsGrid::onJewelsCrushing));
     
     m_crushJewelBox.clear();
+    //TODO: clear JewelGridStatus
+    m_status->clearCombo();
     
     log("crush over!");
     log("begin to refresh!");

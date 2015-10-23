@@ -107,6 +107,11 @@ int MatchCombo::getColOfTypeCount(ElementType type)
     return ret;
 }
 
+void MatchCombo::addMatch(MatchedJewels* match)
+{
+    matches.push_back(match);
+}
+
 // -- JewelGridStatus --
 
 JewelGridStatus::JewelGridStatus():
@@ -156,3 +161,15 @@ int JewelGridStatus::getColOfTypeCount(ElementType type)
     }
     return ret;
 }
+
+void JewelGridStatus::addCombo(MatchCombo *combo)
+{
+    comboes.push_back(combo);
+}
+
+//TODO
+void JewelGridStatus::clearCombo()
+{
+    
+}
+

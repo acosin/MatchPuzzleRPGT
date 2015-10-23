@@ -282,7 +282,31 @@ void MapController::createEnemiesDebug()
                                1     //atk
                                );
     //createEnemyItem(1,2,data->getSpriteImagePath());
-    createEnemyItem(2,0,"element_0.png");
+    createEnemyItem(2,1,"element_0.png");
+    
+    data = new EnemyStatusData(1,    // enemyID,
+                               "element_1.png",   //iconPath,
+                               //std::string imagePath,
+                               "EnemyName_1",     //enemyName,
+                               ElementType::BLUE,  //type,
+                               0,    //level,
+                               10,   //hp,
+                               1     //atk
+                               );
+    //createEnemyItem(1,2,data->getSpriteImagePath());
+    createEnemyItem(1,0,"element_1.png");
+    
+    data = new EnemyStatusData(1,    // enemyID,
+                               "element_1.png",   //iconPath,
+                               //std::string imagePath,
+                               "EnemyName_1",     //enemyName,
+                               ElementType::BLUE,  //type,
+                               0,    //level,
+                               10,   //hp,
+                               1     //atk
+                               );
+    //createEnemyItem(1,2,data->getSpriteImagePath());
+    createEnemyItem(3,0,"element_1.png");
     
     data = new EnemyStatusData(0,    // enemyID,
                                "element_0.png",   //iconPath,
