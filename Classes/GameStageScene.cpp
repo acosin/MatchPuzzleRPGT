@@ -51,6 +51,9 @@ bool GameStageScene::init()
     _puzzleLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_puzzle"));
     _mapLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_map"));
     
+    _textXcombo = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_xCombo"));
+    _textYcombo = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_yCombo"));
+    
     _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
     _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
     _selectStageButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_selectStage"));
@@ -186,5 +189,7 @@ void GameStageScene::regEventJewelGridStatusChange()
 void GameStageScene::onJewelGridStatusChange(cocos2d::Event *pEvent)
 {
     CCLOG("onJewelGridStatusChange");
+    _textXcombo->setString(Value(_jewelsGrid->getStatusXCombo()).asString());
+    _textYcombo->setString(Value(_jewelsGrid->getStatusYCombo()).asString());
 }
 

@@ -89,5 +89,16 @@
       <ContextState
          contextName = "MapItemBase::setX(int):MapItemBase.cpp">
       </ContextState>
+      <ContextState
+         contextName = "MapController::findMapItems(int, int):MapController.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "GameStageScene::onJewelGridStatusChange(cocos2d::Event*):GameStageScene.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "_jewelsGrid-&gt;getStatusXCombo()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

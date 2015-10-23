@@ -414,7 +414,9 @@ bool JewelsGrid::canCrush()
     if (!m_crushJewelBox.empty())
     {
         //TODO: update JeweLGridStatus by a combo
-        m_status->addCombo(matchCombo);
+        if (matchCombo->getMatchedCount() > 0) {
+            m_status->addCombo(matchCombo);
+        }
         return true;
     }
     else
@@ -439,6 +441,10 @@ void JewelsGrid::goCrush()
         
         jewel->crush();
     }
+    
+    //TODO: dispatch here for every combo now!!!!
+    dispatchEventStatusChange();
+
 }
 
 void JewelsGrid::refreshJewelsGrid()
@@ -597,14 +603,10 @@ void JewelsGrid::onJewelsCrushing(float dt)
     unschedule(schedule_selector(JewelsGrid::onJewelsCrushing));
     
     m_crushJewelBox.clear();
-    //TODO: clear JewelGridStatus
-    m_status->clearCombo();
     
     //log("crush over!");
     //log("begin to refresh!");
     
-    //TODO: dispatch here for every combo now!!!!
-    dispatchEventStatusChange();
     
     //刷新宝石阵列，并开启刷新状态捕捉函数（刷新一遍结束，重新判断新阵列是否可消除）
     refreshJewelsGrid();
@@ -670,6 +672,9 @@ void JewelsGrid::onJewelsRefreshing(float dt)
             else
             {
                 // if not a dead map
+                
+                //TODO: clear JewelGridStatus
+                m_status->clearCombo();
                 //如果不是死图，那么就直接开启触摸监听，等待下一轮的交互操作
                 _eventDispatcher->resumeEventListenersForTarget(this);
             }
@@ -692,3 +697,22 @@ void JewelsGrid::stopDispatchStatusChange()
 {
     isDispatchStatusChange = false;
 }
+
+int JewelsGrid::getStatusYCombo()
+{
+    if (!m_status) {
+        return -1;
+    } else {
+        return m_status->getRowCount();
+    }
+}
+
+int JewelsGrid::getStatusXCombo()
+{
+    if (!m_status) {
+        return -1;
+    } else {
+        return m_status->getColCount();
+    }
+}
+

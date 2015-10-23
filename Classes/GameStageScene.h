@@ -33,6 +33,9 @@ protected:
     ui::Button* _exitButton;
     ui::Button* _selectStageButton;
     
+    ui::Text* _textXcombo;
+    ui::Text* _textYcombo;
+    
     uint32_t _stageID;
     StageData* _currentStageData;
     StageScoreRecord* _currentStageScore;

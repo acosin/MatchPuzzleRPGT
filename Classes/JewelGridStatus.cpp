@@ -112,6 +112,11 @@ void MatchCombo::addMatch(MatchedJewels* match)
     matches.push_back(match);
 }
 
+int MatchCombo::getMatchedCount()
+{
+    return (int)matches.size();
+}
+
 // -- JewelGridStatus --
 
 JewelGridStatus::JewelGridStatus():

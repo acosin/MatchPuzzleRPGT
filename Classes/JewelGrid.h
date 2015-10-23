@@ -40,6 +40,10 @@ public:
     void startDispatchStatusChange();
     void stopDispatchStatusChange();
     
+    int getStatusXCombo();
+    int getStatusYCombo();
+    
+    
 private:
     Jewel* createAJewel(int x, int y);
     bool isJewelLegal(Jewel* jewel, int x, int y); //if match 3,illegal

@@ -6,13 +6,13 @@
       <ObjectData Name="Scene" Tag="32" ctype="GameNodeObjectData">
         <Size X="640.0000" Y="1136.0000" />
         <Children>
-          <AbstractNodeData Name="ImageView_background" ActionTag="1917417479" Tag="41" IconVisible="False" LeftMargin="-5.6661" RightMargin="5.6661" TopMargin="-4.5159" BottomMargin="4.5159" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="ImageView_background" ActionTag="1917417479" Tag="41" IconVisible="False" LeftMargin="-8.7535" RightMargin="8.7535" TopMargin="-4.5159" BottomMargin="4.5159" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
             <Size X="640.0000" Y="1136.0000" />
             <AnchorPoint />
-            <Position X="-5.6661" Y="4.5159" />
+            <Position X="-8.7535" Y="4.5159" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="-0.0089" Y="0.0040" />
+            <PrePosition X="-0.0137" Y="0.0040" />
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
           </AbstractNodeData>
@@ -46,7 +46,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_selectStage" ActionTag="687470122" Tag="44" IconVisible="False" LeftMargin="35.9930" RightMargin="304.0070" TopMargin="12.9927" BottomMargin="1043.0073" TouchEnable="True" FontSize="14" ButtonText="Select Stage Again" Scale9Width="1" Scale9Height="1" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_selectStage" ActionTag="687470122" Tag="44" IconVisible="False" LeftMargin="35.9930" RightMargin="304.0070" TopMargin="12.9927" BottomMargin="1043.0073" TouchEnable="True" FontSize="14" ButtonText="Select Stage Again" Scale9Width="118" Scale9Height="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="300.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="185.9930" Y="1083.0073" />
@@ -62,7 +62,7 @@
           <AbstractNodeData Name="Panel_puzzle" ActionTag="2051755324" Alpha="119" Tag="45" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="70.0000" RightMargin="70.0000" TopMargin="571.1625" BottomMargin="64.8375" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="500.0000" Y="500.0000" />
             <AnchorPoint ScaleX="0.5000" />
-            <Position X="320.0000" Y="64.8375" />
+            <Position X="320.0000" Y="64.8656" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="30" G="144" B="255" />
             <PrePosition X="0.5000" Y="0.0571" />
@@ -72,10 +72,10 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_map" ActionTag="-800175265" Alpha="0" Tag="46" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="64.5607" RightMargin="75.4393" TopMargin="3.7859" BottomMargin="632.2141" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_map" ActionTag="-800175265" Alpha="0" Tag="46" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="64.5602" RightMargin="75.4398" TopMargin="3.8159" BottomMargin="632.1841" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="500.0000" Y="500.0000" />
             <AnchorPoint ScaleX="0.5000" />
-            <Position X="314.5607" Y="632.2141" />
+            <Position X="314.5602" Y="632.1841" />
             <Scale ScaleX="1.0000" ScaleY="0.6418" />
             <CColor A="255" R="30" G="144" B="255" />
             <PrePosition X="0.4915" Y="0.5565" />
@@ -97,6 +97,28 @@
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_yCombo" ActionTag="1807653780" Tag="53" IconVisible="False" LeftMargin="320.4877" RightMargin="293.5123" TopMargin="513.6975" BottomMargin="568.3025" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="26.0000" Y="54.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="333.4877" Y="595.3025" />
+            <Scale ScaleX="3.2951" ScaleY="2.6200" />
+            <CColor A="255" R="30" G="144" B="255" />
+            <PrePosition X="0.5211" Y="0.5240" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_xCombo" ActionTag="1726260655" Tag="13" IconVisible="False" LeftMargin="21.5310" RightMargin="592.4690" TopMargin="729.9247" BottomMargin="352.0753" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="26.0000" Y="54.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="34.5310" Y="379.0753" />
+            <Scale ScaleX="3.2951" ScaleY="2.6200" />
+            <CColor A="255" R="30" G="144" B="255" />
+            <PrePosition X="0.0540" Y="0.3337" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

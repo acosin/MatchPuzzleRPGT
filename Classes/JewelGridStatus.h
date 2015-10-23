@@ -78,6 +78,7 @@ public:
     int getRowOfTypeCount(ElementType type);
     int getColOfTypeCount(ElementType type);
     void addMatch(MatchedJewels* match);
+    int getMatchedCount();
 };
 
 class JewelGridStatus
