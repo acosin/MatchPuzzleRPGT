@@ -19,6 +19,8 @@
 
 USING_NS_CC;
 
+#define DELAY_PLAYER_MOVE 0.2
+
 class GameStageScene : public Layer
 {
 protected:
@@ -60,12 +62,15 @@ public:
     
     static Scene *createScene(StageDataManager* stageManager, uint32_t stageID);
 private:
-    void movePlayerTo(int x, int y);
     
     virtual void update(float delta);
     
     void regEventJewelGridStatusChange();
     void removeEventJewelGridStatusChange();
     void onJewelGridStatusChange(EventCustom* pEvent);
-
+    
+    void tryMovePlayerUp(float delay);
+    void tryMovePlayerDown(float delay);
+    void tryMovePlayerLeft(float delay);
+    void tryMovePlayerRight(float delay);
 };

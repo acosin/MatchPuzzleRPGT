@@ -153,25 +153,21 @@ void GameStageScene::LoadTexture()
     
 }
 
-void GameStageScene::movePlayerTo(int x, int y)
-{
-    
-}
-
 void GameStageScene::update(float delta)
 {
+    //TODO: may change to use Action or animation here
     switch ((TagForDirection)(_stick->stickDirection)) {
         case TagForDirection::up:
-            _controller->tryMovePlayerUp();
+            scheduleOnce(schedule_selector(GameStageScene::tryMovePlayerUp), DELAY_PLAYER_MOVE);
             break;
         case TagForDirection::down:
-            _controller->tryMovePlayerDown();
+            scheduleOnce(schedule_selector(GameStageScene::tryMovePlayerDown), DELAY_PLAYER_MOVE);
             break;
         case TagForDirection::left:
-            _controller->tryMovePlayerLeft();
+            scheduleOnce(schedule_selector(GameStageScene::tryMovePlayerLeft), DELAY_PLAYER_MOVE);
             break;
         case TagForDirection::right:
-            _controller->tryMovePlayerRight();
+            scheduleOnce(schedule_selector(GameStageScene::tryMovePlayerRight), DELAY_PLAYER_MOVE);
             break;
         default:
             break;
@@ -207,3 +203,22 @@ void GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)
     _controller->DamageEnemy();
 }
 
+void GameStageScene::tryMovePlayerUp(float delay)
+{
+    _controller->tryMovePlayerUp();
+}
+
+void GameStageScene::tryMovePlayerDown(float delay)
+{
+    _controller->tryMovePlayerDown();
+}
+
+void GameStageScene::tryMovePlayerLeft(float delay)
+{
+    _controller->tryMovePlayerLeft();
+}
+
+void GameStageScene::tryMovePlayerRight(float delay)
+{
+    _controller->tryMovePlayerRight();
+}
