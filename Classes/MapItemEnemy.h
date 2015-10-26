@@ -17,6 +17,7 @@ class MapItemEnemy : public MapItemBase
 {
 private:
     EnemyStatusData* _statusData;
+    int _currentHP;
 public:
     MapItemEnemy(int x, int y, const std::string &imagePath);
     MapItemEnemy(int x, int y, bool movable, const std::string &imagePath);
@@ -24,4 +25,8 @@ public:
     MapItemEnemy();
     
     void setStatusData(EnemyStatusData* statusData);
+    
+    int getCurrentHP();
+    //TODO: implement damage strategy in GameStageController?
+    int getDamaged(int damange);
 };

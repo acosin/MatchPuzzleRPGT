@@ -31,5 +31,23 @@ MapItemEnemy::MapItemEnemy()
 
 void MapItemEnemy::setStatusData(EnemyStatusData *statusData)
 {
+    CC_ASSERT(statusData != nullptr);
     _statusData = statusData;
+    _currentHP = _statusData->hp;
+}
+
+int MapItemEnemy::getCurrentHP()
+{
+    return _currentHP;
+}
+
+int MapItemEnemy::getDamaged(int damange)
+{
+    CC_ASSERT(damange>=0);
+    int res = _currentHP - damange;
+    if (res <0) {
+        res = 0;
+    }
+    _currentHP = res;
+    return _currentHP;
 }
