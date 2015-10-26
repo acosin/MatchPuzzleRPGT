@@ -17,7 +17,6 @@ USING_NS_CC;
 class GameStageController
 {
 private:
-    JewelsGrid* _jewelsGrid;
     StageData* _stageData;
     // map logic control
     MapController* _mapController;
@@ -39,5 +38,8 @@ public:
     bool tryMovePlayerDown();
     bool tryMovePlayerLeft();
     bool tryMovePlayerRight();
-
+    
+    void DamageEnemy();
+public:
+    JewelsGrid* _jewelsGrid;
 };

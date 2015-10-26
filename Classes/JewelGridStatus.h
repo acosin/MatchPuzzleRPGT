@@ -36,7 +36,7 @@ public:
     
     bool operator<(const JewelInfo& rhs) const
     {
-        return (x < rhs.x && y < rhs.y);
+        return (x < rhs.x || y < rhs.y);
     }
     
     static JewelInfo* createJewelInfo(Jewel* jewel)
@@ -57,6 +57,7 @@ public:
     std::set<int> rows;
     std::set<int> cols;
 public:
+    MatchedJewels();
     static MatchedJewels* createMatchRow(int row, int startCol, int endCol, ElementType type);
     static MatchedJewels* createMatchCol(int col, int startRow, int endRow, ElementType type);
     

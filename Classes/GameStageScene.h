@@ -33,15 +33,12 @@ protected:
     ui::Button* _exitButton;
     ui::Button* _selectStageButton;
     
-    ui::Text* _textXcombo;
-    ui::Text* _textYcombo;
     
     uint32_t _stageID;
     StageData* _currentStageData;
     StageScoreRecord* _currentStageScore;
     StageDataManager* _stageManager;
     GameStageController* _controller;
-    JewelsGrid* _jewelsGrid;
     
     MapLayer* _mapLayer;
     
@@ -49,6 +46,10 @@ protected:
     
     int _texture_num = 0;
     void LoadTexture();
+public:
+    ui::Text* _textXcombo;
+    ui::Text* _textYcombo;
+    JewelsGrid* _jewelsGrid;
     
 public:
     GameStageScene();
@@ -58,12 +59,13 @@ public:
     virtual bool init();
     
     static Scene *createScene(StageDataManager* stageManager, uint32_t stageID);
-    
 private:
     void movePlayerTo(int x, int y);
     
     virtual void update(float delta);
     
     void regEventJewelGridStatusChange();
-    void onJewelGridStatusChange(Event *pEvent);
+    void removeEventJewelGridStatusChange();
+    void onJewelGridStatusChange(EventCustom* pEvent);
+
 };

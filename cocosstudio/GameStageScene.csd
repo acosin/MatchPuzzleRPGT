@@ -109,11 +109,11 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_xCombo" ActionTag="1726260655" Tag="13" IconVisible="False" LeftMargin="21.5310" RightMargin="592.4690" TopMargin="729.9247" BottomMargin="352.0753" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_xCombo" ActionTag="1726260655" Tag="13" IconVisible="False" LeftMargin="21.5311" RightMargin="592.4689" TopMargin="729.9247" BottomMargin="352.0753" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="26.0000" Y="54.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="34.5310" Y="379.0753" />
-            <Scale ScaleX="3.2951" ScaleY="2.6200" />
+            <Position X="34.5311" Y="379.0753" />
+            <Scale ScaleX="2.2735" ScaleY="1.8822" />
             <CColor A="255" R="30" G="144" B="255" />
             <PrePosition X="0.0540" Y="0.3337" />
             <PreSize X="0.0000" Y="0.0000" />

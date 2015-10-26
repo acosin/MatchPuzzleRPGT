@@ -91,4 +91,5 @@ private:
     Vector<Jewel*> m_newJewelBox;
     
     JewelGridStatus* m_status;
+    vector<MatchCombo*> tempComboes;
 };

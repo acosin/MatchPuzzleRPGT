@@ -6,6 +6,14 @@
 
 #include "JewelGridStatus.h"
 
+MatchedJewels::MatchedJewels() :
+jewelset(),
+rows(),
+cols()
+{
+    
+}
+
 //NOTE: not check >0 here, check startCol <= endCol
 MatchedJewels* MatchedJewels::createMatchRow(int row, int startCol, int endCol, ElementType type)
 {
@@ -35,6 +43,7 @@ void MatchedJewels::addMatchRowIgnoreDuplication(int row, int startCol, int endC
     
     for (int i = startCol; i <= endCol; i++) {
         jewelset.insert(JewelInfo(i, row, type));
+        cols.insert(i);
     }
     rows.insert(row);
 }
@@ -46,6 +55,7 @@ void MatchedJewels::addMatchColIgnoreDuplication(int col, int startRow, int endR
     
     for (int i = startRow; i <= endRow; i++) {
         jewelset.insert(JewelInfo(col, i, type));
+        rows.insert(i);
     }
     cols.insert(col);
 }
@@ -121,9 +131,10 @@ int MatchCombo::getMatchedCount()
 
 JewelGridStatus::JewelGridStatus():
 isCrushing(false),
-comboCount(0)
+comboCount(0),
+comboes()
 {
-    
+    comboes.clear();
 }
 
 JewelGridStatus::~JewelGridStatus()

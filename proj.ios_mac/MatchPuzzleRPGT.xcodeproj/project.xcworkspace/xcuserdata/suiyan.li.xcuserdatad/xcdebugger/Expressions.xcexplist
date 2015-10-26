@@ -3,34 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "MapController::createMapLayerFromData():MapController.cpp">
-      </ContextState>
-      <ContextState
-         contextName = "StatusDataManager::loadUnitOfPlayerRecordsFromCSV(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):StatusDataManager.cpp">
-         <PersistentStrings>
-            <PersistentString
-               value = "csv[0][5]">
-            </PersistentString>
-            <PersistentString
-               value = "csv.getRowCount()">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "StageDataManager::initWithData(std::__1::map&lt;unsigned int, StageData*, std::__1::less&lt;unsigned int&gt;, std::__1::allocator&lt;std::__1::pair&lt;unsigned int const, StageData*&gt; &gt; &gt;, std::__1::map&lt;unsigned int, StageScoreRecord*, std::__1::less&lt;unsigned int&gt;, std::__1::allocator&lt;std::__1::pair&lt;unsigned int const, StageScoreRecord*&gt; &gt; &gt;):StageDataManager.cpp">
-         <PersistentStrings>
-            <PersistentString
-               value = "mktime(scoreRecord[0].second._bestTimestamp)">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "Jewel::init(ElementType, int, int):Jewel.cpp">
-      </ContextState>
-      <ContextState
-         contextName = "GameStageScene::initData(StageDataManager*, unsigned int):GameStageScene.cpp">
-      </ContextState>
-      <ContextState
          contextName = "StageData::loadStageDataFromCSV(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):StageData.cpp">
          <PersistentStrings>
             <PersistentString
@@ -45,15 +17,109 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MapLayer::onTouchEnded(cocos2d::Touch*, cocos2d::Event*):MapLayer.cpp">
+         contextName = "CsvParser::Csv::Parse(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):CsvParser.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "GameStageScene::onJewelGridStatusChange(cocos2d::EventCustom*):GameStageScene.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "_tileMap-&gt;getMapSize().width">
+               value = "pEvent">
+            </PersistentString>
+            <PersistentString
+               value = "pEvent-&gt;getCurrentTarget()">
+            </PersistentString>
+            <PersistentString
+               value = "this-&gt;_textYcombo">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "GameStageScene::initData(StageDataManager*, unsigned int):GameStageScene.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "JewelsGrid::dispatchEventStatusChange():JewelGrid.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "m_status-&gt;getRowCount()">
+            </PersistentString>
+            <PersistentString
+               value = "m_status-&gt;getColCount()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MapController::tryMovePlayerUp():MapController.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "GameStageController::getJewelsGrid():GameStageController.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "GameStageScene::regEventJewelGridStatusChange()::$_3::operator()(cocos2d::EventCustom*) const:GameStageScene.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "GameStageScene::onJewelGridStatusChange(cocos2d::Event*):GameStageScene.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "_jewelsGrid">
+            </PersistentString>
+            <PersistentString
+               value = "this-&gt;_textXcombo">
+            </PersistentString>
+            <PersistentString
+               value = "_textXcombo">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "StatusDataManager::loadUnitOfPlayerRecordsFromCSV(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):StatusDataManager.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "csv[0][5]">
+            </PersistentString>
+            <PersistentString
+               value = "csv.getRowCount()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MapItemPlayer::MapItemPlayer(int, int, bool, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):MapItemPlayer.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "JewelsGrid::init(int, int):JewelGrid.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "StageDataManager::initWithData(std::__1::map&lt;unsigned int, StageData*, std::__1::less&lt;unsigned int&gt;, std::__1::allocator&lt;std::__1::pair&lt;unsigned int const, StageData*&gt; &gt; &gt;, std::__1::map&lt;unsigned int, StageScoreRecord*, std::__1::less&lt;unsigned int&gt;, std::__1::allocator&lt;std::__1::pair&lt;unsigned int const, StageScoreRecord*&gt; &gt; &gt;):StageDataManager.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "mktime(scoreRecord[0].second._bestTimestamp)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JewelsGrid::canCrush():JewelGrid.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "JewelBegin-&gt;getType()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JewelsGrid::goCrush():JewelGrid.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "MapController::createMapLayerFromData():MapController.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "GameStageScene::init():GameStageScene.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Jewel::init(ElementType, int, int):Jewel.cpp">
+      </ContextState>
+      <ContextState
          contextName = "MapItemBase::MapItemBase(int, int, bool, MapItemType, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):MapItemBase.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "MapController::createPlayerItem(int, int, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):MapController.cpp">
       </ContextState>
       <ContextState
          contextName = "MapController::tryMovePlayerTo(int, int):MapController.cpp">
@@ -64,18 +130,6 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GameStageScene::init():GameStageScene.cpp">
-      </ContextState>
-      <ContextState
-         contextName = "MapController::createPlayerItem(int, int, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):MapController.cpp">
-      </ContextState>
-      <ContextState
-         contextName = "CsvParser::Csv::Parse(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):CsvParser.cpp">
-      </ContextState>
-      <ContextState
-         contextName = "MapController::tryMovePlayerUp():MapController.cpp">
-      </ContextState>
-      <ContextState
          contextName = "Layer_PlayerStatus::createItem(PlayerStatusData*):Layer_PlayerStatus.hpp">
          <PersistentStrings>
             <PersistentString
@@ -84,19 +138,33 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "MapItemPlayer::MapItemPlayer(int, int, bool, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):MapItemPlayer.cpp">
+         contextName = "MapController::findMapItems(int, int):MapController.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "MapLayer::onTouchEnded(cocos2d::Touch*, cocos2d::Event*):MapLayer.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "_tileMap-&gt;getMapSize().width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "JewelGridStatus::getColCount():JewelGridStatus.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "cocos2d::ui::Text::setString(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):(null)">
+      </ContextState>
+      <ContextState
+         contextName = "MatchedJewels::getColCount():JewelGridStatus.cpp">
       </ContextState>
       <ContextState
          contextName = "MapItemBase::setX(int):MapItemBase.cpp">
       </ContextState>
       <ContextState
-         contextName = "MapController::findMapItems(int, int):MapController.cpp">
-      </ContextState>
-      <ContextState
-         contextName = "GameStageScene::onJewelGridStatusChange(cocos2d::Event*):GameStageScene.cpp">
+         contextName = "JewelsGrid::getStatusXCombo():JewelGrid.cpp">
          <PersistentStrings>
             <PersistentString
-               value = "_jewelsGrid-&gt;getStatusXCombo()">
+               value = "m_status-&gt;getColCount()">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

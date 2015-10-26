@@ -29,7 +29,7 @@ _mapLayer(nullptr)
 
 GameStageScene::~GameStageScene()
 {
-    
+    removeEventJewelGridStatusChange();
 }
 
 bool GameStageScene::init()
@@ -129,7 +129,6 @@ Scene* GameStageScene::createScene(StageDataManager* stageManager, uint32_t stag
     
     auto scene = Scene::create();
     scene->addChild(layer);
-    
     return scene;
 }
 
@@ -183,13 +182,28 @@ void GameStageScene::regEventJewelGridStatusChange()
 {
     auto listenner =EventListenerCustom::create(JewelsGrid::eventNameStatusChange,
                                                 CC_CALLBACK_1(GameStageScene::onJewelGridStatusChange, this));
-    this->getEventDispatcher()->addEventListenerWithFixedPriority(listenner, 1);
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->addEventListenerWithFixedPriority(listenner, 100);
 }
 
-void GameStageScene::onJewelGridStatusChange(cocos2d::Event *pEvent)
+void GameStageScene::removeEventJewelGridStatusChange()
 {
+    getEventDispatcher()->removeCustomEventListeners(JewelsGrid::eventNameStatusChange);
+}
+
+void GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)
+{
+    //GameStageScene* target = (GameStageScene*)pEvent->getCurrentTarget();
     CCLOG("onJewelGridStatusChange");
-    _textXcombo->setString(Value(_jewelsGrid->getStatusXCombo()).asString());
-    _textYcombo->setString(Value(_jewelsGrid->getStatusYCombo()).asString());
+    auto str = Value(this->_jewelsGrid->getStatusXCombo()).asString();
+    /*
+    if (typeid(_textXcombo) != typeid(ui::Text*)) {
+        log("textXcombo null");
+    }*/
+    this->_textXcombo->setString(str);
+    str = Value(this->_jewelsGrid->getStatusYCombo()).asString();
+    this->_textYcombo->setString(str);
+    
+    _controller->DamageEnemy();
 }
 

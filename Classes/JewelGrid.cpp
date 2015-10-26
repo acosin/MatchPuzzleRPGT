@@ -148,6 +148,7 @@ bool JewelsGrid::isDeadMap()
     //canCrush would store jewels that can be crushed, for we just simulate here, clear operation is need
     //canCrush会存储能消除的宝石进去，由于是模拟交换，所以还要清空
     m_crushJewelBox.clear();
+    tempComboes.clear();
     
     return isDeadMap;
 }
@@ -360,7 +361,7 @@ bool JewelsGrid::canCrush()
             if (count >= 3)
             {
                 // TODO: Update JewelGridStatus(match a col)
-                auto colMatch = MatchedJewels::createMatchCol(x, y, y+count, JewelNext->getType());
+                auto colMatch = MatchedJewels::createMatchCol(x, y, y+count-1, JewelNext->getType());
                 matchCombo->addMatch(colMatch);
                 for (int n = 0; n < count; n++)
                 {
@@ -392,7 +393,7 @@ bool JewelsGrid::canCrush()
             if (count >= 3)
             {
                 // TODO: Update JewelGridStatus(match a row)
-                auto rowMatch = MatchedJewels::createMatchRow(y, x, x+count, JewelNext->getType());
+                auto rowMatch = MatchedJewels::createMatchRow(y, x, x+count-1, JewelNext->getType());
                 matchCombo->addMatch(rowMatch);
 
                 for (int n = 0; n < count; n++)
@@ -413,9 +414,8 @@ bool JewelsGrid::canCrush()
     
     if (!m_crushJewelBox.empty())
     {
-        //TODO: update JeweLGridStatus by a combo
         if (matchCombo->getMatchedCount() > 0) {
-            m_status->addCombo(matchCombo);
+            tempComboes.push_back(matchCombo);
         }
         return true;
     }
@@ -427,6 +427,12 @@ bool JewelsGrid::canCrush()
 
 void JewelsGrid::goCrush()
 {
+    for (auto combo : tempComboes)
+    {
+        m_status->addCombo(combo);
+    }
+    tempComboes.clear();
+    
     for (auto jewel : m_crushJewelBox)
     {
         //generate new jewel with random type, initial pos is above the top row
@@ -686,7 +692,8 @@ void JewelsGrid::dispatchEventStatusChange()
 {
     if (!isDispatchStatusChange)
         return;
-    this->getEventDispatcher()->dispatchCustomEvent(JewelsGrid::eventNameStatusChange);
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->dispatchCustomEvent(JewelsGrid::eventNameStatusChange);
 }
 
 void JewelsGrid::startDispatchStatusChange()

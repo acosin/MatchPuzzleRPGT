@@ -53,6 +53,9 @@ bool GameStageController::initWithData(StageData *stageData)
 
 JewelsGrid* GameStageController::getJewelsGrid()
 {
+    if (!_jewelsGrid) {
+        _jewelsGrid = JewelsGrid::create(6, 6);
+    }
     return _jewelsGrid;
 }
 
@@ -82,4 +85,10 @@ bool GameStageController::tryMovePlayerRight()
     return _mapController->tryMovePlayerRight();
 }
 
+void GameStageController::DamageEnemy()
+{
+    int damageX = _jewelsGrid->getStatusXCombo();
+    int damageY = _jewelsGrid->getStatusYCombo();
+    CCLOG("dmageEnemy: x(%d) y(%d)", damageX, damageY);
+}
 
