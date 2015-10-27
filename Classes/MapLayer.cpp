@@ -115,16 +115,30 @@ Vec2 MapLayer::convertToMapPos(const Vec2 &pixelPos)
     return ret;
 }
 
-void MapLayer::scaleAsTileSize(Sprite* sprite)
+void MapLayer::scaleAsTileSize(Node* node)
 {
     auto tileSize = _tileMap->getTileSize();
-    auto size = sprite->getContentSize();
+    auto size = node->getContentSize();
     //TODO: may need 0 divide check
-    sprite->setScale(tileSize.width/size.width, tileSize.height/size.height);
+    node->setScale(tileSize.width/size.width, tileSize.height/size.height);
 }
 
 // -- private --
 
+bool MapLayer::moveNodeOnMap(Node* node, int x, int y)
+{
+    if (node == nullptr) {
+        return false;
+    }
+    
+    auto pixelPos = convertToPixelPos(Vec2(x,y));
+    //TODO: should check boundary condiiton
+    node->setPosition(pixelPos);
+    
+    return true;
+}
+
+/*
 bool MapLayer::moveSpriteOnMap(Sprite* sprite, int x, int y)
 {
     if (sprite == nullptr) {
@@ -137,6 +151,7 @@ bool MapLayer::moveSpriteOnMap(Sprite* sprite, int x, int y)
     
     return true;
 }
+*/
 
 void MapLayer::setViewPointCenter(Point position)
 {
@@ -160,7 +175,7 @@ bool MapLayer::movePlayerTo(int x, int y)
     if (_player == nullptr) {
         return false;
     }
-    if(moveSpriteOnMap(_player, x, y)) {
+    if(moveNodeOnMap(_player, x, y)) {
         return true;
     } else {
         //TODO: may need more process here

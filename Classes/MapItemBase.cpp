@@ -94,7 +94,7 @@ void MapItemBase::setImagePath(const std::string &path)
     imagePath = path;
 }
 
-
+/*
 Sprite* MapItemBase::getSprite()
 {
     return sprite;
@@ -103,4 +103,15 @@ Sprite* MapItemBase::getSprite()
 void MapItemBase::setSprite(Sprite* sprite)
 {
     this->sprite = sprite;
+}
+*/
+
+Node* MapItemBase::getNode()
+{
+    return node;
+}
+
+void MapItemBase::setNode(cocos2d::Node *node)
+{
+    this->node = node;
 }

@@ -10,6 +10,7 @@
 
 #include "MapItemBase.h"
 #include "EnemyStatusData.h"
+#include "EnemyNode.h"
 
 USING_NS_CC;
 
@@ -29,4 +30,5 @@ public:
     int getCurrentHP();
     //TODO: implement damage strategy in GameStageController?
     int getDamaged(int damange);
+    bool isDead();
 };

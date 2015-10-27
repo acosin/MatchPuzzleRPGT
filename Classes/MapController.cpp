@@ -59,8 +59,12 @@ void MapController::movePlayerTo(int x, int y)
     
     _playerItem->setXY(x, y);
     // TODO: may update rendering
+    /*
     auto sprite = _playerItem->getSprite();
     _mapLayer->moveSpriteOnMap(sprite, x, y);
+     */
+    auto node = _playerItem->getNode();
+    _mapLayer->moveNodeOnMap(node, x, y);
 }
 
 bool MapController::tryMovePlayerTo(int x, int y)
@@ -135,9 +139,11 @@ bool MapController::moveMapItemTo(uint32_t id, int x, int y)
     auto item = _mapItems[id];
     //TODO: may need animation
     item->setXY(x, y);
-    auto sprite = item->getSprite();
-    _mapLayer->moveSpriteOnMap(sprite, x, y);
     
+    //auto sprite = item->getSprite();
+    //_mapLayer->moveSpriteOnMap(sprite, x, y);
+    auto node = item->getNode();
+    _mapLayer->moveNodeOnMap(node, x, y);
     
     return true;
 }
@@ -196,9 +202,11 @@ bool MapController::createPlayerItem(int x, int y, const std::string &imagePath)
     auto id = _IDpool_mapItem->generateID();
     _playerItem->setID(id);
     auto sprite = Sprite::create(imagePath);
+    sprite->setAnchorPoint(Vec2(0,0));
     //change this to pixel coordinate
     sprite->setPosition(_mapLayer->convertToPixelPos(Vec2(x,y)));
-    _playerItem->setSprite(sprite);
+    //_playerItem->setSprite(sprite);
+    _playerItem->setNode(sprite);
     _mapLayer->initPlayer(sprite);
     
     return true;
@@ -217,14 +225,21 @@ uint32_t MapController::createEnemyItem(int x, int y, const std::string &imagePa
     id = _IDpool_mapItem->generateID();
     enemy->setID(id);
     //TODO: set data later
-    //enemy->setStatusData(<#EnemyStatusData *statusData#>);
-    auto sprite = Sprite::create(imagePath);
+    //enemy->setStatusData(EnemyStatusData *statusData);
+    
+    //auto node = Sprite::create(imagePath);
+    auto node = EnemyNode::createNode(imagePath);
+    
+    node->setAnchorPoint(Vec2(0,0));
     //change this to pixel coordinate
-    sprite->setPosition(_mapLayer->convertToPixelPos(Vec2(x,y)));
-    enemy->setSprite(sprite);    _mapItems[id] = enemy;
+    auto pos = _mapLayer->convertToPixelPos(Vec2(x,y));
+    node->setPosition(pos);
+    //node->setPosition(_mapLayer->convertToPixelPos(Vec2(0,0)));
+    enemy->setNode(node);
+    _mapItems[id] = enemy;
     //TODO: scale enemy item here, may remove later (image should be ideal size)
-    _mapLayer->scaleAsTileSize(sprite);
-    _mapLayer->addChild(sprite);
+    _mapLayer->scaleAsTileSize(node);
+    _mapLayer->addChild(node);
     
     return id;
 }

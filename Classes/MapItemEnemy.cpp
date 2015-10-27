@@ -51,3 +51,8 @@ int MapItemEnemy::getDamaged(int damange)
     _currentHP = res;
     return _currentHP;
 }
+
+bool MapItemEnemy::isDead()
+{
+    return (_currentHP == 0);
+}

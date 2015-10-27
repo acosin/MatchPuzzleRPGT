@@ -7,7 +7,7 @@
         <Size X="450.0000" Y="50.0000" />
         <Children>
           <AbstractNodeData Name="Image_unitIcon" ActionTag="1625243511" Tag="16" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="9.4500" RightMargin="394.5500" TopMargin="4.7420" BottomMargin="9.2580" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-            <Size X="46.0000" Y="38.3333" />
+            <Size X="45.9900" Y="38.3350" />
             <AnchorPoint />
             <Position X="9.4500" Y="7.7150" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -19,7 +19,7 @@
           <AbstractNodeData Name="Text_unitInfo" ActionTag="-1372809871" Tag="17" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="87.5706" RightMargin="228.4294" TopMargin="-1.0000" BottomMargin="-1.0000" FontSize="36" LabelText="Unit Info" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="134.0000" Y="42.0000" />
             <AnchorPoint ScaleY="0.5000" />
-            <Position X="87.5706" Y="25.0000" />
+            <Position X="87.5700" Y="25.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1946" Y="0.5000" />

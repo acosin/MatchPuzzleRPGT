@@ -8,6 +8,7 @@
 
 #include "cocos2d.h"
 
+
 USING_NS_CC;
 
 class MapLayer : public cocos2d::Layer
@@ -15,7 +16,7 @@ class MapLayer : public cocos2d::Layer
 private:
     TMXTiledMap* _tileMap;
     TMXLayer* _background;
-    Sprite* _player;
+    Node* _player;
     Vector<Sprite*> _enemies;
     
 public:
@@ -37,9 +38,9 @@ public:
     Vec2 convertToPixelPos(const Vec2 &mapPos);
     Vec2 convertToMapPos(const Vec2 &pixelPos);
     
-    void scaleAsTileSize(Sprite* sprite);
-    
-    bool moveSpriteOnMap(Sprite* sprite, int x, int y);
+    void scaleAsTileSize(Node* node);
+    bool moveNodeOnMap(Node* node, int x, int y);
+    //bool moveSpriteOnMap(Sprite* sprite, int x, int y);
     
 private:
     void setViewPointCenter(Point position);

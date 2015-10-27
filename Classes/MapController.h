@@ -17,6 +17,8 @@
 
 #include "IDPool.h"
 
+#include "EnemyNode.h"
+
 USING_NS_CC;
 
 class MapController

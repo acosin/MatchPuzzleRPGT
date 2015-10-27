@@ -40,6 +40,9 @@ bool GameStageScene::init()
     
     auto viewSize=Director::getInstance()->getVisibleSize();
     
+    //NOTE: should load texture before creating Jewel class!
+    LoadTexture();
+    
     _layout = CSLoader::createNode("ui/GameStageScene.csb");
     _layout->setName("LAYOUT");
     
@@ -94,9 +97,6 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     _stageManager = stageManager;
     _currentStageScore = stageManager->getStageScoreRecord(stageID);
     _currentStageData = _currentStageScore->getStageData();
-    
-    //NOTE: should load texture before creating Jewel class!
-    LoadTexture();
     
     _controller = GameStageController::create(_currentStageData);
     _jewelsGrid = _controller->getJewelsGrid();

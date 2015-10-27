@@ -90,6 +90,12 @@
 		3188E6831BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6801BD0A6BB00AC8FBC /* StageScoreScene.cpp */; };
 		3188E6851BD0B68000AC8FBC /* stageIcon_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3188E6841BD0B68000AC8FBC /* stageIcon_0.png */; };
 		3188E6861BD0B68000AC8FBC /* stageIcon_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3188E6841BD0B68000AC8FBC /* stageIcon_0.png */; };
+		319DA2C61BDF180F00151EF1 /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2C41BDF180F00151EF1 /* HealthBar.cpp */; };
+		319DA2C71BDF180F00151EF1 /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2C41BDF180F00151EF1 /* HealthBar.cpp */; };
+		319DA2C91BDF26C500151EF1 /* hp.png in Resources */ = {isa = PBXBuildFile; fileRef = 319DA2C81BDF26C500151EF1 /* hp.png */; };
+		319DA2CA1BDF26C500151EF1 /* hp.png in Resources */ = {isa = PBXBuildFile; fileRef = 319DA2C81BDF26C500151EF1 /* hp.png */; };
+		319DA2CD1BDF323E00151EF1 /* EnemyNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2CB1BDF323E00151EF1 /* EnemyNode.cpp */; };
+		319DA2CE1BDF323E00151EF1 /* EnemyNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2CB1BDF323E00151EF1 /* EnemyNode.cpp */; };
 		31CD823E1BD6464C0009D1FB /* Player_on_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CD823D1BD6464C0009D1FB /* Player_on_map.png */; };
 		31CD82451BD725F00009D1FB /* MapItemBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31CD82431BD725F00009D1FB /* MapItemBase.cpp */; };
 		31CD82461BD725F00009D1FB /* MapItemBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31CD82431BD725F00009D1FB /* MapItemBase.cpp */; };
@@ -230,6 +236,11 @@
 		3188E6841BD0B68000AC8FBC /* stageIcon_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stageIcon_0.png; sourceTree = "<group>"; };
 		3188E6871BD0E31300AC8FBC /* Item_StageScoreRecord.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Item_StageScoreRecord.hpp; sourceTree = "<group>"; };
 		3188E6881BD1064D00AC8FBC /* TimeParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TimeParser.hpp; sourceTree = "<group>"; };
+		319DA2C41BDF180F00151EF1 /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthBar.cpp; sourceTree = "<group>"; };
+		319DA2C51BDF180F00151EF1 /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthBar.h; sourceTree = "<group>"; };
+		319DA2C81BDF26C500151EF1 /* hp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hp.png; sourceTree = "<group>"; };
+		319DA2CB1BDF323E00151EF1 /* EnemyNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyNode.cpp; sourceTree = "<group>"; };
+		319DA2CC1BDF323E00151EF1 /* EnemyNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyNode.h; sourceTree = "<group>"; };
 		31CD823D1BD6464C0009D1FB /* Player_on_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player_on_map.png; sourceTree = "<group>"; };
 		31CD82401BD64C000009D1FB /* IMapItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMapItem.h; sourceTree = "<group>"; };
 		31CD82431BD725F00009D1FB /* MapItemBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapItemBase.cpp; sourceTree = "<group>"; };
@@ -462,6 +473,10 @@
 				3185615F1BD4899100627C21 /* Item_SelectStage.hpp */,
 				31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */,
 				3188E6871BD0E31300AC8FBC /* Item_StageScoreRecord.hpp */,
+				319DA2C41BDF180F00151EF1 /* HealthBar.cpp */,
+				319DA2C51BDF180F00151EF1 /* HealthBar.h */,
+				319DA2CB1BDF323E00151EF1 /* EnemyNode.cpp */,
+				319DA2CC1BDF323E00151EF1 /* EnemyNode.h */,
 			);
 			name = DataVisualizer;
 			sourceTree = "<group>";
@@ -508,6 +523,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				319DA2C81BDF26C500151EF1 /* hp.png */,
 				31FF12B41BD9D49400E06405 /* stick_inner.png */,
 				31FF12B51BD9D49400E06405 /* stick_outer.png */,
 				31CD823D1BD6464C0009D1FB /* Player_on_map.png */,
@@ -698,6 +714,7 @@
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				31122E871BC7852F00F08C65 /* score.png in Resources */,
+				319DA2C91BDF26C500151EF1 /* hp.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				31122EAE1BCC9DBC00F08C65 /* element_green.png in Resources */,
@@ -749,6 +766,7 @@
 				31122EAB1BCC9DBC00F08C65 /* character_icon_0.png in Resources */,
 				31122E851BC780C400F08C65 /* mainBG.png in Resources */,
 				3141AEE11BD4DB47001F09B6 /* element_0.png in Resources */,
+				319DA2CA1BDF26C500151EF1 /* hp.png in Resources */,
 				3141AEE51BD4DB47001F09B6 /* element_2.png in Resources */,
 				31122EAF1BCC9DBC00F08C65 /* element_green.png in Resources */,
 				3141AEF31BD6217F001F09B6 /* map_00.tmx in Resources */,
@@ -775,8 +793,10 @@
 			files = (
 				3188E6761BCF8E7900AC8FBC /* StageData.cpp in Sources */,
 				3188E67A1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
+				319DA2CD1BDF323E00151EF1 /* EnemyNode.cpp in Sources */,
 				3188E67E1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,
 				31122E761BC7658100F08C65 /* HomeScene.cpp in Sources */,
+				319DA2C61BDF180F00151EF1 /* HealthBar.cpp in Sources */,
 				3141AECE1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */,
 				31122E811BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				3188E6821BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
@@ -808,6 +828,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319DA2C71BDF180F00151EF1 /* HealthBar.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				3188E67B1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
 				31122E7B1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
@@ -821,6 +842,7 @@
 				3141AEF01BD615CB001F09B6 /* MapLayer.cpp in Sources */,
 				31CD82461BD725F00009D1FB /* MapItemBase.cpp in Sources */,
 				3141AED41BD4B8F0001F09B6 /* Jewel.cpp in Sources */,
+				319DA2CE1BDF323E00151EF1 /* EnemyNode.cpp in Sources */,
 				31CD82531BD77CD40009D1FB /* MapController.cpp in Sources */,
 				31122E821BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				3188E67F1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,
