@@ -74,6 +74,8 @@
 		3141AEF51BD62333001F09B6 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEF41BD62333001F09B6 /* tmw_desert_spacing.png */; };
 		3141AEF61BD62333001F09B6 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEF41BD62333001F09B6 /* tmw_desert_spacing.png */; };
 		31599BE21BCF5E58005E92C5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 31599BE11BCF5E58005E92C5 /* data */; };
+		31819B501BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B4E1BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp */; };
+		31819B511BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B4E1BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp */; };
 		3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; };
 		3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; };
 		318561621BD4A48800627C21 /* GameStageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318561601BD4A48800627C21 /* GameStageScene.cpp */; };
@@ -220,6 +222,9 @@
 		3141AEF71BD63320001F09B6 /* UIHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UIHelper.hpp; sourceTree = "<group>"; };
 		31599BE11BCF5E58005E92C5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Layer_PlayerStatus.hpp; sourceTree = "<group>"; };
+		31819B4D1BE0C43300C505E8 /* IClearStageCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IClearStageCondition.h; sourceTree = "<group>"; };
+		31819B4E1BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClearStageCondition_GoalMap.cpp; sourceTree = "<group>"; };
+		31819B4F1BE0C57300C505E8 /* ClearStageCondition_GoalMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearStageCondition_GoalMap.h; sourceTree = "<group>"; };
 		3185615B1BD4855800627C21 /* StageSelectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageSelectScene.cpp; sourceTree = "<group>"; };
 		3185615C1BD4855800627C21 /* StageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectScene.h; sourceTree = "<group>"; };
 		3185615F1BD4899100627C21 /* Item_SelectStage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Item_SelectStage.hpp; sourceTree = "<group>"; };
@@ -521,6 +526,9 @@
 				319DA2D21BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.h */,
 				31CD82501BD77CD40009D1FB /* MapController.cpp */,
 				31CD82511BD77CD40009D1FB /* MapController.h */,
+				31819B4D1BE0C43300C505E8 /* IClearStageCondition.h */,
+				31819B4E1BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp */,
+				31819B4F1BE0C57300C505E8 /* ClearStageCondition_GoalMap.h */,
 				3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */,
 				3141AECD1BD4B6F1001F09B6 /* GameStageController.h */,
 			);
@@ -808,6 +816,7 @@
 				31122E761BC7658100F08C65 /* HomeScene.cpp in Sources */,
 				319DA2C61BDF180F00151EF1 /* HealthBar.cpp in Sources */,
 				3141AECE1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */,
+				31819B501BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp in Sources */,
 				31122E811BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				3188E6821BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
 				3141AED71BD4BCF9001F09B6 /* JewelGrid.cpp in Sources */,
@@ -846,6 +855,7 @@
 				3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
 				3141AEEC1BD5DB6F001F09B6 /* JewelGridStatus.cpp in Sources */,
 				31122E921BC7884600F08C65 /* StatusScene.cpp in Sources */,
+				31819B511BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp in Sources */,
 				31FF12BD1BD9D61000E06405 /* AnalogStick.cpp in Sources */,
 				3141AED81BD4BCF9001F09B6 /* JewelGrid.cpp in Sources */,
 				31122E771BC7658100F08C65 /* HomeScene.cpp in Sources */,

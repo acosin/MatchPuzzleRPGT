@@ -14,7 +14,12 @@
 
 #include "PuzzleStatusChangeData.h"
 
+#include "IClearStageCondition.h"
+
 USING_NS_CC;
+
+class IClearStageCondition;
+enum class ClearStageConditionType;
 
 class GameStageController
 {
@@ -22,6 +27,7 @@ private:
     StageData* _stageData;
     // map logic control
     MapController* _mapController;
+    std::vector<IClearStageCondition*> _clearConditions;
     
 public:
     GameStageController();
@@ -42,6 +48,15 @@ public:
     bool tryMovePlayerRight();
     
     void onPuzzleStatusChange();
+    
+    void checkClearStage();
+    void processClearStage(ClearStageConditionType t);
+    int getPlayerX();
+    int getPlayerY();
+    StageData* getStageData();
 public:
     JewelsGrid* _jewelsGrid;
+    
+private:
+    void addClearConditions();
 };
