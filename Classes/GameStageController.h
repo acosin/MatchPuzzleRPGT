@@ -12,6 +12,8 @@
 #include "StageScoreRecord.h"
 #include "MapController.h"
 
+#include "PuzzleStatusChangeData.h"
+
 USING_NS_CC;
 
 class GameStageController
@@ -39,7 +41,7 @@ public:
     bool tryMovePlayerLeft();
     bool tryMovePlayerRight();
     
-    void DamageEnemy();
+    void onPuzzleStatusChange();
 public:
     JewelsGrid* _jewelsGrid;
 };

@@ -78,8 +78,6 @@
 		3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; };
 		318561621BD4A48800627C21 /* GameStageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318561601BD4A48800627C21 /* GameStageScene.cpp */; };
 		318561631BD4A48800627C21 /* GameStageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318561601BD4A48800627C21 /* GameStageScene.cpp */; };
-		3188E6721BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */; };
-		3188E6731BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */; };
 		3188E6761BCF8E7900AC8FBC /* StageData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6741BCF8E7900AC8FBC /* StageData.cpp */; };
 		3188E6771BCF8E7900AC8FBC /* StageData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6741BCF8E7900AC8FBC /* StageData.cpp */; };
 		3188E67A1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6791BCFBA4500AC8FBC /* StageScoreRecord.cpp */; };
@@ -96,6 +94,10 @@
 		319DA2CA1BDF26C500151EF1 /* hp.png in Resources */ = {isa = PBXBuildFile; fileRef = 319DA2C81BDF26C500151EF1 /* hp.png */; };
 		319DA2CD1BDF323E00151EF1 /* EnemyNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2CB1BDF323E00151EF1 /* EnemyNode.cpp */; };
 		319DA2CE1BDF323E00151EF1 /* EnemyNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2CB1BDF323E00151EF1 /* EnemyNode.cpp */; };
+		319DA2D31BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2D11BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp */; };
+		319DA2D41BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2D11BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp */; };
+		319DA2D61BE0A7B200151EF1 /* defaultParticle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 319DA2D51BE0A7B200151EF1 /* defaultParticle.plist */; };
+		319DA2D71BE0A7B200151EF1 /* defaultParticle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 319DA2D51BE0A7B200151EF1 /* defaultParticle.plist */; };
 		31CD823E1BD6464C0009D1FB /* Player_on_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CD823D1BD6464C0009D1FB /* Player_on_map.png */; };
 		31CD82451BD725F00009D1FB /* MapItemBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31CD82431BD725F00009D1FB /* MapItemBase.cpp */; };
 		31CD82461BD725F00009D1FB /* MapItemBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31CD82431BD725F00009D1FB /* MapItemBase.cpp */; };
@@ -223,8 +225,6 @@
 		3185615F1BD4899100627C21 /* Item_SelectStage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Item_SelectStage.hpp; sourceTree = "<group>"; };
 		318561601BD4A48800627C21 /* GameStageScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStageScene.cpp; sourceTree = "<group>"; };
 		318561611BD4A48800627C21 /* GameStageScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStageScene.h; sourceTree = "<group>"; };
-		3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PuzzleData.cpp; sourceTree = "<group>"; };
-		3188E6711BCF8DD100AC8FBC /* PuzzleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleData.h; sourceTree = "<group>"; };
 		3188E6741BCF8E7900AC8FBC /* StageData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageData.cpp; sourceTree = "<group>"; };
 		3188E6751BCF8E7900AC8FBC /* StageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageData.h; sourceTree = "<group>"; };
 		3188E6781BCFB90200AC8FBC /* StageScoreRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageScoreRecord.h; sourceTree = "<group>"; };
@@ -241,6 +241,11 @@
 		319DA2C81BDF26C500151EF1 /* hp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hp.png; sourceTree = "<group>"; };
 		319DA2CB1BDF323E00151EF1 /* EnemyNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyNode.cpp; sourceTree = "<group>"; };
 		319DA2CC1BDF323E00151EF1 /* EnemyNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyNode.h; sourceTree = "<group>"; };
+		319DA2CF1BE0656000151EF1 /* PuzzleStatusChangeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleStatusChangeData.h; sourceTree = "<group>"; };
+		319DA2D01BE06DAD00151EF1 /* IMapStrategyOnPuzzleStatusChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMapStrategyOnPuzzleStatusChange.h; sourceTree = "<group>"; };
+		319DA2D11BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleMapStrategyOnPuzzleStatusChange.cpp; sourceTree = "<group>"; };
+		319DA2D21BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleMapStrategyOnPuzzleStatusChange.h; sourceTree = "<group>"; };
+		319DA2D51BE0A7B200151EF1 /* defaultParticle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaultParticle.plist; sourceTree = "<group>"; };
 		31CD823D1BD6464C0009D1FB /* Player_on_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player_on_map.png; sourceTree = "<group>"; };
 		31CD82401BD64C000009D1FB /* IMapItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMapItem.h; sourceTree = "<group>"; };
 		31CD82431BD725F00009D1FB /* MapItemBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapItemBase.cpp; sourceTree = "<group>"; };
@@ -428,8 +433,7 @@
 				31122E9C1BC7A88900F08C65 /* UnitOfPlayerRecord.h */,
 				31122EA01BC7B52600F08C65 /* PlayerStatusData.h */,
 				31CD824F1BD76AD50009D1FB /* EnemyStatusData.h */,
-				3188E6701BCF8DD100AC8FBC /* PuzzleData.cpp */,
-				3188E6711BCF8DD100AC8FBC /* PuzzleData.h */,
+				319DA2CF1BE0656000151EF1 /* PuzzleStatusChangeData.h */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";
@@ -512,6 +516,9 @@
 				31CD82481BD767440009D1FB /* MapItemPlayer.h */,
 				3141AEED1BD615CB001F09B6 /* MapLayer.cpp */,
 				3141AEEE1BD615CB001F09B6 /* MapLayer.h */,
+				319DA2D01BE06DAD00151EF1 /* IMapStrategyOnPuzzleStatusChange.h */,
+				319DA2D11BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp */,
+				319DA2D21BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.h */,
 				31CD82501BD77CD40009D1FB /* MapController.cpp */,
 				31CD82511BD77CD40009D1FB /* MapController.h */,
 				3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */,
@@ -523,6 +530,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				319DA2D51BE0A7B200151EF1 /* defaultParticle.plist */,
 				319DA2C81BDF26C500151EF1 /* hp.png */,
 				31FF12B41BD9D49400E06405 /* stick_inner.png */,
 				31FF12B51BD9D49400E06405 /* stick_outer.png */,
@@ -705,6 +713,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				319DA2D61BE0A7B200151EF1 /* defaultParticle.plist in Resources */,
 				31122EC11BCD01CD00F08C65 /* ui in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				31122E8A1BC786DA00F08C65 /* status.png in Resources */,
@@ -776,6 +785,7 @@
 				31122E8B1BC786DA00F08C65 /* status.png in Resources */,
 				31122EC21BCD01CD00F08C65 /* ui in Resources */,
 				31122E8E1BC7872800F08C65 /* exit.png in Resources */,
+				319DA2D71BE0A7B200151EF1 /* defaultParticle.plist in Resources */,
 				31122EB31BCC9DBC00F08C65 /* element_yellow.png in Resources */,
 				31FF12B91BD9D49400E06405 /* stick_outer.png in Resources */,
 				31FF12B71BD9D49400E06405 /* stick_inner.png in Resources */,
@@ -813,11 +823,11 @@
 				318561621BD4A48800627C21 /* GameStageScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				31122EA31BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
+				319DA2D31BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				31CD82521BD77CD40009D1FB /* MapController.cpp in Sources */,
 				31CD82561BD882DA0009D1FB /* IDPool.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				3188E6721BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */,
 				31CD82451BD725F00009D1FB /* MapItemBase.cpp in Sources */,
 				3141AED31BD4B8F0001F09B6 /* Jewel.cpp in Sources */,
 				31CD824D1BD769EC0009D1FB /* MapItemEnemy.cpp in Sources */,
@@ -830,6 +840,7 @@
 			files = (
 				319DA2C71BDF180F00151EF1 /* HealthBar.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				319DA2D41BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp in Sources */,
 				3188E67B1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
 				31122E7B1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
 				3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
@@ -850,7 +861,6 @@
 				318561631BD4A48800627C21 /* GameStageScene.cpp in Sources */,
 				31CD824E1BD769EC0009D1FB /* MapItemEnemy.cpp in Sources */,
 				3141AECF1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */,
-				3188E6731BCF8DD100AC8FBC /* PuzzleData.cpp in Sources */,
 				3188E6831BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
 				31122EA41BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
 				31CD82571BD882DA0009D1FB /* IDPool.cpp in Sources */,

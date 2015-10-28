@@ -200,7 +200,10 @@ void GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)
     str = Value(this->_jewelsGrid->getStatusYCombo()).asString();
     this->_textYcombo->setString(str);
     
-    _controller->DamageEnemy();
+    //TODO: may need async here
+    _stick->stopStick();
+    _controller->onPuzzleStatusChange();
+    _stick->startStick();
 }
 
 void GameStageScene::tryMovePlayerUp(float delay)

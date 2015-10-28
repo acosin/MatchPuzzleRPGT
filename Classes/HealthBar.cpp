@@ -36,7 +36,7 @@ bool HealthBar::init()
     hpSprite = Sprite::createWithTexture(texture);
     progressTimer = ProgressTimer::create(hpSprite);
     progressTimer->setType(ProgressTimer::Type::RADIAL);
-    //progressTimer->setReverseProgress(true);
+    progressTimer->setReverseProgress(true);
     progressTimer->setPercentage(100.0);
     this->setContentSize(progressTimer->getContentSize());
     

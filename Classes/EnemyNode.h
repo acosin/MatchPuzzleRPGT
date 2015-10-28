@@ -19,6 +19,7 @@ private:
     ui::Layout* _panel_icon;
     ui::Layout* _panel_hp;
     
+    ParticleSystem *_deadEffect;
 protected:
     Sprite *mapEnemy;
     HealthBar *hpBar;
@@ -34,4 +35,5 @@ public:
     void setPercentage(float percentage);
     float getPercentage();
     void animateFromTo(float duration, float fromPercentage, float toPercentage);
+    void showDeadAnimation();
 };

@@ -32,6 +32,17 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Particle_dead" ActionTag="1581569789" VisibleForFrame="False" Tag="44" IconVisible="True" LeftMargin="-0.0021" RightMargin="0.0021" TopMargin="15.0443" BottomMargin="-15.0443" ctype="ParticleObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="-0.0021" Y="-15.0443" />
+            <Scale ScaleX="2.9558" ScaleY="2.8805" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FileData Type="Normal" Path="defaultParticle.plist" Plist="" />
+            <BlendFunc Src="775" Dst="1" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

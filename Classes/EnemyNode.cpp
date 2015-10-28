@@ -25,11 +25,25 @@ bool EnemyNode::init()
     }
     
     auto node = CSLoader::createNode("ui/MapEnemyNode.csb");
+    auto size = node->getContentSize();
     
     _panel_icon = dynamic_cast<ui::Layout*>(node->getChildByName("Panel_icon"));
     _panel_hp = dynamic_cast<ui::Layout*>(node->getChildByName("Panel_hp"));
+    //_deadEffect = dynamic_cast<ParticleSystem*>(node->getChildByName("Particle_dead"));
+    //_deadEffect->setLocalZOrder(4);
+    //_deadEffect->setPositionZ(100);
+    //_deadEffect->stopSystem();
     
-    this->setContentSize(node->getContentSize());
+    _deadEffect = ParticleSystemQuad::create("defaultParticle.plist");
+    _deadEffect->stopSystem();
+    _deadEffect->setVisible(false);
+    auto scale = size.width/_deadEffect->getEndSize();
+    //scale = 3;
+    _deadEffect->setScale(scale);
+    _deadEffect->setPosition(Vec2(size.width/2, size.height/2));
+    this->addChild(_deadEffect, 4,4);
+    
+    this->setContentSize(size);
     this->addChild(node);
 
 
@@ -81,5 +95,22 @@ float EnemyNode::getPercentage()
 void EnemyNode::animateFromTo(float duration, float fromPercentage, float toPercentage)
 {
     hpBar->animateFromTo(duration, fromPercentage, toPercentage);
+}
+
+void EnemyNode::showDeadAnimation()
+{
+    auto blink = Blink::create(0.6, 3);
+    auto callback = CallFunc::create([&](){
+        this->_deadEffect->stopSystem();
+        this->_deadEffect->setVisible(false);
+        this->setVisible(false);
+    });
+    _deadEffect->setLife(0.5);
+    _deadEffect->setLifeVar(0.5);
+    //_deadEffect->setAutoRemoveOnFinish(true);
+    _deadEffect->setVisible(true);
+    _deadEffect->resetSystem();
+    
+    this->runAction(Sequence::create(blink, callback, NULL));
 }
 

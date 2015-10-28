@@ -36,6 +36,11 @@ void MapItemEnemy::setStatusData(EnemyStatusData *statusData)
     _currentHP = _statusData->hp;
 }
 
+int MapItemEnemy::getTotalHP()
+{
+    return _statusData->hp;
+}
+
 int MapItemEnemy::getCurrentHP()
 {
     return _currentHP;

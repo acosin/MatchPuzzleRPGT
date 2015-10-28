@@ -18,8 +18,12 @@
 #include "IDPool.h"
 
 #include "EnemyNode.h"
+#include "PuzzleStatusChangeData.h"
+#include "IMapStrategyOnPuzzleStatusChange.h"
 
 USING_NS_CC;
+
+class IMapStrategyOnPuzzleStatusChange;
 
 class MapController
 {
@@ -31,6 +35,8 @@ private:
     MapItemPlayer* _playerItem = nullptr;
     int _lastPlayerX, _lastPlayerY;
     std::map<uint32_t, MapItemEnemy*> _mapItems;
+    
+    IMapStrategyOnPuzzleStatusChange *_strategyOnPuzzle;
 public:
     MapController(StageData *stageData);
     ~MapController();
@@ -58,6 +64,14 @@ public:
     
     //NOTE: return 0 if cannot create
     uint32_t createEnemyItem(int x, int y, const std::string &imagePath);
+    uint32_t createEnemyItem(int x, int y, EnemyStatusData *data);
+
+    //for game logic
+public:
+    void onPuzzleStatusChange(PuzzleStatusChangeData *data);
+    std::map<uint32_t, MapItemEnemy*> getEnemyAround(int x, int y);
+    
+    bool checkGoal();
     
 private:
     /*

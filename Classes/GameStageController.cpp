@@ -85,10 +85,17 @@ bool GameStageController::tryMovePlayerRight()
     return _mapController->tryMovePlayerRight();
 }
 
-void GameStageController::DamageEnemy()
+void GameStageController::onPuzzleStatusChange()
 {
     int damageX = _jewelsGrid->getStatusXCombo();
     int damageY = _jewelsGrid->getStatusYCombo();
-    CCLOG("dmageEnemy: x(%d) y(%d)", damageX, damageY);
+    //TODO: show damage animation here
+    auto changeData = new PuzzleStatusChangeData();
+    changeData->xCombo = damageX;
+    changeData->yCombo = damageY;
+    
+    //TODO: may need async here,
+    //first stop stick controller to keep no playerItem change
+    _mapController->onPuzzleStatusChange(changeData);
 }
 

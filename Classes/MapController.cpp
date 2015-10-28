@@ -6,10 +6,14 @@
 
 #include "MapController.h"
 
+#include "SimpleMapStrategyOnPuzzleStatusChange.h"
+
 MapController::MapController(StageData *stageData)
 {
     _IDpool_mapItem = new IDPool();
     initMap(stageData);
+    
+    _strategyOnPuzzle = new SimpleMapStrategyOnPuzzleStatusChange();
 }
 
 MapController::~MapController()
@@ -65,6 +69,8 @@ void MapController::movePlayerTo(int x, int y)
      */
     auto node = _playerItem->getNode();
     _mapLayer->moveNodeOnMap(node, x, y);
+    
+    auto goal = checkGoal();
 }
 
 bool MapController::tryMovePlayerTo(int x, int y)
@@ -244,6 +250,72 @@ uint32_t MapController::createEnemyItem(int x, int y, const std::string &imagePa
     return id;
 }
 
+uint32_t MapController::createEnemyItem(int x, int y, EnemyStatusData *data)
+{
+    uint32_t id = 0;
+    
+    if (_mapLayer == nullptr) {
+        return 0;
+    }
+    
+    auto imagePath = data->getSpriteImagePath();
+    
+    auto enemy = new MapItemEnemy(x,y,imagePath);
+    id = _IDpool_mapItem->generateID();
+    enemy->setID(id);
+    enemy->setStatusData(data);
+    
+    //auto node = Sprite::create(imagePath);
+    auto node = EnemyNode::createNode(imagePath);
+    
+    node->setAnchorPoint(Vec2(0,0));
+    //change this to pixel coordinate
+    auto pos = _mapLayer->convertToPixelPos(Vec2(x,y));
+    node->setPosition(pos);
+    //node->setPosition(_mapLayer->convertToPixelPos(Vec2(0,0)));
+    enemy->setNode(node);
+    _mapItems[id] = enemy;
+    //TODO: scale enemy item here, may remove later (image should be ideal size)
+    _mapLayer->scaleAsTileSize(node);
+    _mapLayer->addChild(node);
+    
+    return id;
+}
+
+// -- public for game logic--
+void MapController::onPuzzleStatusChange(PuzzleStatusChangeData *data)
+{
+    _strategyOnPuzzle->exec(this, data);
+}
+
+
+std::map<uint32_t, MapItemEnemy*>MapController::getEnemyAround(int x, int y)
+{
+    std::map<uint32_t, MapItemEnemy*> ret;
+    for (auto item : _mapItems) {
+        if (item.second->getType() == MapItemType::Enemy) {
+            auto enemy = item.second;
+            if (abs(enemy->getX() - x) + abs(enemy->getY()-y) == 1) {
+                ret.insert(item);
+            }
+        }
+    }
+    return ret;
+}
+
+bool MapController::checkGoal()
+{
+    int goalY, goalX;
+    //TODO: load from stageData
+    goalY = 0;
+    goalX = _stageData->_mapWidth / 2;
+    
+    if (getPlayerX() == goalX && getPlayerY() == goalY) {
+        return true;
+    }
+    return false;
+}
+
 // -- private --
 
 
@@ -281,11 +353,11 @@ void MapController::createEnemiesDebug()
                                "EnemyName_0",     //enemyName,
                                ElementType::RED,  //type,
                                0,    //level,
-                               10,   //hp,
+                               100,   //hp,
                                1     //atk
                                );
-    //createEnemyItem(1,2,data->getSpriteImagePath());
-    createEnemyItem(1,2,"element_0.png");
+    //createEnemyItem(1,2,"element_0.png");
+    createEnemyItem(1,2,data);
     
     data = new EnemyStatusData(0,    // enemyID,
                                "element_0.png",   //iconPath,
@@ -293,11 +365,23 @@ void MapController::createEnemiesDebug()
                                "EnemyName_0",     //enemyName,
                                ElementType::RED,  //type,
                                0,    //level,
-                               10,   //hp,
+                               100,   //hp,
                                1     //atk
                                );
-    //createEnemyItem(1,2,data->getSpriteImagePath());
-    createEnemyItem(2,1,"element_0.png");
+    //createEnemyItem(2,1,"element_0.png");
+    createEnemyItem(2,1,data);
+    
+    data = new EnemyStatusData(1,    // enemyID,
+                               "element_1.png",   //iconPath,
+                               //std::string imagePath,
+                               "EnemyName_1",     //enemyName,
+                               ElementType::BLUE,  //type,
+                               0,    //level,
+                               2,   //hp,
+                               1     //atk
+                               );
+    //createEnemyItem(1,0,"element_1.png");
+    createEnemyItem(1,0,data);
     
     data = new EnemyStatusData(1,    // enemyID,
                                "element_1.png",   //iconPath,
@@ -308,20 +392,8 @@ void MapController::createEnemiesDebug()
                                10,   //hp,
                                1     //atk
                                );
-    //createEnemyItem(1,2,data->getSpriteImagePath());
-    createEnemyItem(1,0,"element_1.png");
-    
-    data = new EnemyStatusData(1,    // enemyID,
-                               "element_1.png",   //iconPath,
-                               //std::string imagePath,
-                               "EnemyName_1",     //enemyName,
-                               ElementType::BLUE,  //type,
-                               0,    //level,
-                               10,   //hp,
-                               1     //atk
-                               );
-    //createEnemyItem(1,2,data->getSpriteImagePath());
-    createEnemyItem(3,0,"element_1.png");
+    //createEnemyItem(3,0,"element_1.png");
+    createEnemyItem(3,0,data);
     
     data = new EnemyStatusData(0,    // enemyID,
                                "element_0.png",   //iconPath,
@@ -332,8 +404,8 @@ void MapController::createEnemiesDebug()
                                10,   //hp,
                                1     //atk
                                );
-    //createEnemyItem(1,2,data->getSpriteImagePath());
-    createEnemyItem(4,2,"element_0.png");
+    //createEnemyItem(4,2,"element_0.png");
+    createEnemyItem(4,2,data);
 }
 
 

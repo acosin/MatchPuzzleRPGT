@@ -15,6 +15,7 @@
         <Project Name="GameStageScene.csd" Type="Scene" />
         <Project Name="EnemyNode.csd" Type="Node" />
         <Project Name="MapEnemyNode.csd" Type="Layer" />
+        <PlistParticleFile Name="defaultParticle.plist" />
       </RootFolder>
     </Group>
   </SolutionFolder>
