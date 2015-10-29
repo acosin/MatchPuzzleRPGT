@@ -303,6 +303,11 @@ std::map<uint32_t, MapItemEnemy*>MapController::getEnemyAround(int x, int y)
     return ret;
 }
 
+bool MapController::isGoalPos(int x, int y)
+{
+    return _mapLayer->isGoalPos(x, y);
+}
+
 bool MapController::checkGoal()
 {
     int goalY, goalX;
@@ -310,7 +315,8 @@ bool MapController::checkGoal()
     goalY = 0;
     goalX = _stageData->_mapWidth / 2;
     
-    if (getPlayerX() == goalX && getPlayerY() == goalY) {
+    //if (getPlayerX() == goalX && getPlayerY() == goalY) {
+    if (isGoalPos(getPlayerX(), getPlayerY())) {
         return true;
     }
     return false;

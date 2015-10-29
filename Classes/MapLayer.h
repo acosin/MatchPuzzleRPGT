@@ -18,6 +18,7 @@ private:
     TMXLayer* _background;
     Node* _player;
     Vector<Sprite*> _enemies;
+    TMXLayer* _meta;
     
 public:
     MapLayer();
@@ -41,6 +42,8 @@ public:
     void scaleAsTileSize(Node* node);
     bool moveNodeOnMap(Node* node, int x, int y);
     //bool moveSpriteOnMap(Sprite* sprite, int x, int y);
+    
+    bool isGoalPos(int x, int y);
     
 private:
     void setViewPointCenter(Point position);

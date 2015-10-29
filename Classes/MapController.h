@@ -71,6 +71,7 @@ public:
     void onPuzzleStatusChange(PuzzleStatusChangeData *data);
     std::map<uint32_t, MapItemEnemy*> getEnemyAround(int x, int y);
     
+    bool isGoalPos(int x, int y);
     bool checkGoal();
     
 private:

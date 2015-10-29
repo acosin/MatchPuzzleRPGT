@@ -76,6 +76,10 @@
 		31599BE21BCF5E58005E92C5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 31599BE11BCF5E58005E92C5 /* data */; };
 		31819B501BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B4E1BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp */; };
 		31819B511BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B4E1BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp */; };
+		31819B541BE1A98C00C505E8 /* GameStageHUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B521BE1A98C00C505E8 /* GameStageHUD.cpp */; };
+		31819B551BE1A98C00C505E8 /* GameStageHUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B521BE1A98C00C505E8 /* GameStageHUD.cpp */; };
+		31819B571BE1B0D500C505E8 /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 31819B561BE1B0D500C505E8 /* meta_tiles.png */; };
+		31819B581BE1B0D500C505E8 /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 31819B561BE1B0D500C505E8 /* meta_tiles.png */; };
 		3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; };
 		3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; };
 		318561621BD4A48800627C21 /* GameStageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318561601BD4A48800627C21 /* GameStageScene.cpp */; };
@@ -225,6 +229,9 @@
 		31819B4D1BE0C43300C505E8 /* IClearStageCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IClearStageCondition.h; sourceTree = "<group>"; };
 		31819B4E1BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClearStageCondition_GoalMap.cpp; sourceTree = "<group>"; };
 		31819B4F1BE0C57300C505E8 /* ClearStageCondition_GoalMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearStageCondition_GoalMap.h; sourceTree = "<group>"; };
+		31819B521BE1A98C00C505E8 /* GameStageHUD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStageHUD.cpp; sourceTree = "<group>"; };
+		31819B531BE1A98C00C505E8 /* GameStageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStageHUD.h; sourceTree = "<group>"; };
+		31819B561BE1B0D500C505E8 /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta_tiles.png; sourceTree = "<group>"; };
 		3185615B1BD4855800627C21 /* StageSelectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageSelectScene.cpp; sourceTree = "<group>"; };
 		3185615C1BD4855800627C21 /* StageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectScene.h; sourceTree = "<group>"; };
 		3185615F1BD4899100627C21 /* Item_SelectStage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Item_SelectStage.hpp; sourceTree = "<group>"; };
@@ -471,6 +478,8 @@
 				31FF12BB1BD9D61000E06405 /* AnalogStick.h */,
 				318561601BD4A48800627C21 /* GameStageScene.cpp */,
 				318561611BD4A48800627C21 /* GameStageScene.h */,
+				31819B521BE1A98C00C505E8 /* GameStageHUD.cpp */,
+				31819B531BE1A98C00C505E8 /* GameStageHUD.h */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -538,6 +547,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				31819B561BE1B0D500C505E8 /* meta_tiles.png */,
 				319DA2D51BE0A7B200151EF1 /* defaultParticle.plist */,
 				319DA2C81BDF26C500151EF1 /* hp.png */,
 				31FF12B41BD9D49400E06405 /* stick_inner.png */,
@@ -741,6 +751,7 @@
 				31122E7D1BC77C4B00F08C65 /* start.png in Resources */,
 				3188E6851BD0B68000AC8FBC /* stageIcon_0.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
+				31819B571BE1B0D500C505E8 /* meta_tiles.png in Resources */,
 				3141AEDA1BD4C03B001F09B6 /* crush.ogg in Resources */,
 				31122EAC1BCC9DBC00F08C65 /* element_blue.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
@@ -787,6 +798,7 @@
 				3141AEE51BD4DB47001F09B6 /* element_2.png in Resources */,
 				31122EAF1BCC9DBC00F08C65 /* element_green.png in Resources */,
 				3141AEF31BD6217F001F09B6 /* map_00.tmx in Resources */,
+				31819B581BE1B0D500C505E8 /* meta_tiles.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				3141AEE31BD4DB47001F09B6 /* element_1.png in Resources */,
 				3141AEDB1BD4C03B001F09B6 /* crush.ogg in Resources */,
@@ -825,6 +837,7 @@
 				3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
 				31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */,
 				31FF12BC1BD9D61000E06405 /* AnalogStick.cpp in Sources */,
+				31819B541BE1A98C00C505E8 /* GameStageHUD.cpp in Sources */,
 				31CD82491BD767440009D1FB /* MapItemPlayer.cpp in Sources */,
 				31122E7A1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
@@ -861,6 +874,7 @@
 				31122E771BC7658100F08C65 /* HomeScene.cpp in Sources */,
 				31CD824A1BD767440009D1FB /* MapItemPlayer.cpp in Sources */,
 				3141AEF01BD615CB001F09B6 /* MapLayer.cpp in Sources */,
+				31819B551BE1A98C00C505E8 /* GameStageHUD.cpp in Sources */,
 				31CD82461BD725F00009D1FB /* MapItemBase.cpp in Sources */,
 				3141AED41BD4B8F0001F09B6 /* Jewel.cpp in Sources */,
 				319DA2CE1BDF323E00151EF1 /* EnemyNode.cpp in Sources */,

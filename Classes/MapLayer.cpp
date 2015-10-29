@@ -9,7 +9,8 @@
 MapLayer::MapLayer():
 _tileMap(nullptr),
 _background(nullptr),
-_player(nullptr)
+_player(nullptr),
+_meta(nullptr)
 {
     
 }
@@ -46,6 +47,8 @@ bool MapLayer::initMap(const std::string &mapFilename)
     }
     
     _background = _tileMap->getLayer("Background");
+    _meta = _tileMap->getLayer("meta");
+    _meta->setVisible(false);
     addChild(_tileMap);
     setContentSize(_tileMap->getContentSize());
     
@@ -121,6 +124,19 @@ void MapLayer::scaleAsTileSize(Node* node)
     auto size = node->getContentSize();
     //TODO: may need 0 divide check
     node->setScale(tileSize.width/size.width, tileSize.height/size.height);
+}
+
+bool MapLayer::isGoalPos(int x, int y)
+{
+    auto tileGid = _meta->getTileGIDAt(Vec2(x,y));
+    if (tileGid != 0) {
+        auto propertiesDict = _tileMap->getPropertiesForGID(tileGid).asValueMap();
+        auto prop = propertiesDict["isGoal"];
+        if (prop.asString().compare("true") == 0) {
+            return true;
+        }
+    }
+    return false;
 }
 
 // -- private --
