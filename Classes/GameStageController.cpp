@@ -117,16 +117,14 @@ bool GameStageController::tryMovePlayerRight()
 
 void GameStageController::onPuzzleStatusChange()
 {
-    int damageX = _jewelsGrid->getStatusXCombo();
-    int damageY = _jewelsGrid->getStatusYCombo();
-    //TODO: show damage animation here
-    auto changeData = new PuzzleStatusChangeData();
-    changeData->xCombo = damageX;
-    changeData->yCombo = damageY;
+    auto changeData = getPuzzleStatusChangeData();
     
     //TODO: may need async here,
     //first stop stick controller to keep no playerItem change
     _mapController->onPuzzleStatusChange(changeData);
+    
+    //TODO: handle changeData memory here
+    delete changeData;
     
     checkClearStage();
 }
@@ -186,6 +184,16 @@ StageData* GameStageController::getStageData()
 int GameStageController::getEnemyCount()
 {
     return _mapController->getEnemyCount();
+}
+
+PuzzleStatusChangeData* GameStageController::getPuzzleStatusChangeData()
+{
+    int damageX = _jewelsGrid->getStatusXCombo();
+    int damageY = _jewelsGrid->getStatusYCombo();
+    auto changeData = new PuzzleStatusChangeData();
+    changeData->xCombo = damageX;
+    changeData->yCombo = damageY;
+    return changeData;
 }
 
 void GameStageController::addClearConditions()

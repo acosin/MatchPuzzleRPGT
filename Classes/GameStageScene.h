@@ -80,4 +80,10 @@ private:
     void regEventStageClear();
     void removeEventStageCLear();
     void onStageClear(EventCustom* pEvent);
+    
+    void stopInteraction();
+    void startInteraction();
+    
+    virtual void animateComboCountChange(PuzzleStatusChangeData *data, float duration, CallFunc *callback=NULL);
+    static std::string getTextLabelComboCount(bool isX, ElementType type);
 };

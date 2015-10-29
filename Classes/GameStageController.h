@@ -57,6 +57,7 @@ public:
     int getPlayerY();
     StageData* getStageData();
     int getEnemyCount();
+    PuzzleStatusChangeData* getPuzzleStatusChangeData();
 public:
     JewelsGrid* _jewelsGrid;
 

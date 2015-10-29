@@ -234,6 +234,10 @@ void JewelsGrid::setJewelPixPos(Jewel* jewel, float x, float y)
 
 bool JewelsGrid::onTouchBegan(Touch* pTouch, Event* pEvent)
 {
+    if (!m_touchable) {
+        return false;
+    }
+    
     auto pos = this->convertToNodeSpace(pTouch->getLocation());
     
     if (Rect(0, 0, m_col*GRID_WIDTH, m_row*GRID_WIDTH).containsPoint(pos))
@@ -721,5 +725,15 @@ int JewelsGrid::getStatusXCombo()
     } else {
         return m_status->getColCount();
     }
+}
+
+void JewelsGrid::disableTounch()
+{
+    m_touchable = false;
+}
+
+void JewelsGrid::enableTouch()
+{
+    m_touchable = true;
 }
 

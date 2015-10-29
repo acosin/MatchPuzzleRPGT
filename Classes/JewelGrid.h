@@ -43,6 +43,9 @@ public:
     int getStatusXCombo();
     int getStatusYCombo();
     
+    void disableTounch();
+    void enableTouch();
+    
     
 private:
     Jewel* createAJewel(int x, int y);
@@ -92,4 +95,6 @@ private:
     
     JewelGridStatus* m_status;
     vector<MatchCombo*> tempComboes;
+    
+    bool m_touchable = true;
 };

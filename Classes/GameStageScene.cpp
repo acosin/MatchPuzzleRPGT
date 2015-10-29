@@ -192,21 +192,27 @@ void GameStageScene::removeEventJewelGridStatusChange()
 
 void GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)
 {
+    //TODO: should stopInteraction() when JewelsGrid::onTouchBegan/End?
+    stopInteraction();
     //GameStageScene* target = (GameStageScene*)pEvent->getCurrentTarget();
     CCLOG("onJewelGridStatusChange");
-    auto str = Value(this->_jewelsGrid->getStatusXCombo()).asString();
+    
     /*
-    if (typeid(_textXcombo) != typeid(ui::Text*)) {
-        log("textXcombo null");
-    }*/
+    auto str = Value(this->_jewelsGrid->getStatusXCombo()).asString();
     this->_textXcombo->setString(str);
     str = Value(this->_jewelsGrid->getStatusYCombo()).asString();
     this->_textYcombo->setString(str);
+    */
+    float duration = 0.5;
+    animateComboCountChange(_controller->getPuzzleStatusChangeData(), duration);
     
     //TODO: may need async here
-    _stick->stopStick();
+    //_stick->stopStick();
+    
     _controller->onPuzzleStatusChange();
-    _stick->startStick();
+    //(animation)
+    //_stick->startStick();
+    startInteraction();
 }
 
 void GameStageScene::regEventStageClear()
@@ -252,4 +258,69 @@ void GameStageScene::tryMovePlayerLeft(float delay)
 void GameStageScene::tryMovePlayerRight(float delay)
 {
     _controller->tryMovePlayerRight();
+}
+
+void GameStageScene::stopInteraction()
+{
+    _stick->stopStick();
+    _jewelsGrid->disableTounch();
+}
+
+void GameStageScene::startInteraction()
+{
+    _stick->startStick();
+    _jewelsGrid->enableTouch();
+}
+
+/*
+ * note that this is an animation and last for [duration] in the rendering time
+ * not recommand to call other function after calling this function
+ */
+void GameStageScene::animateComboCountChange(PuzzleStatusChangeData *data, float duration, CallFunc *callback)
+{
+    //data should store match count of every element type for x/y
+    //duration define how long for every (element) number count
+    
+    int timesChange = 10;
+    int xFrom = 0;
+    int xTo = data->xCombo;
+    float xStep = (xTo - xFrom) / (float)timesChange;
+    int yFrom = 0;
+    int yTo = data->yCombo;
+    float yStep = (xTo - xFrom) / (float)timesChange;
+    //TODO: handle countChange and timesChange here
+    float delay = duration / (float)timesChange;
+    Vector<FiniteTimeAction*> actions;
+    for (int i = 1; i<=timesChange; i++) {
+        for (int type = 0; type < (int)ElementType::count; type++) {
+            auto currentX = xTo - (int)xStep*(timesChange - i);
+            auto currentY = yTo - (int)yStep*(timesChange - i);
+            
+            auto actionX = Sequence::create(DelayTime::create(delay), CallFunc::create([&, currentX, type](){
+                auto xTextName = this->getTextLabelComboCount(true, (ElementType)type);
+                //TODO
+                xTextName = "Text_xCombo";
+                auto xText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(xTextName));
+                xText->setString(Value(currentX).asString());
+            }), NULL);
+            auto actionY = Sequence::create(DelayTime::create(delay), CallFunc::create([&, currentY, type](){
+                auto yTextName = this->getTextLabelComboCount(false, (ElementType)type);
+                //TODO
+                yTextName = "Text_yCombo";
+                auto yText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(yTextName));
+                yText->setString(Value(currentY).asString());
+            }), NULL);
+            
+            actions.pushBack(Spawn::create(actionX, actionY, NULL));
+        }
+    }
+    auto sequence = Sequence::create(Sequence::create(actions),callback, NULL);
+    this->runAction(sequence);
+}
+
+std::string GameStageScene::getTextLabelComboCount(bool isX, ElementType type)
+{
+    std::string xOrY = (isX)?("Text_xCombo"):("Text_yCombo");
+    auto ret = xOrY + ElementTypeUtils::toString(type);
+    return ret;
 }
