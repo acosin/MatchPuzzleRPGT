@@ -73,6 +73,7 @@ public:
     
     bool isGoalPos(int x, int y);
     bool checkGoal();
+    int getEnemyCount();
     
 private:
     /*

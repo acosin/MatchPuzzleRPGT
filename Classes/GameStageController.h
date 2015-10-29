@@ -56,6 +56,7 @@ public:
     int getPlayerX();
     int getPlayerY();
     StageData* getStageData();
+    int getEnemyCount();
 public:
     JewelsGrid* _jewelsGrid;
 

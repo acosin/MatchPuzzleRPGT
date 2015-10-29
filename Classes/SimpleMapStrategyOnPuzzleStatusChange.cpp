@@ -21,8 +21,10 @@ void SimpleMapStrategyOnPuzzleStatusChange::exec(MapController *c, PuzzleStatusC
         int damage;
         if (enemyItem->getX() == c->getPlayerX()) {
             damage = data->xCombo;
+            //damage = data->xCombo - 1;
         } else if (enemyItem->getY() == c->getPlayerY()) {
             damage = data->yCombo;
+            //damage = data->yCombo -1;
         }
         auto afterHP = enemyItem->getDamaged(damage);
         float totalHP = (float)enemyItem->getTotalHP();

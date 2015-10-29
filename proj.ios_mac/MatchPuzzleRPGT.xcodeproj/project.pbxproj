@@ -84,6 +84,8 @@
 		31819B5C1BE1BD2D00C505E8 /* StageClearLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B591BE1BD2D00C505E8 /* StageClearLayer.cpp */; };
 		31819B5F1BE1BDAB00C505E8 /* StageClearData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B5D1BE1BDAB00C505E8 /* StageClearData.cpp */; };
 		31819B601BE1BDAB00C505E8 /* StageClearData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B5D1BE1BDAB00C505E8 /* StageClearData.cpp */; };
+		31819B651BE1EF0D00C505E8 /* ClearStageCondition_NoEnemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B631BE1EF0D00C505E8 /* ClearStageCondition_NoEnemy.cpp */; };
+		31819B661BE1EF0D00C505E8 /* ClearStageCondition_NoEnemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B631BE1EF0D00C505E8 /* ClearStageCondition_NoEnemy.cpp */; };
 		3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; };
 		3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; };
 		318561621BD4A48800627C21 /* GameStageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318561601BD4A48800627C21 /* GameStageScene.cpp */; };
@@ -240,6 +242,8 @@
 		31819B5A1BE1BD2D00C505E8 /* StageClearLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageClearLayer.h; sourceTree = "<group>"; };
 		31819B5D1BE1BDAB00C505E8 /* StageClearData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageClearData.cpp; sourceTree = "<group>"; };
 		31819B5E1BE1BDAB00C505E8 /* StageClearData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageClearData.h; sourceTree = "<group>"; };
+		31819B631BE1EF0D00C505E8 /* ClearStageCondition_NoEnemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClearStageCondition_NoEnemy.cpp; sourceTree = "<group>"; };
+		31819B641BE1EF0D00C505E8 /* ClearStageCondition_NoEnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearStageCondition_NoEnemy.h; sourceTree = "<group>"; };
 		3185615B1BD4855800627C21 /* StageSelectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageSelectScene.cpp; sourceTree = "<group>"; };
 		3185615C1BD4855800627C21 /* StageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectScene.h; sourceTree = "<group>"; };
 		3185615F1BD4899100627C21 /* Item_SelectStage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Item_SelectStage.hpp; sourceTree = "<group>"; };
@@ -527,6 +531,8 @@
 		3141AED01BD4B74E001F09B6 /* GameStage */ = {
 			isa = PBXGroup;
 			children = (
+				31819B621BE1EEBB00C505E8 /* MapStrategyOnPuzzle */,
+				31819B611BE1EE9F00C505E8 /* ClearCondition */,
 				3141AED11BD4B8F0001F09B6 /* Jewel.cpp */,
 				3141AED21BD4B8F0001F09B6 /* Jewel.h */,
 				3141AED51BD4BCF9001F09B6 /* JewelGrid.cpp */,
@@ -542,18 +548,34 @@
 				31CD82481BD767440009D1FB /* MapItemPlayer.h */,
 				3141AEED1BD615CB001F09B6 /* MapLayer.cpp */,
 				3141AEEE1BD615CB001F09B6 /* MapLayer.h */,
-				319DA2D01BE06DAD00151EF1 /* IMapStrategyOnPuzzleStatusChange.h */,
-				319DA2D11BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp */,
-				319DA2D21BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.h */,
 				31CD82501BD77CD40009D1FB /* MapController.cpp */,
 				31CD82511BD77CD40009D1FB /* MapController.h */,
-				31819B4D1BE0C43300C505E8 /* IClearStageCondition.h */,
-				31819B4E1BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp */,
-				31819B4F1BE0C57300C505E8 /* ClearStageCondition_GoalMap.h */,
 				3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */,
 				3141AECD1BD4B6F1001F09B6 /* GameStageController.h */,
 			);
 			name = GameStage;
+			sourceTree = "<group>";
+		};
+		31819B611BE1EE9F00C505E8 /* ClearCondition */ = {
+			isa = PBXGroup;
+			children = (
+				31819B4D1BE0C43300C505E8 /* IClearStageCondition.h */,
+				31819B4E1BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp */,
+				31819B4F1BE0C57300C505E8 /* ClearStageCondition_GoalMap.h */,
+				31819B631BE1EF0D00C505E8 /* ClearStageCondition_NoEnemy.cpp */,
+				31819B641BE1EF0D00C505E8 /* ClearStageCondition_NoEnemy.h */,
+			);
+			name = ClearCondition;
+			sourceTree = "<group>";
+		};
+		31819B621BE1EEBB00C505E8 /* MapStrategyOnPuzzle */ = {
+			isa = PBXGroup;
+			children = (
+				319DA2D01BE06DAD00151EF1 /* IMapStrategyOnPuzzleStatusChange.h */,
+				319DA2D11BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp */,
+				319DA2D21BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.h */,
+			);
+			name = MapStrategyOnPuzzle;
 			sourceTree = "<group>";
 		};
 		46880B7519C43A67006E1F66 /* Resources */ = {
@@ -860,6 +882,7 @@
 				31819B5F1BE1BDAB00C505E8 /* StageClearData.cpp in Sources */,
 				319DA2D31BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				31819B651BE1EF0D00C505E8 /* ClearStageCondition_NoEnemy.cpp in Sources */,
 				31CD82521BD77CD40009D1FB /* MapController.cpp in Sources */,
 				31819B5B1BE1BD2D00C505E8 /* StageClearLayer.cpp in Sources */,
 				31CD82561BD882DA0009D1FB /* IDPool.cpp in Sources */,
@@ -875,6 +898,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				319DA2C71BDF180F00151EF1 /* HealthBar.cpp in Sources */,
+				31819B661BE1EF0D00C505E8 /* ClearStageCondition_NoEnemy.cpp in Sources */,
 				31819B5C1BE1BD2D00C505E8 /* StageClearLayer.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				319DA2D41BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp in Sources */,

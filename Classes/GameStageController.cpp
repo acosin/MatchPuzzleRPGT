@@ -7,6 +7,7 @@
 #include "GameStageController.h"
 
 #include "ClearStageCondition_GoalMap.h"
+#include "ClearStageCondition_NoEnemy.h"
 #include "StageClearData.h"
 
 const string GameStageController::EventNameStageClear = "event_StageClear";
@@ -126,6 +127,8 @@ void GameStageController::onPuzzleStatusChange()
     //TODO: may need async here,
     //first stop stick controller to keep no playerItem change
     _mapController->onPuzzleStatusChange(changeData);
+    
+    checkClearStage();
 }
 
 void GameStageController::checkClearStage()
@@ -150,12 +153,15 @@ void GameStageController::processClearStage(ClearStageConditionType t)
             //process StageClearData
 
             break;
-        //case ClearStageConditionType:: ;
-         
+        case ClearStageConditionType::NO_ENEMY:
+            CCLOG("clear stage: no enemy!");
+            //process StageClearData
+
+            break;
         default:
             break;
     }
-    if (data != nullptr) {
+    if (data != nullptr) { // now data == NULL
         auto dispatcher = Director::getInstance()->getEventDispatcher();
         dispatcher->dispatchCustomEvent(GameStageController::EventNameStageClear, data);
     }
@@ -177,9 +183,17 @@ StageData* GameStageController::getStageData()
     return _stageData;
 }
 
+int GameStageController::getEnemyCount()
+{
+    return _mapController->getEnemyCount();
+}
+
 void GameStageController::addClearConditions()
 {
     auto goalMap = new ClearStageCondition_GoalMap();
     _clearConditions.push_back(goalMap);
+    
+    auto noEnemy = new ClearStageCondition_NoEnemy();
+    _clearConditions.push_back(noEnemy);
 }
 

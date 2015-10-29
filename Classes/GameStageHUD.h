@@ -17,11 +17,10 @@ public:
     GameStageHUD();
     ~GameStageHUD();
     
-    static cocos2d::Scene* createScene();
+    CREATE_FUNC(GameStageHUD);
     virtual bool init();
 
     
-    CREATE_FUNC(GameStageHUD);
 
 private:
 

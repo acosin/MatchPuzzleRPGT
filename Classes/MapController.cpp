@@ -316,6 +316,17 @@ bool MapController::checkGoal()
     return false;
 }
 
+int MapController::getEnemyCount()
+{
+    int ret = 0;
+    for (auto item : _mapItems) {
+        if (item.second->getType() == MapItemType::Enemy) {
+            ret++;
+        }
+    }
+    return ret;
+}
+
 // -- private --
 
 

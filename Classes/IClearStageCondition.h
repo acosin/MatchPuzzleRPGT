@@ -10,7 +10,8 @@
 class GameStageController;
 
 enum class ClearStageConditionType {
-    GOAL_MAP
+    GOAL_MAP,
+    NO_ENEMY
 };
 
 class IClearStageCondition
