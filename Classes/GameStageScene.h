@@ -17,6 +17,9 @@
 #include "UIHelper.hpp"
 #include "AnalogStick.h"
 
+#include "StageClearLayer.h"
+#include "StageClearData.h"
+
 USING_NS_CC;
 
 #define DELAY_PLAYER_MOVE 0.2
@@ -73,4 +76,8 @@ private:
     void tryMovePlayerDown(float delay);
     void tryMovePlayerLeft(float delay);
     void tryMovePlayerRight(float delay);
+    
+    void regEventStageClear();
+    void removeEventStageCLear();
+    void onStageClear(EventCustom* pEvent);
 };

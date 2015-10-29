@@ -80,6 +80,10 @@
 		31819B551BE1A98C00C505E8 /* GameStageHUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B521BE1A98C00C505E8 /* GameStageHUD.cpp */; };
 		31819B571BE1B0D500C505E8 /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 31819B561BE1B0D500C505E8 /* meta_tiles.png */; };
 		31819B581BE1B0D500C505E8 /* meta_tiles.png in Resources */ = {isa = PBXBuildFile; fileRef = 31819B561BE1B0D500C505E8 /* meta_tiles.png */; };
+		31819B5B1BE1BD2D00C505E8 /* StageClearLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B591BE1BD2D00C505E8 /* StageClearLayer.cpp */; };
+		31819B5C1BE1BD2D00C505E8 /* StageClearLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B591BE1BD2D00C505E8 /* StageClearLayer.cpp */; };
+		31819B5F1BE1BDAB00C505E8 /* StageClearData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B5D1BE1BDAB00C505E8 /* StageClearData.cpp */; };
+		31819B601BE1BDAB00C505E8 /* StageClearData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B5D1BE1BDAB00C505E8 /* StageClearData.cpp */; };
 		3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; };
 		3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3185615B1BD4855800627C21 /* StageSelectScene.cpp */; };
 		318561621BD4A48800627C21 /* GameStageScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 318561601BD4A48800627C21 /* GameStageScene.cpp */; };
@@ -232,6 +236,10 @@
 		31819B521BE1A98C00C505E8 /* GameStageHUD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStageHUD.cpp; sourceTree = "<group>"; };
 		31819B531BE1A98C00C505E8 /* GameStageHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStageHUD.h; sourceTree = "<group>"; };
 		31819B561BE1B0D500C505E8 /* meta_tiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meta_tiles.png; sourceTree = "<group>"; };
+		31819B591BE1BD2D00C505E8 /* StageClearLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageClearLayer.cpp; sourceTree = "<group>"; };
+		31819B5A1BE1BD2D00C505E8 /* StageClearLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageClearLayer.h; sourceTree = "<group>"; };
+		31819B5D1BE1BDAB00C505E8 /* StageClearData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageClearData.cpp; sourceTree = "<group>"; };
+		31819B5E1BE1BDAB00C505E8 /* StageClearData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageClearData.h; sourceTree = "<group>"; };
 		3185615B1BD4855800627C21 /* StageSelectScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StageSelectScene.cpp; sourceTree = "<group>"; };
 		3185615C1BD4855800627C21 /* StageSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSelectScene.h; sourceTree = "<group>"; };
 		3185615F1BD4899100627C21 /* Item_SelectStage.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Item_SelectStage.hpp; sourceTree = "<group>"; };
@@ -438,6 +446,8 @@
 			children = (
 				3188E6741BCF8E7900AC8FBC /* StageData.cpp */,
 				3188E6751BCF8E7900AC8FBC /* StageData.h */,
+				31819B5D1BE1BDAB00C505E8 /* StageClearData.cpp */,
+				31819B5E1BE1BDAB00C505E8 /* StageClearData.h */,
 				3188E6791BCFBA4500AC8FBC /* StageScoreRecord.cpp */,
 				3188E6781BCFB90200AC8FBC /* StageScoreRecord.h */,
 				31122E961BC7A19400F08C65 /* ElementType.h */,
@@ -474,6 +484,8 @@
 				3188E6811BD0A6BB00AC8FBC /* StageScoreScene.h */,
 				3185615B1BD4855800627C21 /* StageSelectScene.cpp */,
 				3185615C1BD4855800627C21 /* StageSelectScene.h */,
+				31819B591BE1BD2D00C505E8 /* StageClearLayer.cpp */,
+				31819B5A1BE1BD2D00C505E8 /* StageClearLayer.h */,
 				31FF12BA1BD9D61000E06405 /* AnalogStick.cpp */,
 				31FF12BB1BD9D61000E06405 /* AnalogStick.h */,
 				318561601BD4A48800627C21 /* GameStageScene.cpp */,
@@ -845,9 +857,11 @@
 				318561621BD4A48800627C21 /* GameStageScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				31122EA31BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
+				31819B5F1BE1BDAB00C505E8 /* StageClearData.cpp in Sources */,
 				319DA2D31BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				31CD82521BD77CD40009D1FB /* MapController.cpp in Sources */,
+				31819B5B1BE1BD2D00C505E8 /* StageClearLayer.cpp in Sources */,
 				31CD82561BD882DA0009D1FB /* IDPool.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				31CD82451BD725F00009D1FB /* MapItemBase.cpp in Sources */,
@@ -861,6 +875,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				319DA2C71BDF180F00151EF1 /* HealthBar.cpp in Sources */,
+				31819B5C1BE1BD2D00C505E8 /* StageClearLayer.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				319DA2D41BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp in Sources */,
 				3188E67B1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
@@ -883,6 +898,7 @@
 				3188E67F1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				318561631BD4A48800627C21 /* GameStageScene.cpp in Sources */,
+				31819B601BE1BDAB00C505E8 /* StageClearData.cpp in Sources */,
 				31CD824E1BD769EC0009D1FB /* MapItemEnemy.cpp in Sources */,
 				3141AECF1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */,
 				3188E6831BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,

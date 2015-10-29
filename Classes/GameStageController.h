@@ -23,6 +23,8 @@ enum class ClearStageConditionType;
 
 class GameStageController
 {
+public:
+    static const std::string EventNameStageClear;
 private:
     StageData* _stageData;
     // map logic control
@@ -56,6 +58,7 @@ public:
     StageData* getStageData();
 public:
     JewelsGrid* _jewelsGrid;
+
     
 private:
     void addClearConditions();

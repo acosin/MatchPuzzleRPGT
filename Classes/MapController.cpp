@@ -310,12 +310,6 @@ bool MapController::isGoalPos(int x, int y)
 
 bool MapController::checkGoal()
 {
-    int goalY, goalX;
-    //TODO: load from stageData
-    goalY = 0;
-    goalX = _stageData->_mapWidth / 2;
-    
-    //if (getPlayerX() == goalX && getPlayerY() == goalY) {
     if (isGoalPos(getPlayerX(), getPlayerY())) {
         return true;
     }

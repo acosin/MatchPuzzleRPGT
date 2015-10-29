@@ -7,6 +7,9 @@
 #include "GameStageController.h"
 
 #include "ClearStageCondition_GoalMap.h"
+#include "StageClearData.h"
+
+const string GameStageController::EventNameStageClear = "event_StageClear";
 
 GameStageController::GameStageController():
 _jewelsGrid(nullptr),
@@ -139,15 +142,22 @@ void GameStageController::checkClearStage()
 
 void GameStageController::processClearStage(ClearStageConditionType t)
 {
+    StageClearData *data;
     switch (t) {
         case ClearStageConditionType::GOAL_MAP:
             
             CCLOG("clear stage: goal map!");
+            //process StageClearData
 
             break;
-            
+        //case ClearStageConditionType:: ;
+         
         default:
             break;
+    }
+    if (data != nullptr) {
+        auto dispatcher = Director::getInstance()->getEventDispatcher();
+        dispatcher->dispatchCustomEvent(GameStageController::EventNameStageClear, data);
     }
 }
 

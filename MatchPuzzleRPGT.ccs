@@ -16,6 +16,7 @@
         <Project Name="EnemyNode.csd" Type="Node" />
         <Project Name="MapEnemyNode.csd" Type="Layer" />
         <PlistParticleFile Name="defaultParticle.plist" />
+        <Project Name="StageClearLayer.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>

@@ -30,6 +30,7 @@ _mapLayer(nullptr)
 GameStageScene::~GameStageScene()
 {
     removeEventJewelGridStatusChange();
+    removeEventStageCLear();
 }
 
 bool GameStageScene::init()
@@ -116,6 +117,8 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     //TODO: may register more events here
     regEventJewelGridStatusChange();
     _jewelsGrid->startDispatchStatusChange();
+    
+    regEventStageClear();
     
     return true;
 }
@@ -204,6 +207,31 @@ void GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)
     _stick->stopStick();
     _controller->onPuzzleStatusChange();
     _stick->startStick();
+}
+
+void GameStageScene::regEventStageClear()
+{
+    auto listenner =EventListenerCustom::create(GameStageController::EventNameStageClear,
+                                                CC_CALLBACK_1(GameStageScene::onStageClear, this));
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->addEventListenerWithFixedPriority(listenner, 100);
+}
+
+void GameStageScene::removeEventStageCLear()
+{
+    getEventDispatcher()->removeCustomEventListeners(GameStageController::EventNameStageClear);
+}
+
+void GameStageScene::onStageClear(EventCustom* pEvent)
+{
+    //TODO: need stop any interaction here
+    _stick->stopStick();
+    
+    auto data = static_cast<StageClearData*>(pEvent->getUserData());
+    auto stageClearLayer = StageClearLayer::create();
+    stageClearLayer->initWithData(data);
+    
+    this->addChild(stageClearLayer, 10, 10);
 }
 
 void GameStageScene::tryMovePlayerUp(float delay)
