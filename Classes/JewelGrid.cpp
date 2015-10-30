@@ -11,6 +11,16 @@
 
 using namespace CocosDenshion;
 
+const std::string JewelsGrid::eventNameStatusChange = "event_JewelGridStatusChange";
+const std::string JewelsGrid::EventName_FinishCrushingMatches = "event_FinishCrushingMatches";
+const std::string JewelsGrid::EventName_FinishCrushingMatches_End = "event_FinishCrushingMatches_End";
+
+
+JewelsGrid::~JewelsGrid()
+{
+    removeEventStatusChange();
+}
+
 // [TODO] may need modification to fulfill the latest style of memory management
 JewelsGrid* JewelsGrid::create(int row, int col)
 {
@@ -68,6 +78,8 @@ bool JewelsGrid::init(int row, int col)
     listener->onTouchMoved = CC_CALLBACK_2(JewelsGrid::onTouchMoved, this);
     
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+    
+    regEventStatusChange();
     
     log("JewelsGrid init!");
     return true;
@@ -608,12 +620,19 @@ void JewelsGrid::onJewelsCrushing(float dt)
         }
     }
     
+    //if (!m_isFinishCrushingMatches_End) {
+      //  return;
+    //}
+    
+    
     // if all jewels finish crushing, stop the catch function
     //如果全部宝石已经消除完毕，停止捕捉函数
     unschedule(schedule_selector(JewelsGrid::onJewelsCrushing));
     
     dispatchEventStatusChange();
     
+    
+    /*
     m_crushJewelBox.clear();
     
     //log("crush over!");
@@ -623,6 +642,8 @@ void JewelsGrid::onJewelsCrushing(float dt)
     //刷新宝石阵列，并开启刷新状态捕捉函数（刷新一遍结束，重新判断新阵列是否可消除）
     refreshJewelsGrid();
     schedule(schedule_selector(JewelsGrid::onJewelsRefreshing));
+    */
+    
 }
 
 void JewelsGrid::onJewelsRefreshing(float dt)
@@ -694,12 +715,14 @@ void JewelsGrid::onJewelsRefreshing(float dt)
     }
 }
 
-void JewelsGrid::dispatchEventStatusChange()
+void JewelsGrid::dispatchEventStatusChange(CallFunc *callback)
 {
     if (!isDispatchStatusChange)
         return;
+    
+    //m_isFinishCrushingMatches_End = false;
     auto dispatcher = Director::getInstance()->getEventDispatcher();
-    dispatcher->dispatchCustomEvent(JewelsGrid::eventNameStatusChange);
+    dispatcher->dispatchCustomEvent(JewelsGrid::EventName_FinishCrushingMatches, callback);
 }
 
 void JewelsGrid::startDispatchStatusChange()
@@ -747,5 +770,30 @@ void JewelsGrid::disableTounch()
 void JewelsGrid::enableTouch()
 {
     m_touchable = true;
+}
+
+void JewelsGrid::regEventStatusChange()
+{
+    auto listenner =EventListenerCustom::create(JewelsGrid::EventName_FinishCrushingMatches_End,
+                                                CC_CALLBACK_1(JewelsGrid::onEventName_FinishCrushingMatches_End, this));
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->addEventListenerWithFixedPriority(listenner, 100);
+}
+
+void JewelsGrid::removeEventStatusChange()
+{
+    getEventDispatcher()->removeCustomEventListeners(JewelsGrid::EventName_FinishCrushingMatches_End);
+}
+
+void JewelsGrid::onEventName_FinishCrushingMatches_End(EventCustom* pEvent)
+{
+   // m_isFinishCrushingMatches_End = true;
+    m_crushJewelBox.clear();
+    //log("crush over!");
+    //log("begin to refresh!");
+    //刷新宝石阵列，并开启刷新状态捕捉函数（刷新一遍结束，重新判断新阵列是否可消除）
+    refreshJewelsGrid();
+    schedule(schedule_selector(JewelsGrid::onJewelsRefreshing));
+    
 }
 

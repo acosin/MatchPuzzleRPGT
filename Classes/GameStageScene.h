@@ -24,7 +24,7 @@ USING_NS_CC;
 
 #define DELAY_PLAYER_MOVE 0.2
 
-#define ELEMENT_TYPE_MATCH_COUNT_DELAY 1.0
+#define ELEMENT_TYPE_MATCH_COUNT_DELAY 0.1
 
 class GameStageScene : public Layer
 {

@@ -31,7 +31,12 @@ class JewelsGrid : public Node
 {
 public:
     static const std::string eventNameStatusChange;
+    // who handle EventName_FinishCrushingMatches, should dispatch a EventName_FinishCrushingMatches after handlinig!
+    // here we use to catch the fact that has dealt with element-x/y count animation after matches crushed
+    static const std::string EventName_FinishCrushingMatches;
+    static const std::string EventName_FinishCrushingMatches_End;
 public:
+    ~JewelsGrid();
     static JewelsGrid* create(int row, int col);
     bool init(int row, int col);
     
@@ -79,7 +84,13 @@ private:
     void onJewelsRefreshing(float dt);
     
     bool isDispatchStatusChange = false;
-    void dispatchEventStatusChange();
+    //bool m_isFinishCrushingMatches_End = true;
+    
+    void dispatchEventStatusChange(CallFunc *callback = NULL);
+    void onEventName_FinishCrushingMatches_End(EventCustom* pEvent);
+    
+    void regEventStatusChange();
+    void removeEventStatusChange();
     
 public:
     int getRow() { return m_row; }

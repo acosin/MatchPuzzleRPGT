@@ -3,6 +3,9 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "JewelsGrid::onJewelsCrushing(float):JewelGrid.cpp">
+      </ContextState>
+      <ContextState
          contextName = "MapController::createEnemyItem(int, int, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):MapController.cpp">
          <PersistentStrings>
             <PersistentString
@@ -12,6 +15,9 @@
                value = "node-&gt;getContentSize()">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameStageScene::animateComboCountChange(PuzzleStatusChangeData*, float, cocos2d::CallFunc*):GameStageScene.cpp">
       </ContextState>
       <ContextState
          contextName = "StageData::loadStageDataFromCSV(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):StageData.cpp">
@@ -31,7 +37,18 @@
          contextName = "CsvParser::Csv::Parse(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):CsvParser.cpp">
       </ContextState>
       <ContextState
+         contextName = "GameStageScene::onJewelGridStatusChange(cocos2d::EventCustom*):GameStageScene.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "pEvent">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "GameStageScene::initData(StageDataManager*, unsigned int):GameStageScene.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "JewelsGrid::createPuzzleStatusChangeData():JewelGrid.cpp">
       </ContextState>
       <ContextState
          contextName = "MapController::tryMovePlayerUp():MapController.cpp">
@@ -87,10 +104,15 @@
          contextName = "JewelsGrid::goCrush():JewelGrid.cpp">
       </ContextState>
       <ContextState
-         contextName = "MapController::createMapLayerFromData():MapController.cpp">
+         contextName = "Layer_PlayerStatus::createItem(PlayerStatusData*):Layer_PlayerStatus.hpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "item-&gt;_customSize">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "GameStageScene::init():GameStageScene.cpp">
+         contextName = "MapController::createMapLayerFromData():MapController.cpp">
       </ContextState>
       <ContextState
          contextName = "Jewel::init(ElementType, int, int):Jewel.cpp">
@@ -99,7 +121,7 @@
          contextName = "MapItemBase::MapItemBase(int, int, bool, MapItemType, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):MapItemBase.cpp">
       </ContextState>
       <ContextState
-         contextName = "MapController::createPlayerItem(int, int, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):MapController.cpp">
+         contextName = "GameStageScene::init():GameStageScene.cpp">
       </ContextState>
       <ContextState
          contextName = "MapController::tryMovePlayerTo(int, int):MapController.cpp">
@@ -110,12 +132,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "Layer_PlayerStatus::createItem(PlayerStatusData*):Layer_PlayerStatus.hpp">
-         <PersistentStrings>
-            <PersistentString
-               value = "item-&gt;_customSize">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "MapController::createPlayerItem(int, int, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt; &gt; const&amp;):MapController.cpp">
       </ContextState>
       <ContextState
          contextName = "MapController::findMapItems(int, int):MapController.cpp">
@@ -135,6 +152,15 @@
                value = "node-&gt;getContentSize()">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "GameStageScene::animateComboCountChange(PuzzleStatusChangeData*, float, cocos2d::CallFunc*)::$_3::operator()() const:GameStageScene.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "PuzzleStatusChangeData::init(JewelGridStatus const*):PuzzleStatusChangeData.hpp">
+      </ContextState>
+      <ContextState
+         contextName = "GameStageScene::animateComboCountChange(PuzzleStatusChangeData*, float, cocos2d::CallFunc*)::$_4::operator()() const:GameStageScene.cpp">
       </ContextState>
       <ContextState
          contextName = "MapItemBase::setX(int):MapItemBase.cpp">

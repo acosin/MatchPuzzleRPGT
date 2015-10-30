@@ -6,8 +6,6 @@
 
 #include "GameStageScene.h"
 
-const string JewelsGrid::eventNameStatusChange = "event_JewelGridStatusChange";
-
 GameStageScene::GameStageScene():
 _layout(nullptr),
 _puzzleLayout(nullptr),
@@ -179,7 +177,7 @@ void GameStageScene::update(float delta)
 
 void GameStageScene::regEventJewelGridStatusChange()
 {
-    auto listenner =EventListenerCustom::create(JewelsGrid::eventNameStatusChange,
+    auto listenner =EventListenerCustom::create(JewelsGrid::EventName_FinishCrushingMatches,
                                                 CC_CALLBACK_1(GameStageScene::onJewelGridStatusChange, this));
     auto dispatcher = Director::getInstance()->getEventDispatcher();
     dispatcher->addEventListenerWithFixedPriority(listenner, 100);
@@ -187,7 +185,7 @@ void GameStageScene::regEventJewelGridStatusChange()
 
 void GameStageScene::removeEventJewelGridStatusChange()
 {
-    getEventDispatcher()->removeCustomEventListeners(JewelsGrid::eventNameStatusChange);
+    getEventDispatcher()->removeCustomEventListeners(JewelsGrid::EventName_FinishCrushingMatches);
 }
 
 void GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)
@@ -206,15 +204,18 @@ void GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)
     this->_textYcombo->setString(str);
     */
     float duration = ELEMENT_TYPE_MATCH_COUNT_DELAY;
-    animateComboCountChange(data, duration);
+    //animateComboCountChange(data, duration);
+    //_controller->onPuzzleStatusChange();
+    //startInteraction();
     
-    //TODO: may need async here
-    //_stick->stopStick();
-    
-    _controller->onPuzzleStatusChange();
-    //(animation)
-    //_stick->startStick();
-    startInteraction();
+    //TODO
+    animateComboCountChange(data, duration, CallFunc::create([&](){
+        this->_controller->onPuzzleStatusChange();
+        this->startInteraction();
+        
+        auto dispatcher = Director::getInstance()->getEventDispatcher();
+        dispatcher->dispatchCustomEvent(JewelsGrid::EventName_FinishCrushingMatches_End);
+    }));
 }
 
 void GameStageScene::regEventStageClear()
