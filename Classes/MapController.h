@@ -18,7 +18,7 @@
 #include "IDPool.h"
 
 #include "EnemyNode.h"
-#include "PuzzleStatusChangeData.h"
+#include "PuzzleStatusChangeData.hpp"
 #include "IMapStrategyOnPuzzleStatusChange.h"
 
 USING_NS_CC;

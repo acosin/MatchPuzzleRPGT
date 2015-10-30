@@ -6,7 +6,7 @@
 #pragma once
 
 #include "MapController.h"
-#include "PuzzleStatusChangeData.h"
+#include "PuzzleStatusChangeData.hpp"
 
 class MapController;
 

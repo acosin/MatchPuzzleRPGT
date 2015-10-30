@@ -12,7 +12,7 @@
 #include "StageScoreRecord.h"
 #include "MapController.h"
 
-#include "PuzzleStatusChangeData.h"
+#include "PuzzleStatusChangeData.hpp"
 
 #include "IClearStageCondition.h"
 

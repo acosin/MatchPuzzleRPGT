@@ -265,7 +265,7 @@
 		319DA2C81BDF26C500151EF1 /* hp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hp.png; sourceTree = "<group>"; };
 		319DA2CB1BDF323E00151EF1 /* EnemyNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EnemyNode.cpp; sourceTree = "<group>"; };
 		319DA2CC1BDF323E00151EF1 /* EnemyNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyNode.h; sourceTree = "<group>"; };
-		319DA2CF1BE0656000151EF1 /* PuzzleStatusChangeData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleStatusChangeData.h; sourceTree = "<group>"; };
+		319DA2CF1BE0656000151EF1 /* PuzzleStatusChangeData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = PuzzleStatusChangeData.hpp; sourceTree = "<group>"; };
 		319DA2D01BE06DAD00151EF1 /* IMapStrategyOnPuzzleStatusChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMapStrategyOnPuzzleStatusChange.h; sourceTree = "<group>"; };
 		319DA2D11BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleMapStrategyOnPuzzleStatusChange.cpp; sourceTree = "<group>"; };
 		319DA2D21BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleMapStrategyOnPuzzleStatusChange.h; sourceTree = "<group>"; };
@@ -459,7 +459,7 @@
 				31122E9C1BC7A88900F08C65 /* UnitOfPlayerRecord.h */,
 				31122EA01BC7B52600F08C65 /* PlayerStatusData.h */,
 				31CD824F1BD76AD50009D1FB /* EnemyStatusData.h */,
-				319DA2CF1BE0656000151EF1 /* PuzzleStatusChangeData.h */,
+				319DA2CF1BE0656000151EF1 /* PuzzleStatusChangeData.hpp */,
 			);
 			name = DataModel;
 			sourceTree = "<group>";

@@ -93,10 +93,11 @@ public:
     JewelGridStatus();
     ~JewelGridStatus();
     
-    int getRowCount();
-    int getColCount();
-    int getRowOfTypeCount(ElementType type);
-    int getColOfTypeCount(ElementType type);
+    int getRowCount() const;
+    int getColCount() const;
+    int getRowOfTypeCount(ElementType type) const;
+    int getColOfTypeCount(ElementType type) const;
+    int getComboCount() const;
     
     void addCombo(MatchCombo* combo);
     void clearCombo();

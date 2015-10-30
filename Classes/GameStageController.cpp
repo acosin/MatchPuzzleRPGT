@@ -188,11 +188,13 @@ int GameStageController::getEnemyCount()
 
 PuzzleStatusChangeData* GameStageController::getPuzzleStatusChangeData()
 {
+    auto changeData = _jewelsGrid->createPuzzleStatusChangeData();
+    //TODO:remove later
     int damageX = _jewelsGrid->getStatusXCombo();
     int damageY = _jewelsGrid->getStatusYCombo();
-    auto changeData = new PuzzleStatusChangeData();
     changeData->xCombo = damageX;
     changeData->yCombo = damageY;
+    //
     return changeData;
 }
 

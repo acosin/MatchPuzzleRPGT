@@ -10,10 +10,10 @@
 #include <stdio.h>
 
 enum class ElementType {
-    RED,
+    RED = 0,
     BLUE,
     YELLOW,
-    GREEN,
+    GREEN, // = count - 1
     
     count
 };

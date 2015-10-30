@@ -197,14 +197,16 @@ void GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)
     //GameStageScene* target = (GameStageScene*)pEvent->getCurrentTarget();
     CCLOG("onJewelGridStatusChange");
     
+    auto data = _controller->getPuzzleStatusChangeData();
+    
     /*
     auto str = Value(this->_jewelsGrid->getStatusXCombo()).asString();
     this->_textXcombo->setString(str);
     str = Value(this->_jewelsGrid->getStatusYCombo()).asString();
     this->_textYcombo->setString(str);
     */
-    float duration = 0.5;
-    animateComboCountChange(_controller->getPuzzleStatusChangeData(), duration);
+    float duration = ELEMENT_TYPE_MATCH_COUNT_DELAY;
+    animateComboCountChange(data, duration);
     
     //TODO: may need async here
     //_stick->stopStick();
@@ -282,32 +284,38 @@ void GameStageScene::animateComboCountChange(PuzzleStatusChangeData *data, float
     //duration define how long for every (element) number count
     
     int timesChange = 10;
-    int xFrom = 0;
-    int xTo = data->xCombo;
-    float xStep = (xTo - xFrom) / (float)timesChange;
-    int yFrom = 0;
-    int yTo = data->yCombo;
-    float yStep = (xTo - xFrom) / (float)timesChange;
     //TODO: handle countChange and timesChange here
     float delay = duration / (float)timesChange;
     Vector<FiniteTimeAction*> actions;
     for (int i = 1; i<=timesChange; i++) {
         for (int type = 0; type < (int)ElementType::count; type++) {
+            auto xTextName = this->getTextLabelComboCount(true, (ElementType)type);
+            auto xText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(xTextName));
+            auto yTextName = this->getTextLabelComboCount(false, (ElementType)type);
+            auto yText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(yTextName));
+            
+            //int xFrom = 0;
+            int xFrom = Value(xText->getString()).asInt();
+            //int xTo = data->xCombo;
+            int xTo = data->getMatchCountX((ElementType)type);
+            float xStep = (xTo - xFrom) / (float)timesChange;
+            //int yFrom = 0;
+            int yFrom = Value(yText->getString()).asInt();
+            //int yTo = data->yCombo;
+            int yTo = data->getMatchCountY((ElementType)type);
+            ///TODO: for debug, remove later
+            //yFrom = 0;
+            //yTo = 100;
+            ///
+            float yStep = (yTo - yFrom) / (float)timesChange;
+            
             auto currentX = xTo - (int)xStep*(timesChange - i);
             auto currentY = yTo - (int)yStep*(timesChange - i);
             
-            auto actionX = Sequence::create(DelayTime::create(delay), CallFunc::create([&, currentX, type](){
-                auto xTextName = this->getTextLabelComboCount(true, (ElementType)type);
-                //TODO
-                xTextName = "Text_xCombo";
-                auto xText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(xTextName));
+            auto actionX = Sequence::create(DelayTime::create(delay), CallFunc::create([&, currentX, xText](){
                 xText->setString(Value(currentX).asString());
             }), NULL);
-            auto actionY = Sequence::create(DelayTime::create(delay), CallFunc::create([&, currentY, type](){
-                auto yTextName = this->getTextLabelComboCount(false, (ElementType)type);
-                //TODO
-                yTextName = "Text_yCombo";
-                auto yText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(yTextName));
+            auto actionY = Sequence::create(DelayTime::create(delay), CallFunc::create([&, currentY, yText](){
                 yText->setString(Value(currentY).asString());
             }), NULL);
             

@@ -75,7 +75,7 @@
           <AbstractNodeData Name="Panel_map" ActionTag="-800175265" Alpha="0" Tag="46" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="64.5602" RightMargin="75.4398" TopMargin="3.8159" BottomMargin="632.1841" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="500.0000" Y="500.0000" />
             <AnchorPoint ScaleX="0.5000" />
-            <Position X="314.5602" Y="632.1841" />
+            <Position X="314.5600" Y="632.1840" />
             <Scale ScaleX="1.0000" ScaleY="0.6418" />
             <CColor A="255" R="30" G="144" B="255" />
             <PrePosition X="0.4915" Y="0.5565" />
@@ -98,24 +98,112 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_yCombo" ActionTag="1807653780" Tag="53" IconVisible="False" LeftMargin="320.4877" RightMargin="293.5123" TopMargin="513.6975" BottomMargin="568.3025" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_yCombo" ActionTag="1807653780" Tag="53" IconVisible="False" LeftMargin="85.8572" RightMargin="528.1428" TopMargin="493.0707" BottomMargin="588.9293" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="26.0000" Y="54.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="333.4877" Y="595.3025" />
+            <Position X="98.8572" Y="615.9293" />
             <Scale ScaleX="3.2951" ScaleY="2.6200" />
             <CColor A="255" R="30" G="144" B="255" />
-            <PrePosition X="0.5211" Y="0.5240" />
+            <PrePosition X="0.1545" Y="0.5422" />
             <PreSize X="0.0000" Y="0.0000" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_xCombo" ActionTag="1726260655" Tag="13" IconVisible="False" LeftMargin="21.5311" RightMargin="592.4689" TopMargin="729.9247" BottomMargin="352.0753" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_xCombo" ActionTag="1726260655" Tag="13" IconVisible="False" LeftMargin="21.5310" RightMargin="592.4690" TopMargin="639.6827" BottomMargin="442.3172" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="26.0000" Y="54.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="34.5311" Y="379.0753" />
+            <Position X="34.5310" Y="469.3172" />
             <Scale ScaleX="2.2735" ScaleY="1.8822" />
             <CColor A="255" R="30" G="144" B="255" />
-            <PrePosition X="0.0540" Y="0.3337" />
+            <PrePosition X="0.0540" Y="0.4131" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_xComboRED" ActionTag="341052225" Tag="17" IconVisible="False" LeftMargin="18.6395" RightMargin="595.3605" TopMargin="737.3497" BottomMargin="344.6502" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="26.0000" Y="54.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="31.6395" Y="371.6502" />
+            <Scale ScaleX="2.2735" ScaleY="1.9777" />
+            <CColor A="255" R="255" G="0" B="0" />
+            <PrePosition X="0.0494" Y="0.3272" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_xComboBLUE" ActionTag="600108999" Tag="18" IconVisible="False" LeftMargin="20.9044" RightMargin="593.0956" TopMargin="814.3887" BottomMargin="267.6114" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="26.0000" Y="54.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="33.9044" Y="294.6114" />
+            <Scale ScaleX="2.2735" ScaleY="1.9777" />
+            <CColor A="255" R="0" G="0" B="255" />
+            <PrePosition X="0.0530" Y="0.2593" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_xComboYELLOW" ActionTag="-238162420" Tag="19" IconVisible="False" LeftMargin="20.5912" RightMargin="593.4088" TopMargin="901.7408" BottomMargin="180.2592" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="26.0000" Y="54.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="33.5912" Y="207.2592" />
+            <Scale ScaleX="2.2735" ScaleY="1.9777" />
+            <CColor A="255" R="255" G="255" B="0" />
+            <PrePosition X="0.0525" Y="0.1824" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_xComboGREEN" ActionTag="-564913524" Tag="20" IconVisible="False" LeftMargin="20.2778" RightMargin="593.7222" TopMargin="981.3574" BottomMargin="100.6426" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="26.0000" Y="54.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="33.2778" Y="127.6426" />
+            <Scale ScaleX="2.2735" ScaleY="1.9777" />
+            <CColor A="255" R="17" G="234" B="26" />
+            <PrePosition X="0.0520" Y="0.1124" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_yComboRED" ActionTag="1850671545" Tag="21" IconVisible="False" LeftMargin="173.0269" RightMargin="440.9731" TopMargin="507.5635" BottomMargin="574.4365" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="26.0000" Y="54.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="186.0269" Y="601.4365" />
+            <Scale ScaleX="2.2735" ScaleY="1.9777" />
+            <CColor A="255" R="255" G="0" B="0" />
+            <PrePosition X="0.2907" Y="0.5294" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_yComboBLUE" ActionTag="768015251" Tag="22" IconVisible="False" LeftMargin="250.0649" RightMargin="363.9351" TopMargin="507.2542" BottomMargin="574.7458" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="26.0000" Y="54.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="263.0649" Y="601.7458" />
+            <Scale ScaleX="2.2735" ScaleY="1.9777" />
+            <CColor A="255" R="0" G="0" B="255" />
+            <PrePosition X="0.4110" Y="0.5297" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_yComboYELLOW" ActionTag="1783623012" Tag="23" IconVisible="False" LeftMargin="321.9474" RightMargin="292.0526" TopMargin="506.9403" BottomMargin="575.0597" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="26.0000" Y="54.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="334.9474" Y="602.0597" />
+            <Scale ScaleX="2.2735" ScaleY="1.9777" />
+            <CColor A="255" R="255" G="255" B="0" />
+            <PrePosition X="0.5234" Y="0.5300" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_yComboGREEN" ActionTag="-1016746386" Tag="24" IconVisible="False" LeftMargin="393.8281" RightMargin="220.1719" TopMargin="511.7842" BottomMargin="570.2158" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="26.0000" Y="54.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="406.8281" Y="597.2158" />
+            <Scale ScaleX="2.2735" ScaleY="1.9777" />
+            <CColor A="255" R="17" G="234" B="26" />
+            <PrePosition X="0.6357" Y="0.5257" />
             <PreSize X="0.0000" Y="0.0000" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />

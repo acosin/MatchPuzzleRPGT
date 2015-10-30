@@ -12,6 +12,7 @@
 #include "ElementType.h"
 
 #include "JewelGridStatus.h"
+#include "PuzzleStatusChangeData.hpp"
 
 USING_NS_CC;
 using namespace std;
@@ -42,6 +43,8 @@ public:
     
     int getStatusXCombo();
     int getStatusYCombo();
+    
+    PuzzleStatusChangeData* createPuzzleStatusChangeData();
     
     void disableTounch();
     void enableTouch();

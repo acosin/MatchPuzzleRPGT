@@ -142,7 +142,7 @@ JewelGridStatus::~JewelGridStatus()
     
 }
 
-int JewelGridStatus::getRowCount()
+int JewelGridStatus::getRowCount() const
 {
     int ret = 0;
     for (auto combo : comboes) {
@@ -151,7 +151,7 @@ int JewelGridStatus::getRowCount()
     return ret;
 }
 
-int JewelGridStatus::getColCount()
+int JewelGridStatus::getColCount() const
 {
     int ret = 0;
     for (auto combo : comboes) {
@@ -160,7 +160,7 @@ int JewelGridStatus::getColCount()
     return ret;
 }
 
-int JewelGridStatus::getRowOfTypeCount(ElementType type)
+int JewelGridStatus::getRowOfTypeCount(ElementType type) const
 {
     int ret = 0;
     for (auto combo : comboes) {
@@ -169,13 +169,18 @@ int JewelGridStatus::getRowOfTypeCount(ElementType type)
     return ret;
 }
 
-int JewelGridStatus::getColOfTypeCount(ElementType type)
+int JewelGridStatus::getColOfTypeCount(ElementType type) const
 {
     int ret = 0;
     for (auto combo : comboes) {
         ret += combo->getColOfTypeCount(type);
     }
     return ret;
+}
+
+int JewelGridStatus::getComboCount() const
+{
+    return comboes.size();
 }
 
 void JewelGridStatus::addCombo(MatchCombo *combo)

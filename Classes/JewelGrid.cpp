@@ -365,7 +365,7 @@ bool JewelsGrid::canCrush()
             if (count >= 3)
             {
                 // TODO: Update JewelGridStatus(match a col)
-                auto colMatch = MatchedJewels::createMatchCol(x, y, y+count-1, JewelNext->getType());
+                auto colMatch = MatchedJewels::createMatchCol(x, y, y+count-1, JewelBegin->getType());
                 matchCombo->addMatch(colMatch);
                 for (int n = 0; n < count; n++)
                 {
@@ -397,7 +397,7 @@ bool JewelsGrid::canCrush()
             if (count >= 3)
             {
                 // TODO: Update JewelGridStatus(match a row)
-                auto rowMatch = MatchedJewels::createMatchRow(y, x, x+count-1, JewelNext->getType());
+                auto rowMatch = MatchedJewels::createMatchRow(y, x, x+count-1, JewelBegin->getType());
                 matchCombo->addMatch(rowMatch);
 
                 for (int n = 0; n < count; n++)
@@ -453,7 +453,7 @@ void JewelsGrid::goCrush()
     }
     
     //TODO: dispatch here for every combo now!!!!
-    dispatchEventStatusChange();
+    //dispatchEventStatusChange();
 
 }
 
@@ -612,6 +612,8 @@ void JewelsGrid::onJewelsCrushing(float dt)
     //如果全部宝石已经消除完毕，停止捕捉函数
     unschedule(schedule_selector(JewelsGrid::onJewelsCrushing));
     
+    dispatchEventStatusChange();
+    
     m_crushJewelBox.clear();
     
     //log("crush over!");
@@ -724,6 +726,16 @@ int JewelsGrid::getStatusXCombo()
         return -1;
     } else {
         return m_status->getColCount();
+    }
+}
+
+
+PuzzleStatusChangeData* JewelsGrid::createPuzzleStatusChangeData()
+{
+    if (!m_status) {
+        return nullptr;
+    } else {
+        return PuzzleStatusChangeData::create(m_status);
     }
 }
 
