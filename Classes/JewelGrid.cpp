@@ -713,11 +713,12 @@ void JewelsGrid::onJewelsRefreshing(float dt)
                 
                 //NOTE: should make sure that here only be called only once!!!
                 dispatchEventFinishComboes();
-                
+                /*
                 m_status->clearCombo();
                 
                 //如果不是死图，那么就直接开启触摸监听，等待下一轮的交互操作
                 _eventDispatcher->resumeEventListenersForTarget(this);
+                 */
             }
         }
     }
@@ -827,7 +828,11 @@ void JewelsGrid::removeEventFinishComboesEnd()
 
 void JewelsGrid::onEventName_FinishComboes_End(EventCustom* pEvent)
 {
-    // TODO: show damage animation
+    m_status->clearCombo();
+    
+    //如果不是死图，那么就直接开启触摸监听，等待下一轮的交互操作
+    _eventDispatcher->resumeEventListenersForTarget(this);
+    
 }
 
 

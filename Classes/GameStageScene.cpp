@@ -246,6 +246,7 @@ void GameStageScene::removeEventFinishComboes()
 
 void GameStageScene::onFinishComboes(cocos2d::EventCustom *pEvent)
 {
+    /*
     // handling damage/death here
     // damage logic
     this->_controller->onPuzzleFinishComboes();
@@ -254,6 +255,22 @@ void GameStageScene::onFinishComboes(cocos2d::EventCustom *pEvent)
     
     auto dispatcher = Director::getInstance()->getEventDispatcher();
     dispatcher->dispatchCustomEvent(JewelsGrid::EventName_FinishComboes_End);
+    */
+    
+    
+    // count down the element-x/y
+    animateComboesCountDown(COMBOES_COUNT_DOWN_DURATION, CallFunc::create([&](){
+        // handling damage/death here
+        // damage logic
+        this->_controller->onPuzzleFinishComboes();
+        // end damage logic
+        this->startInteraction();
+        
+        auto dispatcher = Director::getInstance()->getEventDispatcher();
+        dispatcher->dispatchCustomEvent(JewelsGrid::EventName_FinishComboes_End);
+    }));
+    
+    
 }
 
 
@@ -348,6 +365,44 @@ void GameStageScene::animateComboCountChange(PuzzleStatusChangeData *data, float
             //yFrom = 0;
             //yTo = 100;
             ///
+            float yStep = (yTo - yFrom) / (float)timesChange;
+            
+            auto currentX = xTo - (int)xStep*(timesChange - i);
+            auto currentY = yTo - (int)yStep*(timesChange - i);
+            
+            auto actionX = Sequence::create(DelayTime::create(delay), CallFunc::create([&, currentX, xText](){
+                xText->setString(Value(currentX).asString());
+            }), NULL);
+            auto actionY = Sequence::create(DelayTime::create(delay), CallFunc::create([&, currentY, yText](){
+                yText->setString(Value(currentY).asString());
+            }), NULL);
+            
+            actions.pushBack(Spawn::create(actionX, actionY, NULL));
+        }
+    }
+    auto sequence = Sequence::create(Sequence::create(actions),callback, NULL);
+    this->runAction(sequence);
+}
+
+void GameStageScene::animateComboesCountDown(float duration, CallFunc *callback)
+{
+    auto data = _controller->getPuzzleStatusChangeData();
+    int timesChange = 10;
+    //TODO: handle countChange and timesChange here
+    float delay = duration / (float)timesChange;
+    Vector<FiniteTimeAction*> actions;
+    for (int i = 1; i<=timesChange; i++) {
+        for (int type = 0; type < (int)ElementType::count; type++) {
+            auto xTextName = this->getTextLabelComboCount(true, (ElementType)type);
+            auto xText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(xTextName));
+            auto yTextName = this->getTextLabelComboCount(false, (ElementType)type);
+            auto yText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(yTextName));
+            
+            int xFrom = Value(xText->getString()).asInt();
+            int xTo = 0;
+            float xStep = (xTo - xFrom) / (float)timesChange;
+            int yFrom = Value(yText->getString()).asInt();
+            int yTo = 0;
             float yStep = (yTo - yFrom) / (float)timesChange;
             
             auto currentX = xTo - (int)xStep*(timesChange - i);

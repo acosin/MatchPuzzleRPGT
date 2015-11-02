@@ -25,6 +25,7 @@ USING_NS_CC;
 #define DELAY_PLAYER_MOVE 0.2
 
 #define ELEMENT_TYPE_MATCH_COUNT_DELAY 0.1
+#define COMBOES_COUNT_DOWN_DURATION    0.3
 
 class GameStageScene : public Layer
 {
@@ -90,6 +91,7 @@ private:
     void startInteraction();
     
     virtual void animateComboCountChange(PuzzleStatusChangeData *data, float duration, CallFunc *callback=NULL);
+    virtual void animateComboesCountDown(float duration, CallFunc *callback=NULL);
     static std::string getTextLabelComboCount(bool isX, ElementType type);
     
     // processing function in update()
