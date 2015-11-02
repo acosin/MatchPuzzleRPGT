@@ -28,13 +28,20 @@ void SimpleMapStrategyOnPuzzleStatusChange::exec(MapController *c, PuzzleStatusC
         }
         auto afterHP = enemyItem->getDamaged(damage);
         float totalHP = (float)enemyItem->getTotalHP();
+        CC_ASSERT(totalHP!=0);
         enemyNode->animateFromTo(durationEnemyDamageAnimation,
                                  currentHP/totalHP*100,
                                  afterHP/totalHP*100);
+        
         //death handling
         if (enemyItem->isDead()) {
-            enemyNode->showDeadAnimation();
-            c->removeMapItem(enemyItem->getID());
+            auto sequence = Sequence::create(DelayTime::create(durationEnemyDamageAnimation), CallFunc::create([enemyNode,enemyItem,c](){
+                enemyNode->showDeadAnimation();
+                c->removeMapItem(enemyItem->getID());
+            }), NULL);
+            enemyNode->runAction(sequence);
         }
+        
     }
+    
 }
