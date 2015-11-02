@@ -17,6 +17,7 @@
         <Project Name="MapEnemyNode.csd" Type="Layer" />
         <PlistParticleFile Name="defaultParticle.plist" />
         <Project Name="StageClearLayer.csd" Type="Layer" />
+        <Image Name="attack.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

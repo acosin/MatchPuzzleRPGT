@@ -9,6 +9,7 @@
 GameStageScene::GameStageScene():
 _layout(nullptr),
 _puzzleLayout(nullptr),
+_puzzleEffectLayout(nullptr),
 _mapLayout(nullptr),
 _background(nullptr),
 _homeButton(nullptr),
@@ -52,6 +53,10 @@ bool GameStageScene::init()
     _layout->getChildByName("ImageView_background")->addChild(_background);
     
     _puzzleLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_puzzle"));
+    _puzzleEffectLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_puzzle_stage_effect"));
+    _puzzleEffectLayout->setVisible(false);
+    //TODO: may use some animation here
+    _puzzleEffectLayout->setBackGroundImage("ui/attack.png");
     _mapLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_map"));
     
     _textXcombo = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_xCombo"));
@@ -248,31 +253,20 @@ void GameStageScene::removeEventFinishComboes()
 
 void GameStageScene::onFinishComboes(cocos2d::EventCustom *pEvent)
 {
-    /*
-    // handling damage/death here
-    // damage logic
-    this->_controller->onPuzzleFinishComboes();
-    // end damage logic
-    this->startInteraction();
-    
-    auto dispatcher = Director::getInstance()->getEventDispatcher();
-    dispatcher->dispatchCustomEvent(JewelsGrid::EventName_FinishComboes_End);
-    */
-    
-    
-    // count down the element-x/y
-    animateComboesCountDown(COMBOES_COUNT_DOWN_DURATION, CallFunc::create([&](){
-        // handling damage/death here
-        // damage logic
-        this->_controller->onPuzzleFinishComboes();
-        // end damage logic
-        this->startInteraction();
-        
-        auto dispatcher = Director::getInstance()->getEventDispatcher();
-        dispatcher->dispatchCustomEvent(JewelsGrid::EventName_FinishComboes_End);
+    // add a "attack animation" here
+    animateAttackAnimation(ATTACK_ANIMATION_DURATION, CallFunc::create([&](){
+        // count down the element-x/y
+        animateComboesCountDown(COMBOES_COUNT_DOWN_DURATION, CallFunc::create([&](){
+            // handling damage/death here
+            // damage logic
+            this->_controller->onPuzzleFinishComboes();
+            // end damage logic
+            this->startInteraction();
+            
+            auto dispatcher = Director::getInstance()->getEventDispatcher();
+            dispatcher->dispatchCustomEvent(JewelsGrid::EventName_FinishComboes_End);
+        }));
     }));
-    
-    
 }
 
 
@@ -420,6 +414,31 @@ void GameStageScene::animateComboesCountDown(float duration, CallFunc *callback)
             actions.pushBack(Spawn::create(actionX, actionY, NULL));
         }
     }
+    auto sequence = Sequence::create(Sequence::create(actions),callback, NULL);
+    this->runAction(sequence);
+}
+
+void GameStageScene::animateAttackAnimation(float duration, CallFunc *callback)
+{
+    _puzzleEffectLayout->setOpacity(0);
+    _puzzleEffectLayout->setVisible(true);
+    
+    
+    auto actionShow = Sequence::create(DelayTime::create(0), CallFunc::create([&](){
+        this->_puzzleEffectLayout->runAction(FadeTo::create(0.2, 128));
+    }), NULL);
+    auto actionHide = Sequence::create(DelayTime::create(duration), CallFunc::create([&, duration](){
+        this->_puzzleEffectLayout->runAction(FadeOut::create(duration));
+    }), NULL);
+    auto actionNotVisable = Sequence::create(DelayTime::create(duration), CallFunc::create([&](){
+        this->_puzzleEffectLayout->setVisible(false);
+    }), NULL);
+
+    
+    Vector<FiniteTimeAction*> actions;
+    actions.pushBack(actionShow);
+    actions.pushBack(actionHide);
+    actions.pushBack(actionNotVisable);
     auto sequence = Sequence::create(Sequence::create(actions),callback, NULL);
     this->runAction(sequence);
 }

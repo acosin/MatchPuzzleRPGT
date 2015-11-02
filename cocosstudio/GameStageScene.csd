@@ -208,6 +208,19 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Panel_puzzle_stage_effect" ActionTag="1068859230" Alpha="199" Tag="25" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="64.5315" RightMargin="75.4685" TopMargin="475.4214" BottomMargin="160.5786" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="500.0000" Y="500.0000" />
+            <AnchorPoint ScaleX="0.5000" />
+            <Position X="314.5315" Y="160.5786" />
+            <Scale ScaleX="0.9278" ScaleY="0.4792" />
+            <CColor A="255" R="63" G="80" B="95" />
+            <PrePosition X="0.4915" Y="0.1414" />
+            <PreSize X="0.7813" Y="0.4401" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

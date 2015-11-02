@@ -100,6 +100,8 @@
 		3188E6831BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3188E6801BD0A6BB00AC8FBC /* StageScoreScene.cpp */; };
 		3188E6851BD0B68000AC8FBC /* stageIcon_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3188E6841BD0B68000AC8FBC /* stageIcon_0.png */; };
 		3188E6861BD0B68000AC8FBC /* stageIcon_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3188E6841BD0B68000AC8FBC /* stageIcon_0.png */; };
+		3198547E1BE758EE004A9CEE /* attack.png in Resources */ = {isa = PBXBuildFile; fileRef = 3198547D1BE758EE004A9CEE /* attack.png */; };
+		3198547F1BE758EE004A9CEE /* attack.png in Resources */ = {isa = PBXBuildFile; fileRef = 3198547D1BE758EE004A9CEE /* attack.png */; };
 		319DA2C61BDF180F00151EF1 /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2C41BDF180F00151EF1 /* HealthBar.cpp */; };
 		319DA2C71BDF180F00151EF1 /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2C41BDF180F00151EF1 /* HealthBar.cpp */; };
 		319DA2C91BDF26C500151EF1 /* hp.png in Resources */ = {isa = PBXBuildFile; fileRef = 319DA2C81BDF26C500151EF1 /* hp.png */; };
@@ -260,6 +262,7 @@
 		3188E6841BD0B68000AC8FBC /* stageIcon_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stageIcon_0.png; sourceTree = "<group>"; };
 		3188E6871BD0E31300AC8FBC /* Item_StageScoreRecord.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Item_StageScoreRecord.hpp; sourceTree = "<group>"; };
 		3188E6881BD1064D00AC8FBC /* TimeParser.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TimeParser.hpp; sourceTree = "<group>"; };
+		3198547D1BE758EE004A9CEE /* attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attack.png; sourceTree = "<group>"; };
 		319DA2C41BDF180F00151EF1 /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthBar.cpp; sourceTree = "<group>"; };
 		319DA2C51BDF180F00151EF1 /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthBar.h; sourceTree = "<group>"; };
 		319DA2C81BDF26C500151EF1 /* hp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hp.png; sourceTree = "<group>"; };
@@ -581,6 +584,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3198547D1BE758EE004A9CEE /* attack.png */,
 				31819B561BE1B0D500C505E8 /* meta_tiles.png */,
 				319DA2D51BE0A7B200151EF1 /* defaultParticle.plist */,
 				319DA2C81BDF26C500151EF1 /* hp.png */,
@@ -796,6 +800,7 @@
 				31122E8D1BC7872800F08C65 /* exit.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				31122E841BC780C400F08C65 /* mainBG.png in Resources */,
+				3198547E1BE758EE004A9CEE /* attack.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				31122EB01BCC9DBC00F08C65 /* element_red.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
@@ -823,6 +828,7 @@
 				31122E881BC7852F00F08C65 /* score.png in Resources */,
 				31122E7E1BC77C4B00F08C65 /* start.png in Resources */,
 				3188E6861BD0B68000AC8FBC /* stageIcon_0.png in Resources */,
+				3198547F1BE758EE004A9CEE /* attack.png in Resources */,
 				31122E951BC79CC800F08C65 /* home.png in Resources */,
 				31122EAD1BCC9DBC00F08C65 /* element_blue.png in Resources */,
 				31122EAB1BCC9DBC00F08C65 /* character_icon_0.png in Resources */,
