@@ -61,6 +61,7 @@ private:
     Jewel* createAJewel(int x, int y);
     bool isJewelLegal(Jewel* jewel, int x, int y); //if match 3,illegal
     void setJewelPixPos(Jewel* jewel, float x, float y); //set actual pos of Jewel Sprite in the game
+    void setJewelDefaultSize(Jewel* jewel);
     
     //operation of Jewel
     void swapJewels(Jewel *jewelA, Jewel *jewelB);

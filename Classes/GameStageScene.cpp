@@ -56,6 +56,8 @@ bool GameStageScene::init()
     
     _textXcombo = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_xCombo"));
     _textYcombo = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_yCombo"));
+    _textXcombo->setVisible(false);
+    _textYcombo->setVisible(false);
     
     _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
     _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));

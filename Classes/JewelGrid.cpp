@@ -192,6 +192,7 @@ Jewel* JewelsGrid::createAJewel(int x, int y)
     }
     
     setJewelPixPos(jewel, x, y);
+    setJewelDefaultSize(jewel);
     addChild(jewel);
     
     //log("add a jewel!---type:%d---x:%d---y:%d", jewel->getType(), x, y);
@@ -245,6 +246,12 @@ bool JewelsGrid::isJewelLegal(Jewel* jewel, int x, int y)
 void JewelsGrid::setJewelPixPos(Jewel* jewel, float x, float y)
 {
     jewel->setPosition(x * GRID_WIDTH, y * GRID_WIDTH);
+}
+
+void JewelsGrid::setJewelDefaultSize(Jewel *jewel)
+{
+    auto size = jewel->getContentSize();
+    jewel->setScale(GRID_WIDTH/size.width, GRID_WIDTH/size.height);
 }
 
 bool JewelsGrid::onTouchBegan(Touch* pTouch, Event* pEvent)
@@ -458,6 +465,7 @@ void JewelsGrid::goCrush()
         //生成新的宝石，类型随机，初始位置在最上面一行的上边一行（布局外一格）
         auto newJewel = Jewel::createByType((ElementType)random(FIRST_JEWEL_ID, LAST_JEWEL_ID), jewel->getX(), m_row);
         setJewelPixPos(newJewel, newJewel->getX(), m_row);
+        setJewelDefaultSize(newJewel);
         addChild(newJewel);
         
         m_newJewelBox.pushBack(newJewel);
