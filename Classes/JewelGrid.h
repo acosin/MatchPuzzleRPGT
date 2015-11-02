@@ -35,6 +35,8 @@ public:
     // here we use to catch the fact that has dealt with element-x/y count animation after matches crushed
     static const std::string EventName_FinishCrushingMatches;
     static const std::string EventName_FinishCrushingMatches_End;
+    static const std::string EventName_FinishComboes;
+    static const std::string EventName_FinishComboes_End;
 public:
     ~JewelsGrid();
     static JewelsGrid* create(int row, int col);
@@ -88,13 +90,20 @@ private:
     
     void dispatchEventStatusChange(CallFunc *callback = NULL);
     void onEventName_FinishCrushingMatches_End(EventCustom* pEvent);
+    void dispatchEventFinishComboes(CallFunc *callback = NULL);
+    void onEventName_FinishComboes_End(EventCustom* pEvent);
     
     void regEventStatusChange();
     void removeEventStatusChange();
+    void regEventFinishComboesEnd();
+    void removeEventFinishComboesEnd();
     
 public:
     int getRow() { return m_row; }
     int getCol() { return m_col; }
+    
+    void pauseInteraction() { _eventDispatcher->pauseEventListenersForTarget(this);}
+    void resumeInteraction() { _eventDispatcher->resumeEventListenersForTarget(this);}
     
 private:
     int m_row;

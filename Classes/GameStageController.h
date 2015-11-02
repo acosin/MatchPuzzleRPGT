@@ -49,7 +49,7 @@ public:
     bool tryMovePlayerLeft();
     bool tryMovePlayerRight();
     
-    void onPuzzleStatusChange();
+    void onPuzzleFinishComboes();
     
     void checkClearStage();
     void processClearStage(ClearStageConditionType t);

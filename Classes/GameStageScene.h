@@ -73,6 +73,9 @@ private:
     void regEventJewelGridStatusChange();
     void removeEventJewelGridStatusChange();
     void onJewelGridStatusChange(EventCustom* pEvent);
+    void regEventFinishComboes();
+    void removeEventFinishComboes();
+    void onFinishComboes(EventCustom* pEvent);
     
     void tryMovePlayerUp(float delay);
     void tryMovePlayerDown(float delay);
@@ -88,4 +91,8 @@ private:
     
     virtual void animateComboCountChange(PuzzleStatusChangeData *data, float duration, CallFunc *callback=NULL);
     static std::string getTextLabelComboCount(bool isX, ElementType type);
+    
+    // processing function in update()
+    void processController();
+    
 };

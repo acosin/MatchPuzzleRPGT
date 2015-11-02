@@ -115,7 +115,7 @@ bool GameStageController::tryMovePlayerRight()
     return ret;
 }
 
-void GameStageController::onPuzzleStatusChange()
+void GameStageController::onPuzzleFinishComboes()
 {
     auto changeData = getPuzzleStatusChangeData();
     

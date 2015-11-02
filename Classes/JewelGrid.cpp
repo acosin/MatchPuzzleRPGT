@@ -14,11 +14,13 @@ using namespace CocosDenshion;
 const std::string JewelsGrid::eventNameStatusChange = "event_JewelGridStatusChange";
 const std::string JewelsGrid::EventName_FinishCrushingMatches = "event_FinishCrushingMatches";
 const std::string JewelsGrid::EventName_FinishCrushingMatches_End = "event_FinishCrushingMatches_End";
-
+const std::string JewelsGrid::EventName_FinishComboes = "event_FinishComboes";
+const std::string JewelsGrid::EventName_FinishComboes_End = "event_FinishComboes_End";
 
 JewelsGrid::~JewelsGrid()
 {
     removeEventStatusChange();
+    removeEventFinishComboesEnd();
 }
 
 // [TODO] may need modification to fulfill the latest style of memory management
@@ -80,6 +82,7 @@ bool JewelsGrid::init(int row, int col)
     _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
     regEventStatusChange();
+    regEventFinishComboesEnd();
     
     log("JewelsGrid init!");
     return true;
@@ -706,8 +709,13 @@ void JewelsGrid::onJewelsRefreshing(float dt)
             {
                 // if not a dead map
                 
-                //TODO: clear JewelGridStatus
+                
+                
+                //NOTE: should make sure that here only be called only once!!!
+                dispatchEventFinishComboes();
+                
                 m_status->clearCombo();
+                
                 //如果不是死图，那么就直接开启触摸监听，等待下一轮的交互操作
                 _eventDispatcher->resumeEventListenersForTarget(this);
             }
@@ -796,4 +804,30 @@ void JewelsGrid::onEventName_FinishCrushingMatches_End(EventCustom* pEvent)
     schedule(schedule_selector(JewelsGrid::onJewelsRefreshing));
     
 }
+
+void JewelsGrid::dispatchEventFinishComboes(CallFunc *callback)
+{
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->dispatchCustomEvent(JewelsGrid::EventName_FinishComboes, callback);
+
+}
+
+void JewelsGrid::regEventFinishComboesEnd()
+{
+    auto listenner =EventListenerCustom::create(JewelsGrid::EventName_FinishComboes_End,
+                                                CC_CALLBACK_1(JewelsGrid::onEventName_FinishComboes_End, this));
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->addEventListenerWithFixedPriority(listenner, 100);
+}
+
+void JewelsGrid::removeEventFinishComboesEnd()
+{
+    getEventDispatcher()->removeCustomEventListeners(JewelsGrid::EventName_FinishComboes_End);
+}
+
+void JewelsGrid::onEventName_FinishComboes_End(EventCustom* pEvent)
+{
+    // TODO: show damage animation
+}
+
 

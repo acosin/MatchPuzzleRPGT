@@ -29,6 +29,7 @@ GameStageScene::~GameStageScene()
 {
     removeEventJewelGridStatusChange();
     removeEventStageCLear();
+    removeEventFinishComboes();
 }
 
 bool GameStageScene::init()
@@ -114,6 +115,7 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     
     //TODO: may register more events here
     regEventJewelGridStatusChange();
+    regEventFinishComboes();
     _jewelsGrid->startDispatchStatusChange();
     
     regEventStageClear();
@@ -156,7 +158,12 @@ void GameStageScene::LoadTexture()
 
 void GameStageScene::update(float delta)
 {
-    //TODO: may change to use Action or animation here
+    processController();
+}
+
+// processing functions in update()
+void GameStageScene::processController()
+{
     switch ((TagForDirection)(_stick->stickDirection)) {
         case TagForDirection::up:
             scheduleOnce(schedule_selector(GameStageScene::tryMovePlayerUp), DELAY_PLAYER_MOVE);
@@ -174,6 +181,8 @@ void GameStageScene::update(float delta)
             break;
     }
 }
+
+// end processing functions in update()
 
 void GameStageScene::regEventJewelGridStatusChange()
 {
@@ -210,13 +219,44 @@ void GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)
     
     //TODO
     animateComboCountChange(data, duration, CallFunc::create([&](){
-        this->_controller->onPuzzleStatusChange();
-        this->startInteraction();
-        
         auto dispatcher = Director::getInstance()->getEventDispatcher();
         dispatcher->dispatchCustomEvent(JewelsGrid::EventName_FinishCrushingMatches_End);
+        /*
+        // TODO:
+        // damage logic
+        this->_controller->onPuzzleFinishComboes();
+        // end damage logic
+        this->startInteraction();
+         */
     }));
 }
+
+void GameStageScene::regEventFinishComboes()
+{
+    auto listenner =EventListenerCustom::create(JewelsGrid::EventName_FinishComboes,
+                                                CC_CALLBACK_1(GameStageScene::onFinishComboes, this));
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->addEventListenerWithFixedPriority(listenner, 100);
+}
+
+void GameStageScene::removeEventFinishComboes()
+{
+    getEventDispatcher()->removeCustomEventListeners(JewelsGrid::EventName_FinishComboes);
+}
+
+void GameStageScene::onFinishComboes(cocos2d::EventCustom *pEvent)
+{
+    // handling damage/death here
+    // damage logic
+    this->_controller->onPuzzleFinishComboes();
+    // end damage logic
+    this->startInteraction();
+    
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->dispatchCustomEvent(JewelsGrid::EventName_FinishComboes_End);
+}
+
+
 
 void GameStageScene::regEventStageClear()
 {
