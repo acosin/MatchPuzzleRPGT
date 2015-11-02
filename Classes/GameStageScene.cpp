@@ -420,25 +420,33 @@ void GameStageScene::animateComboesCountDown(float duration, CallFunc *callback)
 
 void GameStageScene::animateAttackAnimation(float duration, CallFunc *callback)
 {
-    _puzzleEffectLayout->setOpacity(0);
-    _puzzleEffectLayout->setVisible(true);
-    
-    
-    auto actionShow = Sequence::create(DelayTime::create(0), CallFunc::create([&](){
-        this->_puzzleEffectLayout->runAction(FadeTo::create(0.2, 128));
-    }), NULL);
-    auto actionHide = Sequence::create(DelayTime::create(duration), CallFunc::create([&, duration](){
-        this->_puzzleEffectLayout->runAction(FadeOut::create(duration));
-    }), NULL);
-    auto actionNotVisable = Sequence::create(DelayTime::create(duration), CallFunc::create([&](){
-        this->_puzzleEffectLayout->setVisible(false);
-    }), NULL);
-
-    
     Vector<FiniteTimeAction*> actions;
-    actions.pushBack(actionShow);
-    actions.pushBack(actionHide);
-    actions.pushBack(actionNotVisable);
+    
+    auto actionEmpty = Sequence::create(DelayTime::create(0), CallFunc::create([&](){
+    }), NULL);
+    actions.pushBack(actionEmpty);
+    
+    if (_controller->canAttackEnemy()) {
+        _puzzleEffectLayout->setOpacity(0);
+        _puzzleEffectLayout->setVisible(true);
+        
+        
+        auto actionShow = Sequence::create(DelayTime::create(0), CallFunc::create([&](){
+            this->_puzzleEffectLayout->runAction(FadeTo::create(0.2, 128));
+        }), NULL);
+        auto actionHide = Sequence::create(DelayTime::create(duration), CallFunc::create([&, duration](){
+            this->_puzzleEffectLayout->runAction(FadeOut::create(duration));
+        }), NULL);
+        auto actionNotVisable = Sequence::create(DelayTime::create(duration), CallFunc::create([&](){
+            this->_puzzleEffectLayout->setVisible(false);
+        }), NULL);
+        
+        
+        actions.pushBack(actionShow);
+        actions.pushBack(actionHide);
+        actions.pushBack(actionNotVisable);
+    }
+    
     auto sequence = Sequence::create(Sequence::create(actions),callback, NULL);
     this->runAction(sequence);
 }

@@ -58,6 +58,8 @@ public:
     StageData* getStageData();
     int getEnemyCount();
     PuzzleStatusChangeData* getPuzzleStatusChangeData();
+    
+    bool canAttackEnemy();
 public:
     JewelsGrid* _jewelsGrid;
 

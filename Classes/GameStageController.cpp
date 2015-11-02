@@ -198,6 +198,21 @@ PuzzleStatusChangeData* GameStageController::getPuzzleStatusChangeData()
     return changeData;
 }
 
+// TODO: [optimization] can maintain a flag after every move to avoid computing
+bool GameStageController::canAttackEnemy()
+{
+    auto x = _mapController->getPlayerX();
+    auto y = _mapController->getPlayerY();
+    auto enemies = _mapController->getEnemyAround(x, y);
+    auto count = enemies.size();
+    enemies.clear();
+    if (count == 0) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 void GameStageController::addClearConditions()
 {
     auto goalMap = new ClearStageCondition_GoalMap();
