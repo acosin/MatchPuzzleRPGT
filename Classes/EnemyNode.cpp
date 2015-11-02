@@ -94,7 +94,10 @@ float EnemyNode::getPercentage()
 
 void EnemyNode::animateFromTo(float duration, float fromPercentage, float toPercentage)
 {
+    int blinkCount = 5;
+    auto blink = Blink::create(duration, blinkCount);
     hpBar->animateFromTo(duration, fromPercentage, toPercentage);
+    this->runAction(blink);
 }
 
 void EnemyNode::showDeadAnimation()

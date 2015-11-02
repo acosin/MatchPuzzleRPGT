@@ -220,21 +220,10 @@ void GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)
     this->_textYcombo->setString(str);
     */
     float duration = ELEMENT_TYPE_MATCH_COUNT_DELAY;
-    //animateComboCountChange(data, duration);
-    //_controller->onPuzzleStatusChange();
-    //startInteraction();
     
-    //TODO
     animateComboCountChange(data, duration, CallFunc::create([&](){
         auto dispatcher = Director::getInstance()->getEventDispatcher();
         dispatcher->dispatchCustomEvent(JewelsGrid::EventName_FinishCrushingMatches_End);
-        /*
-        // TODO:
-        // damage logic
-        this->_controller->onPuzzleFinishComboes();
-        // end damage logic
-        this->startInteraction();
-         */
     }));
 }
 
