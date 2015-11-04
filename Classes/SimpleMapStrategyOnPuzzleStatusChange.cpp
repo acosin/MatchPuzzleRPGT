@@ -34,6 +34,7 @@ void SimpleMapStrategyOnPuzzleStatusChange::exec(MapController *c, PuzzleStatusC
                                  afterHP/totalHP*100);
         
         //death handling
+        //TODO: process like this cannot guarantee synchonization of the end of the damage animation and the start of the dead animation
         if (enemyItem->isDead()) {
             auto sequence = Sequence::create(DelayTime::create(durationEnemyDamageAnimation), CallFunc::create([enemyNode,enemyItem,c](){
                 enemyNode->showDeadAnimation();

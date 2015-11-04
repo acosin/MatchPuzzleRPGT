@@ -96,6 +96,8 @@ private:
     virtual void animateComboesCountDown(float duration, CallFunc *callback=NULL);
     void animateAttackAnimation(float duration, CallFunc *callback=NULL);
     static std::string getTextLabelComboCount(bool isX, ElementType type);
+    void hideElementXYCount();
+    void showElementXYCount();
     
     // processing function in update()
     void processController();

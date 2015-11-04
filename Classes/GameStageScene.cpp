@@ -56,13 +56,14 @@ bool GameStageScene::init()
     _puzzleEffectLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_puzzle_stage_effect"));
     _puzzleEffectLayout->setVisible(false);
     //TODO: may use some animation here
-    _puzzleEffectLayout->setBackGroundImage("ui/attack.png");
+    _puzzleEffectLayout->setBackGroundImage("attack.png");
     _mapLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_map"));
     
     _textXcombo = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_xCombo"));
     _textYcombo = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_yCombo"));
     _textXcombo->setVisible(false);
     _textYcombo->setVisible(false);
+    hideElementXYCount();
     
     _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
     _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
@@ -246,6 +247,7 @@ void GameStageScene::onFinishComboes(cocos2d::EventCustom *pEvent)
     animateAttackAnimation(ATTACK_ANIMATION_DURATION, CallFunc::create([&](){
         // count down the element-x/y
         animateComboesCountDown(COMBOES_COUNT_DOWN_DURATION, CallFunc::create([&](){
+            this->hideElementXYCount();
             // handling damage/death here
             // damage logic
             this->_controller->onPuzzleFinishComboes();
@@ -325,7 +327,7 @@ void GameStageScene::animateComboCountChange(PuzzleStatusChangeData *data, float
 {
     //data should store match count of every element type for x/y
     //duration define how long for every (element) number count
-    
+    this->showElementXYCount();
     int timesChange = 10;
     //TODO: handle countChange and timesChange here
     float delay = duration / (float)timesChange;
@@ -420,8 +422,9 @@ void GameStageScene::animateAttackAnimation(float duration, CallFunc *callback)
         _puzzleEffectLayout->setVisible(true);
         
         
-        auto actionShow = Sequence::create(DelayTime::create(0), CallFunc::create([&](){
-            this->_puzzleEffectLayout->runAction(FadeTo::create(0.2, 128));
+        auto actionShow = Sequence::create(DelayTime::create(0), CallFunc::create([&,duration](){
+            this->_puzzleEffectLayout->runAction(FadeTo::create(duration, 128));
+            
         }), NULL);
         auto actionHide = Sequence::create(DelayTime::create(duration), CallFunc::create([&, duration](){
             this->_puzzleEffectLayout->runAction(FadeOut::create(duration));
@@ -445,4 +448,28 @@ std::string GameStageScene::getTextLabelComboCount(bool isX, ElementType type)
     std::string xOrY = (isX)?("Text_xCombo"):("Text_yCombo");
     auto ret = xOrY + ElementTypeUtils::toString(type);
     return ret;
+}
+
+void GameStageScene::hideElementXYCount()
+{
+    for (int type = 0; type < (int)ElementType::count; type++) {
+        auto xTextName = this->getTextLabelComboCount(true, (ElementType)type);
+        auto xText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(xTextName));
+        xText->setVisible(false);
+        auto yTextName = this->getTextLabelComboCount(false, (ElementType)type);
+        auto yText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(yTextName));
+        yText->setVisible(false);
+    }
+}
+
+void GameStageScene::showElementXYCount()
+{
+    for (int type = 0; type < (int)ElementType::count; type++) {
+        auto xTextName = this->getTextLabelComboCount(true, (ElementType)type);
+        auto xText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(xTextName));
+        xText->setVisible(true);
+        auto yTextName = this->getTextLabelComboCount(false, (ElementType)type);
+        auto yText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(yTextName));
+        yText->setVisible(true);
+    }
 }
