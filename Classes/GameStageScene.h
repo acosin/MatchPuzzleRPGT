@@ -20,6 +20,9 @@
 #include "StageClearLayer.h"
 #include "StageClearData.h"
 
+#include "ScoreBoard.h"
+#include "IScoreStrategy.h"
+
 USING_NS_CC;
 
 #define DELAY_PLAYER_MOVE 0.2
@@ -51,6 +54,9 @@ protected:
     GameStageController* _controller;
     
     MapLayer* _mapLayer;
+    
+    ScoreBoard* _scoreBoard;
+    IScoreStrategy* _scoreStrategy;
     
     bool initData(StageDataManager* stageManager, uint32_t stageID);
     
@@ -98,6 +104,7 @@ private:
     static std::string getTextLabelComboCount(bool isX, ElementType type);
     void hideElementXYCount();
     void showElementXYCount();
+    void processScoreForPuzzle();
     
     // processing function in update()
     void processController();

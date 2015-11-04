@@ -5,6 +5,7 @@
 //
 
 #include "GameStageScene.h"
+#include "SimpleScoreStrategy.h"
 
 GameStageScene::GameStageScene():
 _layout(nullptr),
@@ -21,7 +22,9 @@ _currentStageScore(nullptr),
 _stageManager(nullptr),
 _controller(nullptr),
 _jewelsGrid(nullptr),
-_mapLayer(nullptr)
+_mapLayer(nullptr),
+_scoreBoard(nullptr),
+_scoreStrategy(nullptr)
 {
     
 }
@@ -68,6 +71,15 @@ bool GameStageScene::init()
     _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
     _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
     _selectStageButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_selectStage"));
+    
+    auto scorePanel = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_score"));
+    _scoreBoard = ScoreBoard::create();
+    _scoreBoard->setScale(scorePanel->getContentSize().width/_scoreBoard->getContentSize().width,
+                          scorePanel->getContentSize().height/_scoreBoard->getContentSize().height);
+    _scoreBoard->setAnchorPoint(Vec2(0,0));
+    _scoreBoard->setPosition(Vec2(0,0));
+    scorePanel->addChild(_scoreBoard);
+    _scoreStrategy = new SimpleScoreStrategy();
     
     this->addChild(_layout);
     
@@ -247,6 +259,8 @@ void GameStageScene::onFinishComboes(cocos2d::EventCustom *pEvent)
     animateAttackAnimation(ATTACK_ANIMATION_DURATION, CallFunc::create([&](){
         // count down the element-x/y
         animateComboesCountDown(COMBOES_COUNT_DOWN_DURATION, CallFunc::create([&](){
+            this->processScoreForPuzzle();
+            
             this->hideElementXYCount();
             // handling damage/death here
             // damage logic
@@ -373,7 +387,6 @@ void GameStageScene::animateComboCountChange(PuzzleStatusChangeData *data, float
 
 void GameStageScene::animateComboesCountDown(float duration, CallFunc *callback)
 {
-    auto data = _controller->getPuzzleStatusChangeData();
     int timesChange = 10;
     //TODO: handle countChange and timesChange here
     float delay = duration / (float)timesChange;
@@ -472,4 +485,12 @@ void GameStageScene::showElementXYCount()
         auto yText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(yTextName));
         yText->setVisible(true);
     }
+}
+
+void GameStageScene::processScoreForPuzzle()
+{
+    auto data = _controller->getPuzzleStatusChangeData();
+    auto scoreToAdd = _scoreStrategy->getScoreToAdd(data);
+    auto score = _scoreBoard->getScore();
+    _scoreBoard->setScore(score+scoreToAdd);
 }

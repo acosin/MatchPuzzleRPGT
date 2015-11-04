@@ -29,6 +29,8 @@ public:
             matchCountY[(ElementType)type] = 0;
         }
         comboCount = 0;
+        xCombo = 0;
+        yCombo = 0;
     }
     
     int getMatchCountX(ElementType type) {
@@ -44,12 +46,18 @@ public:
         matchCountY[type] = count;
     }
     
+    int getComboCount() {
+        return comboCount;
+    }
+    
     void init(const JewelGridStatus *status) {
         for (int type = 0; type<(int)ElementType::count; type++) {
             auto xCount = status->getColOfTypeCount((ElementType)type);
             matchCountX[(ElementType)type] = xCount;
+            xCombo += xCount;
             auto yCount = status->getRowOfTypeCount((ElementType)type);
             matchCountY[(ElementType)type] = yCount;
+            yCombo += yCount;
         }
         comboCount = status->getComboCount();
     }

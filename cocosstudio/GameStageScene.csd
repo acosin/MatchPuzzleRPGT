@@ -46,13 +46,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_selectStage" ActionTag="687470122" Tag="44" IconVisible="False" LeftMargin="35.9930" RightMargin="304.0070" TopMargin="12.9927" BottomMargin="1043.0073" TouchEnable="True" FontSize="14" ButtonText="Select Stage Again" Scale9Width="118" Scale9Height="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_selectStage" ActionTag="687470122" Tag="44" IconVisible="False" LeftMargin="238.0911" RightMargin="101.9089" TopMargin="12.9948" BottomMargin="1043.0052" TouchEnable="True" FontSize="24" ButtonText="Select Stage Again" Scale9Width="118" Scale9Height="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="300.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="185.9930" Y="1083.0073" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <Position X="388.0911" Y="1083.0052" />
+            <Scale ScaleX="0.7642" ScaleY="0.7474" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.2906" Y="0.9534" />
+            <PrePosition X="0.6064" Y="0.9533" />
             <PreSize X="0.4688" Y="0.0704" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
@@ -216,6 +216,19 @@
             <CColor A="255" R="63" G="80" B="95" />
             <PrePosition X="0.4993" Y="0.0680" />
             <PreSize X="0.7813" Y="0.4401" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_score" ActionTag="-987862831" Tag="32" IconVisible="False" LeftMargin="26.5236" RightMargin="413.4764" TopMargin="-60.6162" BottomMargin="996.6161" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="200.0000" Y="200.0000" />
+            <AnchorPoint />
+            <Position X="26.5236" Y="996.6161" />
+            <Scale ScaleX="1.0758" ScaleY="0.5326" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0414" Y="0.8773" />
+            <PreSize X="0.0000" Y="0.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />

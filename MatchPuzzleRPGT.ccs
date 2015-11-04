@@ -18,6 +18,7 @@
         <PlistParticleFile Name="defaultParticle.plist" />
         <Project Name="StageClearLayer.csd" Type="Layer" />
         <Image Name="attack.png" />
+        <Project Name="ScoreBoard.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>
