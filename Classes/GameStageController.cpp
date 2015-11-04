@@ -11,6 +11,7 @@
 #include "StageClearData.h"
 
 const string GameStageController::EventNameStageClear = "event_StageClear";
+const string GameStageController::EventNameEnemyDead  = "event_EnemyDead";
 
 GameStageController::GameStageController():
 _jewelsGrid(nullptr),

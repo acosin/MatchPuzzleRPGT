@@ -31,6 +31,7 @@ public:
     
     int getTotalHP();
     int getCurrentHP();
+    int getLevel();
     //TODO: implement damage strategy in GameStageController?
     int getDamaged(int damange);
     bool isDead();

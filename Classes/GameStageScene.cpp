@@ -5,7 +5,8 @@
 //
 
 #include "GameStageScene.h"
-#include "SimpleScoreStrategy.h"
+#include "SimpleScorePuzzleStrategy.hpp"
+#include "SimpleScoreEnemyStrategy.hpp"
 
 GameStageScene::GameStageScene():
 _layout(nullptr),
@@ -24,7 +25,8 @@ _controller(nullptr),
 _jewelsGrid(nullptr),
 _mapLayer(nullptr),
 _scoreBoard(nullptr),
-_scoreStrategy(nullptr)
+_scorePuzzleStrategy(nullptr),
+_scoreEnemyStrategy(nullptr)
 {
     
 }
@@ -34,6 +36,7 @@ GameStageScene::~GameStageScene()
     removeEventJewelGridStatusChange();
     removeEventStageCLear();
     removeEventFinishComboes();
+    removeEventEnemyDead();
 }
 
 bool GameStageScene::init()
@@ -79,7 +82,8 @@ bool GameStageScene::init()
     _scoreBoard->setAnchorPoint(Vec2(0,0));
     _scoreBoard->setPosition(Vec2(0,0));
     scorePanel->addChild(_scoreBoard);
-    _scoreStrategy = new SimpleScoreStrategy();
+    _scorePuzzleStrategy = new SimpleScorePuzzleStrategy();
+    _scoreEnemyStrategy = new SimpleScoreEnemyStrategy();
     
     this->addChild(_layout);
     
@@ -139,6 +143,7 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     _jewelsGrid->startDispatchStatusChange();
     
     regEventStageClear();
+    regEventEnemyDead();
     
     return true;
 }
@@ -490,7 +495,30 @@ void GameStageScene::showElementXYCount()
 void GameStageScene::processScoreForPuzzle()
 {
     auto data = _controller->getPuzzleStatusChangeData();
-    auto scoreToAdd = _scoreStrategy->getScoreToAdd(data);
+    auto scoreToAdd = _scorePuzzleStrategy->getScoreToAdd(data);
     auto score = _scoreBoard->getScore();
     _scoreBoard->setScore(score+scoreToAdd);
+}
+
+
+void GameStageScene::regEventEnemyDead()
+{
+    auto listenner =EventListenerCustom::create(GameStageController::EventNameEnemyDead,
+                                                CC_CALLBACK_1(GameStageScene::onEnemyDead, this));
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->addEventListenerWithFixedPriority(listenner, 100);
+}
+
+void GameStageScene::removeEventEnemyDead()
+{
+    getEventDispatcher()->removeCustomEventListeners(GameStageController::EventNameEnemyDead);
+}
+
+void GameStageScene::onEnemyDead(EventCustom* pEvent)
+{
+    auto enemy = static_cast<MapItemEnemy*>(pEvent->getUserData());
+    auto scoreToAdd = _scoreEnemyStrategy->getScoreToAdd(enemy);
+    auto score = _scoreBoard->getScore();
+    _scoreBoard->setScore(score+scoreToAdd);
+
 }

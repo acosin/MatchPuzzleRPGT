@@ -104,8 +104,6 @@
 		3198547F1BE758EE004A9CEE /* attack.png in Resources */ = {isa = PBXBuildFile; fileRef = 3198547D1BE758EE004A9CEE /* attack.png */; };
 		319854821BE9A406004A9CEE /* ScoreBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319854801BE9A406004A9CEE /* ScoreBoard.cpp */; };
 		319854831BE9A406004A9CEE /* ScoreBoard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319854801BE9A406004A9CEE /* ScoreBoard.cpp */; };
-		319854881BE9DC06004A9CEE /* SimpleScoreStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319854861BE9DC06004A9CEE /* SimpleScoreStrategy.cpp */; };
-		319854891BE9DC06004A9CEE /* SimpleScoreStrategy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319854861BE9DC06004A9CEE /* SimpleScoreStrategy.cpp */; };
 		319DA2C61BDF180F00151EF1 /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2C41BDF180F00151EF1 /* HealthBar.cpp */; };
 		319DA2C71BDF180F00151EF1 /* HealthBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 319DA2C41BDF180F00151EF1 /* HealthBar.cpp */; };
 		319DA2C91BDF26C500151EF1 /* hp.png in Resources */ = {isa = PBXBuildFile; fileRef = 319DA2C81BDF26C500151EF1 /* hp.png */; };
@@ -269,9 +267,10 @@
 		3198547D1BE758EE004A9CEE /* attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attack.png; sourceTree = "<group>"; };
 		319854801BE9A406004A9CEE /* ScoreBoard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScoreBoard.cpp; sourceTree = "<group>"; };
 		319854811BE9A406004A9CEE /* ScoreBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoard.h; sourceTree = "<group>"; };
-		319854851BE9BD8A004A9CEE /* IScoreStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IScoreStrategy.h; sourceTree = "<group>"; };
-		319854861BE9DC06004A9CEE /* SimpleScoreStrategy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleScoreStrategy.cpp; sourceTree = "<group>"; };
-		319854871BE9DC06004A9CEE /* SimpleScoreStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleScoreStrategy.h; sourceTree = "<group>"; };
+		319854851BE9BD8A004A9CEE /* IScorePuzzleStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IScorePuzzleStrategy.h; sourceTree = "<group>"; };
+		319854871BE9DC06004A9CEE /* SimpleScorePuzzleStrategy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleScorePuzzleStrategy.hpp; sourceTree = "<group>"; };
+		3198548A1BE9F288004A9CEE /* IScoreEnemyStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IScoreEnemyStrategy.h; sourceTree = "<group>"; };
+		3198548B1BE9F3D4004A9CEE /* SimpleScoreEnemyStrategy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleScoreEnemyStrategy.hpp; sourceTree = "<group>"; };
 		319DA2C41BDF180F00151EF1 /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthBar.cpp; sourceTree = "<group>"; };
 		319DA2C51BDF180F00151EF1 /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthBar.h; sourceTree = "<group>"; };
 		319DA2C81BDF26C500151EF1 /* hp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hp.png; sourceTree = "<group>"; };
@@ -596,9 +595,10 @@
 		319854841BE9BD57004A9CEE /* ScoreStrategy */ = {
 			isa = PBXGroup;
 			children = (
-				319854851BE9BD8A004A9CEE /* IScoreStrategy.h */,
-				319854861BE9DC06004A9CEE /* SimpleScoreStrategy.cpp */,
-				319854871BE9DC06004A9CEE /* SimpleScoreStrategy.h */,
+				319854851BE9BD8A004A9CEE /* IScorePuzzleStrategy.h */,
+				319854871BE9DC06004A9CEE /* SimpleScorePuzzleStrategy.hpp */,
+				3198548A1BE9F288004A9CEE /* IScoreEnemyStrategy.h */,
+				3198548B1BE9F3D4004A9CEE /* SimpleScoreEnemyStrategy.hpp */,
 			);
 			name = ScoreStrategy;
 			sourceTree = "<group>";
@@ -916,7 +916,6 @@
 				31819B5B1BE1BD2D00C505E8 /* StageClearLayer.cpp in Sources */,
 				31CD82561BD882DA0009D1FB /* IDPool.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
-				319854881BE9DC06004A9CEE /* SimpleScoreStrategy.cpp in Sources */,
 				31CD82451BD725F00009D1FB /* MapItemBase.cpp in Sources */,
 				3141AED31BD4B8F0001F09B6 /* Jewel.cpp in Sources */,
 				31CD824D1BD769EC0009D1FB /* MapItemEnemy.cpp in Sources */,
@@ -933,7 +932,6 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				319DA2D41BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp in Sources */,
 				3188E67B1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
-				319854891BE9DC06004A9CEE /* SimpleScoreStrategy.cpp in Sources */,
 				31122E7B1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
 				319854831BE9A406004A9CEE /* ScoreBoard.cpp in Sources */,
 				3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */,

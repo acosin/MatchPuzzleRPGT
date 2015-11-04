@@ -6,10 +6,9 @@
 
 #pragma once
 
-#include "GameStageController.h"
+#include "PuzzleStatusChangeData.hpp"
 
-
-class IScoreStrategy
+class IScorePuzzleStrategy
 {
 protected:
 public:

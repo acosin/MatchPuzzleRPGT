@@ -18,6 +18,8 @@
 
 USING_NS_CC;
 
+class MapController; //cross
+
 class IClearStageCondition;
 enum class ClearStageConditionType;
 
@@ -25,6 +27,7 @@ class GameStageController
 {
 public:
     static const std::string EventNameStageClear;
+    static const std::string EventNameEnemyDead;
 private:
     StageData* _stageData;
     // map logic control
@@ -58,6 +61,7 @@ public:
     StageData* getStageData();
     int getEnemyCount();
     PuzzleStatusChangeData* getPuzzleStatusChangeData();
+    
     
     bool canAttackEnemy();
 public:

@@ -46,6 +46,11 @@ int MapItemEnemy::getCurrentHP()
     return _currentHP;
 }
 
+int MapItemEnemy::getLevel()
+{
+    return _statusData->level;
+}
+
 int MapItemEnemy::getDamaged(int damange)
 {
     CC_ASSERT(damange>=0);

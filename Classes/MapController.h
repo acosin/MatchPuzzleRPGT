@@ -21,7 +21,12 @@
 #include "PuzzleStatusChangeData.hpp"
 #include "IMapStrategyOnPuzzleStatusChange.h"
 
+//cross
+#include "GameStageController.h"
+
 USING_NS_CC;
+
+class GameStageController;
 
 class IMapStrategyOnPuzzleStatusChange;
 
@@ -74,6 +79,7 @@ public:
     bool isGoalPos(int x, int y);
     bool checkGoal();
     int getEnemyCount();
+    void dispatchEnemyDeadEvent(MapItemEnemy* enemy);
     
 private:
     /*

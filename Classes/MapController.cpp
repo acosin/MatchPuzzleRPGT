@@ -327,6 +327,12 @@ int MapController::getEnemyCount()
     return ret;
 }
 
+void MapController::dispatchEnemyDeadEvent(MapItemEnemy *enemy)
+{
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->dispatchCustomEvent(GameStageController::EventNameEnemyDead, enemy);
+}
+
 // -- private --
 
 

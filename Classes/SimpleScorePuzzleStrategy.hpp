@@ -5,9 +5,9 @@
 
 #pragma once
 
-#include "IScoreStrategy.h"
+#include "IScorePuzzleStrategy.h"
 
-class SimpleScoreStrategy : public IScoreStrategy
+class SimpleScorePuzzleStrategy : public IScorePuzzleStrategy
 {
 public:
     int getScoreToAdd(PuzzleStatusChangeData *data) override {

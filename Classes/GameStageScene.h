@@ -21,7 +21,8 @@
 #include "StageClearData.h"
 
 #include "ScoreBoard.h"
-#include "IScoreStrategy.h"
+#include "IScorePuzzleStrategy.h"
+#include "IScoreEnemyStrategy.h"
 
 USING_NS_CC;
 
@@ -56,7 +57,8 @@ protected:
     MapLayer* _mapLayer;
     
     ScoreBoard* _scoreBoard;
-    IScoreStrategy* _scoreStrategy;
+    IScorePuzzleStrategy* _scorePuzzleStrategy;
+    IScoreEnemyStrategy* _scoreEnemyStrategy;
     
     bool initData(StageDataManager* stageManager, uint32_t stageID);
     
@@ -105,6 +107,9 @@ private:
     void hideElementXYCount();
     void showElementXYCount();
     void processScoreForPuzzle();
+    void regEventEnemyDead();
+    void removeEventEnemyDead();
+    void onEnemyDead(EventCustom* pEvent);
     
     // processing function in update()
     void processController();

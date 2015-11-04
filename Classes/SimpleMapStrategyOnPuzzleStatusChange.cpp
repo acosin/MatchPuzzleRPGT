@@ -38,6 +38,9 @@ void SimpleMapStrategyOnPuzzleStatusChange::exec(MapController *c, PuzzleStatusC
         if (enemyItem->isDead()) {
             auto sequence = Sequence::create(DelayTime::create(durationEnemyDamageAnimation), CallFunc::create([enemyNode,enemyItem,c](){
                 enemyNode->showDeadAnimation();
+                // NOTE: before remove enemyItem, handling score change
+                c->dispatchEnemyDeadEvent(enemyItem);
+                // end score handling
                 c->removeMapItem(enemyItem->getID());
             }), NULL);
             enemyNode->runAction(sequence);

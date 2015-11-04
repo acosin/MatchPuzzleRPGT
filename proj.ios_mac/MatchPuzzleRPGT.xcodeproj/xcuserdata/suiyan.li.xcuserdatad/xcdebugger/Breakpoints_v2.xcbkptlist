@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameStageScene.cpp"
-            timestampString = "468313217.924637"
+            timestampString = "468317393.259228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "242"
+            endingLineNumber = "242"
             landmarkName = "GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)"
             landmarkType = "5">
             <Locations>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameStageScene.cpp"
-            timestampString = "468313217.924637"
+            timestampString = "468317393.259228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameStageController.cpp"
-            timestampString = "468137027.426465"
+            timestampString = "468315447.833189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "GameStageController::onPuzzleFinishComboes()"
             landmarkType = "5">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameStageScene.cpp"
-            timestampString = "468313941.695163"
+            timestampString = "468317393.259228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454"
+            startingLineNumber = "459"
+            endingLineNumber = "459"
             landmarkName = "GameStageScene::animateAttackAnimation(float duration, CallFunc *callback)"
             landmarkType = "5">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameStageScene.cpp"
-            timestampString = "468313941.695163"
+            timestampString = "468317393.259228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "456"
-            endingLineNumber = "456"
+            startingLineNumber = "461"
+            endingLineNumber = "461"
             landmarkName = "GameStageScene::animateAttackAnimation(float duration, CallFunc *callback)"
             landmarkType = "5">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameStageScene.cpp"
-            timestampString = "468313941.695163"
+            timestampString = "468317393.259228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
             landmarkName = "GameStageScene::onFinishComboes(cocos2d::EventCustom *pEvent)"
             landmarkType = "5">
             <Locations>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameStageScene.cpp"
-            timestampString = "468313941.695163"
+            timestampString = "468317393.259228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "GameStageScene::onFinishComboes(cocos2d::EventCustom *pEvent)"
             landmarkType = "5">
             <Locations>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameStageScene.cpp"
-            timestampString = "468313217.924637"
+            timestampString = "468317393.259228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "GameStageScene::onJewelGridStatusChange(EventCustom* pEvent)"
             landmarkType = "5">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameStageScene.cpp"
-            timestampString = "468313941.695163"
+            timestampString = "468317393.259228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
             landmarkName = "GameStageScene::onFinishComboes(cocos2d::EventCustom *pEvent)"
             landmarkType = "5">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameStageScene.cpp"
-            timestampString = "468313941.695163"
+            timestampString = "468317393.259228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "438"
-            endingLineNumber = "438"
+            startingLineNumber = "443"
+            endingLineNumber = "443"
             landmarkName = "GameStageScene::animateAttackAnimation(float duration, CallFunc *callback)"
             landmarkType = "5">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameStageScene.cpp"
-            timestampString = "468313941.695163"
+            timestampString = "468317393.259228"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "443"
-            endingLineNumber = "443"
+            startingLineNumber = "448"
+            endingLineNumber = "448"
             landmarkName = "GameStageScene::animateAttackAnimation(float duration, CallFunc *callback)"
             landmarkType = "5">
          </BreakpointContent>
@@ -384,6 +384,101 @@
             startingLineNumber = "28"
             endingLineNumber = "28"
             landmarkName = "ScoreBoard::init()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameStageScene.cpp"
+            timestampString = "468317393.259228"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "GameStageScene::~GameStageScene()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GameStageScene::~GameStageScene()"
+                  moduleName = "MatchPuzzleRPGT-mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suiyan.li/Develop/Codes/cocos2dx/MatchPuzzleRPGT/Classes/GameStageScene.cpp"
+                  timestampString = "468316619.695931"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GameStageScene::~GameStageScene()"
+                  moduleName = "MatchPuzzleRPGT-mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suiyan.li/Develop/Codes/cocos2dx/MatchPuzzleRPGT/Classes/GameStageScene.cpp"
+                  timestampString = "468316619.696294"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GameStageScene::~GameStageScene()"
+                  moduleName = "MatchPuzzleRPGT-mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/suiyan.li/Develop/Codes/cocos2dx/MatchPuzzleRPGT/Classes/GameStageScene.cpp"
+                  timestampString = "468316619.696574"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/GameStageScene.cpp"
+            timestampString = "468317427.366385"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "522"
+            endingLineNumber = "522"
+            landmarkName = "GameStageScene::onEnemyDead(EventCustom* pEvent)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../Classes/SimpleMapStrategyOnPuzzleStatusChange.cpp"
+            timestampString = "468317512.608436"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "SimpleMapStrategyOnPuzzleStatusChange::exec(MapController *c, PuzzleStatusChangeData *data)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
