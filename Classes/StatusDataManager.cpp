@@ -91,7 +91,8 @@ bool StatusDataManager::loadPlayerDataFromCSV(const std::string &filename)
     _playerData = new PlayerStatusData((uint32_t)(Value(row[0]).asInt()),
                                        row[1],
                                        row[2],
-                                       Value(row[3]).asInt()
+                                       Value(row[3]).asInt(),
+                                       Value(row[4]).asInt()
                                        );
     
     return true;
@@ -142,7 +143,8 @@ bool StatusDataManager::initWithDebugData()
     PlayerStatusData* playerData = new PlayerStatusData(0,
                                                         "character_icon_0.png",
                                                         "Username_0",
-                                                        100);
+                                                        100,
+                                                        1000);
     
     std::vector<UnitOfPlayerRecord*> unitRecords;
     UnitData unitDataTemp;

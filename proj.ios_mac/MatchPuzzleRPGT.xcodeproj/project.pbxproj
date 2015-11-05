@@ -271,6 +271,8 @@
 		319854871BE9DC06004A9CEE /* SimpleScorePuzzleStrategy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleScorePuzzleStrategy.hpp; sourceTree = "<group>"; };
 		3198548A1BE9F288004A9CEE /* IScoreEnemyStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IScoreEnemyStrategy.h; sourceTree = "<group>"; };
 		3198548B1BE9F3D4004A9CEE /* SimpleScoreEnemyStrategy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleScoreEnemyStrategy.hpp; sourceTree = "<group>"; };
+		3198548D1BE9FBE9004A9CEE /* IGrowthStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGrowthStrategy.h; sourceTree = "<group>"; };
+		3198548E1BE9FD24004A9CEE /* GrowthData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GrowthData.hpp; sourceTree = "<group>"; };
 		319DA2C41BDF180F00151EF1 /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthBar.cpp; sourceTree = "<group>"; };
 		319DA2C51BDF180F00151EF1 /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthBar.h; sourceTree = "<group>"; };
 		319DA2C81BDF26C500151EF1 /* hp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hp.png; sourceTree = "<group>"; };
@@ -544,6 +546,7 @@
 		3141AED01BD4B74E001F09B6 /* GameStage */ = {
 			isa = PBXGroup;
 			children = (
+				3198548C1BE9FB53004A9CEE /* GrowthStrategy */,
 				319854841BE9BD57004A9CEE /* ScoreStrategy */,
 				31819B621BE1EEBB00C505E8 /* MapStrategyOnPuzzle */,
 				31819B611BE1EE9F00C505E8 /* ClearCondition */,
@@ -601,6 +604,15 @@
 				3198548B1BE9F3D4004A9CEE /* SimpleScoreEnemyStrategy.hpp */,
 			);
 			name = ScoreStrategy;
+			sourceTree = "<group>";
+		};
+		3198548C1BE9FB53004A9CEE /* GrowthStrategy */ = {
+			isa = PBXGroup;
+			children = (
+				3198548D1BE9FBE9004A9CEE /* IGrowthStrategy.h */,
+				3198548E1BE9FD24004A9CEE /* GrowthData.hpp */,
+			);
+			name = GrowthStrategy;
 			sourceTree = "<group>";
 		};
 		46880B7519C43A67006E1F66 /* Resources */ = {

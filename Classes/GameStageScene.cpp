@@ -58,6 +58,7 @@ bool GameStageScene::init()
     _background = MainBackground::create();
     _layout->getChildByName("ImageView_background")->addChild(_background);
     
+    
     _puzzleLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_puzzle"));
     _puzzleEffectLayout = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_puzzle_stage_effect"));
     _puzzleEffectLayout->setVisible(false);

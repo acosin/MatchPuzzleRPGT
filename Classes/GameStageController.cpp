@@ -144,7 +144,7 @@ void GameStageController::checkClearStage()
 
 void GameStageController::processClearStage(ClearStageConditionType t)
 {
-    StageClearData *data;
+    StageClearData *data = nullptr;
     switch (t) {
         case ClearStageConditionType::GOAL_MAP:
             
