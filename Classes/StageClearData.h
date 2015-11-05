@@ -17,6 +17,8 @@ public:
     StageData* stageData;
     int score;
     ClearStageConditionType type;
+    int playerLevel;
+    int playerExp;
     
 public:
     StageClearData();

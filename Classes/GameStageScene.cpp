@@ -85,6 +85,7 @@ bool GameStageScene::init()
     scorePanel->addChild(_scoreBoard);
     _scorePuzzleStrategy = new SimpleScorePuzzleStrategy();
     _scoreEnemyStrategy = new SimpleScoreEnemyStrategy();
+
     
     this->addChild(_layout);
     
@@ -123,7 +124,9 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     _currentStageScore = stageManager->getStageScoreRecord(stageID);
     _currentStageData = _currentStageScore->getStageData();
     
-    _controller = GameStageController::create(_currentStageData);
+    _statusManager = SceneMediator::getInstance()->getStatusDataManager();
+    
+    _controller = GameStageController::create(_currentStageData, _statusManager->getPlayerStatusData());
     _jewelsGrid = _controller->getJewelsGrid();
     
     _mapLayer = _controller->getMapLayer();

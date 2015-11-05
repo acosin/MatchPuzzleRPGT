@@ -52,6 +52,7 @@ protected:
     StageData* _currentStageData;
     StageScoreRecord* _currentStageScore;
     StageDataManager* _stageManager;
+    StatusDataManager* _statusManager;
     GameStageController* _controller;
     
     MapLayer* _mapLayer;

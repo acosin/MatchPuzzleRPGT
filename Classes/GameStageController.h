@@ -17,6 +17,8 @@
 #include "IClearStageCondition.h"
 #include "StageClearData.h"
 
+#include "PlayerStatusData.h"
+
 USING_NS_CC;
 
 class MapController; //cross
@@ -38,14 +40,16 @@ private:
     std::vector<IClearStageCondition*> _clearConditions;
     StageClearData * _clearData;
     
+    PlayerStatusData* _playerData;
+    
 public:
     GameStageController();
     ~GameStageController();
     
-    static GameStageController* create(StageData* stageData);
+    static GameStageController* create(StageData* stageData, PlayerStatusData* playerData);
     
     virtual bool initWithoutData();
-    bool initWithData(StageData* stageData);
+    bool initWithData(StageData* stageData, PlayerStatusData* playerData);
     
     JewelsGrid* getJewelsGrid();
     

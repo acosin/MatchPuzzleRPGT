@@ -32,13 +32,13 @@ GameStageController::~GameStageController()
      */
 }
 
-GameStageController* GameStageController::create(StageData *stageData)
+GameStageController* GameStageController::create(StageData *stageData, PlayerStatusData* playerData)
 {
     auto c = new GameStageController();
     
     if (c && c->initWithoutData()) {
         //m->autorelease();
-        c->initWithData(stageData);
+        c->initWithData(stageData, playerData);
         return c;
     }
     
@@ -52,10 +52,11 @@ bool GameStageController::initWithoutData()
     return true;
 }
 
-bool GameStageController::initWithData(StageData *stageData)
+bool GameStageController::initWithData(StageData *stageData, PlayerStatusData* playerData)
 {
     _stageData = stageData;
     _mapController = new MapController(stageData);
+    _playerData = playerData;
     
     CC_ASSERT(_mapController->getMapLayer() != nullptr);
     
@@ -66,6 +67,8 @@ bool GameStageController::initWithData(StageData *stageData)
     
     _clearData = new StageClearData();
     _clearData->stageData = _stageData;
+    _clearData->playerLevel = _playerData->playerLevel;
+    _clearData->playerExp = _playerData->exp;
     
     return true;
 }

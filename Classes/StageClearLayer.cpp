@@ -72,8 +72,19 @@ bool StageClearLayer::initWithData(StageClearData *data)
     _textScoreTotal->setString("Total Score: " + Value(totalScore).asString());
     
     // -- growth --
-    auto playerExp = _growthStrategyStageClear->getPlayerExp(_clearData);
-    _textGrowthPlayer->setString("Player Exp: +" + Value(playerExp).asString());
+    auto addExp = _growthStrategyStageClear->getPlayerExp(_clearData);
+    _textGrowthPlayer->setString("Player Exp: +" + Value(addExp).asString());
+    
+    auto currentExp = _clearData->playerExp;
+    auto newExp = currentExp;
+    auto currentLevel = _clearData->playerLevel;
+    auto newLevel = _growthStrategyStageClear->getNewLevel(currentLevel, newExp, addExp);
+    
+    if (newLevel != currentLevel) {
+        CCLOG("Level up! %d -> %d", currentLevel, newLevel);
+    } else {
+        CCLOG("Exp up! %d -> %d", currentExp, newExp);
+    }
     
     return true;
 }
