@@ -15,7 +15,8 @@ const string GameStageController::EventNameEnemyDead  = "event_EnemyDead";
 
 GameStageController::GameStageController():
 _jewelsGrid(nullptr),
-_stageData(nullptr)
+_stageData(nullptr),
+_clearData(nullptr)
 {
     
 }
@@ -62,6 +63,9 @@ bool GameStageController::initWithData(StageData *stageData)
     _jewelsGrid = JewelsGrid::create(6, 6);
     
     addClearConditions();
+    
+    _clearData = new StageClearData();
+    _clearData->stageData = _stageData;
     
     return true;
 }
@@ -144,7 +148,8 @@ void GameStageController::checkClearStage()
 
 void GameStageController::processClearStage(ClearStageConditionType t)
 {
-    StageClearData *data = nullptr;
+    _clearData->type = t;
+    
     switch (t) {
         case ClearStageConditionType::GOAL_MAP:
             
@@ -160,10 +165,10 @@ void GameStageController::processClearStage(ClearStageConditionType t)
         default:
             break;
     }
-    if (data != nullptr) { // now data == NULL
-        auto dispatcher = Director::getInstance()->getEventDispatcher();
-        dispatcher->dispatchCustomEvent(GameStageController::EventNameStageClear, data);
-    }
+    
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->dispatchCustomEvent(GameStageController::EventNameStageClear, _clearData);
+
 }
 
 
@@ -212,6 +217,11 @@ bool GameStageController::canAttackEnemy()
     } else {
         return true;
     }
+}
+
+void GameStageController::setScore(int score)
+{
+    _clearData->score = score;
 }
 
 void GameStageController::addClearConditions()

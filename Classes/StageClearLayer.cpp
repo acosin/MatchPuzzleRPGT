@@ -6,6 +6,8 @@
 
 #include "StageClearLayer.h"
 
+#include "SimpleGrowthStrategyStageClear.hpp"
+
 StageClearLayer::StageClearLayer()
 {
     
@@ -32,6 +34,8 @@ bool StageClearLayer::init()
     
     
     this->addChild(_layout);
+    
+    _growthStrategyStageClear = new SimpleGrowthStrategyStageClear();
 
     return true;
 }

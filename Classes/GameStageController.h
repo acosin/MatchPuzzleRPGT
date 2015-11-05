@@ -15,6 +15,7 @@
 #include "PuzzleStatusChangeData.hpp"
 
 #include "IClearStageCondition.h"
+#include "StageClearData.h"
 
 USING_NS_CC;
 
@@ -22,6 +23,8 @@ class MapController; //cross
 
 class IClearStageCondition;
 enum class ClearStageConditionType;
+
+class StageClearData;
 
 class GameStageController
 {
@@ -33,6 +36,7 @@ private:
     // map logic control
     MapController* _mapController;
     std::vector<IClearStageCondition*> _clearConditions;
+    StageClearData * _clearData;
     
 public:
     GameStageController();
@@ -64,6 +68,8 @@ public:
     
     
     bool canAttackEnemy();
+    
+    void setScore(int score);
 public:
     JewelsGrid* _jewelsGrid;
 

@@ -12,6 +12,8 @@
 #include "SceneMediator.h"
 #include "StageClearData.h"
 
+#include "IGrowthStrategyStageClear.h"
+
 USING_NS_CC;
 
 class StageClearLayer : public Layer
@@ -19,6 +21,7 @@ class StageClearLayer : public Layer
 protected:
     Node* _layout;
     ui::Text *_clearInfo;
+    IGrowthStrategyStageClear *_growthStrategyStageClear;
 public:
     StageClearLayer();
     ~StageClearLayer();

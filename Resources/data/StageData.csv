@@ -1,4 +1,4 @@
-stageID,stageName,mapID,mapName,stageIconPath,mapWidth,mapHeight,playerInitialX,playerInitialY,difficultybaga
+stageID,stageName,mapID,mapName,stageIconPath,mapWidth,mapHeight,playerInitialX,playerInitialY,difficulty
 0,stageName_0,0,mapName_0,stageIcon_0.png,5,4,2,3,1
 1,stageName_1,1,mapName_1,stageIcon_0.png,5,5,2,4,1
 2,stageName_2,2,mapName_2,stageIcon_0.png,5,4,2,3,1

@@ -299,6 +299,7 @@ void GameStageScene::onStageClear(EventCustom* pEvent)
 {
     //TODO: need stop any interaction here
     _stick->stopStick();
+    _jewelsGrid->pauseInteraction();
     
     auto data = static_cast<StageClearData*>(pEvent->getUserData());
     auto stageClearLayer = StageClearLayer::create();
@@ -498,7 +499,9 @@ void GameStageScene::processScoreForPuzzle()
     auto data = _controller->getPuzzleStatusChangeData();
     auto scoreToAdd = _scorePuzzleStrategy->getScoreToAdd(data);
     auto score = _scoreBoard->getScore();
-    _scoreBoard->setScore(score+scoreToAdd);
+    auto result = score+scoreToAdd;
+    _scoreBoard->setScore(result);
+    _controller->setScore(result);
 }
 
 
@@ -520,6 +523,7 @@ void GameStageScene::onEnemyDead(EventCustom* pEvent)
     auto enemy = static_cast<MapItemEnemy*>(pEvent->getUserData());
     auto scoreToAdd = _scoreEnemyStrategy->getScoreToAdd(enemy);
     auto score = _scoreBoard->getScore();
-    _scoreBoard->setScore(score+scoreToAdd);
-
+    auto result = score+scoreToAdd;
+    _scoreBoard->setScore(result);
+    _controller->setScore(result);
 }

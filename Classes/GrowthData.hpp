@@ -3,9 +3,16 @@
 //  MatchPuzzleRPGT
 //
 
+#pragma once
+
+#include "StageData.h"
+
 class GrowthData
 {
-private:
+public:
+    StageData* stageData;
+    int score;
     
 public:
+    
 };

@@ -8,8 +8,6 @@
 
 class IScoreEnemyStrategy
 {
-protected:
-public:
     
 public:
     virtual int getScoreToAdd(MapItemEnemy *enemy) = 0;

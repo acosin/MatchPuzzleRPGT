@@ -271,8 +271,11 @@
 		319854871BE9DC06004A9CEE /* SimpleScorePuzzleStrategy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleScorePuzzleStrategy.hpp; sourceTree = "<group>"; };
 		3198548A1BE9F288004A9CEE /* IScoreEnemyStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IScoreEnemyStrategy.h; sourceTree = "<group>"; };
 		3198548B1BE9F3D4004A9CEE /* SimpleScoreEnemyStrategy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleScoreEnemyStrategy.hpp; sourceTree = "<group>"; };
-		3198548D1BE9FBE9004A9CEE /* IGrowthStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGrowthStrategy.h; sourceTree = "<group>"; };
+		3198548D1BE9FBE9004A9CEE /* IGrowthStrategyStageClear.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGrowthStrategyStageClear.h; sourceTree = "<group>"; };
 		3198548E1BE9FD24004A9CEE /* GrowthData.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = GrowthData.hpp; sourceTree = "<group>"; };
+		3198548F1BEAF656004A9CEE /* IScoreStageClearStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IScoreStageClearStrategy.h; sourceTree = "<group>"; };
+		319854901BEAF70B004A9CEE /* SimpleScoreStageClearStrategy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleScoreStageClearStrategy.hpp; sourceTree = "<group>"; };
+		319854911BEB1036004A9CEE /* SimpleGrowthStrategyStageClear.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleGrowthStrategyStageClear.hpp; sourceTree = "<group>"; };
 		319DA2C41BDF180F00151EF1 /* HealthBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HealthBar.cpp; sourceTree = "<group>"; };
 		319DA2C51BDF180F00151EF1 /* HealthBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthBar.h; sourceTree = "<group>"; };
 		319DA2C81BDF26C500151EF1 /* hp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hp.png; sourceTree = "<group>"; };
@@ -461,6 +464,7 @@
 		31122EBA1BCCF0FE00F08C65 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				3198548E1BE9FD24004A9CEE /* GrowthData.hpp */,
 				3188E6741BCF8E7900AC8FBC /* StageData.cpp */,
 				3188E6751BCF8E7900AC8FBC /* StageData.h */,
 				31819B5D1BE1BDAB00C505E8 /* StageClearData.cpp */,
@@ -602,6 +606,8 @@
 				319854871BE9DC06004A9CEE /* SimpleScorePuzzleStrategy.hpp */,
 				3198548A1BE9F288004A9CEE /* IScoreEnemyStrategy.h */,
 				3198548B1BE9F3D4004A9CEE /* SimpleScoreEnemyStrategy.hpp */,
+				3198548F1BEAF656004A9CEE /* IScoreStageClearStrategy.h */,
+				319854901BEAF70B004A9CEE /* SimpleScoreStageClearStrategy.hpp */,
 			);
 			name = ScoreStrategy;
 			sourceTree = "<group>";
@@ -609,8 +615,8 @@
 		3198548C1BE9FB53004A9CEE /* GrowthStrategy */ = {
 			isa = PBXGroup;
 			children = (
-				3198548D1BE9FBE9004A9CEE /* IGrowthStrategy.h */,
-				3198548E1BE9FD24004A9CEE /* GrowthData.hpp */,
+				3198548D1BE9FBE9004A9CEE /* IGrowthStrategyStageClear.h */,
+				319854911BEB1036004A9CEE /* SimpleGrowthStrategyStageClear.hpp */,
 			);
 			name = GrowthStrategy;
 			sourceTree = "<group>";
