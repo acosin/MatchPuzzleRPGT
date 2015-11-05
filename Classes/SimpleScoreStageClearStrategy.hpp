@@ -12,9 +12,9 @@ class SimpleScoreStageClearStrategy : public IScoreStageClearStrategy
 private:
     const int DifficultyFactor = 100;
 public:
-    int getScoreToAdd(StageData *data) {
+    int getScoreToAdd(StageData *data) override {
         CC_ASSERT(data != nullptr);
-        int ret = 0
+        int ret = 0;
         
         ret += data->_difficulty * DifficultyFactor;
         

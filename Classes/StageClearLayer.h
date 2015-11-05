@@ -13,15 +13,27 @@
 #include "StageClearData.h"
 
 #include "IGrowthStrategyStageClear.h"
+#include "IScoreStageClearStrategy.h"
 
 USING_NS_CC;
 
 class StageClearLayer : public Layer
 {
+public:
+    static int BonusKillAllEnemies;
 protected:
     Node* _layout;
-    ui::Text *_clearInfo;
+    ui::Text* _clearInfo;
+    ui::Text* _textScore;
+    ui::Text* _textScoreStage;
+    ui::Text* _textScoreEnemy;
+    ui::Text* _textScoreTotal;
+    ui::Text* _textGrowthPlayer;
+    
+    
     IGrowthStrategyStageClear *_growthStrategyStageClear;
+    StageClearData *_clearData;
+    IScoreStageClearStrategy *_scoreStageClearStrategy;
 public:
     StageClearLayer();
     ~StageClearLayer();
