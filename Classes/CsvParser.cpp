@@ -6,6 +6,9 @@
 
 #include "CsvParser.h"
 
+#include <iostream>
+#include <fstream>
+
 namespace CsvParser {
     
     Csv::Csv(const string& filename)
@@ -246,4 +249,20 @@ namespace CsvParser {
         throw "can't return this row (doesn't exist)";
     }
     
+    void Csv::Write(const string &filename, vector<vector<string> > &rows)
+    {
+        ofstream file;
+        file.open(filename);
+        for (auto row : rows) {
+            for (auto it = row.begin(); it != row.end(); it++) {
+                file << (*it);
+                if (it!=row.end()) {
+                    file << ",";
+                }
+            }
+            if (row != (*rows.end())) {
+                file << "\n";
+            }
+        }
+    }
 }

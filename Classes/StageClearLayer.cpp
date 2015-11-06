@@ -9,6 +9,8 @@
 #include "SimpleGrowthStrategyStageClear.hpp"
 #include "SimpleScoreStageClearStrategy.hpp"
 
+#include "GameStageController.h"
+
 
 int StageClearLayer::BonusKillAllEnemies = 1000;
 
@@ -91,5 +93,20 @@ bool StageClearLayer::initWithData(StageClearData *data)
         _textGrowthPlayerResult->setString(str);
     }
     
+    // persistence
+    dispatchGrowthEvent(newLevel, newExp);
+    
+    
     return true;
+}
+
+void StageClearLayer::dispatchGrowthEvent(int newPlayerLevel, int newPlayerExp)
+{
+    auto growthData = new GrowthDataStageClear();
+    growthData->newPlayerLevel = newPlayerLevel;
+    growthData->newPlayerExp = newPlayerExp;
+    
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->dispatchCustomEvent(GameStageController::EventNameProcessGrowth, growthData);
+    
 }

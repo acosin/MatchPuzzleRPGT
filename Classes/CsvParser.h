@@ -66,6 +66,8 @@ namespace CsvParser {
         
         Row& operator[](unsigned int key);
         
+        static void Write(const string& filename, vector<vector<string>>& rows);
+        
     private:
         void Load(const string& filename, string& Data);
         void setHeader();

@@ -24,6 +24,10 @@ protected:
     PlayerStatusData* _playerData;
     std::vector<UnitOfPlayerRecord*> _unitRecords;
     
+    std::string playerDataFilename;
+    std::string unitRocordsFilename;
+private:
+    
     void clearPlayerData();
     void clearUnitRecords();
     
@@ -37,12 +41,17 @@ public:
     virtual bool initWithData(PlayerStatusData* playerData, std::vector<UnitOfPlayerRecord*> &unitRecords);
     virtual bool initFromLocalData(const std::string &playerDataFile, const std::string &unitRocordsFile);
     bool loadPlayerDataFromCSV(const std::string &filename);
+    bool writePlayerDataToCSV();
     bool loadUnitOfPlayerRecordsFromCSV(const std::string& filename);
+    bool writeUnitOfPlayerRecordsToCSV();
     
     std::vector<UnitOfPlayerRecord*> getUnitRecords();
     PlayerStatusData* getPlayerStatusData();
     
-    // TODO: for debug, remove later
+    // for growth
+    void setPlayerLevel(int level);
+    void setPlayerExp(int exp);
 public:
+    // TODO: for debug, remove later
     bool initWithDebugData();
 };

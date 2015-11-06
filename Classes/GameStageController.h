@@ -17,7 +17,7 @@
 #include "IClearStageCondition.h"
 #include "StageClearData.h"
 
-#include "PlayerStatusData.h"
+#include "StatusDataManager.h"
 
 USING_NS_CC;
 
@@ -33,6 +33,7 @@ class GameStageController
 public:
     static const std::string EventNameStageClear;
     static const std::string EventNameEnemyDead;
+    static const std::string EventNameProcessGrowth;
 private:
     StageData* _stageData;
     // map logic control
@@ -40,16 +41,16 @@ private:
     std::vector<IClearStageCondition*> _clearConditions;
     StageClearData * _clearData;
     
-    PlayerStatusData* _playerData;
+    StatusDataManager *_statusManager;
     
 public:
     GameStageController();
     ~GameStageController();
     
-    static GameStageController* create(StageData* stageData, PlayerStatusData* playerData);
+    static GameStageController* create(StageData* stageData, StatusDataManager *statusManager);
     
     virtual bool initWithoutData();
-    bool initWithData(StageData* stageData, PlayerStatusData* playerData);
+    bool initWithData(StageData* stageData, StatusDataManager *statusManager);
     
     JewelsGrid* getJewelsGrid();
     

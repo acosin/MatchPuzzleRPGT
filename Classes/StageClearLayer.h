@@ -17,6 +17,13 @@
 
 USING_NS_CC;
 
+class GrowthDataStageClear
+{
+public:
+    int newPlayerLevel;
+    int newPlayerExp;
+};
+
 class StageClearLayer : public Layer
 {
 public:
@@ -44,5 +51,5 @@ public:
     
     bool initWithData(StageClearData *data);
 private:
-
+    void dispatchGrowthEvent(int newPlayerLevel, int newPlayerExp);
 };

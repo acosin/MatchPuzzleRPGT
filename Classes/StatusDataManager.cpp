@@ -59,9 +59,11 @@ bool StatusDataManager::initFromLocalData(const std::string &playerDataFile, con
 {
     if (loadPlayerDataFromCSV(playerDataFile) == false)
         return false;
+    playerDataFilename = playerDataFile;
     
     if (loadUnitOfPlayerRecordsFromCSV(unitRocordsFile) == false)
         return false;
+    unitRocordsFilename = unitRocordsFile;
     
     return true;
 }
@@ -98,6 +100,33 @@ bool StatusDataManager::loadPlayerDataFromCSV(const std::string &filename)
     return true;
 }
 
+bool StatusDataManager::writePlayerDataToCSV()
+{
+    std::vector<std::vector<string>> rows;
+    std::vector<string> row;
+    
+    row.push_back("playerID");
+    row.push_back("playerIconPath");
+    row.push_back("playarName");
+    row.push_back("playerLevel");
+    row.push_back("exp");
+    rows.push_back(row);
+    row.clear();
+    
+    row.push_back(StringUtils::toString(_playerData->playerID));
+    row.push_back(_playerData->playerIconPath);
+    row.push_back(_playerData->playerName);
+    row.push_back(StringUtils::toString(_playerData->playerLevel));
+    row.push_back(StringUtils::toString(_playerData->exp));
+    rows.push_back(row);
+    row.clear();
+    
+    CsvParser::Csv::Write(FileUtils::getInstance()->fullPathForFilename(playerDataFilename), rows);
+    rows.clear();
+    
+    return true;
+}
+
 bool StatusDataManager::loadUnitOfPlayerRecordsFromCSV(const std::string &filename)
 {
     clearUnitRecords();
@@ -126,9 +155,51 @@ bool StatusDataManager::loadUnitOfPlayerRecordsFromCSV(const std::string &filena
     return true;
 }
 
+bool StatusDataManager::writeUnitOfPlayerRecordsToCSV()
+{
+    std::vector<std::vector<string>> rows;
+    std::vector<string> row;
+    
+    row.push_back("unitID");
+    row.push_back("unitIconPath");
+    row.push_back("elementType");
+    row.push_back("unitName");
+    row.push_back("atk");
+    row.push_back("level");
+    rows.push_back(row);
+    row.clear();
+    
+    for (auto record : _unitRecords) {
+        auto unitdata = record->unitdata;
+        row.push_back(StringUtils::toString(unitdata.unitID));
+        row.push_back(unitdata.unitIconPath);
+        row.push_back(StringUtils::toString((int)unitdata.elementType));
+        row.push_back(unitdata.unitName);
+        row.push_back(StringUtils::toString(unitdata.atk));
+        row.push_back(StringUtils::toString(unitdata.level));
+        rows.push_back(row);
+        row.clear();
+    }
+    
+    CsvParser::Csv::Write(FileUtils::getInstance()->fullPathForFilename(unitRocordsFilename), rows);
+    rows.clear();
+    
+    return true;
+}
+
 PlayerStatusData* StatusDataManager::getPlayerStatusData()
 {
     return _playerData;
+}
+
+void StatusDataManager::setPlayerLevel(int level)
+{
+    _playerData->playerLevel = level;
+}
+
+void StatusDataManager::setPlayerExp(int exp)
+{
+    _playerData->exp = exp;
 }
 
 std::vector<UnitOfPlayerRecord*> StatusDataManager::getUnitRecords()

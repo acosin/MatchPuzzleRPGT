@@ -37,6 +37,7 @@ GameStageScene::~GameStageScene()
     removeEventStageCLear();
     removeEventFinishComboes();
     removeEventEnemyDead();
+    removeEventProgressGrowth();
 }
 
 bool GameStageScene::init()
@@ -126,7 +127,7 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     
     _statusManager = SceneMediator::getInstance()->getStatusDataManager();
     
-    _controller = GameStageController::create(_currentStageData, _statusManager->getPlayerStatusData());
+    _controller = GameStageController::create(_currentStageData, _statusManager);
     _jewelsGrid = _controller->getJewelsGrid();
     
     _mapLayer = _controller->getMapLayer();
@@ -148,6 +149,7 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     
     regEventStageClear();
     regEventEnemyDead();
+    regEventProgressGrowth();
     
     return true;
 }
@@ -309,6 +311,30 @@ void GameStageScene::onStageClear(EventCustom* pEvent)
     stageClearLayer->initWithData(data);
     
     this->addChild(stageClearLayer, 10, 10);
+}
+
+
+void GameStageScene::regEventProgressGrowth()
+{
+    auto listenner =EventListenerCustom::create(GameStageController::EventNameProcessGrowth,
+                                                CC_CALLBACK_1(GameStageScene::onProgressGrowth, this));
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->addEventListenerWithFixedPriority(listenner, 100);
+}
+
+void GameStageScene::removeEventProgressGrowth()
+{
+    getEventDispatcher()->removeCustomEventListeners(GameStageController::EventNameProcessGrowth);
+}
+
+void GameStageScene::onProgressGrowth(EventCustom* pEvent)
+{
+    auto data = static_cast<GrowthDataStageClear*>(pEvent->getUserData());
+    _statusManager->setPlayerLevel(data->newPlayerLevel);
+    _statusManager->setPlayerExp(data->newPlayerExp);
+    _statusManager->writePlayerDataToCSV();
+    
+    //TODO: handle growth of units here later
 }
 
 void GameStageScene::tryMovePlayerUp(float delay)

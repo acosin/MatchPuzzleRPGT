@@ -98,6 +98,10 @@ private:
     void removeEventStageCLear();
     void onStageClear(EventCustom* pEvent);
     
+    void regEventProgressGrowth();
+    void removeEventProgressGrowth();
+    void onProgressGrowth(EventCustom* pEvent);
+    
     void stopInteraction();
     void startInteraction();
     

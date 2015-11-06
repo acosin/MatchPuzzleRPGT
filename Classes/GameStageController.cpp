@@ -12,6 +12,7 @@
 
 const string GameStageController::EventNameStageClear = "event_StageClear";
 const string GameStageController::EventNameEnemyDead  = "event_EnemyDead";
+const string GameStageController::EventNameProcessGrowth  = "event_ProcessGrowth";
 
 GameStageController::GameStageController():
 _jewelsGrid(nullptr),
@@ -32,13 +33,13 @@ GameStageController::~GameStageController()
      */
 }
 
-GameStageController* GameStageController::create(StageData *stageData, PlayerStatusData* playerData)
+GameStageController* GameStageController::create(StageData *stageData, StatusDataManager *statusManager)
 {
     auto c = new GameStageController();
     
     if (c && c->initWithoutData()) {
         //m->autorelease();
-        c->initWithData(stageData, playerData);
+        c->initWithData(stageData, statusManager);
         return c;
     }
     
@@ -52,11 +53,11 @@ bool GameStageController::initWithoutData()
     return true;
 }
 
-bool GameStageController::initWithData(StageData *stageData, PlayerStatusData* playerData)
+bool GameStageController::initWithData(StageData *stageData, StatusDataManager *statusManager)
 {
     _stageData = stageData;
     _mapController = new MapController(stageData);
-    _playerData = playerData;
+    _statusManager = statusManager;
     
     CC_ASSERT(_mapController->getMapLayer() != nullptr);
     
@@ -67,8 +68,9 @@ bool GameStageController::initWithData(StageData *stageData, PlayerStatusData* p
     
     _clearData = new StageClearData();
     _clearData->stageData = _stageData;
-    _clearData->playerLevel = _playerData->playerLevel;
-    _clearData->playerExp = _playerData->exp;
+    auto playerData = _statusManager->getPlayerStatusData();
+    _clearData->playerLevel = playerData->playerLevel;
+    _clearData->playerExp = playerData->exp;
     
     return true;
 }
