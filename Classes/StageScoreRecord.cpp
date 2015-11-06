@@ -57,6 +57,11 @@ int StageScoreRecord::getBestScore()
         return 0;
 }
 
+time_t StageScoreRecord::getBestTimestamp()
+{
+    return _bestTimestamp;
+}
+
 /*
  * NOTE: use updateScore() instead
  */
@@ -87,6 +92,11 @@ int StageScoreRecord::getLastScore()
         return _lastScore;
     else
         return 0;
+}
+
+time_t StageScoreRecord::getLastTimestamp()
+{
+    return _lastTimestamp;
 }
 
 void StageScoreRecord::setLastScore(int score, time_t timestamp)
@@ -165,4 +175,46 @@ std::map<uint32_t, StageScoreRecord*> StageScoreRecord::loadStageScoreRecordFrom
     
     return ret;
     
+}
+
+bool StageScoreRecord::writeStageScoreRecordsToCSV(const std::string &filename, std::map<uint32_t, StageScoreRecord *> &records)
+{
+    std::vector<std::vector<string>> rows;
+    std::vector<string> row;
+    
+    row.push_back("stageId");
+    row.push_back("scoreExist");
+    row.push_back("bestScore");
+    row.push_back("bestTimestamp");
+    row.push_back("lastScore");
+    row.push_back("lastTimeStamp");
+    rows.push_back(row);
+    row.clear();
+    
+    for (auto pair : records) {
+        auto record = pair.second;
+        
+        row.push_back("stageId");
+        row.push_back("scoreExist");
+        row.push_back("bestScore");
+        row.push_back("bestTimestamp");
+        row.push_back("lastScore");
+        row.push_back("lastTimeStamp");
+        
+        row.push_back(StringUtils::toString(record->getStageID()));
+        row.push_back(record->isScoreExist()?"TRUE":"FALSE");
+        row.push_back(StringUtils::toString(record->getBestScore()));
+        time_t besttime =record->getBestTimestamp();
+        row.push_back(StringUtils::toString(TimeParser::TMToString(*localtime(&besttime))));
+        row.push_back(StringUtils::toString(record->getLastScore()));
+        time_t lasttime =record->getLastTimestamp();
+        row.push_back(StringUtils::toString(TimeParser::TMToString(*localtime(&lasttime))));
+        rows.push_back(row);
+        row.clear();
+    }
+    
+    CsvParser::Csv::Write(FileUtils::getInstance()->fullPathForFilename(filename), rows);
+    rows.clear();
+    
+    return true;
 }
