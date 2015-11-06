@@ -85,6 +85,17 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Text_growth_playerResult" ActionTag="1599162446" Tag="43" IconVisible="False" HorizontalEdge="BothEdge" LeftMargin="259.0000" RightMargin="259.0000" TopMargin="965.2712" BottomMargin="150.7287" FontSize="14" LabelText="Player Lv.0-&gt;Lv.100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="122.0000" Y="20.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="320.0000" Y="160.7287" />
+            <Scale ScaleX="3.9427" ScaleY="4.0755" />
+            <CColor A="255" R="255" G="165" B="0" />
+            <PrePosition X="0.5000" Y="0.1415" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

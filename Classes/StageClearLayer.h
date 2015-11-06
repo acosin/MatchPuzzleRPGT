@@ -29,6 +29,7 @@ protected:
     ui::Text* _textScoreEnemy;
     ui::Text* _textScoreTotal;
     ui::Text* _textGrowthPlayer;
+    ui::Text* _textGrowthPlayerResult;
     
     
     IGrowthStrategyStageClear *_growthStrategyStageClear;

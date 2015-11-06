@@ -40,6 +40,7 @@ bool StageClearLayer::init()
     _textScoreEnemy = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_score_enemy"));
     _textScoreTotal = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_score_total"));
     _textGrowthPlayer = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_growth_player"));
+    _textGrowthPlayerResult = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_growth_playerResult"));
     
     this->addChild(_layout);
     
@@ -82,8 +83,12 @@ bool StageClearLayer::initWithData(StageClearData *data)
     
     if (newLevel != currentLevel) {
         CCLOG("Level up! %d -> %d", currentLevel, newLevel);
+        auto str = "Level up!\n Lv." + Value(currentLevel).asString()+ " -> Lv."+Value(newLevel).asString();
+        _textGrowthPlayerResult->setString(str);
     } else {
         CCLOG("Exp up! %d -> %d", currentExp, newExp);
+        auto str = "Exp: " + Value(currentExp).asString()+ " -> "+Value(newExp).asString();
+        _textGrowthPlayerResult->setString(str);
     }
     
     return true;
