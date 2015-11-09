@@ -14,6 +14,8 @@ struct UnitOfPlayerRecord {
     //unit32_t playerID;
     time_t getTimestamp;
     
+    bool isSortie = false;
+    
     UnitOfPlayerRecord(UnitData unitdata,
                        time_t getTimestamp)
     {

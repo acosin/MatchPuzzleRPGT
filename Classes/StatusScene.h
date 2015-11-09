@@ -12,7 +12,7 @@
 #include "cocostudio/CocoStudio.h"
 
 #include "SceneMediator.h"
-#include "ListItem_UnitRecord.hpp"
+#include "ListItem_UnitRecord.h"
 #include "Layer_PlayerStatus.hpp"
 
 USING_NS_CC;

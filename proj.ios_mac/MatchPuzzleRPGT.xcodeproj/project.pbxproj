@@ -11,6 +11,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		31108CB11BF0AA8000C71ED9 /* ListItem_UnitRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31108CB01BF0AA8000C71ED9 /* ListItem_UnitRecord.cpp */; };
+		31108CB21BF0AA8000C71ED9 /* ListItem_UnitRecord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31108CB01BF0AA8000C71ED9 /* ListItem_UnitRecord.cpp */; };
 		31122E761BC7658100F08C65 /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122E741BC7658100F08C65 /* HomeScene.cpp */; };
 		31122E771BC7658100F08C65 /* HomeScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122E741BC7658100F08C65 /* HomeScene.cpp */; };
 		31122E7A1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122E781BC76DCF00F08C65 /* SceneMediator.cpp */; };
@@ -186,6 +188,7 @@
 		1D6058910D05DD3D006BFB54 /* MatchPuzzleRPGT-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MatchPuzzleRPGT-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		31108CB01BF0AA8000C71ED9 /* ListItem_UnitRecord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ListItem_UnitRecord.cpp; sourceTree = "<group>"; };
 		31122E741BC7658100F08C65 /* HomeScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HomeScene.cpp; sourceTree = "<group>"; };
 		31122E751BC7658100F08C65 /* HomeScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeScene.h; sourceTree = "<group>"; };
 		31122E781BC76DCF00F08C65 /* SceneMediator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SceneMediator.cpp; sourceTree = "<group>"; };
@@ -212,7 +215,7 @@
 		31122EA81BCC9DBC00F08C65 /* element_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = element_red.png; sourceTree = "<group>"; };
 		31122EA91BCC9DBC00F08C65 /* element_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = element_yellow.png; sourceTree = "<group>"; };
 		31122EB41BCCBEDF00F08C65 /* Chara_illust.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Chara_illust.png; sourceTree = "<group>"; };
-		31122EBF1BCCF22F00F08C65 /* ListItem_UnitRecord.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ListItem_UnitRecord.hpp; sourceTree = "<group>"; };
+		31122EBF1BCCF22F00F08C65 /* ListItem_UnitRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListItem_UnitRecord.h; sourceTree = "<group>"; };
 		31122EC01BCD01CD00F08C65 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		31122EC41BCE27A300F08C65 /* CsvParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CsvParser.cpp; sourceTree = "<group>"; };
 		31122EC51BCE27A300F08C65 /* CsvParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CsvParser.h; sourceTree = "<group>"; };
@@ -520,7 +523,8 @@
 		31122EBE1BCCF19900F08C65 /* DataVisualizer */ = {
 			isa = PBXGroup;
 			children = (
-				31122EBF1BCCF22F00F08C65 /* ListItem_UnitRecord.hpp */,
+				31122EBF1BCCF22F00F08C65 /* ListItem_UnitRecord.h */,
+				31108CB01BF0AA8000C71ED9 /* ListItem_UnitRecord.cpp */,
 				3185615F1BD4899100627C21 /* Item_SelectStage.hpp */,
 				31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */,
 				3188E6871BD0E31300AC8FBC /* Item_StageScoreRecord.hpp */,
@@ -927,6 +931,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				31122EA31BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
 				31819B5F1BE1BDAB00C505E8 /* StageClearData.cpp in Sources */,
+				31108CB11BF0AA8000C71ED9 /* ListItem_UnitRecord.cpp in Sources */,
 				319DA2D31BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				31819B651BE1EF0D00C505E8 /* ClearStageCondition_NoEnemy.cpp in Sources */,
@@ -975,6 +980,7 @@
 				3141AECF1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */,
 				3188E6831BD0A6BB00AC8FBC /* StageScoreScene.cpp in Sources */,
 				31122EA41BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
+				31108CB21BF0AA8000C71ED9 /* ListItem_UnitRecord.cpp in Sources */,
 				31CD82571BD882DA0009D1FB /* IDPool.cpp in Sources */,
 				3188E6771BCF8E7900AC8FBC /* StageData.cpp in Sources */,
 				31122EC71BCE27A300F08C65 /* CsvParser.cpp in Sources */,

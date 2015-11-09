@@ -149,6 +149,13 @@ bool StatusDataManager::loadUnitOfPlayerRecordsFromCSV(const std::string &filena
         // TODO: should load here later
         unitRecordTemp = new UnitOfPlayerRecord(unitDataTemp,
                                                 time(nullptr));
+        
+        // TODO: may process in another function
+        if (i <= (int)ElementType::count) {
+            unitRecordTemp->isSortie = true;
+        } else {
+            unitRecordTemp->isSortie = false;
+        }
         _unitRecords.push_back(unitRecordTemp);
     }
     

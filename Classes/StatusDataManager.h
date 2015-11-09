@@ -29,8 +29,7 @@ protected:
 private:
     
     void clearPlayerData();
-    void clearUnitRecords();
-    
+    void clearUnitRecords();    
 public:
     StatusDataManager();
     virtual ~StatusDataManager();
