@@ -51,5 +51,7 @@ public:
     
     bool initWithData(StageClearData *data);
 private:
+    void handleStageClear(int newPlayerLevel, int newPlayerExp, int score);
     void dispatchGrowthEvent(int newPlayerLevel, int newPlayerExp);
+    void dispatchSaveScoreEvent(int score);
 };

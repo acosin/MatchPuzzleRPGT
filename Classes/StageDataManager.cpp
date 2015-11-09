@@ -71,6 +71,8 @@ bool StageDataManager::initFromLocalData(const std::string &stageDataFile,
     auto scoreRecord = StageScoreRecord::loadStageScoreRecordFromCSV(scoreRocordsFile,
                                                                      stageData);
     
+    _scoreRecordsFilename = scoreRocordsFile;
+    
     return initWithData(stageData, scoreRecord);
 }
 
@@ -87,6 +89,15 @@ StageScoreRecord* StageDataManager::getStageScoreRecord(uint32_t stageID)
     } else {
         return _stageScoreRecords[stageID];
     }
+}
+
+bool StageDataManager::tryUpdateScore(uint32_t stageID, int score)
+{
+    auto isHigher = _stageScoreRecords[stageID]->updateScore(score, time(NULL));
+    
+    StageScoreRecord::writeStageScoreRecordsToCSV(_scoreRecordsFilename, _stageScoreRecords);
+    
+    return isHigher;
 }
 
 bool StageDataManager::initWithDebugData()

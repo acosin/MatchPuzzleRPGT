@@ -62,6 +62,8 @@ protected:
     IScoreEnemyStrategy* _scoreEnemyStrategy;
     
     bool initData(StageDataManager* stageManager, uint32_t stageID);
+    void regLogicalEvent();
+    void removeLogicalEvent();
     
     int _texture_num = 0;
     void LoadTexture();
@@ -101,6 +103,10 @@ private:
     void regEventProgressGrowth();
     void removeEventProgressGrowth();
     void onProgressGrowth(EventCustom* pEvent);
+    
+    void regEventSaveScore();
+    void removeEventSaveScore();
+    void onSaveScore(EventCustom* pEvent);
     
     void stopInteraction();
     void startInteraction();

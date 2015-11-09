@@ -13,6 +13,7 @@
 const string GameStageController::EventNameStageClear = "event_StageClear";
 const string GameStageController::EventNameEnemyDead  = "event_EnemyDead";
 const string GameStageController::EventNameProcessGrowth  = "event_ProcessGrowth";
+const string GameStageController::EventNameSaveScore = "event_SaveScore";
 
 GameStageController::GameStageController():
 _jewelsGrid(nullptr),

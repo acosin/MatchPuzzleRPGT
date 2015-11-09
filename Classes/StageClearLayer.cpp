@@ -94,10 +94,15 @@ bool StageClearLayer::initWithData(StageClearData *data)
     }
     
     // persistence
-    dispatchGrowthEvent(newLevel, newExp);
-    
+    handleStageClear(newLevel, newExp, totalScore);
     
     return true;
+}
+
+void StageClearLayer::handleStageClear(int newPlayerLevel, int newPlayerExp, int score)
+{
+    dispatchGrowthEvent(newPlayerLevel, newPlayerExp);
+    dispatchSaveScoreEvent(score);
 }
 
 void StageClearLayer::dispatchGrowthEvent(int newPlayerLevel, int newPlayerExp)
@@ -109,4 +114,11 @@ void StageClearLayer::dispatchGrowthEvent(int newPlayerLevel, int newPlayerExp)
     auto dispatcher = Director::getInstance()->getEventDispatcher();
     dispatcher->dispatchCustomEvent(GameStageController::EventNameProcessGrowth, growthData);
     
+}
+
+void StageClearLayer::dispatchSaveScoreEvent(int score)
+{
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    //TODO: may need to guarantee safa memory access (&score) here!!!!
+    dispatcher->dispatchCustomEvent(GameStageController::EventNameSaveScore, &score);
 }

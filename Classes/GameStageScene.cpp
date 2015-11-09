@@ -33,11 +33,7 @@ _scoreEnemyStrategy(nullptr)
 
 GameStageScene::~GameStageScene()
 {
-    removeEventJewelGridStatusChange();
-    removeEventStageCLear();
-    removeEventFinishComboes();
-    removeEventEnemyDead();
-    removeEventProgressGrowth();
+    removeLogicalEvent();
 }
 
 bool GameStageScene::init()
@@ -142,6 +138,13 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     _puzzleLayout->addChild(_jewelsGrid);
     //this->addChild(_jewelsGrid);
     
+    regLogicalEvent();
+    
+    return true;
+}
+
+void GameStageScene::regLogicalEvent()
+{
     //TODO: may register more events here
     regEventJewelGridStatusChange();
     regEventFinishComboes();
@@ -150,10 +153,18 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     regEventStageClear();
     regEventEnemyDead();
     regEventProgressGrowth();
-    
-    return true;
+    regEventSaveScore();
 }
 
+void GameStageScene::removeLogicalEvent()
+{
+    removeEventJewelGridStatusChange();
+    removeEventStageCLear();
+    removeEventFinishComboes();
+    removeEventEnemyDead();
+    removeEventProgressGrowth();
+    removeEventSaveScore();
+}
 
 Scene* GameStageScene::createScene(StageDataManager* stageManager, uint32_t stageID)
 {
@@ -335,6 +346,34 @@ void GameStageScene::onProgressGrowth(EventCustom* pEvent)
     _statusManager->writePlayerDataToCSV();
     
     //TODO: handle growth of units here later
+}
+
+
+void GameStageScene::regEventSaveScore()
+{
+    auto listenner =EventListenerCustom::create(GameStageController::EventNameSaveScore,
+                                                CC_CALLBACK_1(GameStageScene::onSaveScore, this));
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->addEventListenerWithFixedPriority(listenner, 100);
+}
+
+void GameStageScene::removeEventSaveScore()
+{
+    getEventDispatcher()->removeCustomEventListeners(GameStageController::EventNameSaveScore);
+}
+
+void GameStageScene::onSaveScore(EventCustom* pEvent)
+{
+    auto data = static_cast<int*>(pEvent->getUserData());
+    auto score = *data;
+    //TODO: persistence of score here
+    auto ret = _stageManager->tryUpdateScore(_stageID, score);
+    
+    if (ret) {
+        CCLOG("best score update!");
+    } else {
+        CCLOG("cannot update best score");
+    }
 }
 
 void GameStageScene::tryMovePlayerUp(float delay)

@@ -34,6 +34,7 @@ public:
     static const std::string EventNameStageClear;
     static const std::string EventNameEnemyDead;
     static const std::string EventNameProcessGrowth;
+    static const std::string EventNameSaveScore;
 private:
     StageData* _stageData;
     // map logic control
