@@ -2,6 +2,6 @@ unitID,unitIconPath,elementType,unitName,atk,level
 0,element_red.png,0,UnitName_0_red,10,1
 1,element_blue.png,1,UnitName_1_blue,10,1
 2,element_yellow.png,2,UnitName_2_yellow,10,1
-3,element_green.png,3,UnitName_3_blue_baga,10,1
-1,element_blue.png,1,UnitName_1_blue,10,1
+3,element_green.png,3,UnitName_3_green,10,1
+1,element_blue.png,1,UnitName_1_blue_baga,10,1
 1,element_blue.png,1,UnitName_1_blue,10,1

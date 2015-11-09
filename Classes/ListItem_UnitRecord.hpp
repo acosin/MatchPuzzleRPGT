@@ -15,26 +15,33 @@
 
 USING_NS_CC;
 
-class ListItem_UnitRecord
+class ListItem_UnitRecord : public ui::Widget
 {
 public:
+    ui::CheckBox *_checkboxIsDefault;
+public:
+    CREATE_FUNC(ListItem_UnitRecord);
+    
     static ui::Widget* createListItem(UnitOfPlayerRecord* record)
     {
+        auto item = ListItem_UnitRecord::create();
         auto node = CSLoader::createNode("ui/ListItem_UnitRecord.csb");
         
         ui::ImageView* unitIcon = dynamic_cast<ui::ImageView*>(node->getChildByName("Image_unitIcon"));
         ui::Text* unitInfo = dynamic_cast<ui::Text*>(node->getChildByName("Text_unitInfo"));
         unitIcon->loadTexture(record->unitdata.unitIconPath);
         unitInfo->setString(record->unitdata.unitName);
+        item->_checkboxIsDefault = dynamic_cast<ui::CheckBox*>(node->getChildByName("CheckBox_isDefault"));
         
-        ui::Widget* item = ui::Widget::create();
-        //item->setSize(node->getSize());
-        //item->setSizePercent(Vec2(96.0, 60.0));
-        //item->setSize(Size(100,90));
-        //item->setSizePercent(Vec2(900.0, 1000.0));
-        //node->setPosition(Vec2(0.5, 0.5));
+        //TODO: only for debug, remove later
+        if (item->_checkboxIsDefault == NULL || item->_checkboxIsDefault == nullptr) {
+            CCLOG("ListItem_UnitRecord::checkbox null!");
+        }
+        
         item->setContentSize(node->getContentSize());
         item->addChild(node);
         return item;
     }
+    
+    
 };

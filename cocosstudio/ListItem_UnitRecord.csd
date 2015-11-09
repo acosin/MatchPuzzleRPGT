@@ -27,6 +27,20 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
+          <AbstractNodeData Name="CheckBox_isDefault" ActionTag="-1867776659" Tag="60" IconVisible="False" LeftMargin="253.9561" RightMargin="156.0439" TopMargin="2.6042" BottomMargin="7.3958" TouchEnable="True" CheckedState="True" ctype="CheckBoxObjectData">
+            <Size X="40.0000" Y="40.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="273.9561" Y="27.3958" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="0" G="0" B="0" />
+            <PrePosition X="0.6088" Y="0.5479" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <NormalBackFileData Type="Default" Path="Default/CheckBox_Normal.png" Plist="" />
+            <PressedBackFileData Type="Default" Path="Default/CheckBox_Press.png" Plist="" />
+            <DisableBackFileData Type="Default" Path="Default/CheckBox_Disable.png" Plist="" />
+            <NodeNormalFileData Type="Default" Path="Default/CheckBoxNode_Normal.png" Plist="" />
+            <NodeDisableFileData Type="Default" Path="Default/CheckBoxNode_Disable.png" Plist="" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>
