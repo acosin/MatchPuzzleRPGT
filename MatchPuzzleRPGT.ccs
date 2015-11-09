@@ -19,6 +19,10 @@
         <Project Name="StageClearLayer.csd" Type="Layer" />
         <Image Name="attack.png" />
         <Project Name="ScoreBoard.csd" Type="Layer" />
+        <Image Name="stick_outer.png" />
+        <Image Name="hp.png" />
+        <Image Name="checkbox_normal.png" />
+        <Image Name="checkbox_disable.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>
