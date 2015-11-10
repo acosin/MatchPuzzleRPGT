@@ -23,7 +23,7 @@ void ListItem_UnitRecord::loadImageOnce()
     }
 }
 
-ui::Widget* ListItem_UnitRecord::createListItem(UnitOfPlayerRecord* record)
+ListItem_UnitRecord* ListItem_UnitRecord::createListItem(UnitOfPlayerRecord* record)
 {
     ListItem_UnitRecord::loadImageOnce();
     
@@ -51,4 +51,10 @@ ui::Widget* ListItem_UnitRecord::createListItem(UnitOfPlayerRecord* record)
     item->setContentSize(node->getContentSize());
     item->addChild(node);
     return item;
+}
+
+void ListItem_UnitRecord::setSelected(bool is_select)
+{
+    isSelect = is_select;
+    _checkboxIsDefault->setSelected(is_select);
 }

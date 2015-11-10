@@ -7,6 +7,8 @@
 #include "StatusDataManager.h"
 #include "time.h"
 
+#include <algorithm>
+
 
 StatusDataManager::StatusDataManager():
 _playerData(nullptr)
@@ -214,6 +216,20 @@ UnitOfPlayerRecord* StatusDataManager::getDefaultUnit(ElementType type)
     auto index = (int)type;
     
     return _unitRecords[index];
+}
+
+bool StatusDataManager::changeDefaultUnitOfType(int index)
+{
+    auto recordToChange = _unitRecords[index];
+    auto type = recordToChange->unitdata.elementType;
+    (*(_unitRecords.begin()+index))->isSortie = true;
+    (*(_unitRecords.begin()+(int)type))->isSortie = false;
+    iter_swap(_unitRecords.begin()+index, _unitRecords.begin()+(int)type);
+    
+    // TODO: persistence here
+    writeUnitOfPlayerRecordsToCSV();
+    
+    return true;
 }
 
 std::vector<UnitOfPlayerRecord*> StatusDataManager::getUnitRecords()

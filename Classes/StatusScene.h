@@ -30,6 +30,7 @@ protected:
     ui::Layout* _panel_mask;
     ui::ListView* _listView_selectDefault;
     ui::Button* _button_cancelSelectDefault;
+    ui::Button* _button_saveSelectDefault;
     
     StatusDataManager* _statusManager;
     
@@ -42,8 +43,10 @@ public:
     
     static Scene *createScene();
     
+    
 private:
     virtual bool fillPanelPlayerStatus();
     virtual bool fillListViewUnitRecords();
     virtual bool fillDefaultUnits();
+    bool changeDefaultUnitOfType();
 };

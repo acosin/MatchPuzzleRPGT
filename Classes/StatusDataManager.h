@@ -53,6 +53,7 @@ public:
     void setPlayerExp(int exp);
     
     UnitOfPlayerRecord* getDefaultUnit(ElementType type);
+    bool changeDefaultUnitOfType(int index);
 public:
     // TODO: for debug, remove later
     bool initWithDebugData();

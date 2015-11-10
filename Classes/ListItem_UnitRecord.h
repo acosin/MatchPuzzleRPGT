@@ -24,12 +24,16 @@ public:
     static Texture2D* imageCheckboxDisable;
 public:
     ui::CheckBox *_checkboxIsDefault = nullptr;
+    bool isSelect = false;
+    int index = -1;
     
 public:
     CREATE_FUNC(ListItem_UnitRecord);
     
     static void loadImageOnce();
-    static ui::Widget* createListItem(UnitOfPlayerRecord* record);
+    static ListItem_UnitRecord* createListItem(UnitOfPlayerRecord* record);
+    
+    void setSelected(bool is_select);
 };
 
 
