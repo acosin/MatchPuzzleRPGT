@@ -36,17 +36,17 @@ ui::Widget* ListItem_UnitRecord::createListItem(UnitOfPlayerRecord* record)
     unitInfo->setString(record->unitdata.unitName);
     
     item->_checkboxIsDefault = dynamic_cast<ui::CheckBox*>(node->getChildByName("CheckBox_isDefault"));
-    item->_checkboxIsDefault->loadTextures(ListItem_UnitRecord::ImageFile_checkboxNormal,//const std::string &background,
-                                           ListItem_UnitRecord::ImageFile_checkboxNormal,
-                                           ListItem_UnitRecord::ImageFile_checkboxNormal,//const std::string &cross,
-                                           ListItem_UnitRecord::ImageFile_checkboxDisable,
-                                           ListItem_UnitRecord::ImageFile_checkboxDisable);
+    item->_checkboxIsDefault->loadTextureFrontCross(ListItem_UnitRecord::ImageFile_checkboxNormal);
+    item->_checkboxIsDefault->loadTextureFrontCrossDisabled(ListItem_UnitRecord::ImageFile_checkboxDisable);
     
     
     //TODO: only for debug, remove later
     if (item->_checkboxIsDefault == NULL || item->_checkboxIsDefault == nullptr) {
         CCLOG("ListItem_UnitRecord::checkbox null!");
     }
+    
+    
+    item->_checkboxIsDefault->setSelected(record->isSortie);
     
     item->setContentSize(node->getContentSize());
     item->addChild(node);

@@ -16,8 +16,8 @@
             <PreSize X="0.1022" Y="0.7667" />
             <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_unitInfo" ActionTag="-1372809871" Tag="17" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="87.5706" RightMargin="228.4294" TopMargin="-1.0000" BottomMargin="-1.0000" FontSize="36" LabelText="Unit Info" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="134.0000" Y="42.0000" />
+          <AbstractNodeData Name="Text_unitInfo" ActionTag="-1372809871" Tag="17" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="87.5706" RightMargin="228.4294" TopMargin="-1.0000" BottomMargin="-1.0000" FontSize="24" LabelText="Unit Info" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="89.0000" Y="28.0000" />
             <AnchorPoint ScaleY="0.5000" />
             <Position X="87.5700" Y="25.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
