@@ -209,10 +209,32 @@ void StatusDataManager::setPlayerExp(int exp)
     _playerData->exp = exp;
 }
 
+UnitOfPlayerRecord* StatusDataManager::getDefaultUnit(ElementType type)
+{
+    auto index = (int)type;
+    
+    return _unitRecords[index];
+}
+
 std::vector<UnitOfPlayerRecord*> StatusDataManager::getUnitRecords()
 {
     // TODO: should return a safe readable object instead
     return _unitRecords;
+}
+
+std::map<int, UnitOfPlayerRecord*> StatusDataManager::getUnitRecordsOfType(ElementType type)
+{
+    std::map<int, UnitOfPlayerRecord*> ret;
+    
+    // NOTE: use iterator for linear speed 
+    for (auto it = _unitRecords.begin(); it != _unitRecords.end(); it++) {
+        if ((*it)->unitdata.elementType == type) {
+            auto index = it - _unitRecords.begin();
+            ret[index] = *it;
+        }
+    }
+    
+    return ret;
 }
 
 // TODO: for debug, remove later

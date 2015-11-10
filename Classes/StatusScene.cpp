@@ -53,12 +53,18 @@ bool StatusScene::init()
     _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
     _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
     
+    _panel_mask = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_mask"));
+    _panel_mask->setOpacity(0);
+    _panel_mask->setTouchEnabled(false);
+    _listView_selectDefault = dynamic_cast<ui::ListView*>(_panel_mask->getChildByName("ListView_selectDefault"));
+    _button_cancelSelectDefault = dynamic_cast<ui::Button*>(_panel_mask->getChildByName("Button_cancelSelectDefault"));
     
     _panel_playerStatus = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_PlayerStatus"));
     fillPanelPlayerStatus();
     _listView_unitRecords = dynamic_cast<ui::ListView*>(_layout->getChildByName("ListView_UnitRecords"));
     // add unit records to the listview
     fillListViewUnitRecords();
+    fillDefaultUnits();
     
     this->addChild(_layout);
 
@@ -114,6 +120,49 @@ bool StatusScene::fillListViewUnitRecords()
         item->setPositionPercent(Vec2(0.5,0.5));
         _listView_unitRecords->pushBackCustomItem(item);
     }
+    
+    return true;
+}
+
+bool StatusScene::fillDefaultUnits()
+{
+    for (int type = 0; type < (int)ElementType::count; type++) {
+        auto str = "Image_defaultUnitIcon_" + Value(type).asString();
+        auto image = dynamic_cast<ui::ImageView*>(_layout->getChildByName(str));
+        auto record = _statusManager->getDefaultUnit((ElementType)type);
+        image->loadTexture(record->unitdata.unitIconPath);
+        
+        image->addClickEventListener([&, type](Ref* ref) {
+            this->_listView_selectDefault->removeAllItems();
+            float timeFadeIn = 0.8;
+            CCLOG("tap");
+            // TODO: guarantee no memory leak here
+            auto recordsMap = this->_statusManager->getUnitRecordsOfType((ElementType)type);
+            for (auto pair : recordsMap) {
+                auto recordTemp = pair.second;
+                auto item = ListItem_UnitRecord::createListItem(recordTemp);
+                item->setAnchorPoint(Vec2(0,0));
+                item->setPositionType(ui::Widget::PositionType::PERCENT);
+                item->setPositionPercent(Vec2(0.5,0.5));
+                item->setScale(this->_listView_selectDefault->getContentSize().width/item->getContentSize().width, 1);
+                this->_listView_selectDefault->pushBackCustomItem(item);
+            }
+            
+            this->_panel_mask->runAction(FadeIn::create(timeFadeIn));
+            //this->_listView_selectDefault->runAction(FadeOut::create(timeFadeIn));
+            this->_listView_selectDefault->setVisible(true);
+            this->_panel_mask->setTouchEnabled(true);
+        });
+
+    }
+    
+    _button_cancelSelectDefault->addClickEventListener([&](Ref* ref) {
+        float timeFadeout = 0.8;
+        this->_panel_mask->runAction(FadeOut::create(timeFadeout));
+        //this->_listView_selectDefault->runAction(FadeOut::create(timeFadeout));
+        this->_listView_selectDefault->setVisible(false);
+        this->_panel_mask->setTouchEnabled(false);
+    });
     
     return true;
 }

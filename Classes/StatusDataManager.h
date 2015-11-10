@@ -45,11 +45,14 @@ public:
     bool writeUnitOfPlayerRecordsToCSV();
     
     std::vector<UnitOfPlayerRecord*> getUnitRecords();
+    std::map<int, UnitOfPlayerRecord*> getUnitRecordsOfType(ElementType type);
     PlayerStatusData* getPlayerStatusData();
     
     // for growth
     void setPlayerLevel(int level);
     void setPlayerExp(int exp);
+    
+    UnitOfPlayerRecord* getDefaultUnit(ElementType type);
 public:
     // TODO: for debug, remove later
     bool initWithDebugData();

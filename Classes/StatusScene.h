@@ -27,6 +27,9 @@ protected:
     ui::Button* _exitButton;
     ui::Layout* _panel_playerStatus;
     ui::ListView* _listView_unitRecords;
+    ui::Layout* _panel_mask;
+    ui::ListView* _listView_selectDefault;
+    ui::Button* _button_cancelSelectDefault;
     
     StatusDataManager* _statusManager;
     
@@ -42,4 +45,5 @@ public:
 private:
     virtual bool fillPanelPlayerStatus();
     virtual bool fillListViewUnitRecords();
+    virtual bool fillDefaultUnits();
 };
