@@ -57,6 +57,7 @@ bool StatusScene::init()
     _panel_mask->setOpacity(0);
     _panel_mask->setTouchEnabled(false);
     _listView_selectDefault = dynamic_cast<ui::ListView*>(_panel_mask->getChildByName("ListView_selectDefault"));
+    _listView_selectDefault->setTouchEnabled(false);
     _button_cancelSelectDefault = dynamic_cast<ui::Button*>(_panel_mask->getChildByName("Button_cancelSelectDefault"));
     
     _panel_playerStatus = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_PlayerStatus"));
