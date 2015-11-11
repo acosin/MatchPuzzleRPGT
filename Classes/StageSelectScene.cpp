@@ -58,7 +58,6 @@ bool StageSelectScene::init()
     _listView_selectStage = dynamic_cast<ui::ListView*>(_layout->getChildByName("ListView_selectStage"));
     fillListViewSelectStage();
     
-    _statusManager = SceneMediator::getInstance()->getStatusDataManager();
     _panel_mask = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_mask"));
     _panel_mask->setOpacity(0);
     _panel_mask->setTouchEnabled(false);
@@ -68,7 +67,12 @@ bool StageSelectScene::init()
     _button_saveUnits = dynamic_cast<ui::Button*>(_panel_mask->getChildByName("Button_saveUnits"));
     _button_saveUnits->setVisible(false);
     _button_saveUnits->setTouchEnabled(false);
-    fillDefaultUnits();
+    
+    _statusManager = SceneMediator::getInstance()->getStatusDataManager();
+    _unitsSortie.clear();
+    _unitsSortie = _statusManager->getDefaultUnitsIndex();
+    fillSortieUnits();
+    
     
     this->addChild(_layout);
     
@@ -112,13 +116,14 @@ bool StageSelectScene::fillListViewSelectStage()
     return true;
 }
 
-bool StageSelectScene::fillDefaultUnits()
+bool StageSelectScene::fillSortieUnits()
 {
+    _listView_units->removeAllItems();
     // TODO: maintain a static ListItems here later for better performance
-    for (int type = 0; type < (int)ElementType::count; type++) {
+    for (int type = 0 ; type < (int)ElementType::count; type++) {
         auto str = "Image_defaultUnitIcon_" + Value(type).asString();
         auto image = dynamic_cast<ui::ImageView*>(_layout->getChildByName(str));
-        auto record = _statusManager->getDefaultUnit((ElementType)type);
+        auto record = _statusManager->getUnitByIndex(_unitsSortie[(ElementType)type]);
         image->loadTexture(record->unitdata.unitIconPath);
         
         image->addClickEventListener([&, type](Ref* ref) {
@@ -130,6 +135,8 @@ bool StageSelectScene::fillDefaultUnits()
                 auto index = pair.first;
                 auto recordTemp = pair.second;
                 auto item = ListItem_UnitRecord::createListItem(recordTemp);
+                bool isSortieOfItsType = this->_unitsSortie[(ElementType)type] == index;
+                item->setSelected(isSortieOfItsType);
                 item->setAnchorPoint(Vec2(0,0));
                 item->setPositionType(ui::Widget::PositionType::PERCENT);
                 item->setPositionPercent(Vec2(0.5,0.5));
@@ -180,7 +187,7 @@ bool StageSelectScene::fillDefaultUnits()
     });
     
     _button_saveUnits->addClickEventListener([&](Ref* ref) {
-        this->changeDefaultUnitOfType();
+        this->changeSortieUnitOfType();
         
         float timeFadeout = 0.5;
         this->_panel_mask->runAction(FadeOut::create(timeFadeout));
@@ -193,13 +200,13 @@ bool StageSelectScene::fillDefaultUnits()
     return true;
 }
 
-void StageSelectScene::changeDefaultUnitOfType()
+void StageSelectScene::changeSortieUnitOfType()
 {
     auto selectIndex = this->_listView_units->getCurSelectedIndex();
     auto item = dynamic_cast<ListItem_UnitRecord*>(this->_listView_units->getItem(selectIndex));
-    _statusManager->changeDefaultUnitOfType(item->index);
+    _unitsSortie[item->type] = item->index;
     
-    fillDefaultUnits();
+    fillSortieUnits();
 }
 
 void StageSelectScene::selectStage_callback(Ref* pSender, ui::ListView::EventType type)

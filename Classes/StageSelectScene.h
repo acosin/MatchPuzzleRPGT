@@ -34,6 +34,7 @@ protected:
     StageDataManager* _stageManager;
     StatusDataManager* _statusManager;
     
+    std::map<ElementType,int> _unitsSortie;
 public:
     StageSelectScene();
     ~StageSelectScene();
@@ -45,8 +46,8 @@ public:
     
     virtual bool fillListViewSelectStage();
     
-    virtual bool fillDefaultUnits();
-    void changeDefaultUnitOfType();
+    virtual bool fillSortieUnits();
+    void changeSortieUnitOfType();
     
     void selectStage_callback(Ref* pSender, ui::ListView::EventType type);
 };

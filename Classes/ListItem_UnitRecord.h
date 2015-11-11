@@ -26,6 +26,7 @@ public:
     ui::CheckBox *_checkboxIsDefault = nullptr;
     bool isSelect = false;
     int index = -1;
+    ElementType type;
     
 public:
     CREATE_FUNC(ListItem_UnitRecord);

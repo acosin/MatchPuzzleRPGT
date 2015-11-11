@@ -50,6 +50,8 @@ ListItem_UnitRecord* ListItem_UnitRecord::createListItem(UnitOfPlayerRecord* rec
     
     item->setContentSize(node->getContentSize());
     item->addChild(node);
+    
+    item->type = record->unitdata.elementType;
     return item;
 }
 

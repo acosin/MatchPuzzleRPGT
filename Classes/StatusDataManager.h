@@ -7,6 +7,7 @@
 #pragma once
 
 #include <vector>
+#include <map>
 #include "cocos2d.h"
 
 #include "UnitOfPlayerRecord.h"
@@ -26,6 +27,7 @@ protected:
     
     std::string playerDataFilename;
     std::string unitRocordsFilename;
+    
 private:
     
     void clearPlayerData();
@@ -53,7 +55,9 @@ public:
     void setPlayerExp(int exp);
     
     UnitOfPlayerRecord* getDefaultUnit(ElementType type);
+    UnitOfPlayerRecord* getUnitByIndex(int index);
     bool changeDefaultUnitOfType(int index);
+    std::map<ElementType,int> getDefaultUnitsIndex();
 public:
     // TODO: for debug, remove later
     bool initWithDebugData();

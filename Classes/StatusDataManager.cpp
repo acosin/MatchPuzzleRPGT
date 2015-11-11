@@ -161,6 +161,7 @@ bool StatusDataManager::loadUnitOfPlayerRecordsFromCSV(const std::string &filena
         _unitRecords.push_back(unitRecordTemp);
     }
     
+    
     return true;
 }
 
@@ -218,6 +219,11 @@ UnitOfPlayerRecord* StatusDataManager::getDefaultUnit(ElementType type)
     return _unitRecords[index];
 }
 
+UnitOfPlayerRecord* StatusDataManager::getUnitByIndex(int index)
+{
+    return _unitRecords[index];
+}
+
 bool StatusDataManager::changeDefaultUnitOfType(int index)
 {
     auto recordToChange = _unitRecords[index];
@@ -230,6 +236,16 @@ bool StatusDataManager::changeDefaultUnitOfType(int index)
     writeUnitOfPlayerRecordsToCSV();
     
     return true;
+}
+
+std::map<ElementType, int> StatusDataManager::getDefaultUnitsIndex()
+{
+    std::map<ElementType, int> ret;
+    
+    for (int type = 0; type < (int)ElementType::count; type++) {
+        ret[(ElementType)type] = type;
+    }
+    return ret;
 }
 
 std::vector<UnitOfPlayerRecord*> StatusDataManager::getUnitRecords()
