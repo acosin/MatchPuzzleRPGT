@@ -9,6 +9,7 @@
 #include <map>
 #include "ElementType.h"
 #include "JewelGridStatus.h"
+#include "UnitOfPlayerRecord.h"
 
 USING_NS_CC;
 
@@ -17,6 +18,8 @@ class PuzzleStatusChangeData : public Ref
 private:
     std::map<ElementType, int> matchCountX, matchCountY;
     int comboCount;
+    
+    std::map<ElementType, UnitOfPlayerRecord*> units;
 public:
     int xCombo;
     int yCombo;
@@ -60,6 +63,14 @@ public:
             yCombo += yCount;
         }
         comboCount = status->getComboCount();
+    }
+    
+    void setUnits(std::map<ElementType, UnitOfPlayerRecord*> &unitsSortie) {
+        units = unitsSortie;
+    }
+    
+    UnitOfPlayerRecord* getUnitRecordOfType(ElementType type) {
+        return units[type];
     }
     
     static PuzzleStatusChangeData* create(const JewelGridStatus *status) {

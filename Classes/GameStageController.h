@@ -43,7 +43,7 @@ private:
     StageClearData * _clearData;
     
     StatusDataManager *_statusManager;
-    std::map<ElementType, int> _unitsSortie;
+    std::map<ElementType, UnitOfPlayerRecord*> _unitsSortie;
     
 public:
     GameStageController();

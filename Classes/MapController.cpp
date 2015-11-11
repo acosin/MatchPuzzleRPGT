@@ -7,13 +7,15 @@
 #include "MapController.h"
 
 #include "SimpleMapStrategyOnPuzzleStatusChange.h"
+#include "SimpleMapStrategyWithUnitsOnPuzzleStatusChange.h"
 
 MapController::MapController(StageData *stageData)
 {
     _IDpool_mapItem = new IDPool();
     initMap(stageData);
     
-    _strategyOnPuzzle = new SimpleMapStrategyOnPuzzleStatusChange();
+    //_strategyOnPuzzle = new SimpleMapStrategyOnPuzzleStatusChange();
+    _strategyOnPuzzle = new SimpleMapStrategyWithUnitsOnPuzzleStatusChange();
 }
 
 MapController::~MapController()

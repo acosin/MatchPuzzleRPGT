@@ -8,6 +8,20 @@
 
 #include "EnemyNode.h"
 
+SimpleMapStrategyWithUnitsOnPuzzleStatusChange::SimpleMapStrategyWithUnitsOnPuzzleStatusChange()
+: IMapStrategyOnPuzzleStatusChange()
+{
+    for (int type = 0; type < (int)ElementType::count; type++) {
+        auto typeE = (ElementType)type;
+        unitElementDamage[typeE] = 0;
+    }
+}
+
+SimpleMapStrategyWithUnitsOnPuzzleStatusChange::~SimpleMapStrategyWithUnitsOnPuzzleStatusChange()
+{
+    unitElementDamage.clear();
+}
+
 void SimpleMapStrategyWithUnitsOnPuzzleStatusChange::exec(MapController *c, PuzzleStatusChangeData *data)
 {
     CCLOG("dmageEnemy: x(%d) y(%d)", data->xCombo, data->yCombo);
@@ -19,13 +33,26 @@ void SimpleMapStrategyWithUnitsOnPuzzleStatusChange::exec(MapController *c, Puzz
         auto enemyItem = enemy.second;
         EnemyNode* enemyNode = dynamic_cast<EnemyNode*>(enemyItem->getNode());
         auto currentHP = enemyItem->getCurrentHP();
-        int damage;
+        int damage = 0;
         if (enemyItem->getX() == c->getPlayerX()) {
-            damage = data->xCombo;
-            //damage = data->xCombo - 1;
+            for (int type = 0; type < (int)ElementType::count; type++) {
+                auto typeE = (ElementType)type;
+                auto unitRecord = data->getUnitRecordOfType(typeE);
+                auto atk = unitRecord->unitdata.atk;
+                auto matchX = data->getMatchCountX(typeE);
+                auto newDamage = matchX * atk;
+                damage += newDamage;
+                unitElementDamage[typeE] += newDamage;
+            }
         } else if (enemyItem->getY() == c->getPlayerY()) {
-            damage = data->yCombo;
-            //damage = data->yCombo -1;
+            for (int type = 0; type < (int)ElementType::count; type++) {
+                auto typeE = (ElementType)type;
+                auto unitRecord = data->getUnitRecordOfType(typeE);
+                auto atk = unitRecord->unitdata.atk;
+                auto matchY = data->getMatchCountY(typeE);
+                auto newDamage = matchY * atk;
+                damage += newDamage;
+                unitElementDamage[typeE] += newDamage;            }
         }
         auto afterHP = enemyItem->getDamaged(damage);
         float totalHP = (float)enemyItem->getTotalHP();

@@ -63,7 +63,11 @@ bool GameStageController::initWithData(StageData *stageData, StatusDataManager *
     _statusManager = statusManager;
     
     _unitsSortie.clear();
-    _unitsSortie = unitsSortie;
+    //_unitsSortie = unitsSortie;
+    for (int type = 0; type < (int)ElementType::count; type++) {
+        auto typeE = (ElementType)type;
+        _unitsSortie[typeE] = _statusManager->getUnitByIndex(unitsSortie[typeE]);
+    }
     
     CC_ASSERT(_mapController->getMapLayer() != nullptr);
     
@@ -211,7 +215,9 @@ PuzzleStatusChangeData* GameStageController::getPuzzleStatusChangeData()
     int damageY = _jewelsGrid->getStatusYCombo();
     changeData->xCombo = damageX;
     changeData->yCombo = damageY;
-    //
+    // set unitsSortie data
+    changeData->setUnits(_unitsSortie);
+    
     return changeData;
 }
 
@@ -238,7 +244,7 @@ void GameStageController::setScore(int score)
 
 UnitOfPlayerRecord* GameStageController::getSortieUnitRecordByType(ElementType type)
 {
-    return _statusManager->getUnitByIndex(_unitsSortie[type]);
+    return _unitsSortie[type];
 }
 
 // -- private --
