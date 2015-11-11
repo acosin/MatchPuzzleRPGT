@@ -26,8 +26,13 @@ protected:
     ui::Button* _exitButton;
     
     ui::ListView* _listView_selectStage;
+    ui::ListView* _listView_units;
+    ui::Layout* _panel_mask;
+    ui::Button* _button_saveUnits;
+    ui::Button* _button_cancelUnits;
     
     StageDataManager* _stageManager;
+    StatusDataManager* _statusManager;
     
 public:
     StageSelectScene();
@@ -39,6 +44,9 @@ public:
     static Scene *createScene();
     
     virtual bool fillListViewSelectStage();
+    
+    virtual bool fillDefaultUnits();
+    void changeDefaultUnitOfType();
     
     void selectStage_callback(Ref* pSender, ui::ListView::EventType type);
 };
