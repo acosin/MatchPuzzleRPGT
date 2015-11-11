@@ -35,7 +35,8 @@ public:
     
     virtual void gotoHomeScene();
     virtual void gotoStageSelectScene();
-    virtual void gotoGameStageScene(StageDataManager* stageDataManager, uint32_t stageID);
+    virtual void gotoGameStageScene(StageDataManager* stageDataManager, uint32_t stageID,
+                                    std::map<ElementType, int> &unitsSortie);
     virtual void gotoStageScoreScene();
     virtual void gotoStatusScene();
 

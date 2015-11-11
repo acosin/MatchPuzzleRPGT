@@ -224,6 +224,6 @@ void StageSelectScene::selectStage_callback(Ref* pSender, ui::ListView::EventTyp
         log("selected index %ld", selectedIndex);
         
         // TODO: select a stage and change scene here, may need more check about whether resources have been released
-        SceneMediator::getInstance()->gotoGameStageScene(_stageManager, (uint32_t)selectedIndex);
+        SceneMediator::getInstance()->gotoGameStageScene(_stageManager, (uint32_t)selectedIndex, _unitsSortie);
     }
 }

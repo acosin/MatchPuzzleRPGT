@@ -61,7 +61,8 @@ protected:
     IScorePuzzleStrategy* _scorePuzzleStrategy;
     IScoreEnemyStrategy* _scoreEnemyStrategy;
     
-    bool initData(StageDataManager* stageManager, uint32_t stageID);
+    bool initData(StageDataManager* stageManager, uint32_t stageID,
+                  std::map<ElementType, int> &unitsSortie);
     void regLogicalEvent();
     void removeLogicalEvent();
     
@@ -79,7 +80,8 @@ public:
     CREATE_FUNC(GameStageScene);
     virtual bool init();
     
-    static Scene *createScene(StageDataManager* stageManager, uint32_t stageID);
+    static Scene *createScene(StageDataManager* stageManager, uint32_t stageID,
+                              std::map<ElementType, int> &unitsSortie);
 private:
     
     virtual void update(float delta);

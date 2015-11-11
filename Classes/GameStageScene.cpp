@@ -115,7 +115,8 @@ bool GameStageScene::init()
 
 
 
-bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
+bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID,
+                              std::map<ElementType, int> &unitsSortie)
 {
     _stageManager = stageManager;
     _currentStageScore = stageManager->getStageScoreRecord(stageID);
@@ -123,7 +124,7 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID)
     
     _statusManager = SceneMediator::getInstance()->getStatusDataManager();
     
-    _controller = GameStageController::create(_currentStageData, _statusManager);
+    _controller = GameStageController::create(_currentStageData, _statusManager, unitsSortie);
     _jewelsGrid = _controller->getJewelsGrid();
     
     _mapLayer = _controller->getMapLayer();
@@ -166,11 +167,12 @@ void GameStageScene::removeLogicalEvent()
     removeEventSaveScore();
 }
 
-Scene* GameStageScene::createScene(StageDataManager* stageManager, uint32_t stageID)
+Scene* GameStageScene::createScene(StageDataManager* stageManager, uint32_t stageID,
+                                   std::map<ElementType, int> &unitsSortie)
 {
     auto layer = GameStageScene::create();
     
-    layer->initData(stageManager, stageID);
+    layer->initData(stageManager, stageID, unitsSortie);
     
     auto scene = Scene::create();
     scene->addChild(layer);

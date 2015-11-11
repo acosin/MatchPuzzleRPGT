@@ -34,13 +34,14 @@ GameStageController::~GameStageController()
      */
 }
 
-GameStageController* GameStageController::create(StageData *stageData, StatusDataManager *statusManager)
+GameStageController* GameStageController::create(StageData *stageData, StatusDataManager *statusManager,
+                                                 std::map<ElementType, int> &unitsSortie)
 {
     auto c = new GameStageController();
     
     if (c && c->initWithoutData()) {
         //m->autorelease();
-        c->initWithData(stageData, statusManager);
+        c->initWithData(stageData, statusManager, unitsSortie);
         return c;
     }
     
@@ -54,11 +55,13 @@ bool GameStageController::initWithoutData()
     return true;
 }
 
-bool GameStageController::initWithData(StageData *stageData, StatusDataManager *statusManager)
+bool GameStageController::initWithData(StageData *stageData, StatusDataManager *statusManager,
+                                       std::map<ElementType, int> &unitsSortie)
 {
     _stageData = stageData;
     _mapController = new MapController(stageData);
     _statusManager = statusManager;
+    _unitsSortie = unitsSortie;
     
     CC_ASSERT(_mapController->getMapLayer() != nullptr);
     

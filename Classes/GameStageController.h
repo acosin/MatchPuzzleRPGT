@@ -43,15 +43,18 @@ private:
     StageClearData * _clearData;
     
     StatusDataManager *_statusManager;
+    std::map<ElementType, int> _unitsSortie;
     
 public:
     GameStageController();
     ~GameStageController();
     
-    static GameStageController* create(StageData* stageData, StatusDataManager *statusManager);
+    static GameStageController* create(StageData* stageData, StatusDataManager *statusManager,
+                                       std::map<ElementType, int> &unitsSortie);
     
     virtual bool initWithoutData();
-    bool initWithData(StageData* stageData, StatusDataManager *statusManager);
+    bool initWithData(StageData* stageData, StatusDataManager *statusManager,
+                      std::map<ElementType, int> &unitsSortie);
     
     JewelsGrid* getJewelsGrid();
     
