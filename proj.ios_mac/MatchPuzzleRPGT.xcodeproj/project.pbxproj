@@ -75,6 +75,8 @@
 		3141AEF31BD6217F001F09B6 /* map_00.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEF11BD6217F001F09B6 /* map_00.tmx */; };
 		3141AEF51BD62333001F09B6 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEF41BD62333001F09B6 /* tmw_desert_spacing.png */; };
 		3141AEF61BD62333001F09B6 /* tmw_desert_spacing.png in Resources */ = {isa = PBXBuildFile; fileRef = 3141AEF41BD62333001F09B6 /* tmw_desert_spacing.png */; };
+		314354021BF31C9D0016C6F1 /* SimpleMapStrategyWithUnitsOnPuzzleStatusChange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 314354001BF31C9D0016C6F1 /* SimpleMapStrategyWithUnitsOnPuzzleStatusChange.cpp */; };
+		314354031BF31C9D0016C6F1 /* SimpleMapStrategyWithUnitsOnPuzzleStatusChange.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 314354001BF31C9D0016C6F1 /* SimpleMapStrategyWithUnitsOnPuzzleStatusChange.cpp */; };
 		31599BE21BCF5E58005E92C5 /* data in Resources */ = {isa = PBXBuildFile; fileRef = 31599BE11BCF5E58005E92C5 /* data */; };
 		31819B501BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B4E1BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp */; };
 		31819B511BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31819B4E1BE0C57300C505E8 /* ClearStageCondition_GoalMap.cpp */; };
@@ -237,6 +239,8 @@
 		3141AEF11BD6217F001F09B6 /* map_00.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map_00.tmx; sourceTree = "<group>"; };
 		3141AEF41BD62333001F09B6 /* tmw_desert_spacing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tmw_desert_spacing.png; sourceTree = "<group>"; };
 		3141AEF71BD63320001F09B6 /* UIHelper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UIHelper.hpp; sourceTree = "<group>"; };
+		314354001BF31C9D0016C6F1 /* SimpleMapStrategyWithUnitsOnPuzzleStatusChange.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SimpleMapStrategyWithUnitsOnPuzzleStatusChange.cpp; sourceTree = "<group>"; };
+		314354011BF31C9D0016C6F1 /* SimpleMapStrategyWithUnitsOnPuzzleStatusChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleMapStrategyWithUnitsOnPuzzleStatusChange.h; sourceTree = "<group>"; };
 		31599BE11BCF5E58005E92C5 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		31599BE31BCF6971005E92C5 /* Layer_PlayerStatus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Layer_PlayerStatus.hpp; sourceTree = "<group>"; };
 		31819B4D1BE0C43300C505E8 /* IClearStageCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IClearStageCondition.h; sourceTree = "<group>"; };
@@ -599,6 +603,8 @@
 				319DA2D01BE06DAD00151EF1 /* IMapStrategyOnPuzzleStatusChange.h */,
 				319DA2D11BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp */,
 				319DA2D21BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.h */,
+				314354001BF31C9D0016C6F1 /* SimpleMapStrategyWithUnitsOnPuzzleStatusChange.cpp */,
+				314354011BF31C9D0016C6F1 /* SimpleMapStrategyWithUnitsOnPuzzleStatusChange.h */,
 			);
 			name = MapStrategyOnPuzzle;
 			sourceTree = "<group>";
@@ -941,6 +947,7 @@
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				31CD82451BD725F00009D1FB /* MapItemBase.cpp in Sources */,
 				3141AED31BD4B8F0001F09B6 /* Jewel.cpp in Sources */,
+				314354021BF31C9D0016C6F1 /* SimpleMapStrategyWithUnitsOnPuzzleStatusChange.cpp in Sources */,
 				31CD824D1BD769EC0009D1FB /* MapItemEnemy.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -975,6 +982,7 @@
 				3188E67F1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				318561631BD4A48800627C21 /* GameStageScene.cpp in Sources */,
+				314354031BF31C9D0016C6F1 /* SimpleMapStrategyWithUnitsOnPuzzleStatusChange.cpp in Sources */,
 				31819B601BE1BDAB00C505E8 /* StageClearData.cpp in Sources */,
 				31CD824E1BD769EC0009D1FB /* MapItemEnemy.cpp in Sources */,
 				3141AECF1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */,

@@ -61,6 +61,8 @@ bool GameStageController::initWithData(StageData *stageData, StatusDataManager *
     _stageData = stageData;
     _mapController = new MapController(stageData);
     _statusManager = statusManager;
+    
+    _unitsSortie.clear();
     _unitsSortie = unitsSortie;
     
     CC_ASSERT(_mapController->getMapLayer() != nullptr);
@@ -232,6 +234,14 @@ void GameStageController::setScore(int score)
 {
     _clearData->score = score;
 }
+
+
+UnitOfPlayerRecord* GameStageController::getSortieUnitRecordByType(ElementType type)
+{
+    return _statusManager->getUnitByIndex(_unitsSortie[type]);
+}
+
+// -- private --
 
 void GameStageController::addClearConditions()
 {

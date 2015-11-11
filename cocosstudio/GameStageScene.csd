@@ -46,7 +46,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_selectStage" ActionTag="687470122" Tag="44" IconVisible="False" LeftMargin="238.0911" RightMargin="101.9089" TopMargin="12.9948" BottomMargin="1043.0052" TouchEnable="True" FontSize="24" ButtonText="Select Stage Again" Scale9Width="118" Scale9Height="20" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_selectStage" ActionTag="687470122" Tag="44" IconVisible="False" LeftMargin="238.0911" RightMargin="101.9089" TopMargin="12.9948" BottomMargin="1043.0052" TouchEnable="True" FontSize="24" ButtonText="Select Stage Again" Scale9Width="202" Scale9Height="28" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="300.0000" Y="80.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="388.0911" Y="1083.0052" />
@@ -59,13 +59,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_puzzle" ActionTag="2051755324" Alpha="119" Tag="45" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="70.0000" RightMargin="70.0000" TopMargin="571.1625" BottomMargin="64.8375" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_puzzle" ActionTag="2051755324" Alpha="119" Tag="45" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="56.9263" RightMargin="83.0737" TopMargin="513.3145" BottomMargin="122.6855" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="500.0000" Y="500.0000" />
-            <AnchorPoint ScaleX="0.5000" />
-            <Position X="320.0000" Y="64.8656" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <AnchorPoint ScaleX="0.4945" ScaleY="0.1129" />
+            <Position X="304.1835" Y="179.1300" />
+            <Scale ScaleX="0.8378" ScaleY="0.8595" />
             <CColor A="255" R="30" G="144" B="255" />
-            <PrePosition X="0.5000" Y="0.0571" />
+            <PrePosition X="0.4753" Y="0.1577" />
             <PreSize X="0.7813" Y="0.4401" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
@@ -85,37 +85,37 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_stick" ActionTag="820179592" Tag="47" IconVisible="False" LeftMargin="469.6468" RightMargin="-29.6468" TopMargin="973.5245" BottomMargin="-37.5245" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_stick" ActionTag="820179592" Tag="47" IconVisible="False" LeftMargin="478.6590" RightMargin="-38.6590" TopMargin="926.2071" BottomMargin="9.7929" TouchEnable="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="200.0000" Y="200.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="569.6468" Y="62.4755" />
+            <Position X="578.6590" Y="109.7929" />
             <Scale ScaleX="0.3240" ScaleY="0.3255" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.8901" Y="0.0550" />
+            <PrePosition X="0.9042" Y="0.0966" />
             <PreSize X="0.0000" Y="0.0000" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_yCombo" ActionTag="1807653780" Tag="53" IconVisible="False" LeftMargin="85.8572" RightMargin="528.1428" TopMargin="493.0707" BottomMargin="588.9293" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_yCombo" ActionTag="1807653780" Tag="53" IconVisible="False" LeftMargin="-98.9030" RightMargin="712.9030" TopMargin="448.0103" BottomMargin="633.9897" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="26.0000" Y="54.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="98.8572" Y="615.9293" />
+            <Position X="-85.9030" Y="660.9897" />
             <Scale ScaleX="3.2951" ScaleY="2.6200" />
             <CColor A="255" R="30" G="144" B="255" />
-            <PrePosition X="0.1545" Y="0.5422" />
+            <PrePosition X="-0.1342" Y="0.5819" />
             <PreSize X="0.0000" Y="0.0000" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Text_xCombo" ActionTag="1726260655" Tag="13" IconVisible="False" LeftMargin="3.4822" RightMargin="610.5178" TopMargin="521.0786" BottomMargin="560.9214" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+          <AbstractNodeData Name="Text_xCombo" ActionTag="1726260655" Tag="13" IconVisible="False" LeftMargin="-75.3801" RightMargin="689.3801" TopMargin="548.1187" BottomMargin="533.8813" FontSize="48" LabelText="0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
             <Size X="26.0000" Y="54.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="16.4822" Y="587.9214" />
+            <Position X="-62.3801" Y="560.8813" />
             <Scale ScaleX="2.2735" ScaleY="1.8822" />
             <CColor A="255" R="30" G="144" B="255" />
-            <PrePosition X="0.0258" Y="0.5175" />
+            <PrePosition X="-0.0975" Y="0.4937" />
             <PreSize X="0.0000" Y="0.0000" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
@@ -208,13 +208,13 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Panel_puzzle_stage_effect" ActionTag="1068859230" Alpha="199" Tag="25" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="69.5831" RightMargin="70.4169" TopMargin="558.7894" BottomMargin="77.2106" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+          <AbstractNodeData Name="Panel_puzzle_stage_effect" ActionTag="1068859230" Alpha="199" Tag="25" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="56.0366" RightMargin="83.9634" TopMargin="495.6622" BottomMargin="140.3378" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="500.0000" Y="500.0000" />
             <AnchorPoint ScaleX="0.5000" />
-            <Position X="319.5831" Y="77.2106" />
-            <Scale ScaleX="0.9278" ScaleY="0.9541" />
+            <Position X="306.0366" Y="140.3378" />
+            <Scale ScaleX="0.8016" ScaleY="0.8189" />
             <CColor A="255" R="63" G="80" B="95" />
-            <PrePosition X="0.4993" Y="0.0680" />
+            <PrePosition X="0.4782" Y="0.1235" />
             <PreSize X="0.7813" Y="0.4401" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
@@ -233,6 +233,98 @@
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_1_0_0_0" ActionTag="790500084" Tag="85" IconVisible="False" LeftMargin="79.5672" RightMargin="476.4328" TopMargin="1033.5559" BottomMargin="18.4441" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="84.0000" Y="84.0000" />
+            <AnchorPoint />
+            <Position X="79.5672" Y="18.4441" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="0" B="0" />
+            <PrePosition X="0.1243" Y="0.0162" />
+            <PreSize X="0.1312" Y="0.0739" />
+            <SingleColor A="255" R="255" G="0" B="0" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_defaultUnitIcon_0" ActionTag="1984495601" Tag="74" IconVisible="False" LeftMargin="82.7879" RightMargin="487.2121" TopMargin="1042.0283" BottomMargin="23.9717" TouchEnable="True" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="70.0000" Y="70.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="117.7879" Y="58.9717" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1840" Y="0.0519" />
+            <PreSize X="0.1094" Y="0.0616" />
+            <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_1_0_0" ActionTag="-1459661932" Tag="84" IconVisible="False" LeftMargin="182.2279" RightMargin="373.7721" TopMargin="1037.0752" BottomMargin="14.9248" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="84.0000" Y="84.0000" />
+            <AnchorPoint />
+            <Position X="182.2279" Y="14.9248" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="30" G="144" B="255" />
+            <PrePosition X="0.2847" Y="0.0131" />
+            <PreSize X="0.1312" Y="0.0739" />
+            <SingleColor A="255" R="30" G="144" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_defaultUnitIcon_1" ActionTag="746023480" Tag="75" IconVisible="False" LeftMargin="186.8847" RightMargin="383.1154" TopMargin="1041.4565" BottomMargin="24.5435" TouchEnable="True" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="70.0000" Y="70.0000" />
+            <AnchorPoint ScaleX="0.4221" ScaleY="0.4256" />
+            <Position X="216.4349" Y="54.3326" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.3382" Y="0.0478" />
+            <PreSize X="0.1094" Y="0.0616" />
+            <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_1_0" ActionTag="-1551221947" Tag="83" IconVisible="False" LeftMargin="311.9271" RightMargin="244.0729" TopMargin="1036.0880" BottomMargin="15.9119" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="84.0000" Y="84.0000" />
+            <AnchorPoint />
+            <Position X="311.9271" Y="15.9119" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="0" />
+            <PrePosition X="0.4874" Y="0.0140" />
+            <PreSize X="0.1312" Y="0.0739" />
+            <SingleColor A="255" R="255" G="255" B="0" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_defaultUnitIcon_2" ActionTag="2008376512" Tag="76" IconVisible="False" LeftMargin="317.8694" RightMargin="252.1306" TopMargin="1043.5084" BottomMargin="22.4916" TouchEnable="True" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="70.0000" Y="70.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="352.8694" Y="57.4916" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5514" Y="0.0506" />
+            <PreSize X="0.1094" Y="0.0616" />
+            <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_1" ActionTag="1667233345" Tag="82" IconVisible="False" LeftMargin="437.1201" RightMargin="118.8799" TopMargin="1032.8477" BottomMargin="19.1524" TouchEnable="True" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="84.0000" Y="84.0000" />
+            <AnchorPoint />
+            <Position X="437.1201" Y="19.1524" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="23" G="219" B="23" />
+            <PrePosition X="0.6830" Y="0.0169" />
+            <PreSize X="0.1312" Y="0.0739" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Image_defaultUnitIcon_3" ActionTag="-792567014" Tag="77" IconVisible="False" LeftMargin="442.9728" RightMargin="127.0272" TopMargin="1041.6156" BottomMargin="24.3844" TouchEnable="True" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+            <Size X="70.0000" Y="70.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="477.9728" Y="59.3844" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.7468" Y="0.0523" />
+            <PreSize X="0.1094" Y="0.0616" />
+            <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

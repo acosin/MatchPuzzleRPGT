@@ -124,6 +124,8 @@ private:
     void removeEventEnemyDead();
     void onEnemyDead(EventCustom* pEvent);
     
+    void fillUnitsSortie();
+    
     // processing function in update()
     void processController();
     

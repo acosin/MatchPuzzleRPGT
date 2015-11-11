@@ -125,6 +125,8 @@ bool GameStageScene::initData(StageDataManager* stageManager, uint32_t stageID,
     _statusManager = SceneMediator::getInstance()->getStatusDataManager();
     
     _controller = GameStageController::create(_currentStageData, _statusManager, unitsSortie);
+    // Note: should do this after initialize _controller!
+    fillUnitsSortie();
     _jewelsGrid = _controller->getJewelsGrid();
     
     _mapLayer = _controller->getMapLayer();
@@ -596,4 +598,14 @@ void GameStageScene::onEnemyDead(EventCustom* pEvent)
     auto result = score+scoreToAdd;
     _scoreBoard->setScore(result);
     _controller->setScore(result);
+}
+
+void GameStageScene::fillUnitsSortie()
+{
+    for (int type = 0 ; type < (int)ElementType::count; type++) {
+        auto str = "Image_defaultUnitIcon_" + Value(type).asString();
+        auto image = dynamic_cast<ui::ImageView*>(_layout->getChildByName(str));
+        auto record = _controller->getSortieUnitRecordByType((ElementType)type);
+        image->loadTexture(record->unitdata.unitIconPath);
+    }
 }

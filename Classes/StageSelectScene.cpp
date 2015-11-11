@@ -118,7 +118,6 @@ bool StageSelectScene::fillListViewSelectStage()
 
 bool StageSelectScene::fillSortieUnits()
 {
-    _listView_units->removeAllItems();
     // TODO: maintain a static ListItems here later for better performance
     for (int type = 0 ; type < (int)ElementType::count; type++) {
         auto str = "Image_defaultUnitIcon_" + Value(type).asString();

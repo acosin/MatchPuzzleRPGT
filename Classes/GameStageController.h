@@ -79,6 +79,8 @@ public:
     bool canAttackEnemy();
     
     void setScore(int score);
+    
+    UnitOfPlayerRecord* getSortieUnitRecordByType(ElementType type);
 public:
     JewelsGrid* _jewelsGrid;
 
