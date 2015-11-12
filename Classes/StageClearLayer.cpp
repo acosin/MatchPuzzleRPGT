@@ -74,14 +74,21 @@ bool StageClearLayer::initWithData(StageClearData *data)
     auto totalScore = scoreBasic + scoreStage + scoreEnemies;
     _textScoreTotal->setString("Total Score: " + Value(totalScore).asString());
     
-    // -- growth --
+    handleGrowthAndScore(totalScore);
+    
+    return true;
+}
+
+void StageClearLayer::handleGrowthAndScore(int totalScore)
+{
+    // -- growth for player--
     auto addExp = _growthStrategyStageClear->getPlayerExp(_clearData);
     _textGrowthPlayer->setString("Player Exp: +" + Value(addExp).asString());
     
     auto currentExp = _clearData->playerExp;
     auto newExp = currentExp;
     auto currentLevel = _clearData->playerLevel;
-    auto newLevel = _growthStrategyStageClear->getNewLevel(currentLevel, newExp, addExp);
+    auto newLevel = _growthStrategyStageClear->getNewPlayerLevel(currentLevel, newExp, addExp);
     
     if (newLevel != currentLevel) {
         CCLOG("Level up! %d -> %d", currentLevel, newLevel);
@@ -93,10 +100,10 @@ bool StageClearLayer::initWithData(StageClearData *data)
         _textGrowthPlayerResult->setString(str);
     }
     
+    // -- growth for UnitSortie
+    
     // persistence
     handleStageClear(newLevel, newExp, totalScore);
-    
-    return true;
 }
 
 void StageClearLayer::handleStageClear(int newPlayerLevel, int newPlayerExp, int score)
@@ -110,6 +117,8 @@ void StageClearLayer::dispatchGrowthEvent(int newPlayerLevel, int newPlayerExp)
     auto growthData = new GrowthDataStageClear();
     growthData->newPlayerLevel = newPlayerLevel;
     growthData->newPlayerExp = newPlayerExp;
+    growthData->growthStrategy = _growthStrategyStageClear;
+    growthData->clearData = _clearData;
     
     auto dispatcher = Director::getInstance()->getEventDispatcher();
     dispatcher->dispatchCustomEvent(GameStageController::EventNameProcessGrowth, growthData);

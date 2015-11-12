@@ -247,6 +247,23 @@ UnitOfPlayerRecord* GameStageController::getSortieUnitRecordByType(ElementType t
     return _unitsSortie[type];
 }
 
+int GameStageController::getUnitDamage(ElementType type)
+{
+    return _mapController->getUnitDamage(type);
+}
+
+void GameStageController::updateSortieUnitExp(ElementType type, int newExp)
+{
+    auto record = _unitsSortie[type];
+    record->exp = newExp;
+}
+
+void GameStageController::updateSortieUnitLevel(ElementType type, int newLevel)
+{
+    auto record = _unitsSortie[type];
+    record->level = newLevel;
+}
+
 // -- private --
 
 void GameStageController::addClearConditions()

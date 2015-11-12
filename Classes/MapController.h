@@ -81,6 +81,7 @@ public:
     int getEnemyCount();
     void dispatchEnemyDeadEvent(MapItemEnemy* enemy);
     
+    int getUnitDamage(ElementType type);
 private:
     /*
     std::vector<IMapItem*>::iterator findMapItem(uint32_t id);

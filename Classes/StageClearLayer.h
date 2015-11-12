@@ -22,6 +22,8 @@ class GrowthDataStageClear
 public:
     int newPlayerLevel;
     int newPlayerExp;
+    IGrowthStrategyStageClear *growthStrategy;
+    StageClearData *clearData;
 };
 
 class StageClearLayer : public Layer
@@ -51,7 +53,8 @@ public:
     
     bool initWithData(StageClearData *data);
 private:
-    void handleStageClear(int newPlayerLevel, int newPlayerExp, int score);
     void dispatchGrowthEvent(int newPlayerLevel, int newPlayerExp);
     void dispatchSaveScoreEvent(int score);
+    void handleGrowthAndScore(int totalScore);
+    void handleStageClear(int newPlayerLevel, int newPlayerExp, int score);
 };

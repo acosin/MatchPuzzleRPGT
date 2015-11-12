@@ -81,6 +81,9 @@ public:
     void setScore(int score);
     
     UnitOfPlayerRecord* getSortieUnitRecordByType(ElementType type);
+    int getUnitDamage(ElementType type);
+    void updateSortieUnitExp(ElementType type, int newExp);
+    void updateSortieUnitLevel(ElementType type, int newLevel);
 public:
     JewelsGrid* _jewelsGrid;
 

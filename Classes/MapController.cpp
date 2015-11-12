@@ -335,6 +335,12 @@ void MapController::dispatchEnemyDeadEvent(MapItemEnemy *enemy)
     dispatcher->dispatchCustomEvent(GameStageController::EventNameEnemyDead, enemy);
 }
 
+int MapController::getUnitDamage(ElementType type)
+{
+    auto strategy = dynamic_cast<SimpleMapStrategyWithUnitsOnPuzzleStatusChange*>(_strategyOnPuzzle);
+    return strategy->getUnitElementDamage(type);
+}
+
 // -- private --
 
 

@@ -350,6 +350,21 @@ void GameStageScene::onProgressGrowth(EventCustom* pEvent)
     _statusManager->writePlayerDataToCSV();
     
     //TODO: handle growth of units here later
+    auto growStrategy = data->growthStrategy;
+    for (int type = 0; type < (int)ElementType::count; type++) {
+        auto typeE = (ElementType)type;
+        auto record = _controller->getSortieUnitRecordByType(typeE);
+        auto damage = _controller->getUnitDamage(typeE);
+        auto expAdd = growStrategy->getUnitExp(record, data->clearData, damage);
+        int expAfter = record->exp;
+        auto newUnitLevel = growStrategy->getNewUnitLevel(record, expAfter, expAdd);
+        _controller->updateSortieUnitExp(typeE, expAfter);
+        _controller->updateSortieUnitLevel(typeE, newUnitLevel);
+        CCLOG("Unit grow: type%d, exp+%d, exp->%d, level->%d", type, expAdd, expAfter, newUnitLevel);
+    }
+    
+    _statusManager->writeUnitOfPlayerRecordsToCSV();
+    
 }
 
 
