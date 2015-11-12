@@ -140,7 +140,7 @@ bool StatusScene::fillDefaultUnits()
         auto str = "Image_defaultUnitIcon_" + Value(type).asString();
         auto image = dynamic_cast<ui::ImageView*>(_layout->getChildByName(str));
         auto record = _statusManager->getDefaultUnit((ElementType)type);
-        image->loadTexture(record->unitdata.unitIconPath);
+        image->loadTexture(record->unitdata->unitIconPath);
         
         image->addClickEventListener([&, type](Ref* ref) {
             this->_listView_selectDefault->removeAllItems();

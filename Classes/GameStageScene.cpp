@@ -606,6 +606,6 @@ void GameStageScene::fillUnitsSortie()
         auto str = "Image_defaultUnitIcon_" + Value(type).asString();
         auto image = dynamic_cast<ui::ImageView*>(_layout->getChildByName(str));
         auto record = _controller->getSortieUnitRecordByType((ElementType)type);
-        image->loadTexture(record->unitdata.unitIconPath);
+        image->loadTexture(record->unitdata->unitIconPath);
     }
 }

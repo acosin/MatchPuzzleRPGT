@@ -38,7 +38,7 @@ void SimpleMapStrategyWithUnitsOnPuzzleStatusChange::exec(MapController *c, Puzz
             for (int type = 0; type < (int)ElementType::count; type++) {
                 auto typeE = (ElementType)type;
                 auto unitRecord = data->getUnitRecordOfType(typeE);
-                auto atk = unitRecord->unitdata.atk;
+                auto atk = unitRecord->unitdata->atk;
                 auto matchX = data->getMatchCountX(typeE);
                 auto newDamage = matchX * atk;
                 damage += newDamage;
@@ -48,7 +48,7 @@ void SimpleMapStrategyWithUnitsOnPuzzleStatusChange::exec(MapController *c, Puzz
             for (int type = 0; type < (int)ElementType::count; type++) {
                 auto typeE = (ElementType)type;
                 auto unitRecord = data->getUnitRecordOfType(typeE);
-                auto atk = unitRecord->unitdata.atk;
+                auto atk = unitRecord->unitdata->atk;
                 auto matchY = data->getMatchCountY(typeE);
                 auto newDamage = matchY * atk;
                 damage += newDamage;
@@ -76,4 +76,9 @@ void SimpleMapStrategyWithUnitsOnPuzzleStatusChange::exec(MapController *c, Puzz
         
     }
     
+}
+
+int SimpleMapStrategyWithUnitsOnPuzzleStatusChange::getUnitElementDamage(ElementType type)
+{
+    return unitElementDamage[type];
 }

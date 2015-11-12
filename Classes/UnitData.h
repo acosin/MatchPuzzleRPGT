@@ -19,7 +19,7 @@ struct UnitData {
     
     // -- for battle system --
     int atk;
-    int level;
+    int rank;
     
     // -- end for battle system --
     UnitData()
@@ -32,9 +32,14 @@ struct UnitData {
               std::string unitName,
               // -- for battle system --
               int atk,
-              int level)
+              int rank)
     {
-        init(unitID, unitIconPath, elementType, unitName, atk, level);
+        init(unitID,
+             unitIconPath,
+             elementType,
+             unitName,
+             atk,
+             rank);
     }
     
     void init(uint32_t unitID,
@@ -43,7 +48,7 @@ struct UnitData {
               std::string unitName,
               // -- for battle system --
               int atk,
-              int level
+              int rank
               )
     {
         this->unitID = unitID;
@@ -51,7 +56,7 @@ struct UnitData {
         this->elementType = elementType;
         this->unitName = unitName;
         this->atk = atk;
-        this->level = level;
+        this->rank = rank;
     }
     
     // TODO: note that not to add virtual function in a struct

@@ -32,8 +32,8 @@ ListItem_UnitRecord* ListItem_UnitRecord::createListItem(UnitOfPlayerRecord* rec
     
     ui::ImageView* unitIcon = dynamic_cast<ui::ImageView*>(node->getChildByName("Image_unitIcon"));
     ui::Text* unitInfo = dynamic_cast<ui::Text*>(node->getChildByName("Text_unitInfo"));
-    unitIcon->loadTexture(record->unitdata.unitIconPath);
-    unitInfo->setString(record->unitdata.unitName);
+    unitIcon->loadTexture(record->unitdata->unitIconPath);
+    unitInfo->setString(record->unitdata->unitName);
     
     item->_checkboxIsDefault = dynamic_cast<ui::CheckBox*>(node->getChildByName("CheckBox_isDefault"));
     item->_checkboxIsDefault->loadTextureFrontCross(ListItem_UnitRecord::ImageFile_checkboxNormal);
@@ -51,7 +51,7 @@ ListItem_UnitRecord* ListItem_UnitRecord::createListItem(UnitOfPlayerRecord* rec
     item->setContentSize(node->getContentSize());
     item->addChild(node);
     
-    item->type = record->unitdata.elementType;
+    item->type = record->unitdata->elementType;
     return item;
 }
 

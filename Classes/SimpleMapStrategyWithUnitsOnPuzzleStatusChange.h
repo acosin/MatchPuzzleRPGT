@@ -18,4 +18,5 @@ public:
     ~SimpleMapStrategyWithUnitsOnPuzzleStatusChange();
     
     void exec(MapController *c, PuzzleStatusChangeData *data) override;
+    int getUnitElementDamage(ElementType type);
 };

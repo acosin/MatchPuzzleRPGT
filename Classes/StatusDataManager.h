@@ -23,14 +23,17 @@ class StatusDataManager
 {
 protected:
     PlayerStatusData* _playerData;
+    std::map<uint32_t, UnitData*> _unitData;
     std::vector<UnitOfPlayerRecord*> _unitRecords;
     
     std::string playerDataFilename;
-    std::string unitRocordsFilename;
+    std::string unitDataFilename;
+    std::string unitOfPlayerRecordsFilename;
     
 private:
     
     void clearPlayerData();
+    void clearUnitData();
     void clearUnitRecords();    
 public:
     StatusDataManager();
@@ -40,9 +43,13 @@ public:
     
     virtual bool initWithoutData(); // TODO: may remove later
     virtual bool initWithData(PlayerStatusData* playerData, std::vector<UnitOfPlayerRecord*> &unitRecords);
-    virtual bool initFromLocalData(const std::string &playerDataFile, const std::string &unitRocordsFile);
+    virtual bool initFromLocalData(const std::string &playerDataFile,
+                                   const std::string &unitDataFile,
+                                   const std::string &unitOfPlayerRecordsFile);
     bool loadPlayerDataFromCSV(const std::string &filename);
     bool writePlayerDataToCSV();
+    bool loadUnitDataFromCSV(const std::string &filename);
+    bool writeUnitDataToCSV();
     bool loadUnitOfPlayerRecordsFromCSV(const std::string& filename);
     bool writeUnitOfPlayerRecordsToCSV();
     

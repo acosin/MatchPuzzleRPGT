@@ -35,7 +35,9 @@ StatusDataManager* SceneMediator::getStatusDataManager()
         _statusDataManager = StatusDataManager::create();
         // TODO: fix here by replacing with initFromLocalData();
         //_statusDataManager->initWithDebugData();
-        _statusDataManager->initFromLocalData("data/PlayerStatusData.csv", "data/UnitOfPlayerRecords.csv");
+        _statusDataManager->initFromLocalData("data/PlayerStatusData.csv",
+                                              "data/UnitData.csv",
+                                              "data/UnitOfPlayerRecords.csv");
     }
     return _statusDataManager;
 }
