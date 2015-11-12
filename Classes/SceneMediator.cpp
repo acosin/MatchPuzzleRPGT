@@ -91,3 +91,10 @@ void SceneMediator::gotoStatusScene()
     
     Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
 }
+
+void SceneMediator::gotoGetUnitScene()
+{
+    auto scene = GetUnitScene::createScene();
+    
+    Director::getInstance()->replaceScene(TransitionFade::create(0.25, scene));
+}

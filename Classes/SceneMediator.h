@@ -14,6 +14,7 @@
 #include "StageScoreScene.h"
 #include "StageSelectScene.h"
 #include "GameStageScene.h"
+#include "GetUnitScene.h"
 
 USING_NS_CC;
 
@@ -39,6 +40,7 @@ public:
                                     std::map<ElementType, int> &unitsSortie);
     virtual void gotoStageScoreScene();
     virtual void gotoStatusScene();
+    virtual void gotoGetUnitScene();
 
 private:
 

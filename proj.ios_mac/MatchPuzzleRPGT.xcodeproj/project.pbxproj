@@ -51,6 +51,10 @@
 		31122EC21BCD01CD00F08C65 /* ui in Resources */ = {isa = PBXBuildFile; fileRef = 31122EC01BCD01CD00F08C65 /* ui */; };
 		31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122EC41BCE27A300F08C65 /* CsvParser.cpp */; };
 		31122EC71BCE27A300F08C65 /* CsvParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122EC41BCE27A300F08C65 /* CsvParser.cpp */; };
+		313E6FEA1BF4704C00DD3BF6 /* GetUnitScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 313E6FE81BF4704C00DD3BF6 /* GetUnitScene.cpp */; };
+		313E6FEB1BF4704C00DD3BF6 /* GetUnitScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 313E6FE81BF4704C00DD3BF6 /* GetUnitScene.cpp */; };
+		313E6FED1BF474FB00DD3BF6 /* getUnits.png in Resources */ = {isa = PBXBuildFile; fileRef = 313E6FEC1BF474FB00DD3BF6 /* getUnits.png */; };
+		313E6FEE1BF474FB00DD3BF6 /* getUnits.png in Resources */ = {isa = PBXBuildFile; fileRef = 313E6FEC1BF474FB00DD3BF6 /* getUnits.png */; };
 		3141AECE1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */; };
 		3141AECF1BD4B6F1001F09B6 /* GameStageController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */; };
 		3141AED31BD4B8F0001F09B6 /* Jewel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3141AED11BD4B8F0001F09B6 /* Jewel.cpp */; };
@@ -221,6 +225,9 @@
 		31122EC01BCD01CD00F08C65 /* ui */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ui; sourceTree = "<group>"; };
 		31122EC41BCE27A300F08C65 /* CsvParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CsvParser.cpp; sourceTree = "<group>"; };
 		31122EC51BCE27A300F08C65 /* CsvParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CsvParser.h; sourceTree = "<group>"; };
+		313E6FE81BF4704C00DD3BF6 /* GetUnitScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GetUnitScene.cpp; sourceTree = "<group>"; };
+		313E6FE91BF4704C00DD3BF6 /* GetUnitScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUnitScene.h; sourceTree = "<group>"; };
+		313E6FEC1BF474FB00DD3BF6 /* getUnits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = getUnits.png; path = ui/getUnits.png; sourceTree = "<group>"; };
 		3141AECC1BD4B6F1001F09B6 /* GameStageController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameStageController.cpp; sourceTree = "<group>"; };
 		3141AECD1BD4B6F1001F09B6 /* GameStageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameStageController.h; sourceTree = "<group>"; };
 		3141AED11BD4B8F0001F09B6 /* Jewel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Jewel.cpp; sourceTree = "<group>"; };
@@ -512,6 +519,8 @@
 				3188E6811BD0A6BB00AC8FBC /* StageScoreScene.h */,
 				3185615B1BD4855800627C21 /* StageSelectScene.cpp */,
 				3185615C1BD4855800627C21 /* StageSelectScene.h */,
+				313E6FE81BF4704C00DD3BF6 /* GetUnitScene.cpp */,
+				313E6FE91BF4704C00DD3BF6 /* GetUnitScene.h */,
 				31819B591BE1BD2D00C505E8 /* StageClearLayer.cpp */,
 				31819B5A1BE1BD2D00C505E8 /* StageClearLayer.h */,
 				31FF12BA1BD9D61000E06405 /* AnalogStick.cpp */,
@@ -662,6 +671,7 @@
 				31122E861BC7852F00F08C65 /* score.png */,
 				31122E891BC786DA00F08C65 /* status.png */,
 				31122E8C1BC7872800F08C65 /* exit.png */,
+				313E6FEC1BF474FB00DD3BF6 /* getUnits.png */,
 				31122E931BC79CC800F08C65 /* home.png */,
 			);
 			name = Resources;
@@ -821,6 +831,7 @@
 			files = (
 				319DA2D61BE0A7B200151EF1 /* defaultParticle.plist in Resources */,
 				31122EC11BCD01CD00F08C65 /* ui in Resources */,
+				313E6FED1BF474FB00DD3BF6 /* getUnits.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				31122E8A1BC786DA00F08C65 /* status.png in Resources */,
 				3141AEF51BD62333001F09B6 /* tmw_desert_spacing.png in Resources */,
@@ -877,6 +888,7 @@
 				3141AEF61BD62333001F09B6 /* tmw_desert_spacing.png in Resources */,
 				31122E881BC7852F00F08C65 /* score.png in Resources */,
 				31122E7E1BC77C4B00F08C65 /* start.png in Resources */,
+				313E6FEE1BF474FB00DD3BF6 /* getUnits.png in Resources */,
 				3188E6861BD0B68000AC8FBC /* stageIcon_0.png in Resources */,
 				3198547F1BE758EE004A9CEE /* attack.png in Resources */,
 				31122E951BC79CC800F08C65 /* home.png in Resources */,
@@ -935,6 +947,7 @@
 				3141AEEF1BD615CB001F09B6 /* MapLayer.cpp in Sources */,
 				318561621BD4A48800627C21 /* GameStageScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				313E6FEA1BF4704C00DD3BF6 /* GetUnitScene.cpp in Sources */,
 				31122EA31BC7B6E000F08C65 /* StatusDataManager.cpp in Sources */,
 				31819B5F1BE1BDAB00C505E8 /* StageClearData.cpp in Sources */,
 				31108CB11BF0AA8000C71ED9 /* ListItem_UnitRecord.cpp in Sources */,
@@ -981,6 +994,7 @@
 				31122E821BC77FA000F08C65 /* MainBackground.cpp in Sources */,
 				3188E67F1BD09D8200AC8FBC /* StageDataManager.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				313E6FEB1BF4704C00DD3BF6 /* GetUnitScene.cpp in Sources */,
 				318561631BD4A48800627C21 /* GameStageScene.cpp in Sources */,
 				314354031BF31C9D0016C6F1 /* SimpleMapStrategyWithUnitsOnPuzzleStatusChange.cpp in Sources */,
 				31819B601BE1BDAB00C505E8 /* StageClearData.cpp in Sources */,

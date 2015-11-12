@@ -19,6 +19,7 @@ protected:
     ui::Button* _startButton;
     ui::Button* _scoreButton;
     ui::Button* _statusButton;
+    ui::Button* _getUnitButton;
     ui::Button* _exitButton;
     
 public:
