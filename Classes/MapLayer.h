@@ -14,11 +14,14 @@ USING_NS_CC;
 class MapLayer : public cocos2d::Layer
 {
 private:
-    TMXTiledMap* _tileMap;
     TMXLayer* _background;
     Node* _player;
     Vector<Sprite*> _enemies;
     TMXLayer* _meta;
+    
+public:
+    
+    TMXTiledMap* _tileMap;
     
 public:
     MapLayer();

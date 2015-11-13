@@ -1,0 +1,3 @@
+enemyID,iconPath,enemyName,type,level,hp,atk
+0,element_0.png,EnemyName_0,0,1,100,1
+1,element_1.png,EnemyName_1,1,1,2,1

@@ -35,8 +35,8 @@ bool MapController::initMap(StageData *stageData)
     createMapLayerFromData();
     CC_ASSERT(_mapLayer != nullptr);
     
-    //createEnemies();
-    createEnemiesDebug();
+    createEnemies();
+    //createEnemiesDebug();
     
     return true;
 }
@@ -362,9 +362,24 @@ std::map<uint32_t, MapItemEnemy*>::iterator MapController::findMapItem(IMapItem*
     return find(_mapItems.begin(), _mapItems.end(), ptr);
 }
 */
+
+
+// create enemies from
 void MapController::createEnemies()
 {
+    std::string enemyDataFile = "data/EnemyStatusData.csv";
+    _enemyData = EnemyStatusData::loadEnemyDataFromCSV(enemyDataFile);
     
+    auto enemyGroup = _mapLayer->_tileMap->getObjectGroup("Enemies");
+    CC_ASSERT(enemyGroup != NULL);
+    auto enemies = enemyGroup->getObjects();
+    for (auto enemy : enemies) {
+        auto properties = enemy.asValueMap();
+        auto mapx = properties["MapX"].asInt();
+        auto mapy = properties["MapY"].asInt();
+        auto enemyid = (uint32_t)(properties["EnemyID"].asInt());
+        createEnemyItem(mapx, mapy, _enemyData[enemyid]);
+    }
 }
 
 void MapController::createEnemiesDebug()

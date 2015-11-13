@@ -363,6 +363,7 @@ void GameStageScene::onProgressGrowth(EventCustom* pEvent)
         CCLOG("Unit grow: type%d, exp+%d, exp->%d, level->%d", type, expAdd, expAfter, newUnitLevel);
     }
     
+    // TODO: may add Try()
     _statusManager->writeUnitOfPlayerRecordsToCSV();
     
 }

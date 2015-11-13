@@ -6,6 +6,7 @@
 #pragma once
 
 #include "ElementType.h"
+#include "CsvParser.h"
 
 struct EnemyStatusData {
     uint32_t enemyID; //enemy type id
@@ -65,5 +66,31 @@ struct EnemyStatusData {
     //TODO: modify later
     std::string getSpriteImagePath() {
         return iconPath;
+    }
+    
+    
+    static std::map<uint32_t, EnemyStatusData*> loadEnemyDataFromCSV(const std::string &filename) {
+        std::map<uint32_t, EnemyStatusData*> ret;
+        
+        // TODO: handle file open excpetion here
+        auto fullFilename = FileUtils::getInstance()->fullPathForFilename(filename);
+        CsvParser::Csv csv(fullFilename);
+        
+        // NOTE: i = 1 to discard header(csv[0])
+        for (int i = 1; i < csv.getRowCount(); i++) {
+            auto row = csv[i];
+            uint32_t id = (uint32_t)(Value(row[0]).asInt());
+            auto enemyDataTemp = new EnemyStatusData(id,         //uint32_t enemyID,
+                                                     row[1],     //std::string iconPath,
+                                                     row[2],     //std::string enemyName,
+                                                     (ElementType)(Value(row[3]).asInt()), //ElementType type,
+                                                     Value(row[4]).asInt(),              //int level,
+                                                     Value(row[5]).asInt(),              //int hp,
+                                                     Value(row[6]).asInt()              //int atk
+                                                     );
+            ret[id] = enemyDataTemp;
+        }
+        
+        return ret;
     }
 };

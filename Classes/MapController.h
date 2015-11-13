@@ -39,6 +39,7 @@ private:
     IDPool* _IDpool_mapItem = nullptr;
     MapItemPlayer* _playerItem = nullptr;
     int _lastPlayerX, _lastPlayerY;
+    std::map<uint32_t, EnemyStatusData*> _enemyData;
     std::map<uint32_t, MapItemEnemy*> _mapItems;
     
     IMapStrategyOnPuzzleStatusChange *_strategyOnPuzzle;
