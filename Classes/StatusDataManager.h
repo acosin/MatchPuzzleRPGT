@@ -13,6 +13,7 @@
 #include "UnitOfPlayerRecord.h"
 #include "PlayerStatusData.h"
 #include "CsvParser.h"
+#include "PlayerAssetsData.h"
 
 USING_NS_CC;
 
@@ -25,10 +26,12 @@ protected:
     PlayerStatusData* _playerData;
     std::map<uint32_t, UnitData*> _unitData;
     std::vector<UnitOfPlayerRecord*> _unitRecords;
+    PlayerAssetsData* _playerAssets;
     
     std::string playerDataFilename;
     std::string unitDataFilename;
     std::string unitOfPlayerRecordsFilename;
+    std::string playerAssetsFilename;
     
 private:
     
@@ -45,7 +48,8 @@ public:
     virtual bool initWithData(PlayerStatusData* playerData, std::vector<UnitOfPlayerRecord*> &unitRecords);
     virtual bool initFromLocalData(const std::string &playerDataFile,
                                    const std::string &unitDataFile,
-                                   const std::string &unitOfPlayerRecordsFile);
+                                   const std::string &unitOfPlayerRecordsFile,
+                                   const std::string &playerAssetsFile);
     bool loadPlayerDataFromCSV(const std::string &filename);
     bool writePlayerDataToCSV();
     bool loadUnitDataFromCSV(const std::string &filename);
@@ -65,6 +69,8 @@ public:
     UnitOfPlayerRecord* getUnitByIndex(int index);
     bool changeDefaultUnitOfType(int index);
     std::map<ElementType,int> getDefaultUnitsIndex();
+    
+    int getPlayerCoins();
 public:
     // TODO: for debug, remove later
     bool initWithDebugData();

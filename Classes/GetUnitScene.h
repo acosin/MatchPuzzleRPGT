@@ -13,6 +13,8 @@
 
 #include "SceneMediator.h"
 
+#include "IUnitGatchaStrategy.h"
+
 USING_NS_CC;
 
 class GetUnitScene : public Layer
@@ -23,10 +25,14 @@ protected:
     
     ui::Button* _homeButton;
     ui::Button* _exitButton;
+    ui::Button* _unitGatchaButton;
     
     ui::ListView* _listView_unitRecords;;
     
+    ui::Text* _text_coins;
+    
     StatusDataManager* _statusManager;
+    IUnitGatchaStrategy* _unitGatchaStrategy;
     
 public:
     GetUnitScene();
@@ -39,4 +45,5 @@ public:
     
 private:
     bool fillListViewUnitRecords();
+    void showPlayerAssets();
 };

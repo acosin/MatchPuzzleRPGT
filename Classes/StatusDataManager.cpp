@@ -60,7 +60,8 @@ bool StatusDataManager::initWithData(PlayerStatusData* playerData, std::vector<U
 // TODO: init for lacoal data
 bool StatusDataManager::initFromLocalData(const std::string &playerDataFile,
                                           const std::string &unitDataFile,
-                                          const std::string &unitOfPlayerRecordFile)
+                                          const std::string &unitOfPlayerRecordFile,
+                                          const std::string &playerAssetsFile)
 {
     if (loadPlayerDataFromCSV(playerDataFile) == false)
         return false;
@@ -73,6 +74,14 @@ bool StatusDataManager::initFromLocalData(const std::string &playerDataFile,
     if (loadUnitOfPlayerRecordsFromCSV(unitOfPlayerRecordFile) == false)
         return false;
     unitOfPlayerRecordsFilename = unitOfPlayerRecordFile;
+    
+    playerAssetsFilename = playerAssetsFile;
+    _playerAssets = new PlayerAssetsData();
+    if (_playerAssets->loadPlayerAssetsFromCSV(playerAssetsFilename) == false) {
+        delete _playerAssets;
+        _playerAssets = nullptr;
+        return false;
+    }
     
     return true;
 }
@@ -315,6 +324,11 @@ std::map<ElementType, int> StatusDataManager::getDefaultUnitsIndex()
         ret[(ElementType)type] = type;
     }
     return ret;
+}
+
+int StatusDataManager::getPlayerCoins()
+{
+    return _playerAssets->getCoins();
 }
 
 std::vector<UnitOfPlayerRecord*> StatusDataManager::getUnitRecords()

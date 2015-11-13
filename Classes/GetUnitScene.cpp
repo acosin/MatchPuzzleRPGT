@@ -9,12 +9,15 @@
 #include "StageSelectScene.h"
 
 #include "ListItem_UnitRecord.h"
+#include "SimpleUnitGatchaStrategy.hpp"
 
 GetUnitScene::GetUnitScene():
 _layout(nullptr),
 _background(nullptr),
 _homeButton(nullptr),
-_exitButton(nullptr)
+_exitButton(nullptr),
+_unitGatchaButton(nullptr),
+_unitGatchaStrategy(nullptr)
 {
     
 }
@@ -55,9 +58,13 @@ bool GetUnitScene::init()
     
     _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
     _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
+    _unitGatchaButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_unitGatcha"));
     
     _statusManager = SceneMediator::getInstance()->getStatusDataManager();
     fillListViewUnitRecords();
+    
+    _text_coins = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_coins"));
+    showPlayerAssets();
     
     this->addChild(_layout);
     
@@ -73,6 +80,13 @@ bool GetUnitScene::init()
         exit(0);
 #endif
     });
+    
+    _unitGatchaButton->addClickEventListener([](Ref* ref) {
+        //TODO
+    });
+
+    
+    _unitGatchaStrategy = new SimpleUnitGatchaStrategy();
     
     
     return true;
@@ -104,5 +118,12 @@ bool GetUnitScene::fillListViewUnitRecords()
     }
     
     return true;
+}
+
+void GetUnitScene::showPlayerAssets()
+{
+    std::string str_coins = "Coins:\n";
+    str_coins += StringUtils::toString(_statusManager->getPlayerCoins());
+    _text_coins->setString(str_coins);
 }
 

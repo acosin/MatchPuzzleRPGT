@@ -70,6 +70,32 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
+          <AbstractNodeData Name="Button_unitGatcha" ActionTag="1658094454" Tag="61" IconVisible="False" LeftMargin="115.5287" RightMargin="124.4713" TopMargin="691.5997" BottomMargin="294.4002" TouchEnable="True" FontSize="72" ButtonText="Unit Gatcha!" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="400.0000" Y="150.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="315.5287" Y="369.4002" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.4930" Y="0.3252" />
+            <PreSize X="0.6250" Y="0.1320" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Text_coins" ActionTag="1288807115" Tag="62" IconVisible="False" LeftMargin="459.0770" RightMargin="124.9230" TopMargin="59.9362" BottomMargin="1030.0638" FontSize="20" LabelText="Coins:&#xA;0" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="56.0000" Y="46.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="487.0770" Y="1053.0638" />
+            <Scale ScaleX="3.0238" ScaleY="3.1937" />
+            <CColor A="255" R="255" G="165" B="0" />
+            <PrePosition X="0.7611" Y="0.9270" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>
