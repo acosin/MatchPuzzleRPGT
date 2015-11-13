@@ -275,6 +275,14 @@ bool StatusDataManager::writeUnitOfPlayerRecordsToCSV()
     return true;
 }
 
+bool StatusDataManager::changePlayerCoins(int coins)
+{
+    _playerAssets->setCoins(coins);
+    _playerAssets->writeToCSV(playerAssetsFilename);
+    
+    return true;
+}
+
 PlayerStatusData* StatusDataManager::getPlayerStatusData()
 {
     return _playerData;
@@ -329,6 +337,12 @@ std::map<ElementType, int> StatusDataManager::getDefaultUnitsIndex()
 int StatusDataManager::getPlayerCoins()
 {
     return _playerAssets->getCoins();
+}
+
+
+std::map<uint32_t, UnitData*> StatusDataManager::getUnitData()
+{
+    return _unitData;
 }
 
 std::vector<UnitOfPlayerRecord*> StatusDataManager::getUnitRecords()

@@ -371,7 +371,6 @@ void MapController::createEnemies()
     _enemyData = EnemyStatusData::loadEnemyDataFromCSV(enemyDataFile);
     
     auto enemyGroup = _mapLayer->_tileMap->getObjectGroup("Enemies");
-    CC_ASSERT(enemyGroup != NULL);
     auto enemies = enemyGroup->getObjects();
     for (auto enemy : enemies) {
         auto properties = enemy.asValueMap();

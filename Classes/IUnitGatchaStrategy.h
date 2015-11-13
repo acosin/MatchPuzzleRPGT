@@ -18,4 +18,7 @@ class IUnitGatchaStrategy
 public:
     virtual UnitGatchaResult* getUnitByGatcha(std::map<uint32_t, UnitData*> &unitData,
                                               StatusDataManager *statusManager) = 0;
+    
+    virtual int getCoinsAfterGatcha(std::map<uint32_t, UnitData*> &unitData,
+                                    StatusDataManager *statusManager) = 0;
 };

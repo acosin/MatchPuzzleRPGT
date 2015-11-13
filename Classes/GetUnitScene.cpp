@@ -66,6 +66,12 @@ bool GetUnitScene::init()
     _text_coins = dynamic_cast<ui::Text*>(_layout->getChildByName("Text_coins"));
     showPlayerAssets();
     
+    
+    _panel_confirmGatcha = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_confirmGatcha"));
+    _text_confirmGatcha = dynamic_cast<ui::Text*>(_panel_confirmGatcha->getChildByName("Text_confirmGatcha"));
+    _panel_confirmGatcha->setVisible(false);
+    _panel_confirmGatcha->setTouchEnabled(false);
+    
     this->addChild(_layout);
     
     
@@ -81,8 +87,8 @@ bool GetUnitScene::init()
 #endif
     });
     
-    _unitGatchaButton->addClickEventListener([](Ref* ref) {
-        //TODO
+    _unitGatchaButton->addClickEventListener([&](Ref* ref) {
+        this->showConfirmGatcha();
     });
 
     
@@ -125,5 +131,25 @@ void GetUnitScene::showPlayerAssets()
     std::string str_coins = "Coins:\n";
     str_coins += StringUtils::toString(_statusManager->getPlayerCoins());
     _text_coins->setString(str_coins);
+}
+
+void GetUnitScene::showConfirmGatcha()
+{
+    CCLOG("confirm gatcha");
+    auto unitdata = _statusManager->getUnitData();
+    auto coinsAfter = _unitGatchaStrategy->getCoinsAfterGatcha(unitdata, _statusManager);
+    
+    if (coinsAfter < 0) {
+        //if (true) {  //only for debug
+        std::string msg = "Coins not enough!\n Coins:";
+        msg += StringUtils::toString(_statusManager->getPlayerCoins()) + "->";
+        msg += StringUtils::toString(coinsAfter);
+        
+        _text_confirmGatcha->setString(msg);
+        _panel_confirmGatcha->setVisible(true);
+        //_panel_confirmGatcha->setTouchEnabled(true);
+    } else {
+        
+    }
 }
 

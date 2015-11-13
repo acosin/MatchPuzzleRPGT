@@ -56,7 +56,9 @@ public:
     bool writeUnitDataToCSV();
     bool loadUnitOfPlayerRecordsFromCSV(const std::string& filename);
     bool writeUnitOfPlayerRecordsToCSV();
+    bool changePlayerCoins(int coins);
     
+    std::map<uint32_t, UnitData*> getUnitData();
     std::vector<UnitOfPlayerRecord*> getUnitRecords();
     std::map<int, UnitOfPlayerRecord*> getUnitRecordsOfType(ElementType type);
     PlayerStatusData* getPlayerStatusData();

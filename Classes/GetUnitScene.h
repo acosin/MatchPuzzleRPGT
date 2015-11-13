@@ -31,6 +31,9 @@ protected:
     
     ui::Text* _text_coins;
     
+    ui::Layout* _panel_confirmGatcha;
+    ui::Text* _text_confirmGatcha;
+    
     StatusDataManager* _statusManager;
     IUnitGatchaStrategy* _unitGatchaStrategy;
     
@@ -46,4 +49,6 @@ public:
 private:
     bool fillListViewUnitRecords();
     void showPlayerAssets();
+    void showConfirmGatcha();
+    
 };

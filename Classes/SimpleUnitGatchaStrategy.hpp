@@ -20,4 +20,13 @@ public:
         
         return ret;
     }
+    
+    int getCoinsAfterGatcha(std::map<uint32_t, UnitData*> &unitData,
+                            StatusDataManager *statusManager)
+    {
+        int ret = 0;
+        
+        
+        return ret;
+    }
 };

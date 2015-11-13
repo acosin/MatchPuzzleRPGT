@@ -30,6 +30,11 @@ int PlayerAssetsData::getCoins()
     return _coins;
 }
 
+void PlayerAssetsData::setCoins(int coins)
+{
+    _coins = coins;
+}
+
 bool PlayerAssetsData::loadPlayerAssetsFromCSV(std::string &filename)
 {
     // TODO: handle file open excpetion here
@@ -46,6 +51,27 @@ bool PlayerAssetsData::loadPlayerAssetsFromCSV(std::string &filename)
         auto row = csv[i];
         _coins = Value(row[0]).asInt();
     }
+    
+    return true;
+}
+
+bool PlayerAssetsData::writeToCSV(std::string &filename)
+{
+    
+    std::vector<std::vector<string>> rows;
+    std::vector<string> row;
+    
+    row.push_back("coins");
+    rows.push_back(row);
+    row.clear();
+    
+    row.push_back(StringUtils::toString(_coins));
+    rows.push_back(row);
+    row.clear();
+    
+    auto fullFilename = FileUtils::getInstance()->fullPathForFilename(filename);
+    CsvParser::Csv::Write(fullFilename, rows);
+    rows.clear();
     
     return true;
 }

@@ -617,11 +617,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/StatusDataManager.cpp"
-            timestampString = "469093419.777758"
+            timestampString = "469099825.408042"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
             landmarkName = "StatusDataManager::changeDefaultUnitOfType(int index)"
             landmarkType = "5">
          </BreakpointContent>
@@ -639,22 +639,6 @@
             startingLineNumber = "401"
             endingLineNumber = "401"
             landmarkName = "GameStageScene::tryMovePlayerUp(float delay)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../Classes/MapController.cpp"
-            timestampString = "469088740.417397"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "373"
-            endingLineNumber = "373"
-            landmarkName = "MapController::createEnemies()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -785,11 +769,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapController.cpp"
-            timestampString = "469090552.775424"
+            timestampString = "469097543.587677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "376"
-            endingLineNumber = "376"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
             landmarkName = "MapController::createEnemies()"
             landmarkType = "5">
             <Locations>
@@ -833,11 +817,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapController.cpp"
-            timestampString = "469090717.054135"
+            timestampString = "469097543.587677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "378"
-            endingLineNumber = "378"
+            startingLineNumber = "377"
+            endingLineNumber = "377"
             landmarkName = "MapController::createEnemies()"
             landmarkType = "5">
          </BreakpointContent>
@@ -849,11 +833,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/MapController.cpp"
-            timestampString = "469090739.217454"
+            timestampString = "469097543.587677"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
             landmarkName = "MapController::createEnemies()"
             landmarkType = "5">
          </BreakpointContent>
@@ -881,11 +865,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GetUnitScene.cpp"
-            timestampString = "469096647.822976"
+            timestampString = "469102167.336333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "GetUnitScene::init()"
             landmarkType = "5">
          </BreakpointContent>
@@ -897,11 +881,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GetUnitScene.cpp"
-            timestampString = "469096647.822976"
+            timestampString = "469102167.336333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "GetUnitScene::showPlayerAssets()"
             landmarkType = "5">
          </BreakpointContent>
@@ -913,11 +897,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/StatusDataManager.cpp"
-            timestampString = "469096356.059351"
+            timestampString = "469099825.408042"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "331"
-            endingLineNumber = "331"
+            startingLineNumber = "339"
+            endingLineNumber = "339"
             landmarkName = "StatusDataManager::getPlayerCoins()"
             landmarkType = "5">
          </BreakpointContent>

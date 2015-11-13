@@ -6,13 +6,13 @@
       <ObjectData Name="Scene" Tag="33" ctype="GameNodeObjectData">
         <Size X="640.0000" Y="1136.0000" />
         <Children>
-          <AbstractNodeData Name="ImageView_background" ActionTag="-1766414171" Tag="55" IconVisible="False" LeftMargin="-4.2800" RightMargin="4.2800" TopMargin="-2.8145" BottomMargin="2.8145" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="ImageView_background" ActionTag="-1766414171" Tag="55" IconVisible="False" LeftMargin="-4.2800" RightMargin="4.2800" TopMargin="-0.2917" BottomMargin="0.2917" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
             <Size X="640.0000" Y="1136.0000" />
             <AnchorPoint />
-            <Position X="-4.2800" Y="2.8145" />
+            <Position X="-4.2800" Y="0.2917" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="-0.0067" Y="0.0025" />
+            <PrePosition X="-0.0067" Y="0.0003" />
             <PreSize X="1.0000" Y="1.0000" />
             <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
           </AbstractNodeData>
@@ -95,6 +95,32 @@
             <PreSize X="0.0000" Y="0.0000" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Panel_confirmGatcha" ActionTag="873900533" Tag="72" IconVisible="False" LeftMargin="50.4536" RightMargin="389.5464" TopMargin="476.8517" BottomMargin="459.1483" TouchEnable="True" BackColorAlpha="232" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
+            <Size X="200.0000" Y="200.0000" />
+            <Children>
+              <AbstractNodeData Name="Text_confirmGatcha" ActionTag="-1224765548" Tag="73" IconVisible="False" LeftMargin="10.3182" RightMargin="8.6818" TopMargin="71.0899" BottomMargin="72.9101" FontSize="24" LabelText="Confirm Gatcha?&#xA;Coins:1000-&gt;0" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="181.0000" Y="56.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="100.8182" Y="100.9101" />
+                <Scale ScaleX="1.0000" ScaleY="3.0017" />
+                <CColor A="255" R="255" G="0" B="0" />
+                <PrePosition X="0.5041" Y="0.5046" />
+                <PreSize X="0.0000" Y="0.0000" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint />
+            <Position X="50.4536" Y="459.1483" />
+            <Scale ScaleX="2.6524" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0788" Y="0.4042" />
+            <PreSize X="0.3125" Y="0.1761" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
         </Children>
       </ObjectData>
