@@ -9,7 +9,8 @@
 
 class UnitGatchaResult
 {
-    
+public:
+    uint32_t unitID;
 };
 
 class IUnitGatchaStrategy

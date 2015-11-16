@@ -1,0 +1,7 @@
+unitID,unitIconPath,elementType,unitName,atk,rank
+0,element_red.png,0,UnitName_0_red,1,1
+1,element_blue.png,1,UnitName_1_blue,1,1
+2,element_yellow.png,2,UnitName_2_yellow,1,1
+3,element_green.png,3,UnitName_3_green,1,1
+4,element_blue.png,1,UnitName_1_blue_atk2,2,2
+5,element_blue.png,1,UnitName_1_blue_atk3,3,3

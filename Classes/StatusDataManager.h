@@ -58,7 +58,8 @@ public:
     bool writeUnitOfPlayerRecordsToCSV();
     bool changePlayerCoins(int coins);
     
-    std::map<uint32_t, UnitData*> getUnitData();
+    std::map<uint32_t, UnitData*> getAllUnitData();
+    UnitData* getUnitData(uint32_t unitid);
     std::vector<UnitOfPlayerRecord*> getUnitRecords();
     std::map<int, UnitOfPlayerRecord*> getUnitRecordsOfType(ElementType type);
     PlayerStatusData* getPlayerStatusData();
@@ -73,6 +74,9 @@ public:
     std::map<ElementType,int> getDefaultUnitsIndex();
     
     int getPlayerCoins();
+    
+    // for gatcha (get new unit)
+    void addNewUnit(uint32_t newid);
 public:
     // TODO: for debug, remove later
     bool initWithDebugData();

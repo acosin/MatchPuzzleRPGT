@@ -53,6 +53,8 @@
 		31122EC71BCE27A300F08C65 /* CsvParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 31122EC41BCE27A300F08C65 /* CsvParser.cpp */; };
 		311C56341BF5C62500357A7A /* PlayerAssetsData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 311C56321BF5C62500357A7A /* PlayerAssetsData.cpp */; };
 		311C56351BF5C62500357A7A /* PlayerAssetsData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 311C56321BF5C62500357A7A /* PlayerAssetsData.cpp */; };
+		3128F7391BF9BDB000198B11 /* GatchaResultLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3128F7371BF9BDB000198B11 /* GatchaResultLayer.cpp */; };
+		3128F73A1BF9BDB000198B11 /* GatchaResultLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3128F7371BF9BDB000198B11 /* GatchaResultLayer.cpp */; };
 		313E6FEA1BF4704C00DD3BF6 /* GetUnitScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 313E6FE81BF4704C00DD3BF6 /* GetUnitScene.cpp */; };
 		313E6FEB1BF4704C00DD3BF6 /* GetUnitScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 313E6FE81BF4704C00DD3BF6 /* GetUnitScene.cpp */; };
 		313E6FED1BF474FB00DD3BF6 /* getUnits.png in Resources */ = {isa = PBXBuildFile; fileRef = 313E6FEC1BF474FB00DD3BF6 /* getUnits.png */; };
@@ -231,6 +233,8 @@
 		311C56331BF5C62500357A7A /* PlayerAssetsData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerAssetsData.h; sourceTree = "<group>"; };
 		311C56381BF5CF1E00357A7A /* IUnitGatchaStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IUnitGatchaStrategy.h; sourceTree = "<group>"; };
 		311C56391BF5D21E00357A7A /* SimpleUnitGatchaStrategy.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SimpleUnitGatchaStrategy.hpp; sourceTree = "<group>"; };
+		3128F7371BF9BDB000198B11 /* GatchaResultLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GatchaResultLayer.cpp; sourceTree = "<group>"; };
+		3128F7381BF9BDB000198B11 /* GatchaResultLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GatchaResultLayer.h; sourceTree = "<group>"; };
 		313E6FE81BF4704C00DD3BF6 /* GetUnitScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GetUnitScene.cpp; sourceTree = "<group>"; };
 		313E6FE91BF4704C00DD3BF6 /* GetUnitScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetUnitScene.h; sourceTree = "<group>"; };
 		313E6FEC1BF474FB00DD3BF6 /* getUnits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = getUnits.png; path = ui/getUnits.png; sourceTree = "<group>"; };
@@ -529,6 +533,8 @@
 				3185615C1BD4855800627C21 /* StageSelectScene.h */,
 				313E6FE81BF4704C00DD3BF6 /* GetUnitScene.cpp */,
 				313E6FE91BF4704C00DD3BF6 /* GetUnitScene.h */,
+				3128F7371BF9BDB000198B11 /* GatchaResultLayer.cpp */,
+				3128F7381BF9BDB000198B11 /* GatchaResultLayer.h */,
 				31819B591BE1BD2D00C505E8 /* StageClearLayer.cpp */,
 				31819B5A1BE1BD2D00C505E8 /* StageClearLayer.h */,
 				31FF12BA1BD9D61000E06405 /* AnalogStick.cpp */,
@@ -964,6 +970,7 @@
 				31122E911BC7884600F08C65 /* StatusScene.cpp in Sources */,
 				3141AEEB1BD5DB6F001F09B6 /* JewelGridStatus.cpp in Sources */,
 				3185615D1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
+				3128F7391BF9BDB000198B11 /* GatchaResultLayer.cpp in Sources */,
 				311C56341BF5C62500357A7A /* PlayerAssetsData.cpp in Sources */,
 				31122EC61BCE27A300F08C65 /* CsvParser.cpp in Sources */,
 				31FF12BC1BD9D61000E06405 /* AnalogStick.cpp in Sources */,
@@ -1003,6 +1010,7 @@
 				319DA2D41BE06ECA00151EF1 /* SimpleMapStrategyOnPuzzleStatusChange.cpp in Sources */,
 				3188E67B1BCFBA4500AC8FBC /* StageScoreRecord.cpp in Sources */,
 				31122E7B1BC76DCF00F08C65 /* SceneMediator.cpp in Sources */,
+				3128F73A1BF9BDB000198B11 /* GatchaResultLayer.cpp in Sources */,
 				319854831BE9A406004A9CEE /* ScoreBoard.cpp in Sources */,
 				3185615E1BD4855800627C21 /* StageSelectScene.cpp in Sources */,
 				3141AEEC1BD5DB6F001F09B6 /* JewelGridStatus.cpp in Sources */,

@@ -20,8 +20,17 @@ public:
     
     UnitGatchaResult* getUnitByGatcha(StatusDataManager *statusManager) override
     {
-        UnitGatchaResult* ret;
+        UnitGatchaResult* ret = new UnitGatchaResult();
         
+        auto unitdata = statusManager->getAllUnitData();
+        auto it = unitdata.begin();
+        std::random_device rd;
+        std::mt19937 mt(rd());
+        CC_ASSERT(unitdata.size() > 0);
+        std::advance(it, mt() % unitdata.size());
+        auto unitid = it->first;
+        
+        ret->unitID = unitid;
         
         return ret;
     }

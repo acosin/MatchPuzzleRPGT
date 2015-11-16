@@ -339,10 +339,31 @@ int StatusDataManager::getPlayerCoins()
     return _playerAssets->getCoins();
 }
 
+void StatusDataManager::addNewUnit(uint32_t newid)
+{
+    CCLOG("add new unit: id (%d)", newid);
+    auto unitdata = getUnitData(newid);
+    auto newrecord = new UnitOfPlayerRecord(unitdata,
+                                            time(NULL), //time_t getTimestamp,
+                                            1, //int level,
+                                            0   //int exp
+                                            );
+    this->_unitRecords.push_back(newrecord);
+    
+    // persistence
+    writeUnitOfPlayerRecordsToCSV();
+}
 
-std::map<uint32_t, UnitData*> StatusDataManager::getUnitData()
+
+std::map<uint32_t, UnitData*> StatusDataManager::getAllUnitData()
 {
     return _unitData;
+}
+
+
+UnitData* StatusDataManager::getUnitData(uint32_t unitid)
+{
+    return _unitData[unitid];
 }
 
 std::vector<UnitOfPlayerRecord*> StatusDataManager::getUnitRecords()

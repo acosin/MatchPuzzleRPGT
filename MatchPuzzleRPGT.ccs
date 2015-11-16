@@ -24,6 +24,7 @@
         <Image Name="checkbox_normal.png" />
         <Image Name="checkbox_disable.png" />
         <Project Name="GetUnitScene.csd" Type="Scene" />
+        <Project Name="GatchaResultLayer.csd" Type="Layer" />
       </RootFolder>
     </Group>
   </SolutionFolder>
