@@ -7,26 +7,36 @@
 
 #include "IUnitGatchaStrategy.h"
 
+#define COINSBASICGATCHA 50
+
 class SimpleUnitGatchaStrategy : public IUnitGatchaStrategy
 {
+private:
+    int coinsBasicGatcha = 0;
 public:
-    UnitGatchaResult* getUnitByGatcha(std::map<uint32_t, UnitData*> &unitData,
-                                              StatusDataManager *statusManager) override
+    SimpleUnitGatchaStrategy() {
+        coinsBasicGatcha = COINSBASICGATCHA;
+    }
+    
+    UnitGatchaResult* getUnitByGatcha(StatusDataManager *statusManager) override
     {
         UnitGatchaResult* ret;
-        
-        
         
         
         return ret;
     }
     
-    int getCoinsAfterGatcha(std::map<uint32_t, UnitData*> &unitData,
-                            StatusDataManager *statusManager)
+    bool canBasicGatcha(StatusDataManager *statusManager) override
     {
-        int ret = 0;
-        
-        
-        return ret;
+        if (statusManager->getPlayerCoins() < coinsBasicGatcha) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    
+    int getCoinsAfterGatcha(StatusDataManager *statusManager) override
+    {
+        return (statusManager->getPlayerCoins() - coinsBasicGatcha);
     }
 };

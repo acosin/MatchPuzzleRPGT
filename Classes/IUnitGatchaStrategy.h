@@ -5,7 +5,6 @@
 
 #pragma once
 
-#include "UnitData.h"
 #include "StatusDataManager.h"
 
 class UnitGatchaResult
@@ -16,9 +15,7 @@ class UnitGatchaResult
 class IUnitGatchaStrategy
 {
 public:
-    virtual UnitGatchaResult* getUnitByGatcha(std::map<uint32_t, UnitData*> &unitData,
-                                              StatusDataManager *statusManager) = 0;
-    
-    virtual int getCoinsAfterGatcha(std::map<uint32_t, UnitData*> &unitData,
-                                    StatusDataManager *statusManager) = 0;
+    virtual UnitGatchaResult* getUnitByGatcha(StatusDataManager *statusManager) = 0;
+    virtual bool canBasicGatcha(StatusDataManager *statusManager) = 0;
+    virtual int getCoinsAfterGatcha(StatusDataManager *statusManager) = 0;
 };

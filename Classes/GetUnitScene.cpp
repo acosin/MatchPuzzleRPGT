@@ -137,19 +137,23 @@ void GetUnitScene::showConfirmGatcha()
 {
     CCLOG("confirm gatcha");
     auto unitdata = _statusManager->getUnitData();
-    auto coinsAfter = _unitGatchaStrategy->getCoinsAfterGatcha(unitdata, _statusManager);
-    
-    if (coinsAfter < 0) {
-        //if (true) {  //only for debug
+    if (_unitGatchaStrategy->canBasicGatcha(_statusManager) == false) {
+        auto coinsAfter = _unitGatchaStrategy->getCoinsAfterGatcha(_statusManager);
         std::string msg = "Coins not enough!\n Coins:";
         msg += StringUtils::toString(_statusManager->getPlayerCoins()) + "->";
         msg += StringUtils::toString(coinsAfter);
         
         _text_confirmGatcha->setString(msg);
         _panel_confirmGatcha->setVisible(true);
-        //_panel_confirmGatcha->setTouchEnabled(true);
-    } else {
         
+        
+        // handle tap event
+        
+        
+        return;
     }
+    
+    // Can basic gatcha
+    
 }
 
