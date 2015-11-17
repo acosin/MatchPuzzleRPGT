@@ -63,6 +63,7 @@ bool StageSelectScene::init()
     _button_nextStage->loadTextures(img_nextStage, img_nextStage);
     
     _listView_selectStage = dynamic_cast<ui::ListView*>(_layout->getChildByName("ListView_selectStage"));
+    _listView_selectStage->setTouchEnabled(false);
     fillListViewSelectStage();
     
     _panel_mask = dynamic_cast<ui::Layout*>(_layout->getChildByName("Panel_mask"));
