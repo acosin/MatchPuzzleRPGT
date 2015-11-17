@@ -648,5 +648,11 @@ void GameStageScene::onEventMapTouch(EventCustom* pEvent)
 {
     auto mapPos = static_cast<Point*>(pEvent->getUserData());
     auto canMove = _controller->tryMovePlayerByAstar(*mapPos);
+    if (!canMove) {
+        return;
+    }
+    
+    // move actually
+    _controller->animateMoveByPopAlongPath();
 }
 

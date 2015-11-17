@@ -571,6 +571,22 @@ ssize_t MapController::getStepIndex(const Vector<ShortestPathStep*> &steps, cons
     return -1;
 }
 
+void MapController::constructPath(MapController::ShortestPathStep *step)
+{
+    _shortestPath.clear();
+    
+    do {
+        if (step->getParent()) {
+            _shortestPath.insert(0, step);
+        }
+        step = step->getParent();
+    } while (step);
+    
+    for (auto s : _shortestPath) {
+        CCLOG("%s", s->getDescription().c_str());
+    }
+}
+
 void MapController::constructPathAndStartMoveFromStep(MapController::ShortestPathStep *step)
 {
     _shortestPath.clear();
@@ -633,7 +649,8 @@ bool MapController::tryMovePlayerByAstar(const Point &target)
         // if current step is target, then finish
         if (currentStep->getPosition() == target) {
             pathFound = true;
-            constructPathAndStartMoveFromStep(currentStep);
+            //constructPathAndStartMoveFromStep(currentStep);
+            constructPath(currentStep);
             /*
             auto tmpStep = currentStep;
             CCLOG("path found: ");
@@ -697,4 +714,16 @@ bool MapController::tryMovePlayerByAstar(const Point &target)
         CCLOG("cannot found a path");
     }
     return pathFound;
+}
+
+Vector<MapController::ShortestPathStep*>& MapController::getShortestPath()
+{
+    return _shortestPath;
+}
+
+void MapController::popFirstStepOfPath()
+{
+    if (_shortestPath.size() != 0) {
+        _shortestPath.erase(0);
+    }
 }

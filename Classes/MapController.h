@@ -118,6 +118,7 @@ protected:
     PointArray* walkableAdjacentTilesPosForTilePos(const Point &tilePos);
     ssize_t getStepIndex(const Vector<ShortestPathStep*> &steps, const ShortestPathStep *step);
     
+    void constructPath(ShortestPathStep* step);
     void constructPathAndStartMoveFromStep(ShortestPathStep *step);
     void animateMovebyPopAlongPath();
 protected:
@@ -126,4 +127,7 @@ protected:
     Vector<ShortestPathStep*> _shortestPath;
 public:
     bool tryMovePlayerByAstar(const Point &target);
+    Vector<MapController::ShortestPathStep*>& getShortestPath();
+    void popFirstStepOfPath();
+
 };

@@ -64,6 +64,7 @@ public:
     bool tryMovePlayerDown();
     bool tryMovePlayerLeft();
     bool tryMovePlayerRight();
+    bool tryMovePlayerTo(int x, int y);
     
     void onPuzzleFinishComboes();
     
@@ -89,6 +90,7 @@ public:
     bool tryMovePlayerByAstar(const Point &target);
     void stopMapTouch();
     void startMapTouch();
+    void animateMoveByPopAlongPath();
 public:
     JewelsGrid* _jewelsGrid;
 

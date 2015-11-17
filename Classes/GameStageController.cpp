@@ -135,6 +135,16 @@ bool GameStageController::tryMovePlayerRight()
     return ret;
 }
 
+bool GameStageController::tryMovePlayerTo(int x, int y)
+{
+    bool ret;
+    ret = _mapController->tryMovePlayerTo(x, y);
+    
+    checkClearStage();
+    return ret;
+}
+
+
 void GameStageController::onPuzzleFinishComboes()
 {
     auto changeData = getPuzzleStatusChangeData();
@@ -280,6 +290,28 @@ void GameStageController::stopMapTouch()
 void GameStageController::startMapTouch()
 {
     _mapController->getMapLayer()->enableTouch();
+}
+
+void GameStageController::animateMoveByPopAlongPath()
+{
+    stopMapTouch();
+    auto path = _mapController->getShortestPath();
+    if (path.size() == 0) {
+        startMapTouch();
+        return;
+    }
+    
+    float durationMoveOnce = 0.3;
+    
+    auto s = path.at(0);
+    auto x = s->getPosition().x;
+    auto y = s->getPosition().y;
+    auto moveAction = Sequence::create(DelayTime::create(durationMoveOnce), CallFunc::create([&, x, y](){
+        this->tryMovePlayerTo(x, y);
+    }), NULL);
+    auto moveCallback = CallFunc::create(CC_CALLBACK_0(GameStageController::animateMoveByPopAlongPath, this));
+    _mapController->popFirstStepOfPath();
+    _mapController->getMapLayer()->runAction(Sequence::create(moveAction,moveCallback, NULL));
 }
 
 // -- private --
