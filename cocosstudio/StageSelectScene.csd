@@ -46,7 +46,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ListView_selectStage" ActionTag="-1061885415" Tag="25" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="110.5941" RightMargin="29.4059" TopMargin="62.0686" BottomMargin="473.9313" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" VerticalType="Align_VerticalCenter" ctype="ListViewObjectData">
+          <AbstractNodeData Name="ListView_selectStage" ActionTag="-1061885415" Tag="25" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="110.5941" RightMargin="29.4059" TopMargin="62.0686" BottomMargin="473.9313" TouchEnable="True" ClipAble="True" BackColorAlpha="101" ComboBoxIndex="1" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="0" VerticalType="Align_VerticalCenter" ctype="ListViewObjectData">
             <Size X="500.0320" Y="600.0352" />
             <AnchorPoint />
             <Position X="110.5920" Y="473.9392" />
@@ -58,6 +58,36 @@
             <FirstColor A="255" R="150" G="150" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Button_prevStage" ActionTag="-1270208057" Tag="47" IconVisible="False" LeftMargin="11.0290" RightMargin="548.9710" TopMargin="419.8522" BottomMargin="636.1478" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="80.0000" Y="80.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="51.0290" Y="676.1478" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0797" Y="0.5952" />
+            <PreSize X="0.1250" Y="0.0704" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Button_nextStage" ActionTag="1408411299" Tag="48" IconVisible="False" LeftMargin="546.6115" RightMargin="13.3885" TopMargin="422.0463" BottomMargin="633.9537" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="80.0000" Y="80.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="586.6115" Y="673.9537" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9166" Y="0.5933" />
+            <PreSize X="0.1250" Y="0.0704" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
           <AbstractNodeData Name="Text_1" ActionTag="828321139" Tag="30" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftMargin="240.5000" RightMargin="240.5000" TopMargin="88.1011" BottomMargin="1026.8989" FontSize="48" LabelText="--Selecting Stages--" HorizontalAlignmentType="HT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
             <Size X="424.0000" Y="54.0000" />
@@ -157,13 +187,13 @@
           <AbstractNodeData Name="Panel_mask" ActionTag="-1267182449" Tag="50" IconVisible="False" LeftMargin="2.5755" RightMargin="437.4245" TopMargin="475.8004" BottomMargin="460.1996" TouchEnable="True" BackColorAlpha="235" ComboBoxIndex="1" ColorAngle="90.0000" ctype="PanelObjectData">
             <Size X="200.0000" Y="200.0000" />
             <Children>
-              <AbstractNodeData Name="ListView_units" ActionTag="-2094428400" Tag="51" IconVisible="False" LeftMargin="0.0000" RightMargin="0.0000" TopMargin="-0.7497" BottomMargin="0.7497" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
+              <AbstractNodeData Name="ListView_units" ActionTag="-2094428400" Tag="51" IconVisible="False" TopMargin="-0.7497" BottomMargin="0.7497" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" ScrollDirectionType="0" DirectionType="Vertical" ctype="ListViewObjectData">
                 <Size X="200.0000" Y="200.0000" />
                 <AnchorPoint />
-                <Position X="0.0000" Y="0.7497" />
+                <Position Y="0.7497" />
                 <Scale ScaleX="1.0000" ScaleY="0.6663" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0000" Y="0.0037" />
+                <PrePosition Y="0.0037" />
                 <PreSize X="1.0000" Y="1.0000" />
                 <SingleColor A="255" R="150" G="150" B="255" />
                 <FirstColor A="255" R="150" G="150" B="255" />

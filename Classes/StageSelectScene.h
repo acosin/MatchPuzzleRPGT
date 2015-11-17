@@ -25,6 +25,9 @@ protected:
     ui::Button* _homeButton;
     ui::Button* _exitButton;
     
+    ui::Button* _button_prevStage;
+    ui::Button* _button_nextStage;
+    
     ui::ListView* _listView_selectStage;
     ui::ListView* _listView_units;
     ui::Layout* _panel_mask;
@@ -35,6 +38,8 @@ protected:
     StatusDataManager* _statusManager;
     
     std::map<ElementType,int> _unitsSortie;
+    
+    int _currentStageIndex;
 public:
     StageSelectScene();
     ~StageSelectScene();
@@ -50,4 +55,9 @@ public:
     void changeSortieUnitOfType();
     
     void selectStage_callback(Ref* pSender, ui::ListView::EventType type);
+    
+private:
+    void onPrevStage();
+    void onNextStage();
+    void scrollToStage(int index, float duration, bool attenuated);
 };

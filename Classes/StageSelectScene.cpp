@@ -55,6 +55,13 @@ bool StageSelectScene::init()
     _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
     _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
     
+    _button_prevStage = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_prevStage"));
+    auto img_prevStage = "Button_prevStage.png";
+    _button_prevStage->loadTextures(img_prevStage, img_prevStage);
+    _button_nextStage = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_nextStage"));
+    auto img_nextStage = "Button_nextStage.png";
+    _button_nextStage->loadTextures(img_nextStage, img_nextStage);
+    
     _listView_selectStage = dynamic_cast<ui::ListView*>(_layout->getChildByName("ListView_selectStage"));
     fillListViewSelectStage();
     
@@ -82,6 +89,16 @@ bool StageSelectScene::init()
     // TODO: may used TouchListener
     _homeButton->addClickEventListener([](Ref* ref) {
         SceneMediator::getInstance()->gotoHomeScene();
+    });
+    
+    _button_prevStage->addClickEventListener([&](Ref* ref) {
+        //CCLOG("prev stage");
+        this->onPrevStage();
+    });
+    
+    _button_nextStage->addClickEventListener([&](Ref* ref) {
+        //CCLOG("next stage");
+        this->onNextStage();
     });
     
     _exitButton->addClickEventListener([](Ref* ref) {
@@ -112,6 +129,8 @@ bool StageSelectScene::fillListViewSelectStage()
         item->setTouchEnabled(true);
         _listView_selectStage->pushBackCustomItem(item);
     }
+    
+    _currentStageIndex = 0;
     
     return true;
 }
@@ -225,4 +244,29 @@ void StageSelectScene::selectStage_callback(Ref* pSender, ui::ListView::EventTyp
         // TODO: select a stage and change scene here, may need more check about whether resources have been released
         SceneMediator::getInstance()->gotoGameStageScene(_stageManager, (uint32_t)selectedIndex, _unitsSortie);
     }
+}
+
+void StageSelectScene::onPrevStage()
+{
+    float duration = 0.3;
+    scrollToStage(_currentStageIndex-1, duration, false);
+}
+
+void StageSelectScene::onNextStage()
+{
+    float duration = 0.3;
+    scrollToStage(_currentStageIndex+1, duration, false);
+}
+
+void StageSelectScene::scrollToStage(int index, float duration, bool attenuated)
+{
+    auto num = _listView_selectStage->getItems().size();
+    if (num <= 1 || index < 0 || index >= num) {
+        return;
+    }
+    
+    float percent = (index) / (float)(num-1) * 100;
+    CCLOG("%f", percent);
+    _currentStageIndex = index;
+    _listView_selectStage->scrollToPercentHorizontal(percent, duration, attenuated);
 }
