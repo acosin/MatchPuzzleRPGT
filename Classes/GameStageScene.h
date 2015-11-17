@@ -129,4 +129,9 @@ private:
     // processing function in update()
     void processController();
     
+    
+    // for move on map when tounching on the map
+    void regEventMapTouch();
+    void removeEventMapTouch();
+    void onEventMapTouch(EventCustom* pEvent);
 };

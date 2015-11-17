@@ -157,6 +157,8 @@ void GameStageScene::regLogicalEvent()
     regEventEnemyDead();
     regEventProgressGrowth();
     regEventSaveScore();
+    
+    regEventMapTouch();
 }
 
 void GameStageScene::removeLogicalEvent()
@@ -167,6 +169,7 @@ void GameStageScene::removeLogicalEvent()
     removeEventEnemyDead();
     removeEventProgressGrowth();
     removeEventSaveScore();
+    removeEventMapTouch();
 }
 
 Scene* GameStageScene::createScene(StageDataManager* stageManager, uint32_t stageID,
@@ -614,6 +617,8 @@ void GameStageScene::onEnemyDead(EventCustom* pEvent)
     auto result = score+scoreToAdd;
     _scoreBoard->setScore(result);
     _controller->setScore(result);
+    
+    _controller->checkClearStage();
 }
 
 void GameStageScene::fillUnitsSortie()
@@ -625,3 +630,23 @@ void GameStageScene::fillUnitsSortie()
         image->loadTexture(record->unitdata->unitIconPath);
     }
 }
+
+void GameStageScene::regEventMapTouch()
+{
+    auto listenner =EventListenerCustom::create(MapLayer::EventNameMapTounch,
+                                                CC_CALLBACK_1(GameStageScene::onEventMapTouch, this));
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->addEventListenerWithFixedPriority(listenner, 100);
+}
+
+void GameStageScene::removeEventMapTouch()
+{
+    getEventDispatcher()->removeCustomEventListeners(MapLayer::EventNameMapTounch);
+}
+
+void GameStageScene::onEventMapTouch(EventCustom* pEvent)
+{
+    auto mapPos = static_cast<Point*>(pEvent->getUserData());
+    auto canMove = _controller->tryMovePlayerByAstar(*mapPos);
+}
+

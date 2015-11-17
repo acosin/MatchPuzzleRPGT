@@ -75,15 +75,25 @@ void MapController::movePlayerTo(int x, int y)
     auto goal = checkGoal();
 }
 
+bool MapController::isValidTilePos(int x, int y)
+{
+    return (x>=0 && y>=0 && x< _stageData->_mapWidth && y < _stageData->_mapHeight);
+}
+
+bool MapController::isWalkableTilePos(int x, int y)
+{
+    return (findMapItems(x,y).size() == 0);
+}
+
 bool MapController::tryMovePlayerTo(int x, int y)
 {
     CC_ASSERT(_IDpool_mapItem != nullptr);
-    if (x<0 || y<0 ||x>= _stageData->_mapWidth || y>=_stageData->_mapHeight) {
+    if (!isValidTilePos(x, y)) {
         //CCLOG("(%d,%d) out of map", x,y);
         return false;
     }
     
-    if (findMapItems(x, y).size() != 0) {
+    if (!isWalkableTilePos(x, y)) {
         CCLOG("already exist item in (%d,%d)", x,y);
         return false;
     }
@@ -447,5 +457,244 @@ void MapController::createEnemiesDebug()
     createEnemyItem(4,2,data);
 }
 
+MapController::ShortestPathStep::ShortestPathStep() :
+_position(Point::ZERO),
+_gScore(0),
+_hScore(0),
+_parent(nullptr)
+{
+    
+}
+
+MapController::ShortestPathStep::~ShortestPathStep()
+{
+    
+}
+
+MapController::ShortestPathStep* MapController::ShortestPathStep::createWithPosition(const Point &pos)
+{
+    ShortestPathStep *pRet = new ShortestPathStep();
+    if (pRet && pRet->initWithPosition(pos)) {
+        pRet->autorelease();
+        return pRet;
+    } else {
+        CC_SAFE_DELETE(pRet);
+        return nullptr;
+    }
+}
+
+bool MapController::ShortestPathStep::initWithPosition(const Point &pos)
+{
+    bool bRet = false;
+    //TODO
+    do {
+        this->setPosition(pos);
+        bRet = true;
+    } while (0);
+    return bRet;
+}
+
+int MapController::ShortestPathStep::getFScore() const
+{
+    return this->getGScore() + this->getHScore();
+}
+
+bool MapController::ShortestPathStep::isEqual(const ShortestPathStep *other) const
+{
+    return this->getPosition() == other->getPosition();
+}
+
+std::string MapController::ShortestPathStep::getDescription() const
+{
+    return StringUtils::format("pos=[%.0f;%.0f]  g=%d  h=%d  f=%d",
+                               this->getPosition().x, this->getPosition().y,
+                               this->getGScore(), this->getHScore(), this->getFScore());
+}
 
 
+void MapController::insertInOpenSteps(ShortestPathStep *step)
+{
+    int stepFscore = step->getFScore();
+    ssize_t count = _mapitemOpenSteps.size();
+    ssize_t i = 0;
+    for (; i < count; i++) {
+        if (stepFscore <= _mapitemOpenSteps.at(i)->getFScore()) {
+            break;
+        }
+    }
+    _mapitemOpenSteps.insert(i, step);
+}
+
+int MapController::computeHScoreFromPosToPos(const Point &fromPos, const Point &toPos)
+{
+    return (int)(abs(toPos.x - fromPos.x) + abs(toPos.y - fromPos.y));
+}
+
+int MapController::costToMoveFromStepToAdjacentStep(const ShortestPathStep *fromStep, const ShortestPathStep *toStep)
+{
+    return 1;
+}
+
+PointArray* MapController::walkableAdjacentTilesPosForTilePos(const Point &tilePos)
+{
+    PointArray *tmp = PointArray::create(4);
+    // up
+    Point p(tilePos.x,tilePos.y-1);
+    if (isValidTilePos(p.x, p.y) && isWalkableTilePos(p.x, p.y)) {
+        tmp->addControlPoint(p);
+    }
+    // left
+    p.set(tilePos.x-1, tilePos.y);
+    if (isValidTilePos(p.x, p.y) && isWalkableTilePos(p.x, p.y)) {
+        tmp->addControlPoint(p);
+    }
+    // down
+    p.set(tilePos.x, tilePos.y+1);
+    if (isValidTilePos(p.x, p.y) && isWalkableTilePos(p.x, p.y)) {
+        tmp->addControlPoint(p);
+    }
+    // right
+    p.set(tilePos.x+1, tilePos.y);
+    if (isValidTilePos(p.x, p.y) && isWalkableTilePos(p.x, p.y)) {
+        tmp->addControlPoint(p);
+    }
+    return tmp;
+}
+
+ssize_t MapController::getStepIndex(const Vector<ShortestPathStep*> &steps, const ShortestPathStep *step)
+{
+    for (ssize_t i = 0; i < steps.size(); i++) {
+        if (steps.at(i)->isEqual(step)) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+void MapController::constructPathAndStartMoveFromStep(MapController::ShortestPathStep *step)
+{
+    _shortestPath.clear();
+    
+    do {
+        if (step->getParent()) {
+            _shortestPath.insert(0, step);
+        }
+        step = step->getParent();
+    } while (step);
+    
+    for (auto s : _shortestPath) {
+        CCLOG("%s", s->getDescription().c_str());
+    }
+    
+    animateMovebyPopAlongPath();
+}
+
+void MapController::animateMovebyPopAlongPath()
+{
+    _mapLayer->disableTouch();
+    if (_shortestPath.size() == 0) {
+        _mapLayer->enableTouch();
+        return;
+    }
+    
+    float durationMoveOnce = 0.3;
+    
+    auto s = _shortestPath.at(0);
+    auto x = s->getPosition().x;
+    auto y = s->getPosition().y;
+    auto moveAction = Sequence::create(DelayTime::create(durationMoveOnce), CallFunc::create([&, x, y](){
+        this->movePlayerTo(x, y);
+    }), NULL);
+    auto moveCallback = CallFunc::create(CC_CALLBACK_0(MapController::animateMovebyPopAlongPath, this));
+    _shortestPath.erase(0);
+    _mapLayer->runAction(Sequence::create(moveAction,moveCallback, NULL));
+}
+
+bool MapController::tryMovePlayerByAstar(const Point &target)
+{
+    bool pathFound = false;
+    
+    _mapitemOpenSteps.clear();
+    _mapitemClosedSteps.clear();
+    
+    Point playerFrom = Point(getPlayerX(), getPlayerY());
+    insertInOpenSteps(ShortestPathStep::createWithPosition(playerFrom));
+    
+    do {
+        // get min F value
+        // the first is min because it is an ordered list
+        auto currentStep = _mapitemOpenSteps.at(0);
+        // add current step to the closed list
+        _mapitemClosedSteps.pushBack(currentStep);
+        // and then remove it from the open list
+        _mapitemOpenSteps.erase(0);
+
+        
+        // if current step is target, then finish
+        if (currentStep->getPosition() == target) {
+            pathFound = true;
+            constructPathAndStartMoveFromStep(currentStep);
+            /*
+            auto tmpStep = currentStep;
+            CCLOG("path found: ");
+            do {
+                CCLOG("%s", tmpStep->getDescription().c_str());
+                tmpStep = tmpStep->getParent(); //backward
+            } while (tmpStep); // until cannot backward
+             */
+            _mapitemOpenSteps.clear();
+            _mapitemClosedSteps.clear();
+            break;
+        }
+        
+        // get adjacent of current step
+        auto adjSteps = walkableAdjacentTilesPosForTilePos(currentStep->getPosition());
+        for (ssize_t i = 0; i < adjSteps->count(); i++) {
+            auto step = ShortestPathStep::createWithPosition(adjSteps->getControlPointAtIndex(i));
+            // check if this step already in closed list
+            if (getStepIndex(_mapitemClosedSteps, step) != -1) {
+                continue;
+            }
+            
+            // compute the cost from current step to this step
+            auto movecost = costToMoveFromStepToAdjacentStep(currentStep, step);
+            // check if this step in the open list
+            auto index = getStepIndex(_mapitemOpenSteps, step);
+            // not in open list, add it
+            if (index == -1) {
+                // set current step as parent
+                step->setParent(currentStep);
+                // G value = G value of current step + movecost
+                step->setGScore(currentStep->getGScore() + movecost);
+                // H value
+                step->setHScore(computeHScoreFromPosToPos(step->getPosition(), target));
+                // insert by order
+                insertInOpenSteps(step);
+            } else {
+                // get existing step, it has been computed
+                step = _mapitemOpenSteps.at(index);
+                // check whether G value < ...
+                if ((currentStep->getGScore() + movecost) < step->getGScore()) {
+                    // set G value as the smaller one
+                    step->setGScore(currentStep->getGScore() + movecost);
+                    // F value would change according to the change of G value
+                    // to keep the open list ordered, we need to remove this step and then insert by order
+                    // before remove, retain the ref
+                    step->retain();
+                    // now can remove from the list while guarantee no memory release
+                    _mapitemOpenSteps.erase(index);
+                    // insert by order again
+                    insertInOpenSteps(step);
+                    // now we can release it, because the open list holds it
+                    step->release();
+                }
+            }
+        }
+        
+    } while (_mapitemOpenSteps.size() > 0);
+    
+    if (!pathFound) {
+        CCLOG("cannot found a path");
+    }
+    return pathFound;
+}

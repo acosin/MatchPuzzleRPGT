@@ -6,6 +6,8 @@
 
 #include "MapLayer.h"
 
+const std::string MapLayer::EventNameMapTounch = "EventNameMapTounch";
+
 MapLayer::MapLayer():
 _tileMap(nullptr),
 _background(nullptr),
@@ -57,7 +59,7 @@ bool MapLayer::initMap(const std::string &mapFilename)
     auto listener = EventListenerTouchOneByOne::create();
     listener->onTouchBegan = [&](Touch *touch, Event *unused_event)->bool { return true; };
     listener->onTouchEnded = CC_CALLBACK_2(MapLayer::onTouchEnded, this);
-    //this->_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+    this->_eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
     return true;
 }
@@ -111,11 +113,12 @@ Vec2 MapLayer::convertToPixelPos(const Vec2 &mapPos)
     return ret;
 }
 
-//TODO
 Vec2 MapLayer::convertToMapPos(const Vec2 &pixelPos)
 {
-    Vec2 ret;
-    return ret;
+    auto x = (int)(pixelPos.x / _tileMap->getTileSize().width);
+    auto y = (int)(_tileMap->getMapSize().height)- (int)(pixelPos.y / _tileMap->getTileSize().height) - 1;
+    
+    return Vec2(x,y);
 }
 
 void MapLayer::scaleAsTileSize(Node* node)
@@ -137,6 +140,16 @@ bool MapLayer::isGoalPos(int x, int y)
         }
     }
     return false;
+}
+
+void MapLayer::enableTouch()
+{
+    this->setTouchEnabled(true);
+}
+
+void MapLayer::disableTouch()
+{
+    this->setTouchEnabled(false);
 }
 
 // -- private --
@@ -204,31 +217,19 @@ void MapLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *unused_event)
     auto touchLocation = touch->getLocation();
     touchLocation = this->convertToNodeSpace(touchLocation);
     
-    auto playerPos = _player->getPosition();
-    auto diff = touchLocation - playerPos;
-    if (abs(diff.x) > abs(diff.y)) {
-        if (diff.x > 0) {
-            playerPos.x += _tileMap->getTileSize().width;
-        }
-        else {
-            playerPos.x -= _tileMap->getTileSize().width;
-        }
+    Point mapPos = convertToMapPos(touchLocation);
+    if (mapPos.x < 0 || mapPos.y < 0 ||
+        mapPos.x >= _tileMap->getMapSize().width ||
+        mapPos.y >= _tileMap->getMapSize().height) {
+        CCLOG("touch out of map");
+        return;
     }
-    else {
-        if (diff.y > 0) {
-            playerPos.y += _tileMap->getTileSize().height;
-        }
-        else {
-            playerPos.y -= _tileMap->getTileSize().height;
-        }
-    }
-    /*
-    if (playerPos.x <= (_tileMap->getMapSize().width * _tileMap->getMapSize().width) &&
-        playerPos.y <= (_tileMap->getMapSize().height * _tileMap->getMapSize().height) &&
-        playerPos.y >= 0 &&
-        playerPos.x >= 0)*/
-    {
-        _player->setPosition(playerPos);
-    }
-    
+    CCLOG("touch map: %f,%f", mapPos.x, mapPos.y);
+    dispatchEventMapTouch(mapPos);
+}
+
+void MapLayer::dispatchEventMapTouch(Point &mapPos)
+{
+    auto dispatcher = Director::getInstance()->getEventDispatcher();
+    dispatcher->dispatchCustomEvent(MapLayer::EventNameMapTounch, &mapPos);
 }

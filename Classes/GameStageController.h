@@ -84,6 +84,11 @@ public:
     int getUnitDamage(ElementType type);
     void updateSortieUnitExp(ElementType type, int newExp);
     void updateSortieUnitLevel(ElementType type, int newLevel);
+    
+    // for path searching
+    bool tryMovePlayerByAstar(const Point &target);
+    void stopMapTouch();
+    void startMapTouch();
 public:
     JewelsGrid* _jewelsGrid;
 

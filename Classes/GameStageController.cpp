@@ -264,6 +264,24 @@ void GameStageController::updateSortieUnitLevel(ElementType type, int newLevel)
     record->level = newLevel;
 }
 
+bool GameStageController::tryMovePlayerByAstar(const Point &target)
+{
+    stopMapTouch();
+    auto bRet = _mapController->tryMovePlayerByAstar(target);
+    startMapTouch();
+    return bRet;
+}
+
+void GameStageController::stopMapTouch()
+{
+    _mapController->getMapLayer()->disableTouch();
+}
+
+void GameStageController::startMapTouch()
+{
+    _mapController->getMapLayer()->enableTouch();
+}
+
 // -- private --
 
 void GameStageController::addClearConditions()
@@ -274,4 +292,5 @@ void GameStageController::addClearConditions()
     auto noEnemy = new ClearStageCondition_NoEnemy();
     _clearConditions.push_back(noEnemy);
 }
+
 

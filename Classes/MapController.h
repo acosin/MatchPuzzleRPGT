@@ -54,6 +54,8 @@ public:
     
     int getPlayerX();
     int getPlayerY();
+    bool isValidTilePos(int x, int y);
+    bool isWalkableTilePos(int x, int y);
     void movePlayerTo(int x, int y);
     bool tryMovePlayerTo(int x, int y);
     bool tryMovePlayerUp();
@@ -90,4 +92,38 @@ private:
     */
     void createEnemies();
     void createEnemiesDebug();
+    
+// -- for A* path searching --
+protected:
+    class ShortestPathStep : public Ref
+    {
+    public:
+        ShortestPathStep();
+        ~ShortestPathStep();
+        static ShortestPathStep *createWithPosition(const Point &pos);
+        bool initWithPosition(const Point &pos);
+        int getFScore() const;
+        bool isEqual(const ShortestPathStep *other) const;
+        std::string getDescription() const;
+        CC_SYNTHESIZE(Point, _position, Position);
+        CC_SYNTHESIZE(int, _gScore, GScore);
+        CC_SYNTHESIZE(int, _hScore, HScore);
+        CC_SYNTHESIZE(ShortestPathStep*, _parent, Parent);
+        
+    };
+    
+    void insertInOpenSteps(ShortestPathStep *step);
+    int computeHScoreFromPosToPos(const Point &fromPos, const Point &toPos);
+    int costToMoveFromStepToAdjacentStep(const ShortestPathStep *fromStep, const ShortestPathStep *toStep);
+    PointArray* walkableAdjacentTilesPosForTilePos(const Point &tilePos);
+    ssize_t getStepIndex(const Vector<ShortestPathStep*> &steps, const ShortestPathStep *step);
+    
+    void constructPathAndStartMoveFromStep(ShortestPathStep *step);
+    void animateMovebyPopAlongPath();
+protected:
+    Vector<ShortestPathStep*> _mapitemOpenSteps;
+    Vector<ShortestPathStep*> _mapitemClosedSteps;
+    Vector<ShortestPathStep*> _shortestPath;
+public:
+    bool tryMovePlayerByAstar(const Point &target);
 };

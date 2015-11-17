@@ -13,6 +13,8 @@ USING_NS_CC;
 
 class MapLayer : public cocos2d::Layer
 {
+public:
+    static const std::string EventNameMapTounch;
 private:
     TMXLayer* _background;
     Node* _player;
@@ -48,9 +50,13 @@ public:
     
     bool isGoalPos(int x, int y);
     
+    void enableTouch();
+    void disableTouch();
+    
 private:
     void setViewPointCenter(Point position);
     
     
     void onTouchEnded(Touch *touch, Event *unused_event);
+    void dispatchEventMapTouch(Point &mapPos);
 };
