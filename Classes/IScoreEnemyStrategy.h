@@ -10,5 +10,6 @@ class IScoreEnemyStrategy
 {
     
 public:
+    virtual ~IScoreEnemyStrategy() {};
     virtual int getScoreToAdd(MapItemEnemy *enemy) = 0;
 };

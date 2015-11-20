@@ -12,9 +12,7 @@ class MapController;
 
 class IMapStrategyOnPuzzleStatusChange
 {
-protected:
 public:
-    
-public:
+    virtual ~IMapStrategyOnPuzzleStatusChange() {}
     virtual void exec(MapController *c, PuzzleStatusChangeData *data) = 0;
 };

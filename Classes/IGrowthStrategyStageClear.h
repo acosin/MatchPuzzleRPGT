@@ -11,6 +11,7 @@
 class IGrowthStrategyStageClear
 {
 public:
+    virtual ~IGrowthStrategyStageClear() {};
     virtual int getPlayerExp(StageClearData *data) = 0;
     virtual int getNewPlayerLevel(int level, int &expCurrent, int expAdd) = 0;
     virtual int getUnitExp(UnitOfPlayerRecord* record,

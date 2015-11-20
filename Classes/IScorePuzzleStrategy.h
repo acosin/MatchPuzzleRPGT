@@ -11,8 +11,8 @@
 class IScorePuzzleStrategy
 {
 protected:
-public:
     
 public:
+    virtual ~IScorePuzzleStrategy() {}
     virtual int getScoreToAdd(PuzzleStatusChangeData *data) = 0;
 };
