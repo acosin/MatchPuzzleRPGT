@@ -69,6 +69,15 @@ bool GameStageScene::init()
     _textYcombo->setVisible(false);
     hideElementXYCount();
     
+    for (int type = 0; type < (int)ElementType::count; type++) {
+        auto xTextName = this->getTextLabelComboCount(true, (ElementType)type);
+        auto xText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(xTextName));
+        _textXMatches.pushBack(xText);
+        auto yTextName = this->getTextLabelComboCount(false, (ElementType)type);
+        auto yText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(yTextName));
+        _textYMatches.pushBack(yText);
+    }
+    
     _homeButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_backHome"));
     _exitButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_exit"));
     _selectStageButton = dynamic_cast<ui::Button*>(_layout->getChildByName("Button_selectStage"));
@@ -446,10 +455,12 @@ void GameStageScene::animateComboCountChange(PuzzleStatusChangeData *data, float
     Vector<FiniteTimeAction*> actions;
     for (int i = 1; i<=timesChange; i++) {
         for (int type = 0; type < (int)ElementType::count; type++) {
-            auto xTextName = this->getTextLabelComboCount(true, (ElementType)type);
-            auto xText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(xTextName));
-            auto yTextName = this->getTextLabelComboCount(false, (ElementType)type);
-            auto yText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(yTextName));
+            //auto xTextName = this->getTextLabelComboCount(true, (ElementType)type);
+            //auto xText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(xTextName));
+            auto xText = _textXMatches.at(type);
+            //auto yTextName = this->getTextLabelComboCount(false, (ElementType)type);
+            //auto yText = dynamic_cast<ui::Text*>(this->_layout->getChildByName(yTextName));
+            auto yText = _textYMatches.at(type);
             
             //int xFrom = 0;
             int xFrom = Value(xText->getString()).asInt();

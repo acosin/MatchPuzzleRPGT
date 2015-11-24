@@ -40,6 +40,8 @@ protected:
     Node* _mapLayout;
     Node* _background;
     ui::Layout* _puzzleEffectLayout;
+    Vector<ui::Text*> _textXMatches;
+    Vector<ui::Text*> _textYMatches;
     
     AnalogStick* _stick;
     
@@ -61,12 +63,14 @@ protected:
     IScorePuzzleStrategy* _scorePuzzleStrategy;
     IScoreEnemyStrategy* _scoreEnemyStrategy;
     
+protected:
     bool initData(StageDataManager* stageManager, uint32_t stageID,
                   std::map<ElementType, int> &unitsSortie);
     void regLogicalEvent();
     void removeLogicalEvent();
     
     int _texture_num = 0;
+    
     void LoadTexture();
 public:
     ui::Text* _textXcombo;
